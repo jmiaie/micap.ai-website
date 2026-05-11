@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate how much revenue you're losing to missed calls. Free opportunity cost calculator for HVAC, plumbing, dental, salon, and law firms.">
+    <meta name="keywords" content="opportunity cost calculator, missed call calculator, revenue loss calculator, AI voice agent">
+    <meta property="og:title" content="Opportunity Cost Calculator - See How Much You're Losing">
+    <meta property="og:description" content="Calculate your annual revenue loss from missed calls. Industry-specific data for HVAC, plumbing, dental, salon, and law firms.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Opportunity Cost Calculator - See How Much You're Losing">
+    <meta name="twitter:description" content="Calculate your annual revenue loss from missed calls. Industry-specific data.">
+    <link rel="canonical" href="https://micap.ai/opportunity-cost-calculator">
+    <title>Opportunity Cost Calculator - Micap AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #d4a574 0%, #b8860b 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .calculator-section {
+            display: none;
+        }
+
+        .calculator-section.active {
+            display: block;
+        }
+
+        .step-indicator {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            gap: 10px;
+        }
+
+        .step {
+            flex: 1;
+            height: 4px;
+            background: #e0e0e0;
+            border-radius: 2px;
+            position: relative;
+        }
+
+        .step.completed {
+            background: #d4a574;
+        }
+
+        .step.active {
+            background: #d4a574;
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+
+        .form-group .help-text {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        .form-group .industry-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 12px;
+        }
+
+        .industry-btn {
+            padding: 12px 16px;
+            border: 2px solid #ddd;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .industry-btn:hover {
+            border-color: #d4a574;
+            background: #f9f9f9;
+        }
+
+        .industry-btn.selected {
+            background: #d4a574;
+            color: white;
+            border-color: #d4a574;
+        }
+
+        .slider-container {
+            margin-top: 15px;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #d4a574;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #d4a574;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .slider-value {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .slider-value .current {
+            font-weight: 600;
+            color: #d4a574;
+        }
+
+        input[type="number"],
+        input[type="email"],
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="number"]:focus,
+        input[type="email"]:focus,
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #d4a574;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+            justify-content: space-between;
+        }
+
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #d4a574;
+            color: white;
+            flex: 1;
+        }
+
+        .btn-primary:hover {
+            background: #b8860b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3);
+        }
+
+        .btn-primary:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #d4a574;
+            border: 2px solid #d4a574;
+        }
+
+        .btn-secondary:hover {
+            background: #f9f9f9;
+        }
+
+        .results-section {
+            background: #f5f5f5;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .result-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .result-label {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .result-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #d4a574;
+        }
+
+        .result-description {
+            font-size: 0.9rem;
+            color: #999;
+            margin-top: 5px;
+        }
+
+        .urgency-message {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 16px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+
+        .urgency-message strong {
+            color: #856404;
+        }
+
+        .urgency-message p {
+            color: #856404;
+            margin: 8px 0;
+            font-size: 0.95rem;
+        }
+
+        .cta-section {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            color: #333;
+        }
+
+        .email-capture {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .email-capture input {
+            margin-bottom: 12px;
+        }
+
+        .privacy-notice {
+            font-size: 0.8rem;
+            color: #999;
+            margin-top: 12px;
+            text-align: center;
+        }
+
+        .privacy-notice a {
+            color: #d4a574;
+            text-decoration: none;
+        }
+
+        .privacy-notice a:hover {
+            text-decoration: underline;
+        }
+
+        .data-source {
+            font-size: 0.85rem;
+            color: #999;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .data-source a {
+            color: #d4a574;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .form-group .industry-buttons {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .result-value {
+                font-size: 1.4rem;
+            }
+        }
+    
+/* Industries dropdown */
+.nav-dropdown{position:relative}
+.nav-dropdown-trigger{display:flex;align-items:center;gap:5px;color:#9C9888;font-size:14px;font-weight:500;cursor:pointer;transition:color .2s;background:none;border:none;font-family:inherit;padding:0}
+.nav-dropdown-trigger:hover,.nav-dropdown:hover .nav-dropdown-trigger{color:#F5F0E8}
+.nav-dropdown-trigger svg{transition:transform .2s}
+.nav-dropdown:hover .nav-dropdown-trigger svg{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:rgba(14,13,11,.97);backdrop-filter:blur(20px);border:1px solid rgba(186,117,23,.2);border-radius:12px;padding:8px;min-width:200px;opacity:0;visibility:hidden;transition:all .2s;z-index:200;box-shadow:0 16px 48px rgba(0,0,0,.4)}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;top:calc(100% + 8px)}
+.nav-dropdown-menu a{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;font-size:13px;color:#9C9888;transition:all .2s;white-space:nowrap}
+.nav-dropdown-menu a:hover{color:#F5F0E8;background:rgba(186,117,23,.08)}
+.nav-dropdown-menu a span.dd-icon{font-size:16px;width:20px;text-align:center}
+.nav-dropdown-divider{height:1px;background:rgba(186,117,23,.1);margin:6px 0}
+
+  </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Opportunity Cost Calculator</h1>
+            <p>See exactly how much revenue you're losing to missed calls</p>
+        </div>
+
+        <div class="content">
+            <!-- Step 1: Industry Selection -->
+            <div class="calculator-section active" id="step1">
+                <div class="step-indicator">
+                    <div class="step active"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>What's your industry?</label>
+                    <div class="industry-buttons">
+                        <button class="industry-btn" data-industry="hvac">HVAC</button>
+                        <button class="industry-btn" data-industry="plumbing">Plumbing</button>
+                        <button class="industry-btn" data-industry="dental">Dental</button>
+                        <button class="industry-btn" data-industry="salon">Salon</button>
+                        <button class="industry-btn" data-industry="law">Law Firm</button>
+                        <button class="industry-btn" data-industry="other">Other</button>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-primary" onclick="nextStep(1)">Continue</button>
+                </div>
+            </div>
+
+            <!-- Step 2: Monthly Call Volume -->
+            <div class="calculator-section" id="step2">
+                <div class="step-indicator">
+                    <div class="step completed"></div>
+                    <div class="step active"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>How many calls do you receive per month?</label>
+                    <div class="slider-container">
+                        <input type="range" id="callVolume" min="10" max="500" value="50" oninput="updateCallVolume()">
+                        <div class="slider-value">
+                            <span>10 calls</span>
+                            <span class="current" id="callVolumeDisplay">50 calls</span>
+                            <span>500 calls</span>
+                        </div>
+                    </div>
+                    <p class="help-text" id="callVolumeHint">Industry average: 50–100 calls/month</p>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-secondary" onclick="prevStep(2)">Back</button>
+                    <button class="btn-primary" onclick="nextStep(2)">Continue</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Miss Rate -->
+            <div class="calculator-section" id="step3">
+                <div class="step-indicator">
+                    <div class="step completed"></div>
+                    <div class="step completed"></div>
+                    <div class="step active"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>What percentage of calls do you miss?</label>
+                    <div class="slider-container">
+                        <input type="range" id="missRate" min="5" max="50" value="25" oninput="updateMissRate()">
+                        <div class="slider-value">
+                            <span>5%</span>
+                            <span class="current" id="missRateDisplay">25%</span>
+                            <span>50%</span>
+                        </div>
+                    </div>
+                    <p class="help-text">Industry average: 25–30% (Invoca research)</p>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-secondary" onclick="prevStep(3)">Back</button>
+                    <button class="btn-primary" onclick="nextStep(3)">Continue</button>
+                </div>
+            </div>
+
+            <!-- Step 4: Average Job Value -->
+            <div class="calculator-section" id="step4">
+                <div class="step-indicator">
+                    <div class="step completed"></div>
+                    <div class="step completed"></div>
+                    <div class="step completed"></div>
+                    <div class="step active"></div>
+                    <div class="step"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>What's your average job/service value?</label>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <span style="font-size: 1.2rem;">$</span>
+                        <input type="number" id="jobValue" placeholder="500" value="500" min="50" max="10000">
+                    </div>
+                    <p class="help-text" id="jobValueHint">Industry average: $500</p>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-secondary" onclick="prevStep(4)">Back</button>
+                    <button class="btn-primary" onclick="nextStep(4)">Continue</button>
+                </div>
+            </div>
+
+            <!-- Step 5: Lead Quality Survey & Email Capture -->
+            <div class="calculator-section" id="step5">
+                <div class="step-indicator">
+                    <div class="step completed"></div>
+                    <div class="step completed"></div>
+                    <div class="step completed"></div>
+                    <div class="step completed"></div>
+                    <div class="step active"></div>
+                </div>
+
+                <!-- Lead Quality Survey -->
+                <div class="form-group">
+                    <label style="font-size: 1.3rem; margin-bottom: 20px; display: block;">Quick questions to personalize your analysis</label>
+                    
+                    <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                        <div class="form-group">
+                            <label style="font-size: 1rem; margin-bottom: 10px;">What's your main business goal?</label>
+                            <div style="display: flex; flex-direction: column; gap: 10px;">
+                                <label style="display: flex; align-items: center; font-weight: 400; font-size: 0.95rem;">
+                                    <input type="radio" name="businessGoal" value="increase_revenue" style="margin-right: 10px;"> Increase revenue from existing customers
+                                </label>
+                                <label style="display: flex; align-items: center; font-weight: 400; font-size: 0.95rem;">
+                                    <input type="radio" name="businessGoal" value="reduce_costs" style="margin-right: 10px;"> Reduce operational costs
+                                </label>
+                                <label style="display: flex; align-items: center; font-weight: 400; font-size: 0.95rem;">
+                                    <input type="radio" name="businessGoal" value="improve_efficiency" style="margin-right: 10px;"> Improve team efficiency
+                                </label>
+                                <label style="display: flex; align-items: center; font-weight: 400; font-size: 0.95rem;">
+                                    <input type="radio" name="businessGoal" value="scale_business" style="margin-right: 10px;"> Scale the business
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                        <div class="form-group">
+                            <label style="font-size: 1rem; margin-bottom: 10px;">When are you looking to implement AI?</label>
+                            <div style="display: flex; flex-direction: column; gap: 10px;">
+                                <label style="display: flex; align-items: center; font-weight: 400; font-size: 0.95rem;">
+                                    <input type="radio" name="timeline" value="immediately" style="margin-right: 10px;"> Immediately (next 30 days)
+                                </label>
+                                <label style="display: flex; align-items: center; font-weight: 400; font-size: 0.95rem;">
+                                    <input type="radio" name="timeline" value="soon" style="margin-right: 10px;"> Soon (1-3 months)
+                                </label>
+                                <label style="display: flex; align-items: center; font-weight: 400; font-size: 0.95rem;">
+                                    <input type="radio" name="timeline" value="exploring" style="margin-right: 10px;"> Still exploring options
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                        <div class="form-group">
+                            <label style="font-size: 1rem; margin-bottom: 10px;">What's your budget range?</label>
+                            <div style="display: flex; flex-direction: column; gap: 10px;">
+                                <label style="display: flex; align-items: center; font-weight: 400; font-size: 0.95rem;">
+                                    <input type="radio" name="budget" value="under_1k" style="margin-right: 10px;"> Under $1,000/month
+                                </label>
+                                <label style="display: flex; align-items: center; font-weight: 400; font-size: 0.95rem;">
+                                    <input type="radio" name="budget" value="1k_3k" style="margin-right: 10px;"> $1,000 - $3,000/month
+                                </label>
+                                <label style="display: flex; align-items: center; font-weight: 400; font-size: 0.95rem;">
+                                    <input type="radio" name="budget" value="3k_plus" style="margin-right: 10px;"> $3,000+/month
+                                </label>
+                                <label style="display: flex; align-items: center; font-weight: 400; font-size: 0.95rem;">
+                                    <input type="radio" name="budget" value="unsure" style="margin-right: 10px;"> Not sure yet
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Get your personalized analysis</label>
+                    <div class="email-capture">
+                        <input type="text" id="firstName" placeholder="First Name" required>
+                        <input type="email" id="email" placeholder="Email Address" required>
+                        <input type="text" id="company" placeholder="Company Name" required>
+                        <button class="btn-primary" onclick="captureEmail()">Get My Analysis</button>
+                        <div class="privacy-notice">
+                            We respect your privacy. <a href="/privacy.html">Privacy Policy</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-secondary" onclick="prevStep(5)">Back</button>
+                </div>
+            </div>
+
+            <!-- Results Display -->
+            <div id="resultsDisplay" style="display: none;">
+                <div class="results-section">
+                    <h2 style="margin-bottom: 20px; color: #1a1a1a;">Your Opportunity Cost Analysis</h2>
+
+                    <div class="result-item">
+                        <div class="result-label">Monthly Missed Calls</div>
+                        <div class="result-value" id="resultMissedCalls">0</div>
+                        <div class="result-description">Based on your call volume and miss rate</div>
+                    </div>
+
+                    <div class="result-item">
+                        <div class="result-label">Monthly Opportunity Cost</div>
+                        <div class="result-value" id="resultMonthlyCost">$0</div>
+                        <div class="result-description">Potential revenue from missed calls</div>
+                    </div>
+
+                    <div class="result-item">
+                        <div class="result-label">Annual Opportunity Cost</div>
+                        <div class="result-value" id="resultAnnualCost">$0</div>
+                        <div class="result-description">Total annual revenue opportunity</div>
+                    </div>
+
+                    <div class="result-item">
+                        <div class="result-label">Permanent Loss (85% never call back)</div>
+                        <div class="result-value" id="resultPermanentLoss">$0</div>
+                        <div class="result-description">Revenue permanently lost due to no callback</div>
+                    </div>
+
+                    <div class="result-item">
+                        <div class="result-label">Recoverable Revenue (70–90%)</div>
+                        <div class="result-value" id="resultRecoverable">$0</div>
+                        <div class="result-description">What Micap typically recovers for similar businesses</div>
+                    </div>
+
+                    <div class="urgency-message">
+                        <strong>Here's the reality:</strong>
+                        <p>You're losing <strong id="urgencyAmount">$0</strong> annually in recoverable revenue. That's equivalent to <strong id="urgencyJobs">0</strong> additional jobs per year.</p>
+                        <p>With Micap, we typically recover 70–90% of missed calls, adding <strong id="urgencyProfit">$0</strong> in annual profit to your business.</p>
+                    </div>
+
+                    <div class="cta-section">
+                        <p>Ready to recover that lost revenue?</p>
+                        <button class="btn-primary" onclick="scheduleAudit()" style="width: 100%; max-width: 300px;">Schedule Free Audit</button>
+                        <p style="margin-top: 16px; font-size: 0.95rem; color: #666;">Or <a href="/roi-calculator.html" style="color: #d4a574; text-decoration: none;">see your ROI potential</a></p>
+                    </div>
+
+                    <div class="data-source">
+                        <strong>Data Sources:</strong> Invoca (27% missed calls, $1,200 avg cost), ServiceTitan (industry benchmarks), Nextiva research
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Industry data mapping
+        const industryData = {
+            hvac: { name: 'HVAC', avgCalls: 75, avgJobValue: 650, avgLTV: 2000 },
+            plumbing: { name: 'Plumbing', avgCalls: 60, avgJobValue: 450, avgLTV: 1500 },
+            dental: { name: 'Dental', avgCalls: 40, avgJobValue: 250, avgLTV: 3000 },
+            salon: { name: 'Salon', avgCalls: 50, avgJobValue: 100, avgLTV: 2000 },
+            law: { name: 'Law Firm', avgCalls: 30, avgJobValue: 5000, avgLTV: 15000 },
+            other: { name: 'Other', avgCalls: 50, avgJobValue: 500, avgLTV: 2500 }
+        };
+
+        let selectedIndustry = null;
+        let calculatorData = {
+            industry: null,
+            callVolume: 50,
+            missRate: 25,
+            jobValue: 500
+        };
+
+        // GA4 tracking
+        function trackEvent(eventName, eventData = {}) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, eventData);
+            }
+        }
+
+        // Industry selection
+        document.querySelectorAll('.industry-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.industry-btn').forEach(b => b.classList.remove('selected'));
+                this.classList.add('selected');
+                selectedIndustry = this.dataset.industry;
+                calculatorData.industry = selectedIndustry;
+                
+                const industryInfo = industryData[selectedIndustry];
+                document.getElementById('callVolumeHint').textContent = `Industry average: ${industryInfo.avgCalls}–${industryInfo.avgCalls + 25} calls/month`;
+                document.getElementById('jobValueHint').textContent = `Industry average: $${industryInfo.avgJobValue}`;
+                document.getElementById('jobValue').value = industryInfo.avgJobValue;
+                
+                trackEvent('opp_cost_calculator_industry_selected', {
+                    industry: selectedIndustry
+                });
+            });
+        });
+
+        function updateCallVolume() {
+            const value = document.getElementById('callVolume').value;
+            calculatorData.callVolume = parseInt(value);
+            document.getElementById('callVolumeDisplay').textContent = value + ' calls';
+        }
+
+        function updateMissRate() {
+            const value = document.getElementById('missRate').value;
+            calculatorData.missRate = parseInt(value);
+            document.getElementById('missRateDisplay').textContent = value + '%';
+        }
+
+        function nextStep(currentStep) {
+            if (currentStep === 1 && !selectedIndustry) {
+                alert('Please select an industry to continue');
+                return;
+            }
+
+            trackEvent(`opp_cost_calculator_step_${currentStep}_completed`, calculatorData);
+
+            document.getElementById('step' + currentStep).classList.remove('active');
+            document.getElementById('step' + (currentStep + 1)).classList.add('active');
+        }
+
+        function prevStep(currentStep) {
+            document.getElementById('step' + currentStep).classList.remove('active');
+            document.getElementById('step' + (currentStep - 1)).classList.add('active');
+        }
+
+        function captureEmail() {
+            const firstName = document.getElementById('firstName').value;
+            const email = document.getElementById('email').value;
+            const company = document.getElementById('company').value;
+            
+            // Capture survey responses
+            const businessGoal = document.querySelector('input[name="businessGoal"]:checked')?.value || '';
+            const timeline = document.querySelector('input[name="timeline"]:checked')?.value || '';
+            const budget = document.querySelector('input[name="budget"]:checked')?.value || '';
+
+            if (!firstName || !email || !company) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            if (!businessGoal || !timeline || !budget) {
+                alert('Please answer all survey questions');
+                return;
+            }
+
+            // Calculate results
+            const missedCalls = Math.round((calculatorData.callVolume * calculatorData.missRate) / 100);
+            const monthlyCost = missedCalls * calculatorData.jobValue;
+            const annualCost = monthlyCost * 12;
+            const permanentLoss = annualCost * 0.85;
+            const recoverable = permanentLoss * 0.80; // 70-90% recovery potential with AI
+
+            // Display results
+            document.getElementById('resultMissedCalls').textContent = missedCalls;
+            document.getElementById('resultMonthlyCost').textContent = '$' + monthlyCost.toLocaleString();
+            document.getElementById('resultAnnualCost').textContent = '$' + annualCost.toLocaleString();
+            document.getElementById('resultPermanentLoss').textContent = '$' + Math.round(permanentLoss).toLocaleString();
+            document.getElementById('resultRecoverable').textContent = '$' + Math.round(recoverable).toLocaleString();
+
+            document.getElementById('urgencyAmount').textContent = '$' + Math.round(recoverable).toLocaleString();
+            document.getElementById('urgencyJobs').textContent = Math.round(recoverable / calculatorData.jobValue);
+            document.getElementById('urgencyProfit').textContent = '$' + Math.round(recoverable).toLocaleString();
+
+            // Hide form, show results
+            document.getElementById('step5').style.display = 'none';
+            document.getElementById('resultsDisplay').style.display = 'block';
+
+            // Send to Mailchimp with survey data
+            submitToMailchimp(firstName, email, company, selectedIndustry, calculatorData, businessGoal, timeline, budget);
+
+            // Track GA4
+            trackEvent('opp_cost_calculator_completed', {
+                industry: selectedIndustry,
+                call_volume: calculatorData.callVolume,
+                miss_rate: calculatorData.missRate,
+                job_value: calculatorData.jobValue,
+                annual_cost: annualCost,
+                recoverable: recoverable
+            });
+
+            trackEvent('opp_cost_calculator_email_captured', {
+                email: email,
+                industry: selectedIndustry
+            });
+        }
+
+        function submitToMailchimp(firstName, email, company, industry, data, businessGoal, timeline, budget) {
+            const makeWebhookUrl = 'https://hook.us2.make.com/o5balatbr2cc9kgi1pvx4z0cm3haxurg';
+            
+            const payload = {
+                firstName: firstName,
+                lastName: company || 'N/A',
+                email: email,
+                industry: industry,
+                callVolume: data.callVolume,
+                missRate: data.missRate,
+                jobValue: data.jobValue,
+                businessGoal: businessGoal,
+                timeline: timeline,
+                budget: budget,
+                timestamp: new Date().toISOString()
+            };
+            
+            fetch(makeWebhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                // Show success message to user
+                document.getElementById('results-container').innerHTML = `
+                    <div class="success-message" style="background: #d4f1d4; border: 2px solid #4caf50; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                        <h3 style="color: #2e7d32; margin-bottom: 10px;">Thank you!</h3>
+                        <p style="color: #1b5e20;">Your information has been received. Check your email for the full report and next steps.</p>
+                    </div>
+                `;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Show error message to user
+                document.getElementById('results-container').innerHTML = `
+                    <div class="error-message" style="background: #ffebee; border: 2px solid #f44336; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                        <h3 style="color: #c62828; margin-bottom: 10px;">Oops!</h3>
+                        <p style="color: #b71c1c;">There was an error submitting your information. Please try again or contact us at hi@micap.pro</p>
+                    </div>
+                `;
+            });
+        }
+
+        function scheduleAudit() {
+            // Redirect to audit scheduling page or form
+            window.location.href = '/audit-request.html';
+        }
+
+        // Initialize
+        document.getElementById('callVolume').value = 50;
+        document.getElementById('missRate').value = 25;
+        document.getElementById('jobValue').value = 500;
+
+        trackEvent('opp_cost_calculator_started');
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-50MLBREDYZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-50MLBREDYZ');
+    </script>
+</body>
+</html>

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Instrument+Serif&display=swap" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <title>Case Studies | Real AI Automation Results - Micap AI</title>
+  <meta name="description" content="Explore real-world AI automation case studies. See measurable ROI, cost savings, and operational improvements across industries.">
+  <link rel="canonical" href="https://micap-ai.manus.space/case-studies.html">
+  <meta property="og:title" content="Case Studies | Real AI Automation Results - Micap AI">
+  <meta property="og:description" content="Explore real-world AI automation case studies. See measurable ROI, cost savings, and operational improvements across industries.">
+  <meta property="og:url" content="https://micap-ai.manus.space/case-studies.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Micap AI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Case Studies | Real AI Automation Results - Micap AI">
+  <meta name="twitter:description" content="Explore real-world AI automation case studies. See measurable ROI, cost savings, and operational improvements across industries.">
+  <link rel="icon" href="/manus-storage/micap-favicon_a2f043bd.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/manus-storage/micap-favicon-256_c9c78192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Instrument+Serif&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-50MLBREDYZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-50MLBREDYZ', { 'page_path': window.location.pathname, 'anonymize_ip': true });
+  </script>
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1012037731152333');
+    fbq('track', 'PageView');
+  </script>
+  <link rel="stylesheet" href="floating-ui.css">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:#0E0D0B;color:#F5F0E8;font-family:'DM Sans',sans-serif;overflow-x:hidden;padding-top:64px}
+    a{text-decoration:none;color:inherit}
+    button{font-family:inherit}
+    img{display:block}
+    @keyframes slideIn{from{transform:translateX(100%)}to{transform:translateX(0)}}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    /* NAV */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid transparent;transition:all .4s ease}
+    .nav.scrolled{background:rgba(14,13,11,.92);backdrop-filter:blur(16px);border-bottom-color:rgba(186,117,23,.12)}
+    .hamburger{display:flex;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;z-index:115}
+    .hamburger span{width:24px;height:2px;background:#BA7517;transition:all .3s}
+    .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+    .nav-menu{display:none;position:fixed;top:64px;right:0;width:250px;max-height:calc(100vh - 64px);background:rgba(14,13,11,.98);backdrop-filter:blur(20px);border-left:1px solid rgba(186,117,23,.2);padding:16px 0;z-index:99;flex-direction:column;overflow-y:auto;animation:slideIn .3s ease}
+    .nav-menu.active{display:flex}
+    .nav-menu a{color:#9C9888;font-size:14px;font-weight:500;text-decoration:none;padding:12px 24px;transition:all .2s;display:block;border-left:3px solid transparent}
+    .nav-menu a:hover{color:#F5F0E8;background:rgba(186,117,23,.1);border-left-color:#BA7517}
+    .nav-menu a.nav-active{color:#BA7517;border-left-color:#BA7517;background:rgba(186,117,23,.05)}
+    .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#F5F0E8;z-index:115}
+    .nav-brand img{width:40px;height:40px;object-fit:contain;background:#000}
+    .nav-brand-text{font-family:'DM Sans',sans-serif;font-size:18px;font-weight:600;color:#F5F0E8;letter-spacing:-.3px}
+    .nav-brand-text span{color:#BA7517}
+    .nav-consultation{background:#BA7517;color:#000;padding:10px 20px;border-radius:6px;font-size:13px;font-weight:600;letter-spacing:.05em;text-decoration:none;transition:all .2s;position:absolute;left:50%;transform:translateX(-50%);top:20px;z-index:115;border:none;cursor:pointer;display:inline-block}
+    .nav-consultation:hover{background:#D4A574;transform:translateX(-50%) translateY(-2px)}
+    /* HERO */
+    .hero{padding:80px 24px 64px;text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(186,117,23,.07) 0%,transparent 70%);pointer-events:none}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(186,117,23,.08);border:1px solid rgba(186,117,23,.2);border-radius:20px;padding:6px 14px;font-size:12px;color:#BA7517;letter-spacing:.08em;text-transform:uppercase;margin-bottom:24px;font-family:'DM Mono',monospace}
+    .hero-badge-dot{width:6px;height:6px;border-radius:50%;background:#BA7517;animation:pulse 2s infinite}
+    .hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(36px,6vw,68px);font-weight:400;line-height:1.1;letter-spacing:-1px;color:#F5F0E8;margin-bottom:20px}
+    .hero h1 em{color:#BA7517;font-style:italic}
+    .hero p{font-size:18px;color:#9C9888;max-width:580px;margin:0 auto 40px;line-height:1.7}
+    /* LAYOUT */
+    .container{max-width:1100px;margin:0 auto;padding:0 24px}
+    .section-label{font-family:'DM Mono',monospace;font-size:11px;color:#BA7517;letter-spacing:.15em;text-transform:uppercase;margin-bottom:16px}
+    .section-title{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(28px,4vw,44px);font-weight:400;color:#F5F0E8;line-height:1.2;letter-spacing:-.5px;margin-bottom:16px}
+    .section-title em{color:#BA7517;font-style:italic}
+    /* BUTTONS */
+    .btn-primary{display:inline-block;background:#BA7517;color:#000;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:600;letter-spacing:.02em;transition:all .2s;border:none;cursor:pointer}
+    .btn-primary:hover{background:#D4A574;transform:translateY(-2px);box-shadow:0 8px 24px rgba(186,117,23,.3)}
+    .btn-ghost{display:inline-block;background:transparent;color:#BA7517;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:600;letter-spacing:.02em;transition:all .2s;border:1px solid rgba(186,117,23,.3)}
+    .btn-ghost:hover{background:rgba(186,117,23,.08);border-color:#BA7517}
+    /* SUMMARY METRICS */
+    .summary-section{padding:60px 0;border-top:1px solid rgba(186,117,23,.08)}
+    .summary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:40px}
+    .summary-card{text-align:center;padding:28px 16px;border-radius:12px;border:1px solid rgba(186,117,23,.1);background:rgba(186,117,23,.02)}
+    .summary-value{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(22px,3vw,34px);color:#BA7517;font-weight:400;margin-bottom:6px;letter-spacing:-.3px}
+    .summary-label{font-size:13px;color:#6B6860;letter-spacing:.03em}
+    /* CASE STUDIES GRID */
+    .studies-section{padding:80px 0;border-top:1px solid rgba(186,117,23,.08)}
+    .studies-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin-top:48px}
+    .study-card{border-radius:16px;border:1px solid rgba(186,117,23,.1);background:rgba(255,255,255,.01);overflow:hidden;transition:border-color .3s,transform .3s;cursor:pointer}
+    .study-card:hover{border-color:rgba(186,117,23,.3);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+    .study-header{padding:24px 24px 16px;border-bottom:1px solid rgba(186,117,23,.06)}
+    .study-industry{font-family:'DM Mono',monospace;font-size:11px;color:#BA7517;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+    .study-title{font-family:'Instrument Serif',Georgia,serif;font-size:22px;font-weight:400;color:#F5F0E8;line-height:1.2}
+    .study-body{padding:20px 24px 24px}
+    .study-challenge{font-size:14px;color:#6B6860;line-height:1.7;margin-bottom:20px}
+    .study-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+    .study-metric{text-align:center;padding:12px 8px;border-radius:8px;background:rgba(186,117,23,.04);border:1px solid rgba(186,117,23,.08)}
+    .study-metric-val{font-family:'DM Mono',monospace;font-size:16px;color:#BA7517;font-weight:500;margin-bottom:4px}
+    .study-metric-label{font-size:11px;color:#6B6860;letter-spacing:.03em}
+    .study-cta{font-size:13px;color:#BA7517;font-weight:600;display:flex;align-items:center;gap:6px}
+    .study-cta::after{content:'→';transition:transform .2s}
+    .study-card:hover .study-cta::after{transform:translateX(4px)}
+    /* MODAL */
+    .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);z-index:200;align-items:center;justify-content:center;padding:24px}
+    .modal-overlay.active{display:flex}
+    .modal{background:#141310;border:1px solid rgba(186,117,23,.2);border-radius:20px;max-width:680px;width:100%;max-height:85vh;overflow-y:auto;position:relative;padding:40px}
+    .modal-close{position:absolute;top:20px;right:20px;background:rgba(186,117,23,.1);border:1px solid rgba(186,117,23,.2);color:#BA7517;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+    .modal-close:hover{background:rgba(186,117,23,.2)}
+    .modal-industry{font-family:'DM Mono',monospace;font-size:11px;color:#BA7517;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+    .modal-title{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(24px,4vw,34px);font-weight:400;color:#F5F0E8;line-height:1.2;margin-bottom:28px}
+    .modal-section{margin-bottom:24px}
+    .modal-section h4{font-size:12px;font-weight:600;color:#BA7517;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;font-family:'DM Mono',monospace}
+    .modal-section p{font-size:15px;color:#9C9888;line-height:1.8}
+    .modal-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}
+    .modal-metric{text-align:center;padding:16px;border-radius:10px;background:rgba(186,117,23,.04);border:1px solid rgba(186,117,23,.1)}
+    .modal-metric-val{font-family:'DM Mono',monospace;font-size:20px;color:#BA7517;font-weight:500;margin-bottom:4px}
+    .modal-metric-label{font-size:12px;color:#6B6860}
+    .modal-footer{margin-top:28px;padding-top:24px;border-top:1px solid rgba(186,117,23,.08);display:flex;gap:12px;flex-wrap:wrap}
+    /* TESTIMONIALS */
+    .testimonials-section{padding:80px 0;border-top:1px solid rgba(186,117,23,.08)}
+    .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:48px}
+    .testimonial-card{padding:28px;border-radius:12px;border:1px solid rgba(186,117,23,.1);background:rgba(186,117,23,.02)}
+    .testimonial-quote{font-size:15px;color:#9C9888;line-height:1.8;margin-bottom:20px;font-style:italic}
+    .testimonial-quote::before{content:'\201C';font-family:'Instrument Serif',Georgia,serif;font-size:40px;color:rgba(186,117,23,.3);line-height:0;vertical-align:-16px;margin-right:4px}
+    .testimonial-author{display:flex;align-items:center;gap:12px}
+    .testimonial-avatar{width:40px;height:40px;border-radius:50%;background:rgba(186,117,23,.15);border:1px solid rgba(186,117,23,.2);display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:14px;color:#BA7517;flex-shrink:0}
+    .testimonial-name{font-size:14px;font-weight:600;color:#F5F0E8}
+    .testimonial-role{font-size:12px;color:#6B6860}
+    /* CTA */
+    .cta-section{padding:80px 24px;text-align:center;border-top:1px solid rgba(186,117,23,.08)}
+    .cta-box{max-width:640px;margin:0 auto;padding:48px;border-radius:24px;border:1px solid rgba(186,117,23,.15);background:linear-gradient(135deg,rgba(186,117,23,.04),rgba(186,117,23,.01))}
+    .cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+    /* FOOTER */
+    .footer{padding:32px 24px;border-top:1px solid rgba(186,117,23,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+    .footer-copy{font-size:13px;color:#6B6860}
+    .footer-links{display:flex;gap:24px}
+    .footer-links a{font-size:13px;color:#6B6860;transition:color .2s}
+    .footer-links a:hover{color:#BA7517}
+    /* MOBILE */
+    @media(max-width:768px){
+      .hero{padding:72px 16px 60px}
+      .summary-grid{grid-template-columns:repeat(2,1fr)}
+      .studies-grid{grid-template-columns:1fr}
+      .testimonials-grid{grid-template-columns:1fr}
+      .modal{padding:28px 20px}
+      .modal-metrics{grid-template-columns:repeat(3,1fr)}
+      .footer{flex-direction:column;gap:16px;text-align:center}
+      .nav-consultation{font-size:11px;padding:8px 14px}
+    }
+    @media(max-width:480px){
+      .summary-grid{grid-template-columns:1fr 1fr}
+      .study-metrics{grid-template-columns:repeat(3,1fr)}
+      .modal-metrics{grid-template-columns:1fr 1fr}
+      .modal-footer{flex-direction:column}
+    }
+  
+/* Industries dropdown */
+.nav-dropdown{position:relative}
+.nav-dropdown-trigger{display:flex;align-items:center;gap:5px;color:#9C9888;font-size:14px;font-weight:500;cursor:pointer;transition:color .2s;background:none;border:none;font-family:inherit;padding:0}
+.nav-dropdown-trigger:hover,.nav-dropdown:hover .nav-dropdown-trigger{color:#F5F0E8}
+.nav-dropdown-trigger svg{transition:transform .2s}
+.nav-dropdown:hover .nav-dropdown-trigger svg{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:rgba(14,13,11,.97);backdrop-filter:blur(20px);border:1px solid rgba(186,117,23,.2);border-radius:12px;padding:8px;min-width:200px;opacity:0;visibility:hidden;transition:all .2s;z-index:200;box-shadow:0 16px 48px rgba(0,0,0,.4)}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;top:calc(100% + 8px)}
+.nav-dropdown-menu a{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;font-size:13px;color:#9C9888;transition:all .2s;white-space:nowrap}
+.nav-dropdown-menu a:hover{color:#F5F0E8;background:rgba(186,117,23,.08)}
+.nav-dropdown-menu a span.dd-icon{font-size:16px;width:20px;text-align:center}
+.nav-dropdown-divider{height:1px;background:rgba(186,117,23,.1);margin:6px 0}
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "AI Automation Case Studies",
+  "description": "Real-world AI automation case studies showing measurable ROI, cost savings, and operational improvements.",
+  "url": "https://micap-ai.manus.space/case-studies.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Micap AI",
+    "url": "https://micap-ai.manus.space"
+  }
+}
+  </script>
+  </head>
+<body>
+    <a href="#main-content" class="skip-to-content" style="position: absolute; top: -40px; left: 0; background: #d4a574; color: white; padding: 8px; text-decoration: none; z-index: 100;">Skip to main content</a>
+
+<button id="scrollToTopBtn" title="Scroll to top">&#8593;</button>
+<!-- NAV -->
+<nav class="nav" id="navbar" role="navigation">
+  <a href="index.html" class="nav-brand">
+    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663473200649/hUUaHIjRLGNJNfOi.jpg" alt="Micap AI" style="width:40px;height:40px;object-fit:contain;background:#000" decoding="async">
+    <div class="nav-brand-text">micap<span>.ai</span></div>
+  </a>
+  <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" rel="noopener noreferrer" class="nav-consultation" aria-label="Opens in new window">CONSULTATION BOOKING</a>
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-menu" id="navMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="digital-employees.html">Digital Employees</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="case-studies.html" class="nav-active">Case Studies</a>
+  <a href="ai-roi-calculator.html">ROI Calculator</a>
+  <a href="roi-calculator-demo.html">ROI Demo</a>
+  <a href="blog.html">Blog</a>
+  <a href="faq.html">FAQ</a>
+</div>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+    document.addEventListener('click', function(event) {
+      if (!event.target.closest('.nav') && !event.target.closest('.nav-menu')) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    });
+  }
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 20) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+</script>
+
+<!-- HERO -->
+<section class="hero" id="main-content">
+    <nav aria-label="breadcrumb" class="breadcrumb-nav" style="margin-bottom: 20px;">
+      <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 5px; font-size: 0.9em;">
+        <li><a href="index.html" style="color: #d4a574; text-decoration: none;">Home</a></li>
+        <li style="color: #999;">/</li>
+        <li aria-current="page" style="color: #666;">Case Studies</li>
+      </ol>
+    </nav>
+
+  <div class="hero-badge">
+    <div class="hero-badge-dot"></div>
+    <span>Proven Results</span>
+  </div>
+  <h1>Real Businesses,<br><em>Real Outcomes</em></h1>
+  <p>Six real-world AI automation deployments across industries — each with measurable ROI, documented savings, and verified implementation timelines.</p>
+</section>
+
+<!-- SUMMARY METRICS -->
+<section class="summary-section">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="section-label">Aggregate Impact</div>
+      <h2 class="section-title">Results Across <em>All Engagements</em></h2>
+    </div>
+    <div class="summary-grid">
+      <div class="summary-card">
+        <div class="summary-value">2.55x&#8211;7.5x</div>
+        <div class="summary-label">Average Year 1 ROI</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-value">1.6&#8211;4.1 mo</div>
+        <div class="summary-label">Average Payback Period</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-value">$280k&#8211;$1.2M</div>
+        <div class="summary-label">Annual Savings Range</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-value">6&#8211;12 wk</div>
+        <div class="summary-label">Typical Implementation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES GRID -->
+<section class="studies-section">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="section-label">Client Engagements</div>
+      <h2 class="section-title">Case <em>Studies</em></h2>
+      <p style="color:#6B6860;font-size:16px;line-height:1.7;max-width:560px;margin:0 auto">Click any card to read the full challenge, solution, and results for each engagement.</p>
+    </div>
+    <div class="studies-grid" id="studiesGrid"></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="section-label">Client Voices</div>
+      <h2 class="section-title">What Clients <em>Say</em></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p class="testimonial-quote">The AI system paid for itself in under two months. Our team went from drowning in support tickets to focusing on strategic work. The transformation was remarkable.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">JM</div>
+          <div>
+            <div class="testimonial-name">James M.</div>
+            <div class="testimonial-role">VP Operations, E-Commerce Retailer</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">We were skeptical about AI for our manufacturing floor, but the predictive maintenance system has saved us over $90k in avoided downtime in the first six months alone.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SR</div>
+          <div>
+            <div class="testimonial-name">Sarah R.</div>
+            <div class="testimonial-role">Plant Manager, Manufacturing Co.</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">Our administrative staff now spends their time on patient care instead of paperwork. The automation handles scheduling, billing, and communications seamlessly.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">DK</div>
+          <div>
+            <div class="testimonial-name">Dr. Karen D.</div>
+            <div class="testimonial-role">Practice Director, Healthcare Group</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-box">
+    <div class="section-label" style="text-align:center">Your Turn</div>
+    <h2 class="section-title" style="text-align:center">Ready to Be Our<br><em>Next Case Study?</em></h2>
+    <p style="color:#6B6860;font-size:16px;line-height:1.7;text-align:center;margin-top:12px">Let's discuss your specific challenges and build a custom automation strategy that delivers measurable results for your business.</p>
+    <div class="cta-btns">
+      <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" rel="noopener noreferrer" class="btn-primary" aria-label="Opens in new window">Book a Consultation</a>
+      <a href="ai-roi-calculator.html" class="btn-ghost">Calculate Your ROI</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-copy">© 2026 Micap AI LLC. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="#privacy">Privacy</a>
+    <a href="#terms">Terms</a>
+    <a href="/api-docs.html">API Documentation</a>
+    <a href="mailto:hi@micap.pro">hi@micap.pro</a>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script defer src="floating-ui.js"></script>
+<script>
+const caseStudies = [
+  {
+    id: 1,
+    industry: 'E-Commerce',
+    title: 'AI Customer Support Automation',
+    challenge: 'A mid-size e-commerce company was spending $45k/month on a 12-person support team handling 8,000+ tickets monthly, with 24-hour average response times and 68% customer satisfaction scores.',
+    solution: 'Deployed a multi-agent AI support system that handles order tracking, returns, FAQs, and escalations autonomously. Integrated with Shopify, Zendesk, and email. Human agents handle only complex edge cases.',
+    results: 'Reduced support costs by 73%, response time dropped to under 2 minutes, CSAT improved to 91%, and the team was reallocated to proactive customer success roles.',
+    metrics: [
+      { value: '73%', label: 'Cost Reduction' },
+      { value: '$33k', label: 'Monthly Savings' },
+      { value: '6 weeks', label: 'Implementation' }
+    ]
+  },
+  {
+    id: 2,
+    industry: 'Manufacturing',
+    title: 'Predictive Maintenance System',
+    challenge: 'Unplanned equipment downtime was costing $180k+ annually in lost production and emergency repairs. Maintenance was reactive, not proactive.',
+    solution: 'Installed IoT sensors on critical equipment and built an AI model that predicts failures 72 hours in advance. Automated work orders and parts procurement triggered automatically.',
+    results: 'Reduced unplanned downtime by 78%, maintenance costs dropped 42%, and the system paid for itself within 4 months of deployment.',
+    metrics: [
+      { value: '78%', label: 'Downtime Reduction' },
+      { value: '$140k', label: 'Annual Savings' },
+      { value: '10 weeks', label: 'Implementation' }
+    ]
+  },
+  {
+    id: 3,
+    industry: 'Financial Services',
+    title: 'Automated Document Processing',
+    challenge: 'Loan officers spent 60% of their time manually reviewing and extracting data from financial documents, creating bottlenecks and slowing approval times from days to weeks.',
+    solution: 'Built an AI document processing pipeline that extracts, validates, and structures data from PDFs, bank statements, and tax returns. Integrated directly into the loan origination system.',
+    results: 'Document processing time reduced from 4 hours to 8 minutes per application, loan approval cycle shortened by 65%, and officer capacity increased 3x.',
+    metrics: [
+      { value: '97%', label: 'Time Saved' },
+      { value: '3x', label: 'Capacity Increase' },
+      { value: '8 weeks', label: 'Implementation' }
+    ]
+  },
+  {
+    id: 4,
+    industry: 'Logistics',
+    title: 'Route Optimization Engine',
+    challenge: 'A regional delivery company with 40 drivers was losing $22k+ monthly in excess fuel and labor costs due to inefficient manual route planning and inconsistent delivery times.',
+    solution: 'Implemented AI-powered route optimization considering real-time traffic, weather, delivery windows, and vehicle capacity. Dispatchers now approve AI-generated routes in seconds.',
+    results: 'Fuel costs reduced 35%, on-time delivery improved to 98%, driver overtime eliminated, and customer satisfaction scores increased significantly.',
+    metrics: [
+      { value: '35%', label: 'Fuel Savings' },
+      { value: '$22k', label: 'Monthly Savings' },
+      { value: '10 weeks', label: 'Implementation' }
+    ]
+  },
+  {
+    id: 5,
+    industry: 'Healthcare',
+    title: 'Administrative Automation Suite',
+    challenge: 'Administrative staff at a multi-location practice spent 50% of their time on routine tasks: scheduling, insurance verification, billing inquiries, and patient communication.',
+    solution: 'Automated appointment scheduling, insurance pre-authorization, billing follow-ups, and patient reminders using AI workflows integrated with the EHR system.',
+    results: 'Administrative overhead reduced by 50%, patient response times improved from hours to minutes, staff redeployed to higher-value patient care activities.',
+    metrics: [
+      { value: '50%', label: 'Admin Reduction' },
+      { value: '$16k', label: 'Monthly Savings' },
+      { value: '8 weeks', label: 'Implementation' }
+    ]
+  },
+  {
+    id: 6,
+    industry: 'Retail',
+    title: 'Predictive Inventory Optimization',
+    challenge: 'Frequent stockouts (lost sales) and overstock situations (wasted capital) were costing a multi-location retailer an estimated $180k annually in combined lost revenue and carrying costs.',
+    solution: 'Deployed a predictive inventory system that forecasts demand by SKU and location, optimizes reorder points, and automates purchase orders with supplier integrations.',
+    results: 'Stockouts reduced by 35%, overstock reduced by 40%, inventory turnover improved 28%, and working capital freed up for growth initiatives.',
+    metrics: [
+      { value: '38%', label: 'Inventory Optimized' },
+      { value: '$14k', label: 'Monthly Savings' },
+      { value: '9 weeks', label: 'Implementation' }
+    ]
+  }
+];
+
+function renderStudies() {
+  const grid = document.getElementById('studiesGrid');
+  grid.innerHTML = caseStudies.map(study => `
+    <div class="study-card" onclick="openModal(${study.id})">
+      <div class="study-header">
+        <div class="study-industry">${study.industry}</div>
+        <div class="study-title">${study.title}</div>
+      </div>
+      <div class="study-body">
+        <p class="study-challenge">${study.challenge.substring(0, 120)}...</p>
+        <div class="study-metrics">
+          ${study.metrics.map(m => `
+            <div class="study-metric">
+              <div class="study-metric-val">${m.value}</div>
+              <div class="study-metric-label">${m.label}</div>
+            </div>
+          `).join('')}
+        </div>
+        <div class="study-cta">Read Full Case Study</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function openModal(id) {
+  const study = caseStudies.find(s => s.id === id);
+  document.getElementById('modalBody').innerHTML = `
+    <div class="modal-industry">${study.industry}</div>
+    <div class="modal-title">${study.title}</div>
+    <div class="modal-section">
+      <h3>The Challenge</h3>
+      <p>${study.challenge}</p>
+    </div>
+    <div class="modal-section">
+      <h3>Our Solution</h3>
+      <p>${study.solution}</p>
+    </div>
+    <div class="modal-section">
+      <h3>Results Achieved</h3>
+      <p>${study.results}</p>
+    </div>
+    <div class="modal-metrics">
+      ${study.metrics.map(m => `
+        <div class="modal-metric">
+          <div class="modal-metric-val">${m.value}</div>
+          <div class="modal-metric-label">${m.label}</div>
+        </div>
+      `).join('')}
+    </div>
+    <div class="modal-footer">
+      <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" rel="noopener noreferrer" class="btn-primary" aria-label="Opens in new window">Get Similar Results</a>
+      <a href="ai-roi-calculator.html" class="btn-ghost">Calculate Your ROI</a>
+    </div>
+  `;
+  document.getElementById('modal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('modal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeModal();
+});
+
+renderStudies();
+</script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How {{caseStudyCompanyType}} Achieved {{caseStudyROI}}% ROI</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; margin: 0; padding: 0; }
+    .email-container { max-width: 600px; margin: 0 auto; background: white; }
+    .header { background: linear-gradient(135deg, #0E0D0B 0%, #1a1917 100%); padding: 30px 20px; text-align: center; }
+    .logo { font-size: 24px; font-weight: 700; color: #BA7517; margin-bottom: 10px; }
+    .tagline { color: #D4A574; font-size: 13px; }
+    .content { padding: 40px 30px; color: #333; line-height: 1.6; }
+    .greeting { font-size: 18px; font-weight: 600; margin-bottom: 20px; }
+    .section { margin-bottom: 30px; }
+    .section-title { font-size: 16px; font-weight: 600; color: #0E0D0B; margin-bottom: 15px; border-left: 4px solid #BA7517; padding-left: 15px; }
+    .section-content { color: #555; font-size: 14px; }
+    .case-study-box { background: #FFF8F0; border: 1px solid #FFDCC4; border-radius: 8px; padding: 20px; margin: 20px 0; }
+    .case-study-box h4 { color: #BA7517; margin-top: 0; }
+    .result-item { background: white; border-left: 4px solid #BA7517; padding: 12px 15px; margin: 10px 0; }
+    .result-metric { font-weight: 600; color: #0E0D0B; }
+    .result-value { color: #BA7517; font-size: 14px; }
+    .highlight { background: #FFF8F0; border-left: 4px solid #BA7517; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .highlight strong { color: #BA7517; }
+    .cta-button { display: inline-block; background: linear-gradient(135deg, #BA7517 0%, #D4A574 100%); color: white; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: 600; margin: 20px 0; }
+    .cta-button:hover { opacity: 0.9; }
+    .footer { background: #f9f9f9; padding: 30px; text-align: center; border-top: 1px solid #eee; font-size: 12px; color: #999; }
+    .footer-link { color: #BA7517; text-decoration: none; }
+    .ps { margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; font-size: 13px; color: #666; }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">micap.ai</div>
+      <div class="tagline">Strategic AI & Agentic Automation Experts</div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <div class="greeting">Hi {{firstName}},</div>
+
+      <p>I want to share a case study that's relevant to your business. This is a real example (company name changed for confidentiality), and the results are typical of what we see in your industry.</p>
+
+      <div class="case-study-box">
+        <h4>The Situation</h4>
+        <p>{{caseStudyCompanyName}} is a {{caseStudyCompanyType}} with {{caseStudyHeadcount}} employees and {{caseStudyAnnualRevenue}} in annual revenue. Like most companies their size, they were struggling with {{caseStudyProblem1}}, {{caseStudyProblem2}}, and {{caseStudyProblem3}}.</p>
+        <p><strong>Their biggest pain point:</strong> {{caseStudyMainPain}}. This was costing them approximately ${{caseStudyAnnualCost}}K annually in direct costs, plus an estimated ${{caseStudyHiddenCost}}K in hidden costs (opportunity cost, errors, delays, customer dissatisfaction).</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">The Solution</div>
+        <div class="section-content">
+          <p>We implemented a combination of {{automationTypes}} that automated {{automationPercentage}}% of their {{keyProcess}}. The implementation took {{implementationTimeframe}} and required {{implementationEffort}} from their team.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">The Results (After 90 Days)</div>
+        <div class="section-content">
+          <div class="result-item">
+            <div class="result-metric">{{result1Metric}}</div>
+            <div class="result-value">{{result1Before}} → {{result1After}} ({{result1Improvement}})</div>
+          </div>
+          <div class="result-item">
+            <div class="result-metric">{{result2Metric}}</div>
+            <div class="result-value">{{result2Before}} → {{result2After}} ({{result2Improvement}})</div>
+          </div>
+          <div class="result-item">
+            <div class="result-metric">{{result3Metric}}</div>
+            <div class="result-value">{{result3Before}} → {{result3After}} ({{result3Improvement}})</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Year 1 Financial Impact</div>
+        <div class="section-content">
+          <ul style="margin: 15px 0; padding-left: 20px;">
+            <li><strong>Direct savings:</strong> ${{directSavings}}K</li>
+            <li><strong>Hidden opportunity realized:</strong> ${{hiddenOpportunitySavings}}K</li>
+            <li><strong>Total Year 1 benefit:</strong> ${{totalBenefit}}K</li>
+            <li><strong>Implementation cost:</strong> ${{implementationCost}}K</li>
+          </ul>
+          <div class="highlight">
+            <strong>Net Year 1 ROI: {{yearOneROI}}%</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">What Made This Successful</div>
+        <div class="section-content">
+          <p>Three things:</p>
+          <ol style="margin: 15px 0; padding-left: 20px;">
+            <li><strong>Clear identification</strong> of the highest-leverage processes to automate first</li>
+            <li><strong>Phased implementation</strong> to minimize disruption</li>
+            <li><strong>Ongoing optimization</strong> to capture the hidden opportunities that emerge after initial deployment</li>
+          </ol>
+          <p>Most companies that fail at automation skip one of these three steps. Most companies that succeed do all three.</p>
+        </div>
+      </div>
+
+      <div class="highlight">
+        <strong>Is This Relevant to You?</strong> If your situation is similar to {{caseStudyCompanyName}}'s, you're probably looking at similar ROI potential. The question is: what's the right first step for your specific situation?
+      </div>
+
+      <p style="text-align: center;">That's what the strategy call is designed to answer. No obligation, just honest analysis.</p>
+
+      <center>
+        <a href="https://tidycal.com/micapai" class="cta-button">Schedule Your Strategy Call</a>
+      </center>
+
+      <p style="margin-top: 30px;">Best,<br><strong>{{senderName}}</strong><br>Micap AI</p>
+
+      <div class="ps">
+        <p><strong>P.S.</strong> — If you have questions about the case study or want to know more about how we approach implementation, reply to this email. I'm happy to discuss specifics.</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>&copy; 2026 Micap AI. All rights reserved.<br>
+      <a href="https://micap.ai" class="footer-link">micap.ai</a> | <a href="https://micap.ai/privacy" class="footer-link">Privacy Policy</a> | <a href="https://micap.ai/unsubscribe?email={{email}}" class="footer-link">Unsubscribe</a></p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Instrument+Serif&display=swap" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <title>AI Readiness Assessment | Free Digital Maturity Score</title>
+  <meta name="description" content="Take our free AI Readiness Assessment to discover your organization's digital transformation potential and strategic roadmap.">
+  <link rel="canonical" href="https://micap-ai.manus.space/ai-readiness-assessment.html">
+  <meta property="og:title" content="AI Readiness Assessment | Free Digital Maturity Score">
+  <meta property="og:description" content="Take our free AI Readiness Assessment to discover your organization's digital transformation potential and strategic roadmap.">
+  <meta property="og:url" content="https://micap-ai.manus.space/ai-readiness-assessment.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Micap AI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Readiness Assessment | Free Digital Maturity Score">
+  <meta name="twitter:description" content="Take our free AI Readiness Assessment to discover your organization's digital transformation potential and strategic roadmap.">
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-50MLBREDYZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-50MLBREDYZ', {
+      'page_path': window.location.pathname,
+      'anonymize_ip': true
+    });
+  </script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Instrument+Serif&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: #0E0D0B; color: #F5F0E8; font-family: 'DM Sans', sans-serif; overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    button { font-family: inherit; }
+    img { display: block; }
+
+    /* NAV */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid transparent; transition: all .4s ease; }
+    .nav.scrolled { background: rgba(14,13,11,.92); backdrop-filter: blur(16px); border-bottom-color: rgba(186,117,23,.12); }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg,#BA7517,#EF9F27); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; color: #0E0D0B; }
+    .nav-logo-text { font-weight: 600; font-size: 18px; color: #F5F0E8; }
+    .nav-logo-text span { color: #BA7517; }
+    .nav-center-cta { position: absolute; left: 50%; transform: translateX(-50%); }
+    .nav-center-cta a { background: linear-gradient(135deg,#BA7517,#D4891A); color: #0E0D0B; padding: 10px 24px; border-radius: 8px; font-weight: 600; font-size: 14px; }
+    .hamburger{display:flex;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;z-index:115}
+    .hamburger span { width: 24px; height: 2px; background: #BA7517; transition: all .3s; }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(8px,8px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px,-7px); }
+
+    /* MAIN CONTENT */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+    .page-header { padding: 120px 24px 60px; text-align: center; }
+    .page-title { font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(32px,4vw,48px); font-weight: 400; margin-bottom: 16px; }
+    .page-subtitle { font-size: 18px; color: #9C9888; max-width: 600px; margin: 0 auto 40px; }
+
+    /* ASSESSMENT */
+    .assessment-container { background: rgba(186,117,23,.02); border: 1px solid rgba(186,117,23,.1); border-radius: 16px; padding: 40px; margin-bottom: 60px; }
+    .question-group { margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(186,117,23,.1); }
+    .question-group:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .question-text { font-size: 16px; font-weight: 600; margin-bottom: 16px; }
+    .question-options { display: flex; flex-direction: column; gap: 12px; }
+    .option-label { display: flex; align-items: center; gap: 12px; cursor: pointer; padding: 12px 16px; background: rgba(186,117,23,.05); border: 1px solid rgba(186,117,23,.2); border-radius: 8px; transition: all .2s; }
+    .option-label:hover { background: rgba(186,117,23,.1); border-color: rgba(186,117,23,.4); }
+    .option-label input { cursor: pointer; }
+    .option-label input:checked + span { color: #BA7517; font-weight: 600; }
+
+    .email-section { background: rgba(186,117,23,.05); border: 1px solid rgba(186,117,23,.2); border-radius: 12px; padding: 32px; margin-bottom: 32px; }
+    .email-section h3 { font-size: 18px; margin-bottom: 16px; }
+    .email-form { display: flex; flex-direction: column; gap: 12px; }
+    .form-input { background: rgba(186,117,23,.05); border: 1px solid rgba(186,117,23,.2); border-radius: 8px; padding: 12px 16px; color: #F5F0E8; font-size: 14px; }
+    .form-input:focus { outline: none; border-color: #BA7517; background: rgba(186,117,23,.08); }
+    .form-input::placeholder { color: #7A756C; }
+
+    .btn-primary { background: linear-gradient(135deg,#BA7517,#D4891A); color: #0E0D0B; padding: 14px 32px; border-radius: 10px; border: none; font-weight: 600; cursor: pointer; transition: transform .2s; font-size: 16px; }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .results-section { display: none; background: rgba(186,117,23,.05); border: 1px solid rgba(186,117,23,.2); border-radius: 12px; padding: 32px; margin-top: 32px; }
+    .results-section.show { display: block; }
+    .score-display { font-size: 48px; font-weight: 700; color: #BA7517; margin-bottom: 16px; }
+    .score-label { font-size: 18px; margin-bottom: 24px; }
+    .score-description { font-size: 14px; color: #9C9888; line-height: 1.6; margin-bottom: 24px; }
+    .cta-section { background: linear-gradient(135deg,rgba(186,117,23,.1),rgba(186,117,23,.05)); border: 1px solid rgba(186,117,23,.2); border-radius: 12px; padding: 24px; text-align: center; margin-top: 32px; }
+
+
+    @media (max-width: 768px) {
+      .assessment-container { padding: 24px; }
+      .chat-window { width: calc(100vw - 32px); height: 70vh; }
+    }
+      /* NAV - Unified hamburger to top banner */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid transparent;transition:all .4s ease}
+    .nav.scrolled{background:rgba(14,13,11,.92);backdrop-filter:blur(16px);border-bottom-color:rgba(186,117,23,.12)}
+    .nav-logo{display:flex;align-items:center;gap:10px}
+    .nav-logo img{display:block;width:32px;height:32px;font-size:18px;color:#F5F0E8;letter-spacing:-.3px}
+    .nav-logo-text span{color:#BA7517}
+    
+    .nav-link{color:#9C9888;font-size:14px;font-weight:500;transition:color .2s}
+    .nav-link:hover{color:#F5F0E8}
+    .nav-link.active{color:#BA7517}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px}
+    .hamburger span{width:24px;height:2px;background:#BA7517;transition:all .3s}
+    .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+    .nav-menu{display:none;position:fixed;top:64px;left:0;right:0;z-index:99;background:rgba(14,13,11,.98);backdrop-filter:blur(20px);border-bottom:1px solid rgba(186,117,23,.2);padding:12px 24px;align-items:center;justify-content:center;gap:24px;animation:slideDown .3s ease}
+    .nav-menu.active{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+    .nav-menu a{padding:10px 18px;color:#9C9888;font-size:13px;font-weight:500;border-radius:8px;transition:all .2s;border:1px solid transparent}
+    .nav-menu a:hover{color:#F5F0E8;background:rgba(186,117,23,.08);border-color:rgba(186,117,23,.15)}
+    @keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+    @media(max-width:900px){.hamburger{display:flex}}
+    @media(min-width:901px){.nav-menu{display:none !important}}
+  /* === STANDARD NAV CSS === */
+.nav{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(14,13,11,.95);backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:100;border-bottom:1px solid rgba(186,117,23,.15)}
+.nav.scrolled{background:rgba(14,13,11,.98);box-shadow:0 2px 20px rgba(0,0,0,.3)}
+.hamburger{display:flex;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;z-index:115}
+.hamburger span{width:24px;height:2px;background:#BA7517;transition:all .3s}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.nav-menu{display:none;position:fixed;top:64px;right:0;width:250px;max-height:calc(100vh - 64px);background:rgba(14,13,11,.98);backdrop-filter:blur(20px);border-left:1px solid rgba(186,117,23,.2);padding:16px 0;z-index:99;flex-direction:column;overflow-y:auto;animation:slideIn .3s ease}
+.nav-menu.active{display:flex}
+.nav-menu a{color:#9C9888;font-size:14px;font-weight:500;text-decoration:none;padding:12px 24px;transition:all .2s;display:block;border-left:3px solid transparent}
+.nav-menu a:hover{color:#F5F0E8;background:rgba(186,117,23,.1);border-left-color:#BA7517}
+.nav-menu a.nav-active{color:#BA7517;border-left-color:#BA7517;background:rgba(186,117,23,.05)}
+@keyframes slideIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#F5F0E8;z-index:115}
+.nav-brand img{width:40px;height:40px;font-size:18px;color:#F5F0E8;letter-spacing:-.3px}
+.nav-brand-text span{color:#BA7517}
+.nav-consultation{background:#BA7517;color:#000;padding:10px 20px;border-radius:6px;font-size:13px;font-weight:600;letter-spacing:.05em;text-decoration:none;transition:all .2s;position:absolute;left:50%;transform:translateX(-50%);top:20px;z-index:115;border:none;cursor:pointer;display:inline-block}
+.nav-consultation:hover{background:#D4A574;transform:translateX(-50%) translateY(-2px)}
+/* === END STANDARD NAV CSS === */
+
+/* Industries dropdown */
+.nav-dropdown{position:relative}
+.nav-dropdown-trigger{display:flex;align-items:center;gap:5px;color:#9C9888;font-size:14px;font-weight:500;cursor:pointer;transition:color .2s;background:none;border:none;font-family:inherit;padding:0}
+.nav-dropdown-trigger:hover,.nav-dropdown:hover .nav-dropdown-trigger{color:#F5F0E8}
+.nav-dropdown-trigger svg{transition:transform .2s}
+.nav-dropdown:hover .nav-dropdown-trigger svg{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:rgba(14,13,11,.97);backdrop-filter:blur(20px);border:1px solid rgba(186,117,23,.2);border-radius:12px;padding:8px;min-width:200px;opacity:0;visibility:hidden;transition:all .2s;z-index:200;box-shadow:0 16px 48px rgba(0,0,0,.4)}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;top:calc(100% + 8px)}
+.nav-dropdown-menu a{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;font-size:13px;color:#9C9888;transition:all .2s;white-space:nowrap}
+.nav-dropdown-menu a:hover{color:#F5F0E8;background:rgba(186,117,23,.08)}
+.nav-dropdown-menu a span.dd-icon{font-size:16px;width:20px;text-align:center}
+.nav-dropdown-divider{height:1px;background:rgba(186,117,23,.1);margin:6px 0}
+
+  </style>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1012037731152333');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1012037731152333&ev=PageView&noscript=1"
+    / alt="" decoding="async"></noscript>
+    <!-- End Meta Pixel Code -->
+  
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "AI Readiness Assessment",
+  "description": "Free assessment tool to discover your organization's digital transformation potential and AI implementation readiness.",
+  "url": "https://micap-ai.manus.space/ai-readiness-assessment.html",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web Browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "Micap AI",
+    "url": "https://micap-ai.manus.space"
+  }
+}
+  </script>
+  </head>
+<body>
+    <a href="#main-content" class="skip-to-content" style="position: absolute; top: -40px; left: 0; background: #d4a574; color: white; padding: 8px; text-decoration: none; z-index: 100;">Skip to main content</a>
+
+<nav class="nav" id="navbar" role="navigation">
+  <a href="index.html" class="nav-brand">
+    <img loading="lazy" src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663473200649/hUUaHIjRLGNJNfOi.jpg" alt="Micap AI" style="width:40px;height:40px;object-fit:contain;background:#000" decoding="async">
+    <div class="nav-brand-text">micap<span>.ai</span></div>
+  </a>
+  <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" rel="noopener noreferrer" class="nav-consultation" aria-label="Opens in new window">CONSULTATION BOOKING</a>
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+<div class="nav-menu" id="navMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="digital-employees.html">Digital Employees</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="case-studies.html">Case Studies</a>
+  <a href="ai-roi-calculator.html">ROI Calculator</a>
+  <a href="blog.html">Blog</a>
+  <a href="faq.html">FAQ</a>
+</div>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+  
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+    
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+    
+    document.addEventListener('click', function(event) {
+      if (!event.target.closest('.nav') && !event.target.closest('.nav-menu')) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    });
+  }
+</script>
+
+  <!-- NAV -->
+  <!-- NAV -->
+
+
+  <!-- PAGE CONTENT -->
+  <div class="page-header">
+    <h1 class="page-title" id="leadMagnetHeadline">AI Readiness Assessment</h1>
+    <p class="page-subtitle">Discover your organization's digital transformation potential in just 5 minutes. Get personalized insights and a roadmap for AI implementation.</p>
+  </div>
+
+  <div class="container">
+    <nav aria-label="breadcrumb" class="breadcrumb-nav" style="margin-bottom: 20px;">
+      <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 5px; font-size: 0.9em;">
+        <li><a href="index.html" style="color: #d4a574; text-decoration: none;">Home</a></li>
+        <li style="color: #999;">/</li>
+        <li aria-current="page" style="color: #666;">Tools</li>
+        <li style="color: #999;">/</li>
+        <li aria-current="page" style="color: #666;">AI Readiness Assessment</li>
+      </ol>
+    </nav>
+
+    <div class="assessment-container">
+      <form id="assessmentForm">
+        <!-- Question 1 -->
+        <div class="question-group">
+          <div class="question-text">1. What is your organization's current AI maturity level?</div>
+          <div class="question-options">
+            <label class="option-label">
+              <input type="radio" name="maturity" value="0" required>
+              <span>No AI implementation yet</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="maturity" value="1">
+              <span>Early exploration / pilot projects</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="maturity" value="2">
+              <span>Some AI tools in production</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="maturity" value="3">
+              <span>AI integrated across multiple departments</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question-group">
+          <div class="question-text">2. Which processes would benefit most from automation?</div>
+          <div class="question-options">
+            <label class="option-label">
+              <input type="radio" name="processes" value="0" required>
+              <span>Customer service & support</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="processes" value="1">
+              <span>Sales & lead qualification</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="processes" value="2">
+              <span>Operations & data processing</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="processes" value="3">
+              <span>Multiple areas / enterprise-wide</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question-group">
+          <div class="question-text">3. What is your primary concern with AI implementation?</div>
+          <div class="question-options">
+            <label class="option-label">
+              <input type="radio" name="concern" value="0" required>
+              <span>Data security & sovereignty</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="concern" value="1">
+              <span>Cost & ROI uncertainty</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="concern" value="2">
+              <span>Technical complexity & integration</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="concern" value="3">
+              <span>Minimal concern / ready to move forward</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question-group">
+          <div class="question-text">4. What is your estimated annual budget for AI initiatives?</div>
+          <div class="question-options">
+            <label class="option-label">
+              <input type="radio" name="budget" value="0" required>
+              <span>Under $50,000</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="budget" value="1">
+              <span>$50,000 - $250,000</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="budget" value="2">
+              <span>$250,000 - $1,000,000</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="budget" value="3">
+              <span>$1,000,000+</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question-group">
+          <div class="question-text">5. What is your timeline for AI implementation?</div>
+          <div class="question-options">
+            <label class="option-label">
+              <input type="radio" name="timeline" value="0" required>
+              <span>Still evaluating / 6+ months</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="timeline" value="1">
+              <span>3-6 months</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="timeline" value="2">
+              <span>1-3 months</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="timeline" value="3">
+              <span>Immediate / next 30 days</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Email Section -->
+        <div class="email-section">
+          <h2>Get Your Personalized Assessment Report</h2>
+          <p style="font-size: 14px; color: #9C9888; margin-bottom: 16px;">Enter your details to receive your AI Readiness Score and a customized implementation roadmap.</p>
+          <div class="email-form">
+            <input type="text" class="form-input" id="nameInput" placeholder="Your Name" required>
+            <input type="email" class="form-input" id="emailInput" placeholder="Your Email" required aria-label="Email address">
+            <input type="text" class="form-input" id="companyInput" placeholder="Company Name" required>
+            <button type="submit" class="btn-primary" style="width: 100%;" aria-label="Submit form">Get My Assessment Report</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Results Section -->
+      <div class="results-section" id="resultsSection">
+        <div style="text-align: center;">
+          <div class="score-display" id="scoreDisplay">0/20</div>
+          <div class="score-label" id="scoreLabel"></div>
+          <div class="score-description" id="scoreDescription"></div>
+          
+          <div class="cta-section">
+            <p style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">Ready to accelerate your AI transformation?</p>
+            <a href="https://tidycal.com/jmilam/ai-deployment-consultation" class="btn-primary" style="display: inline-block;">Schedule a Strategy Call</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const scoreDescriptions = {
+      0: { label: "Early Stage", desc: "Your organization is just beginning its AI journey. We recommend starting with a pilot project to build internal expertise and demonstrate ROI. Our team can help you identify quick wins and build a phased implementation roadmap." },
+      1: { label: "Emerging", desc: "You've taken initial steps toward AI adoption. Now it's time to scale strategically. We can help you expand successful pilots, address integration challenges, and build a comprehensive AI strategy." },
+      2: { label: "Advanced", desc: "Your organization is well-positioned for AI transformation. Focus on scaling across departments, optimizing ROI, and ensuring data sovereignty. Let's discuss enterprise-wide AI initiatives." },
+      3: { label: "Leading", desc: "You're ahead of the curve! Your organization is ready for advanced AI implementations including private infrastructure and custom digital employees. Let's explore strategic partnerships." }
+    };
+
+    document.getElementById('assessmentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const maturity = parseInt(document.querySelector('input[name="maturity"]:checked').value);
+      const processes = parseInt(document.querySelector('input[name="processes"]:checked').value);
+      const concern = parseInt(document.querySelector('input[name="concern"]:checked').value);
+      const budget = parseInt(document.querySelector('input[name="budget"]:checked').value);
+      const timeline = parseInt(document.querySelector('input[name="timeline"]:checked').value);
+      
+      const totalScore = maturity + processes + concern + budget + timeline;
+      const scoreLevel = Math.floor(totalScore / 4);
+      const description = scoreDescriptions[Math.min(scoreLevel, 3)];
+      
+      document.getElementById('scoreDisplay').textContent = totalScore + '/20';
+      document.getElementById('scoreLabel').textContent = description.label;
+      document.getElementById('scoreDescription').textContent = description.desc;
+      
+      // Log the submission (in production, send to backend)
+      console.log('Assessment submitted:', {
+        name: document.getElementById('nameInput').value,
+        email: document.getElementById('emailInput').value,
+        company: document.getElementById('companyInput').value,
+        score: totalScore,
+        level: description.label
+      });
+      
+      // Show results
+      document.getElementById('resultsSection').classList.add('show');
+      setTimeout(() => {
+        document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 10) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      });
+    });// A/B Test: Lead Magnet Headline
+    const leadMagnetVariants = {
+      'A': 'Get Your AI Readiness Assessment',
+      'B': 'Discover Your AI Potential'
+    };
+    
+    function initLeadMagnetABTest() {
+      let variant = sessionStorage.getItem('leadMagnetVariant');
+      if (!variant) {
+        variant = Math.random() < 0.5 ? 'A' : 'B';
+        sessionStorage.setItem('leadMagnetVariant', variant);
+      }
+      
+      const headline = document.getElementById('leadMagnetHeadline');
+      if (headline) {
+        headline.textContent = leadMagnetVariants[variant];
+      }
+      
+      trackLeadMagnetEvent('variant_shown', { variant: variant });
+    }
+    
+    function trackLeadMagnetEvent(eventType, data = {}) {
+      const eventData = {
+        event: 'lead_magnet_' + eventType,
+        variant: sessionStorage.getItem('leadMagnetVariant'),
+        timestamp: new Date().toISOString(),
+        ...data
+      };
+      
+      console.log('Lead Magnet Analytics:', eventData);
+      
+      if (window.gtag) {
+        gtag('event', 'lead_magnet_' + eventType, {
+          'variant': sessionStorage.getItem('leadMagnetVariant'),
+          ...data
+        });
+      }
+      
+      const events = JSON.parse(localStorage.getItem('lead_magnet_analytics') || '[]');
+      events.push(eventData);
+      localStorage.setItem('lead_magnet_analytics', JSON.stringify(events.slice(-500)));
+    }
+    
+    document.getElementById('assessmentForm').addEventListener('submit', function(e) {
+      trackLeadMagnetEvent('form_submitted', {
+        variant: sessionStorage.getItem('leadMagnetVariant')
+      });
+    }, true);
+    
+    initLeadMagnetABTest();
+  </script>
+</body>
+</html>

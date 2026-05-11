@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify Email - Micap AI ROI Calculator</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #0E0D0B 0%, #1a1917 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .verify-container {
+      background: rgba(20, 19, 17, 0.8);
+      border: 1px solid rgba(186, 117, 23, 0.2);
+      border-radius: 12px;
+      padding: 40px;
+      max-width: 420px;
+      width: 100%;
+      backdrop-filter: blur(10px);
+    }
+    .logo {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .logo img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+    }
+    .logo h1 {
+      color: #F5F0E8;
+      font-size: 24px;
+      font-weight: 600;
+    }
+    .section-title {
+      color: #F5F0E8;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .section-subtitle {
+      color: #9C9888;
+      font-size: 13px;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      color: #F5F0E8;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .code-input {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .code-digit {
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+      border: 1px solid rgba(186, 117, 23, 0.3);
+      background: rgba(30, 28, 25, 0.6);
+      color: #F5F0E8;
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+    .code-digit:focus {
+      outline: none;
+      border-color: #BA7517;
+      background: rgba(30, 28, 25, 0.8);
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 12px 16px;
+      background: linear-gradient(135deg, #BA7517 0%, #D4A574 100%);
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .submit-btn:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(186, 117, 23, 0.3);
+    }
+    .submit-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .error-message {
+      color: #ff6b6b;
+      font-size: 12px;
+      margin-top: 10px;
+      display: none;
+      text-align: center;
+    }
+    .resend-link {
+      text-align: center;
+      margin-top: 15px;
+    }
+    .resend-link a {
+      color: #BA7517;
+      text-decoration: none;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .resend-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1012037731152333');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1012037731152333&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <script src="/meta-pixel-events.js"></script>
+    <script>
+      // Track email verification page view
+      if (typeof MetaPixelEvents !== 'undefined') {
+        MetaPixelEvents.trackPageView('Email Verification');
+      }
+    </script>
+  </head>
+<body>
+  <div class="verify-container">
+    <div class="logo">
+      <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663473200649/hUUaHIjRLGNJNfOi.jpg" alt="Micap AI">
+      <h1>Micap AI</h1>
+    </div>
+
+    <div class="section-title">Verify Your Email</div>
+    <div class="section-subtitle" id="emailDisplay">Verification code sent to your email</div>
+
+    <form onsubmit="handleVerification(event)">
+      <div class="form-group">
+        <label>Enter 6-Digit Code</label>
+      </div>
+
+      <div class="code-input" id="codeInput">
+        <input type="text" class="code-digit" maxlength="1" inputmode="numeric" autocomplete="off">
+        <input type="text" class="code-digit" maxlength="1" inputmode="numeric" autocomplete="off">
+        <input type="text" class="code-digit" maxlength="1" inputmode="numeric" autocomplete="off">
+        <input type="text" class="code-digit" maxlength="1" inputmode="numeric" autocomplete="off">
+        <input type="text" class="code-digit" maxlength="1" inputmode="numeric" autocomplete="off">
+        <input type="text" class="code-digit" maxlength="1" inputmode="numeric" autocomplete="off">
+      </div>
+
+      <button type="submit" class="submit-btn" id="verifyBtn">Verify & Continue</button>
+      <div class="error-message" id="errorMessage"></div>
+    </form>
+
+    <div class="resend-link">
+      <a onclick="resendCode()">Didn't receive code? Resend</a>
+    </div>
+  </div>
+
+  <script>
+    // Auto-focus next digit
+    const codeInputs = document.querySelectorAll('.code-digit');
+    codeInputs.forEach((input, index) => {
+      input.addEventListener('input', (e) => {
+        if (e.target.value && index < codeInputs.length - 1) {
+          codeInputs[index + 1].focus();
+        }
+      });
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Backspace' && !e.target.value && index > 0) {
+          codeInputs[index - 1].focus();
+        }
+      });
+    });
+
+    // Get email from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const email = urlParams.get('email');
+    if (email) {
+      document.getElementById('emailDisplay').textContent = `Verification code sent to ${email}`;
+    }
+
+    // Handle verification
+    async function handleVerification(event) {
+      event.preventDefault();
+      
+      const code = Array.from(codeInputs).map(input => input.value).join('');
+      const verifyBtn = document.getElementById('verifyBtn');
+      const errorDiv = document.getElementById('errorMessage');
+      
+      if (code.length !== 6) {
+        errorDiv.textContent = 'Please enter all 6 digits';
+        errorDiv.style.display = 'block';
+        return;
+      }
+      
+      verifyBtn.disabled = true;
+      verifyBtn.textContent = 'Verifying...';
+      errorDiv.style.display = 'none';
+      
+      try {
+        const response = await fetch('/api/auth/verify-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, code })
+        });
+        
+        const data = await response.json();
+        
+        if (!response.ok) {
+          throw new Error(data.error || 'Verification failed');
+        }
+        
+        // Track email verification success with Meta Pixel
+        if (typeof MetaPixelEvents !== 'undefined') {
+          MetaPixelEvents.trackEmailVerification();
+        }
+        
+        // Store session and redirect to ROI calculator
+        localStorage.setItem('userEmail', email);
+        localStorage.setItem('sessionToken', data.sessionToken);
+        window.location.href = '/ai-roi-calculator.html';
+      } catch (error) {
+        errorDiv.textContent = error.message;
+        errorDiv.style.display = 'block';
+      } finally {
+        verifyBtn.disabled = false;
+        verifyBtn.textContent = 'Verify & Continue';
+      }
+    }
+
+    // Resend code
+    async function resendCode() {
+      try {
+        const response = await fetch('/api/auth/send-verification-code', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, consent: true })
+        });
+        
+        if (!response.ok) throw new Error('Failed to resend code');
+        
+        alert('Verification code resent to your email');
+      } catch (error) {
+        alert('Error: ' + error.message);
+      }
+    }
+  </script>
+</body>
+</html>

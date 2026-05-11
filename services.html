@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Instrument+Serif&display=swap" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <title>Services | AI Automation & Digital Transformation Solutions</title>
+  <meta name="description" content="Explore Micap AI services: Digital Transformation, Digital Employees, Private AI Infrastructure, and Agentic Automation.">
+  <link rel="canonical" href="https://micap-ai.manus.space/services.html">
+  <meta property="og:title" content="Services | AI Automation & Digital Transformation Solutions">
+  <meta property="og:description" content="Explore Micap AI services: Digital Transformation, Digital Employees, Private AI Infrastructure, and Agentic Automation.">
+  <meta property="og:url" content="https://micap-ai.manus.space/services.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Micap AI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Services | AI Automation & Digital Transformation Solutions">
+  <meta name="twitter:description" content="Explore Micap AI services: Digital Transformation, Digital Employees, Private AI Infrastructure, and Agentic Automation.">
+  <link rel="icon" href="/manus-storage/micap-favicon_a2f043bd.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/manus-storage/micap-favicon-256_c9c78192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Instrument+Serif&display=swap" rel="stylesheet">
+  
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-50MLBREDYZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-50MLBREDYZ', { 'page_path': window.location.pathname, 'anonymize_ip': true });
+  </script>
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1012037731152333');
+    fbq('track', 'PageView');
+  </script>
+  <link rel="stylesheet" href="floating-ui.css">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:#0E0D0B;color:#F5F0E8;font-family:'DM Sans',sans-serif;overflow-x:hidden;padding-top:64px}
+    a{text-decoration:none;color:inherit}
+    button{font-family:inherit}
+    img{display:block}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes slideIn{from{transform:translateX(100%)}to{transform:translateX(0)}}
+
+    /* NAV */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid transparent;transition:all .4s ease}
+    .nav.scrolled{background:rgba(14,13,11,.92);backdrop-filter:blur(16px);border-bottom-color:rgba(186,117,23,.12)}
+    .hamburger{display:flex;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;z-index:115}
+    .hamburger span{width:24px;height:2px;background:#BA7517;transition:all .3s}
+    .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+    .nav-menu{display:none;position:fixed;top:64px;right:0;width:250px;max-height:calc(100vh - 64px);background:rgba(14,13,11,.98);backdrop-filter:blur(20px);border-left:1px solid rgba(186,117,23,.2);padding:16px 0;z-index:99;flex-direction:column;overflow-y:auto;animation:slideIn .3s ease}
+    .nav-menu.active{display:flex}
+    .nav-menu a{color:#9C9888;font-size:14px;font-weight:500;text-decoration:none;padding:12px 24px;transition:all .2s;display:block;border-left:3px solid transparent}
+    .nav-menu a:hover{color:#F5F0E8;background:rgba(186,117,23,.1);border-left-color:#BA7517}
+    .nav-menu a.nav-active{color:#BA7517;border-left-color:#BA7517;background:rgba(186,117,23,.05)}
+    .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#F5F0E8;z-index:115}
+    .nav-brand img{width:40px;height:40px;object-fit:contain;background:#000}
+    .nav-brand-text{font-family:'DM Sans',sans-serif;font-size:18px;font-weight:600;color:#F5F0E8;letter-spacing:-.3px}
+    .nav-brand-text span{color:#BA7517}
+    .nav-consultation{background:#BA7517;color:#000;padding:10px 20px;border-radius:6px;font-size:13px;font-weight:600;letter-spacing:.05em;text-decoration:none;transition:all .2s;position:absolute;left:50%;transform:translateX(-50%);top:20px;z-index:115;border:none;cursor:pointer;display:inline-block}
+    .nav-consultation:hover{background:#D4A574;transform:translateX(-50%) translateY(-2px)}
+
+    /* SHARED */
+    .section-label{font-family:'DM Mono',monospace;font-size:12px;color:#BA7517;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+    .section-title{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(32px,4vw,48px);font-weight:400;color:#F5F0E8;margin:0 0 16px;letter-spacing:-1px}
+    .section-sub{font-size:17px;color:#9C9888;line-height:1.7;max-width:600px}
+    .container{max-width:1100px;margin:0 auto;padding:0 24px}
+    .card{border-radius:16px;border:1px solid rgba(186,117,23,.1);background:rgba(186,117,23,.02);transition:all .3s}
+    .card:hover{border-color:rgba(186,117,23,.25);background:rgba(186,117,23,.04)}
+    .btn{display:inline-flex;align-items:center;font-weight:600;border-radius:10px;transition:transform .2s,box-shadow .2s;cursor:pointer;border:none}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:linear-gradient(135deg,#BA7517,#D4891A);color:#0E0D0B;padding:14px 32px;font-size:16px}
+    .btn-primary:hover{box-shadow:0 8px 32px rgba(186,117,23,.35)}
+    .btn-ghost{border:1px solid rgba(186,117,23,.3);color:#F5F0E8;padding:14px 32px;font-size:16px;background:rgba(186,117,23,.05)}
+    .btn-ghost:hover{background:rgba(186,117,23,.1);border-color:rgba(186,117,23,.5)}
+
+    /* FOOTER */
+    .footer{border-top:1px solid rgba(186,117,23,.08);padding:32px 24px;display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;font-size:13px;color:#4A473F}
+    .footer a:hover{color:#BA7517}
+
+    /* HERO */
+    .hero{padding:96px 24px 80px;text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(186,117,23,.08) 0%,transparent 70%);pointer-events:none}
+    .hero-label{font-family:'DM Mono',monospace;font-size:12px;color:#BA7517;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;display:inline-block}
+    .hero-title{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(40px,6vw,72px);font-weight:400;color:#F5F0E8;line-height:1.1;letter-spacing:-2px;margin-bottom:24px}
+    .hero-title em{color:#BA7517;font-style:normal}
+    .hero-sub{font-size:18px;color:#9C9888;line-height:1.7;max-width:580px;margin:0 auto 40px}
+    .hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+    /* PROOF BAR */
+    .proof-bar{border-top:1px solid rgba(186,117,23,.08);border-bottom:1px solid rgba(186,117,23,.08);padding:24px;margin-bottom:80px}
+    .proof-bar-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-around;flex-wrap:wrap;gap:24px}
+    .proof-stat{text-align:center}
+    .proof-stat-num{font-family:'Instrument Serif',Georgia,serif;font-size:32px;color:#BA7517;letter-spacing:-1px}
+    .proof-stat-label{font-size:12px;color:#6B6860;text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+
+    /* SERVICE CARDS */
+    .services-section{padding:80px 0}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin-top:48px}
+    .service-card{padding:32px;border-radius:16px;border:1px solid rgba(186,117,23,.1);background:rgba(186,117,23,.02);transition:all .3s;position:relative;overflow:hidden}
+    .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#BA7517,transparent);opacity:0;transition:opacity .3s}
+    .service-card:hover{border-color:rgba(186,117,23,.25);background:rgba(186,117,23,.04);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.3)}
+    .service-card:hover::before{opacity:1}
+    .service-icon{width:48px;height:48px;border-radius:12px;background:rgba(186,117,23,.1);border:1px solid rgba(186,117,23,.2);display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:22px}
+    .service-card h3{font-family:'Instrument Serif',Georgia,serif;font-size:22px;font-weight:400;color:#F5F0E8;margin-bottom:12px;letter-spacing:-.3px}
+    .service-card p{font-size:15px;color:#9C9888;line-height:1.7;margin-bottom:20px}
+    .service-features{list-style:none;margin-bottom:24px}
+    .service-features li{font-size:14px;color:#9C9888;padding:6px 0;padding-left:20px;position:relative}
+    .service-features li::before{content:'→';position:absolute;left:0;color:#BA7517;font-size:12px}
+    .service-tag{display:inline-block;font-family:'DM Mono',monospace;font-size:11px;color:#BA7517;background:rgba(186,117,23,.1);border:1px solid rgba(186,117,23,.2);padding:4px 10px;border-radius:20px;letter-spacing:.05em}
+
+    /* PROCESS */
+    .process-section{padding:80px 0;border-top:1px solid rgba(186,117,23,.08)}
+    .process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;margin-top:48px;position:relative}
+    .process-step{text-align:center;position:relative}
+    .step-num{width:56px;height:56px;border-radius:50%;background:rgba(186,117,23,.1);border:1px solid rgba(186,117,23,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-family:'DM Mono',monospace;font-size:18px;color:#BA7517;font-weight:500}
+    .step-title{font-family:'Instrument Serif',Georgia,serif;font-size:18px;color:#F5F0E8;margin-bottom:8px;font-weight:400}
+    .step-desc{font-size:14px;color:#6B6860;line-height:1.6}
+
+    /* DIFFERENTIATORS */
+    .diff-section{padding:80px 0;border-top:1px solid rgba(186,117,23,.08)}
+    .diff-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:48px}
+    .diff-card{padding:28px;border-radius:12px;border:1px solid rgba(186,117,23,.08);background:rgba(255,255,255,.01)}
+    .diff-card h4{font-size:16px;font-weight:600;color:#F5F0E8;margin-bottom:8px}
+    .diff-card p{font-size:14px;color:#6B6860;line-height:1.6}
+    .diff-icon{font-size:24px;margin-bottom:12px}
+
+    /* CTA SECTION */
+    .cta-section{padding:80px 24px;text-align:center;border-top:1px solid rgba(186,117,23,.08)}
+    .cta-box{max-width:640px;margin:0 auto;padding:48px;border-radius:24px;border:1px solid rgba(186,117,23,.15);background:linear-gradient(135deg,rgba(186,117,23,.04),rgba(186,117,23,.01))}
+    .cta-box .section-title{font-size:clamp(28px,4vw,40px)}
+
+    /* MOBILE */
+    @media(max-width:768px){
+      .hero{padding:72px 16px 60px}
+      .services-grid{grid-template-columns:1fr}
+      .process-steps{grid-template-columns:repeat(2,1fr)}
+      .diff-grid{grid-template-columns:1fr}
+      .footer{flex-direction:column;gap:16px;text-align:center}
+      .nav-consultation{font-size:11px;padding:8px 14px}
+    }
+    @media(max-width:480px){
+      .process-steps{grid-template-columns:1fr}
+      .hero-cta{flex-direction:column;align-items:center}
+    }
+  
+/* Industries dropdown */
+.nav-dropdown{position:relative}
+.nav-dropdown-trigger{display:flex;align-items:center;gap:5px;color:#9C9888;font-size:14px;font-weight:500;cursor:pointer;transition:color .2s;background:none;border:none;font-family:inherit;padding:0}
+.nav-dropdown-trigger:hover,.nav-dropdown:hover .nav-dropdown-trigger{color:#F5F0E8}
+.nav-dropdown-trigger svg{transition:transform .2s}
+.nav-dropdown:hover .nav-dropdown-trigger svg{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:rgba(14,13,11,.97);backdrop-filter:blur(20px);border:1px solid rgba(186,117,23,.2);border-radius:12px;padding:8px;min-width:200px;opacity:0;visibility:hidden;transition:all .2s;z-index:200;box-shadow:0 16px 48px rgba(0,0,0,.4)}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;top:calc(100% + 8px)}
+.nav-dropdown-menu a{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;font-size:13px;color:#9C9888;transition:all .2s;white-space:nowrap}
+.nav-dropdown-menu a:hover{color:#F5F0E8;background:rgba(186,117,23,.08)}
+.nav-dropdown-menu a span.dd-icon{font-size:16px;width:20px;text-align:center}
+.nav-dropdown-divider{height:1px;background:rgba(186,117,23,.1);margin:6px 0}
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "provider": {
+    "@type": "Organization",
+    "name": "Micap AI",
+    "url": "https://micap-ai.manus.space"
+  },
+  "name": "AI Automation & Digital Transformation Services",
+  "description": "Full suite of AI services including Digital Transformation, Digital Employees, Private AI Infrastructure, and Agentic Automation.",
+  "url": "https://micap-ai.manus.space/services.html",
+  "serviceType": [
+    "Digital Transformation",
+    "AI Digital Employees",
+    "Private AI Infrastructure",
+    "Agentic Automation"
+  ],
+  "areaServed": {
+    "@type": "Place",
+    "name": "Worldwide"
+  }
+}
+  </script>
+  </head>
+<body>
+    <a href="#main-content" class="skip-to-content" style="position: absolute; top: -40px; left: 0; background: #d4a574; color: white; padding: 8px; text-decoration: none; z-index: 100;">Skip to main content</a>
+
+
+<!-- Scroll-to-Top Button -->
+<button id="scrollToTopBtn" title="Scroll to top">↑</button>
+
+<!-- NAV -->
+<nav class="nav" id="navbar" role="navigation">
+  <a href="index.html" class="nav-brand">
+    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663473200649/hUUaHIjRLGNJNfOi.jpg" alt="Micap AI" style="width:40px;height:40px;object-fit:contain;background:#000" decoding="async">
+    <div class="nav-brand-text">micap<span>.ai</span></div>
+  </a>
+  <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" rel="noopener noreferrer" class="nav-consultation" aria-label="Opens in new window">CONSULTATION BOOKING</a>
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-menu" id="navMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html" class="nav-active">Services</a>
+  <a href="digital-employees.html">Digital Employees</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="case-studies.html">Case Studies</a>
+  <a href="ai-roi-calculator.html">ROI Calculator</a>
+  <a href="roi-calculator-demo.html">ROI Demo</a>
+  <a href="blog.html">Blog</a>
+  <a href="faq.html">FAQ</a>
+</div>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+    document.addEventListener('click', function(event) {
+      if (!event.target.closest('.nav') && !event.target.closest('.nav-menu')) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    });
+  }
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 20) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+</script>
+
+<!-- HERO -->
+<section class="hero" id="main-content">
+    <nav aria-label="breadcrumb" class="breadcrumb-nav" style="margin-bottom: 20px;">
+      <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 5px; font-size: 0.9em;">
+        <li><a href="index.html" style="color: #d4a574; text-decoration: none;">Home</a></li>
+        <li style="color: #999;">/</li>
+        <li aria-current="page" style="color: #666;">Services</li>
+      </ol>
+    </nav>
+
+  <span class="hero-label">What We Do</span>
+  <h1 class="hero-title">AI That Works.<br><em>Results You Measure.</em></h1>
+  <p class="hero-sub">From strategy to deployment, we build private AI infrastructure, digital employees, and agentic automation systems that transform how your business operates.</p>
+  <div class="hero-cta">
+    <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" class="btn btn-primary" aria-label="Opens in new window">Book a Strategy Call</a>
+    <a href="ai-roi-calculator.html" class="btn btn-ghost">Calculate Your ROI →</a>
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <div class="proof-bar-inner">
+    <div class="proof-stat"><div class="proof-stat-num">10+</div><div class="proof-stat-label">Digital Employee Types</div></div>
+    <div class="proof-stat"><div class="proof-stat-num">90 Days</div><div class="proof-stat-label">Avg. ROI Timeline</div></div>
+    <div class="proof-stat"><div class="proof-stat-num">3×</div><div class="proof-stat-label">Capacity Multiplier</div></div>
+    <div class="proof-stat"><div class="proof-stat-num">100%</div><div class="proof-stat-label">Private Infrastructure</div></div>
+  </div>
+</div>
+
+<!-- SERVICES GRID -->
+<section class="services-section">
+  <div class="container">
+    <div class="section-label">Our Services</div>
+    <h2 class="section-title">Everything You Need to<br>Deploy AI at Scale</h2>
+    <p class="section-sub">We offer a complete stack of AI services — from strategic roadmapping to hands-on deployment and ongoing optimization.</p>
+    <div class="services-grid">
+
+      <!-- Service 1 -->
+      <div class="service-card">
+        <div class="service-icon">🧭</div>
+        <span class="service-tag">Strategy</span>
+        <h3>AI Strategy & Roadmapping</h3>
+        <p>We assess your current operations, identify the highest-ROI automation opportunities, and build a phased deployment plan tailored to your business.</p>
+        <ul class="service-features">
+          <li>Business process audit & gap analysis</li>
+          <li>AI readiness assessment</li>
+          <li>Prioritized automation roadmap</li>
+          <li>KPI definition and success metrics</li>
+          <li>Technology stack recommendations</li>
+        </ul>
+        <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" class="btn btn-primary" style="font-size:14px;padding:10px 20px;border-radius:8px" aria-label="Opens in new window">Start with Strategy →</a>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="service-card">
+        <div class="service-icon">🤖</div>
+        <span class="service-tag">Digital Employees</span>
+        <h3>Digital Employees & AI Agents</h3>
+        <p>Deploy purpose-built AI agents that handle specific business functions — from customer intake to lead qualification, scheduling, and follow-up — 24/7 without fatigue.</p>
+        <ul class="service-features">
+          <li>AI Receptionist & Scheduler</li>
+          <li>Lead Qualifier & SDR Agent</li>
+          <li>Customer Nurture & CSM Agent</li>
+          <li>Social Media & Content Creator</li>
+          <li>Email Marketing Manager Agent</li>
+        </ul>
+        <a href="digital-employees.html" class="btn btn-primary" style="font-size:14px;padding:10px 20px;border-radius:8px">View Digital Employees →</a>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="service-card">
+        <div class="service-icon">🔒</div>
+        <span class="service-tag">Infrastructure</span>
+        <h3>Private AI Infrastructure</h3>
+        <p>Your data never leaves your environment. We design and deploy on-premise or private cloud AI systems with enterprise-grade security and full data sovereignty.</p>
+        <ul class="service-features">
+          <li>On-premise LLM deployment</li>
+          <li>Private vector database setup</li>
+          <li>Zero-trust security architecture</li>
+          <li>Compliance-ready (HIPAA, SOC2)</li>
+          <li>Custom model fine-tuning</li>
+        </ul>
+        <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" class="btn btn-primary" style="font-size:14px;padding:10px 20px;border-radius:8px" aria-label="Opens in new window">Secure Your AI →</a>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <span class="service-tag">Automation</span>
+        <h3>Agentic Workflow Automation</h3>
+        <p>Multi-agent systems that coordinate across your tools and data sources — handling complex, multi-step workflows that previously required human oversight.</p>
+        <ul class="service-features">
+          <li>Multi-agent orchestration</li>
+          <li>CRM & ERP integrations</li>
+          <li>Document processing pipelines</li>
+          <li>Automated reporting & analytics</li>
+          <li>Workflow monitoring & alerts</li>
+        </ul>
+        <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" class="btn btn-primary" style="font-size:14px;padding:10px 20px;border-radius:8px" aria-label="Opens in new window">Automate Workflows →</a>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="service-card">
+        <div class="service-icon">🔄</div>
+        <span class="service-tag">Transformation</span>
+        <h3>Digital Transformation</h3>
+        <p>End-to-end transformation engagements that modernize your operations, retrain your team, and embed AI into the fabric of how your business runs.</p>
+        <ul class="service-features">
+          <li>Change management & team training</li>
+          <li>Legacy system integration</li>
+          <li>Phased rollout with milestones</li>
+          <li>Ongoing optimization retainers</li>
+          <li>Executive AI literacy programs</li>
+        </ul>
+        <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" class="btn btn-primary" style="font-size:14px;padding:10px 20px;border-radius:8px" aria-label="Opens in new window">Transform Your Business →</a>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <span class="service-tag">Analytics</span>
+        <h3>AI-Powered Analytics & Insights</h3>
+        <p>Turn raw business data into actionable intelligence. We build custom dashboards, predictive models, and AI-driven reporting systems that surface what matters.</p>
+        <ul class="service-features">
+          <li>Custom KPI dashboards</li>
+          <li>Predictive analytics models</li>
+          <li>Natural language data querying</li>
+          <li>Automated insight generation</li>
+          <li>Real-time performance monitoring</li>
+        </ul>
+        <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" class="btn btn-primary" style="font-size:14px;padding:10px 20px;border-radius:8px" aria-label="Opens in new window">Unlock Your Data →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section">
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">From Discovery to<br>Deployment in 4 Phases</h2>
+    <p class="section-sub">A structured, low-risk approach that gets AI working in your business without disrupting what already works.</p>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-title">Discovery</div>
+        <p class="step-desc">We map your current workflows, identify bottlenecks, and define the highest-ROI automation targets.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-title">Design</div>
+        <p class="step-desc">We architect the AI solution — selecting models, tools, and integrations — and define success metrics.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-title">Deploy</div>
+        <p class="step-desc">We build, test, and launch your AI systems in a controlled rollout with full team training and support.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <div class="step-title">Optimize</div>
+        <p class="step-desc">We monitor performance, iterate on results, and expand automation as your business grows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATORS -->
+<section class="diff-section">
+  <div class="container">
+    <div class="section-label">Why Micap AI</div>
+    <h2 class="section-title">Built Different.<br>Deployed Responsibly.</h2>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="diff-icon">🏗️</div>
+        <h3>Private-First Architecture</h3>
+        <p>We default to private infrastructure. Your data stays yours — no third-party model training, no data leakage, no compliance risk.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">📐</div>
+        <h3>Outcome-Driven Scoping</h3>
+        <p>Every engagement starts with defined KPIs. We don't build AI for AI's sake — we build it to hit specific, measurable business outcomes.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">🧠</div>
+        <h3>Human-AI Collaboration</h3>
+        <p>We design systems where AI handles the repetitive and your team focuses on high-value work. Augmentation, not replacement.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">⚡</div>
+        <h3>Speed to Value</h3>
+        <p>Most clients see measurable ROI within 90 days. We prioritize quick wins that fund and justify deeper transformation.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">🔧</div>
+        <h3>Full-Stack Capability</h3>
+        <p>From LLM selection to UI design to backend integration — we handle the entire stack so you don't need to manage multiple vendors.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">📈</div>
+        <h3>Scalable by Design</h3>
+        <p>Every system we build is designed to scale. Start with one agent, expand to a full workforce as your confidence and ROI grow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-box">
+    <div class="section-label">Get Started</div>
+    <h2 class="section-title" style="font-size:clamp(28px,4vw,40px)">Ready to Deploy<br>AI That Pays for Itself?</h2>
+    <p style="font-size:16px;color:#9C9888;line-height:1.7;margin-bottom:32px">Book a 30-minute strategy call and walk away with a clear picture of where AI can drive the most value in your business — no commitment required.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" class="btn btn-primary" aria-label="Opens in new window">Book a Strategy Call</a>
+      <a href="ai-roi-calculator.html" class="btn btn-ghost">Calculate Your ROI →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div>&copy; 2026 Micap AI Consulting. All rights reserved.</div>
+  <div style="display:flex;gap:24px">
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+    <a href="mailto:hi@micap.pro">hi@micap.pro</a>
+    <a href="/api-docs.html">API Documentation</a>
+  </div>
+</footer>
+
+<script defer src="floating-ui.js"></script>
+</body>
+</html>

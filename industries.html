@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Micap AI serves HVAC, plumbing, dental, salon, and law firm businesses. See industry-specific revenue recovery data and AI automation solutions.">
+  <meta name="keywords" content="AI automation industries, HVAC AI, plumbing AI, dental AI, salon AI, law firm AI, missed call recovery">
+  <meta property="og:title" content="Industries We Serve | Micap AI">
+  <meta property="og:description" content="AI automation solutions for service businesses. See how much revenue your industry loses to missed calls — and how Micap AI recovers it.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://micap.ai/industries">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Industries We Serve | Micap AI">
+  <meta name="twitter:description" content="AI automation for HVAC, plumbing, dental, salon, and law firms. Recover missed revenue with 24/7 AI call handling.">
+  <link rel="canonical" href="https://micap.ai/industries">
+  <title>Industries We Serve | Micap AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --gold:#BA7517;--gold-light:#D4A030;--gold-pale:#F5C842;
+      --bg:#0E0D0B;--bg2:#141310;--bg3:#1A1916;
+      --text:#F5F0E8;--text-muted:#9C9888;--text-dim:#5A574F;
+      --border:rgba(186,117,23,.15);--border-hover:rgba(186,117,23,.35);
+      --font-serif:'Playfair Display',Georgia,serif;
+      --font-sans:'Inter',-apple-system,sans-serif;
+      --font-mono:'DM Mono',monospace;
+      --radius:12px;--radius-lg:20px;
+      --shadow:0 4px 24px rgba(0,0,0,.4);
+      --shadow-lg:0 16px 48px rgba(0,0,0,.5);
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-sans);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+    a{text-decoration:none;color:inherit}
+    /* Skip link */
+    .skip-link{position:absolute;top:-40px;left:16px;background:var(--gold);color:#000;padding:8px 16px;border-radius:4px;font-weight:600;z-index:9999;transition:top .2s}
+    .skip-link:focus{top:16px}
+    /* NAV */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(14,13,11,.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+    .nav-brand{display:flex;align-items:center;gap:10px;color:var(--text);font-family:var(--font-serif);font-size:20px;font-weight:700}
+    .nav-brand img{width:40px;height:40px;object-fit:contain;background:#000}
+    .nav-brand-text span{color:var(--gold)}
+    .nav-links{display:flex;gap:28px;align-items:center}
+    .nav-link{color:var(--text-muted);font-size:14px;font-weight:500;transition:color .2s}
+    .nav-link:hover,.nav-link.active{color:var(--text)}
+    .nav-consultation{background:var(--gold);color:#000;padding:8px 18px;border-radius:6px;font-size:13px;font-weight:600;letter-spacing:.5px;transition:all .2s}
+    .nav-consultation:hover{background:var(--gold-light);transform:translateY(-1px)}
+    /* Dropdown */
+    .nav-dropdown{position:relative}
+    .nav-dropdown-trigger{display:flex;align-items:center;gap:5px;color:var(--text-muted);font-size:14px;font-weight:500;cursor:pointer;transition:color .2s;background:none;border:none;font-family:inherit;padding:0}
+    .nav-dropdown-trigger:hover,.nav-dropdown:hover .nav-dropdown-trigger{color:var(--text)}
+    .nav-dropdown-trigger svg{transition:transform .2s}
+    .nav-dropdown:hover .nav-dropdown-trigger svg{transform:rotate(180deg)}
+    .nav-dropdown-menu{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:rgba(14,13,11,.97);backdrop-filter:blur(20px);border:1px solid rgba(186,117,23,.2);border-radius:12px;padding:8px;min-width:200px;opacity:0;visibility:hidden;transition:all .2s;z-index:200;box-shadow:0 16px 48px rgba(0,0,0,.4)}
+    .nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;top:calc(100% + 8px)}
+    .nav-dropdown-menu a{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;font-size:13px;color:var(--text-muted);transition:all .2s;white-space:nowrap}
+    .nav-dropdown-menu a:hover{color:var(--text);background:rgba(186,117,23,.08)}
+    .nav-dropdown-menu a span.dd-icon{font-size:16px;width:20px;text-align:center}
+    .nav-dropdown-divider{height:1px;background:rgba(186,117,23,.1);margin:6px 0}
+    /* Hamburger */
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+    .hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all .3s}
+    .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+    .nav-menu{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(14,13,11,.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);z-index:99;flex-direction:column;padding:16px 0}
+    .nav-menu.active{display:flex}
+    .nav-menu a{padding:12px 24px;color:var(--text-muted);font-size:15px;transition:color .2s;border-bottom:1px solid rgba(255,255,255,.04)}
+    .nav-menu a:hover{color:var(--text)}
+    @media(max-width:900px){.nav-links{display:none}.hamburger{display:flex}}
+    /* HERO */
+    .hero{padding:140px 40px 80px;text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(186,117,23,.12) 0%,transparent 70%);pointer-events:none}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(186,117,23,.1);border:1px solid rgba(186,117,23,.25);border-radius:100px;padding:6px 16px;font-size:12px;font-family:var(--font-mono);color:var(--gold-light);margin-bottom:24px;letter-spacing:.5px}
+    .hero-badge-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+    .hero h1{font-family:var(--font-serif);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:700;line-height:1.15;margin-bottom:20px;max-width:800px;margin-left:auto;margin-right:auto}
+    .hero h1 span{color:var(--gold)}
+    .hero p{font-size:1.1rem;color:var(--text-muted);max-width:600px;margin:0 auto 36px}
+    .hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:600;transition:all .2s;cursor:pointer;border:none}
+    .btn-primary{background:var(--gold);color:#000}
+    .btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(186,117,23,.3)}
+    .btn-ghost{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.15)}
+    .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+    /* STATS BAR */
+    .stats-bar{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:32px 40px}
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:24px;max-width:1100px;margin:0 auto;text-align:center}
+    .stat-item{}
+    .stat-value{font-family:var(--font-serif);font-size:2rem;font-weight:700;color:var(--gold);line-height:1}
+    .stat-label{font-size:12px;color:var(--text-muted);margin-top:4px;font-family:var(--font-mono);letter-spacing:.5px;text-transform:uppercase}
+    /* SECTION */
+    .section{padding:80px 40px}
+    .section-header{text-align:center;margin-bottom:56px}
+    .section-label{font-family:var(--font-mono);font-size:11px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+    .section-title{font-family:var(--font-serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;line-height:1.2;margin-bottom:16px}
+    .section-title span{color:var(--gold)}
+    .section-sub{color:var(--text-muted);font-size:1rem;max-width:560px;margin:0 auto}
+    /* INDUSTRY CARDS */
+    .industries-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px;max-width:1200px;margin:0 auto}
+    .industry-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:all .3s;position:relative}
+    .industry-card:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+    .industry-card-header{padding:28px 28px 20px;border-bottom:1px solid var(--border);position:relative}
+    .industry-icon{font-size:2.5rem;margin-bottom:12px;display:block}
+    .industry-card-header h2{font-family:var(--font-serif);font-size:1.5rem;font-weight:700;margin-bottom:6px}
+    .industry-card-header p{font-size:13px;color:var(--text-muted);line-height:1.5}
+    .industry-badge{position:absolute;top:20px;right:20px;background:rgba(186,117,23,.15);border:1px solid rgba(186,117,23,.3);border-radius:100px;padding:4px 12px;font-size:11px;font-family:var(--font-mono);color:var(--gold-light);letter-spacing:.5px}
+    .industry-card-body{padding:20px 28px}
+    .industry-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+    .industry-stat{}
+    .industry-stat-value{font-size:1.3rem;font-weight:700;color:var(--gold);font-family:var(--font-serif)}
+    .industry-stat-label{font-size:11px;color:var(--text-muted);font-family:var(--font-mono);letter-spacing:.3px;text-transform:uppercase;margin-top:2px}
+    .industry-features{list-style:none;margin-bottom:24px}
+    .industry-features li{display:flex;align-items:center;gap:10px;padding:6px 0;font-size:13px;color:var(--text-muted);border-bottom:1px solid rgba(255,255,255,.04)}
+    .industry-features li:last-child{border-bottom:none}
+    .industry-features li::before{content:'✓';color:var(--gold);font-weight:700;font-size:12px;flex-shrink:0}
+    .industry-cta{display:flex;gap:10px}
+    .industry-cta a{flex:1;text-align:center;padding:10px 16px;border-radius:8px;font-size:13px;font-weight:600;transition:all .2s}
+    .cta-primary{background:var(--gold);color:#000}
+    .cta-primary:hover{background:var(--gold-light)}
+    .cta-secondary{background:transparent;color:var(--text-muted);border:1px solid rgba(255,255,255,.12)}
+    .cta-secondary:hover{border-color:var(--gold);color:var(--gold)}
+    /* COMPARISON TABLE */
+    .comparison-section{background:var(--bg2);padding:80px 40px}
+    .comparison-table{max-width:1100px;margin:0 auto;overflow-x:auto}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    thead th{padding:16px 20px;text-align:left;font-family:var(--font-mono);font-size:11px;color:var(--gold);letter-spacing:1px;text-transform:uppercase;border-bottom:2px solid var(--border);white-space:nowrap}
+    thead th:first-child{width:180px}
+    tbody tr{border-bottom:1px solid var(--border);transition:background .2s}
+    tbody tr:hover{background:rgba(186,117,23,.04)}
+    tbody td{padding:14px 20px;color:var(--text-muted);vertical-align:middle}
+    tbody td:first-child{color:var(--text);font-weight:600;display:flex;align-items:center;gap:10px}
+    .highlight{color:var(--gold);font-weight:600}
+    .tag{display:inline-block;background:rgba(186,117,23,.1);border:1px solid rgba(186,117,23,.2);border-radius:4px;padding:2px 8px;font-size:11px;font-family:var(--font-mono);color:var(--gold-light)}
+    /* CALCULATOR CTA */
+    .calc-cta{background:linear-gradient(135deg,rgba(186,117,23,.12) 0%,rgba(186,117,23,.04) 100%);border:1px solid var(--border);border-radius:var(--radius-lg);padding:56px 40px;text-align:center;max-width:800px;margin:0 auto}
+    .calc-cta h2{font-family:var(--font-serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;margin-bottom:16px}
+    .calc-cta h2 span{color:var(--gold)}
+    .calc-cta p{color:var(--text-muted);font-size:1rem;margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto}
+    /* ENTERPRISE */
+    .enterprise-strip{background:var(--bg3);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:40px;text-align:center}
+    .enterprise-strip h3{font-family:var(--font-serif);font-size:1.5rem;margin-bottom:8px}
+    .enterprise-strip p{color:var(--text-muted);font-size:14px;max-width:500px;margin:0 auto 20px}
+    /* FOOTER */
+    .footer{background:var(--bg2);border-top:1px solid var(--border);padding:32px 40px;display:flex;flex-direction:column;gap:20px;align-items:center;text-align:center}
+    .footer nav a{color:var(--text-muted);font-size:13px;transition:color .2s}
+    .footer nav a:hover{color:var(--text)}
+    .footer-copy{color:var(--text-dim);font-size:12px}
+    /* BREADCRUMB */
+    .breadcrumb{padding:100px 40px 0;max-width:1200px;margin:0 auto}
+    .breadcrumb-inner{display:flex;align-items:center;gap:8px;font-size:12px;font-family:var(--font-mono);color:var(--text-dim)}
+    .breadcrumb-inner a{color:var(--text-dim);transition:color .2s}
+    .breadcrumb-inner a:hover{color:var(--gold)}
+    .breadcrumb-inner span{color:var(--text-dim)}
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .hero{padding:120px 20px 60px}
+      .section{padding:60px 20px}
+      .stats-bar{padding:24px 20px}
+      .comparison-section{padding:60px 20px}
+      .calc-cta{padding:40px 20px}
+      .enterprise-strip{padding:32px 20px}
+      .footer{padding:24px 20px}
+      .breadcrumb{padding:90px 20px 0}
+      .industries-grid{grid-template-columns:1fr}
+    }
+  </style>
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Industries We Serve | Micap AI",
+    "description": "Micap AI provides AI automation solutions for HVAC, plumbing, dental, salon, and law firm businesses.",
+    "url": "https://micap.ai/industries",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://micap.ai"},
+        {"@type": "ListItem", "position": 2, "name": "Industries", "item": "https://micap.ai/industries"}
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- NAV -->
+  <nav class="nav" id="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav-brand">
+      <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663473200649/hUUaHIjRLGNJNfOi.jpg" alt="Micap AI" style="width:40px;height:40px;object-fit:contain;background:#000" loading="lazy" decoding="async">
+      <div class="nav-brand-text">micap<span>.ai</span></div>
+    </a>
+    <div class="nav-links" role="list">
+      <a href="services.html" class="nav-link" role="listitem">Services</a>
+      <div class="nav-dropdown" role="navigation" aria-label="Industries">
+        <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          Industries
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="hvac.html" role="menuitem"><span class="dd-icon">🔧</span> HVAC</a>
+          <a href="plumbing.html" role="menuitem"><span class="dd-icon">🚿</span> Plumbing</a>
+          <a href="dental.html" role="menuitem"><span class="dd-icon">🦷</span> Dental</a>
+          <a href="salon.html" role="menuitem"><span class="dd-icon">✂️</span> Salon & Spa</a>
+          <a href="law.html" role="menuitem"><span class="dd-icon">⚖️</span> Law Firm</a>
+          <div class="nav-dropdown-divider"></div>
+          <a href="industries.html" role="menuitem"><span class="dd-icon">📊</span> All Industries</a>
+        </div>
+      </div>
+      <a href="about.html" class="nav-link" role="listitem">About</a>
+      <a href="opportunity-cost-calculator.html" class="nav-link" role="listitem">Opportunity Calculator</a>
+      <a href="blog.html" class="nav-link" role="listitem">Blog</a>
+      <a href="pricing.html" class="nav-link" role="listitem">Pricing</a>
+    </div>
+    <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" rel="noopener noreferrer" class="nav-consultation" aria-label="Book a consultation - Opens in new window">CONSULTATION BOOKING</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="nav-menu" id="navMenu" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <div style="padding:8px 24px 4px;font-size:11px;color:#5A574F;font-family:'DM Mono',monospace;letter-spacing:1px;text-transform:uppercase">Industries</div>
+    <a href="hvac.html">🔧 HVAC</a>
+    <a href="plumbing.html">🚿 Plumbing</a>
+    <a href="dental.html">🦷 Dental</a>
+    <a href="salon.html">✂️ Salon & Spa</a>
+    <a href="law.html">⚖️ Law Firm</a>
+    <a href="industries.html" style="color:#BA7517">📊 All Industries</a>
+    <a href="opportunity-cost-calculator.html" style="color:#BA7517;font-weight:600">📊 Opportunity Cost Calculator</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="blog.html">Blog</a>
+    <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" rel="noopener noreferrer" style="margin:12px 16px;background:#BA7517;color:#000;padding:12px 20px;border-radius:8px;font-weight:600;text-align:center">Book a Consultation</a>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span>Industries</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="main-content">
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      <span>Validated Market Data · 5 Verticals</span>
+    </div>
+    <h1>AI Automation for<br><span>Service Businesses</span></h1>
+    <p>Every industry has unique revenue leakage patterns. See exactly how much your vertical loses to missed calls — and how Micap AI recovers it with 24/7 AI automation.</p>
+    <div class="hero-btns">
+      <a href="opportunity-cost-calculator.html" class="btn btn-primary">Calculate Your Opportunity Cost</a>
+      <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Book a Free Audit</a>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar" role="region" aria-label="Industry statistics">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-value">$45K–$200K</div>
+        <div class="stat-label">Annual Revenue Lost Per Business</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">23–50%</div>
+        <div class="stat-label">Average Call Miss Rate</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">85%</div>
+        <div class="stat-label">Callers Who Never Call Back</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">20–30%</div>
+        <div class="stat-label">Revenue Recoverable with AI</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">5</div>
+        <div class="stat-label">Industries Served</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INDUSTRY CARDS -->
+  <section class="section" id="industries" aria-labelledby="industries-heading">
+    <div class="section-header">
+      <div class="section-label">Industries We Serve</div>
+      <h2 class="section-title" id="industries-heading">Choose Your <span>Industry</span></h2>
+      <p class="section-sub">Each vertical has unique call patterns, job values, and revenue leakage profiles. Select yours to see industry-specific data and solutions.</p>
+    </div>
+    <div class="industries-grid">
+
+      <!-- HVAC -->
+      <div class="industry-card" role="article" aria-labelledby="hvac-heading">
+        <div class="industry-card-header">
+          <span class="industry-icon" aria-hidden="true">🔧</span>
+          <div class="industry-badge">HIGH DEMAND</div>
+          <h2 id="hvac-heading">HVAC</h2>
+          <p>Heating, ventilation, and air conditioning companies lose the most revenue during peak seasons when call volume spikes and technicians are unavailable.</p>
+        </div>
+        <div class="industry-card-body">
+          <div class="industry-stats">
+            <div class="industry-stat">
+              <div class="industry-stat-value">$45K–$95K</div>
+              <div class="industry-stat-label">Annual Revenue Lost</div>
+            </div>
+            <div class="industry-stat">
+              <div class="industry-stat-value">23–35%</div>
+              <div class="industry-stat-label">Call Miss Rate</div>
+            </div>
+            <div class="industry-stat">
+              <div class="industry-stat-value">$287</div>
+              <div class="industry-stat-label">Avg Job Value</div>
+            </div>
+            <div class="industry-stat">
+              <div class="industry-stat-value">85%</div>
+              <div class="industry-stat-label">Competitor Answer Rate</div>
+            </div>
+          </div>
+          <ul class="industry-features" aria-label="HVAC features">
+            <li>24/7 emergency call handling</li>
+            <li>Peak season overflow management</li>
+            <li>Automated scheduling & dispatch</li>
+            <li>SMS follow-up for missed calls</li>
+            <li>MCP-powered service history lookup</li>
+          </ul>
+          <div class="industry-cta">
+            <a href="hvac.html" class="cta-primary">View HVAC Solutions</a>
+            <a href="opportunity-cost-calculator.html?industry=hvac" class="cta-secondary">Calculate Loss</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PLUMBING -->
+      <div class="industry-card" role="article" aria-labelledby="plumbing-heading">
+        <div class="industry-card-header">
+          <span class="industry-icon" aria-hidden="true">🚿</span>
+          <div class="industry-badge">EMERGENCY DRIVEN</div>
+          <h2 id="plumbing-heading">Plumbing</h2>
+          <p>Plumbing emergencies demand immediate response. Every missed call is a customer who found a competitor — often permanently.</p>
+        </div>
+        <div class="industry-card-body">
+          <div class="industry-stats">
+            <div class="industry-stat">
+              <div class="industry-stat-value">$55K–$110K</div>
+              <div class="industry-stat-label">Annual Revenue Lost</div>
+            </div>
+            <div class="industry-stat">
+              <div class="industry-stat-value">25–40%</div>
+              <div class="industry-stat-label">Call Miss Rate</div>
+            </div>
+            <div class="industry-stat">
+              <div class="industry-stat-value">$320</div>
+              <div class="industry-stat-label">Avg Job Value</div>
+            </div>
+            <div class="industry-stat">
+              <div class="industry-stat-value">72%</div>
+              <div class="industry-stat-label">Emergency Call Share</div>
+            </div>
+          </div>
+          <ul class="industry-features" aria-label="Plumbing features">
+            <li>Emergency triage & prioritization</li>
+            <li>After-hours call answering</li>
+            <li>Instant technician dispatch alerts</li>
+            <li>Repeat customer recognition</li>
+            <li>Vectorless RAG knowledge base</li>
+          </ul>
+          <div class="industry-cta">
+            <a href="plumbing.html" class="cta-primary">View Plumbing Solutions</a>
+            <a href="opportunity-cost-calculator.html?industry=plumbing" class="cta-secondary">Calculate Loss</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- DENTAL -->
+      <div class="industry-card" role="article" aria-labelledby="dental-heading">
+        <div class="industry-card-header">
+          <span class="industry-icon" aria-hidden="true">🦷</span>
+          <div class="industry-badge">HIGH LTV</div>
+          <h2 id="dental-heading">Dental</h2>
+          <p>A single missed new patient call represents $1,200–$1,800 in lifetime value. Dental practices have the highest LTV per missed call of any vertical.</p>
+        </div>
+        <div class="industry-card-body">
+          <div class="industry-stats">
+            <div class="industry-stat">
+              <div class="industry-stat-value">$60K–$120K</div>
+              <div class="industry-stat-label">Annual Revenue Lost</div>
+            </div>
+            <div class="industry-stat">
+              <div class="industry-stat-value">20–30%</div>
+              <div class="industry-stat-label">Call Miss Rate</div>
+            </div>
+            <div class="industry-stat">
+              <div class="industry-stat-value">$1,500</div>
+              <div class="industry-stat-label">Avg Patient LTV</div>
+            </div>
+            <div class="industry-stat">
+              <div class="industry-stat-value">68%</div>
+              <div class="industry-stat-label">New Patient Call Share</div>
+            </div>
+          </div>
+          <ul class="industry-features" aria-label="Dental features">
+            <li>New patient intake automation</li>
+            <li>Insurance verification pre-screening</li>
+            <li>Appointment reminder sequences</li>
+            <li>HIPAA-compliant data handling</li>
+            <li>Recall campaign automation</li>
+          </ul>
+          <div class="industry-cta">
+            <a href="dental.html" class="cta-primary">View Dental Solutions</a>
+            <a href="opportunity-cost-calculator.html?industry=dental" class="cta-secondary">Calculate Loss</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SALON -->
+      <div class="industry-card" role="article" aria-labelledby="salon-heading">
+        <div class="industry-card-header">
+          <span class="industry-icon" aria-hidden="true">✂️</span>
+          <div class="industry-badge">BOOKING DRIVEN</div>
+          <h2 id="salon-heading">Salon & Spa</h2>
+          <p>Salons and spas lose revenue through missed booking calls and no-shows. AI automation fills your calendar and reduces no-show rates by 40%.</p>
+        </div>
+        <div class="industry-card-body">
+          <div class="industry-stats">
+            <div class="industry-stat">
+              <div class="industry-stat-value">$35K–$75K</div>
+              <div class="industry-stat-label">Annual Revenue Lost</div>
+            </div>
+            <div class="industry-stat">
+              <div class="industry-stat-value">30–45%</div>
+              <div class="industry-stat-label">Call Miss Rate</div>
+            </div>
+            <div class="industry-stat">
+              <div class="industry-stat-value">$85</div>
+              <div class="industry-stat-label">Avg Service Value</div>
+            </div>
+            <div class="industry-stat">
+              <div class="industry-stat-value">40%</div>
+              <div class="industry-stat-label">No-Show Reduction</div>
+            </div>
+          </div>
+          <ul class="industry-features" aria-label="Salon features">
+            <li>24/7 booking & rescheduling</li>
+            <li>Automated reminder sequences</li>
+            <li>Stylist preference matching</li>
+            <li>Waitlist management</li>
+            <li>Loyalty program integration</li>
+          </ul>
+          <div class="industry-cta">
+            <a href="salon.html" class="cta-primary">View Salon Solutions</a>
+            <a href="opportunity-cost-calculator.html?industry=salon" class="cta-secondary">Calculate Loss</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- LAW -->
+      <div class="industry-card" role="article" aria-labelledby="law-heading">
+        <div class="industry-card-header">
+          <span class="industry-icon" aria-hidden="true">⚖️</span>
+          <div class="industry-badge">HIGHEST VALUE</div>
+          <h2 id="law-heading">Law Firm</h2>
+          <p>Law firms have the highest revenue loss per missed call. A single missed personal injury case can represent $50,000+ in contingency fees.</p>
+        </div>
+        <div class="industry-card-body">
+          <div class="industry-stats">
+            <div class="industry-stat">
+              <div class="industry-stat-value">$80K–$200K</div>
+              <div class="industry-stat-label">Annual Revenue Lost</div>
+            </div>
+            <div class="industry-stat">
+              <div class="industry-stat-value">35–50%</div>
+              <div class="industry-stat-label">Call Miss Rate</div>
+            </div>
+            <div class="industry-stat">
+              <div class="industry-stat-value">$3,200</div>
+              <div class="industry-stat-label">Avg Case Value</div>
+            </div>
+            <div class="industry-stat">
+              <div class="industry-stat-value">78%</div>
+              <div class="industry-stat-label">Hire First Responder</div>
+            </div>
+          </div>
+          <ul class="industry-features" aria-label="Law firm features">
+            <li>24/7 legal intake automation</li>
+            <li>Case type qualification</li>
+            <li>Conflict check pre-screening</li>
+            <li>Urgency triage & escalation</li>
+            <li>Attorney availability routing</li>
+          </ul>
+          <div class="industry-cta">
+            <a href="law.html" class="cta-primary">View Law Firm Solutions</a>
+            <a href="opportunity-cost-calculator.html?industry=law" class="cta-secondary">Calculate Loss</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="comparison-section" aria-labelledby="comparison-heading">
+    <div class="section-header">
+      <div class="section-label">Side-by-Side Comparison</div>
+      <h2 class="section-title" id="comparison-heading">Industry <span>Revenue Loss</span> Comparison</h2>
+      <p class="section-sub">Validated market data from Invoca, ServiceTitan, MGMA, and industry benchmarks.</p>
+    </div>
+    <div class="comparison-table">
+      <table role="table" aria-label="Industry comparison table">
+        <thead>
+          <tr>
+            <th scope="col">Industry</th>
+            <th scope="col">Miss Rate</th>
+            <th scope="col">Avg Job Value</th>
+            <th scope="col">Annual Loss</th>
+            <th scope="col">Recovery Potential</th>
+            <th scope="col">Key Pain Point</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span aria-hidden="true">🔧</span> HVAC</td>
+            <td>23–35%</td>
+            <td class="highlight">$287</td>
+            <td class="highlight">$45K–$95K</td>
+            <td><span class="tag">$9K–$28K/yr</span></td>
+            <td>Peak season overflow</td>
+          </tr>
+          <tr>
+            <td><span aria-hidden="true">🚿</span> Plumbing</td>
+            <td>25–40%</td>
+            <td class="highlight">$320</td>
+            <td class="highlight">$55K–$110K</td>
+            <td><span class="tag">$11K–$33K/yr</span></td>
+            <td>Emergency response speed</td>
+          </tr>
+          <tr>
+            <td><span aria-hidden="true">🦷</span> Dental</td>
+            <td>20–30%</td>
+            <td class="highlight">$1,500 LTV</td>
+            <td class="highlight">$60K–$120K</td>
+            <td><span class="tag">$12K–$36K/yr</span></td>
+            <td>New patient acquisition</td>
+          </tr>
+          <tr>
+            <td><span aria-hidden="true">✂️</span> Salon & Spa</td>
+            <td>30–45%</td>
+            <td class="highlight">$85</td>
+            <td class="highlight">$35K–$75K</td>
+            <td><span class="tag">$7K–$22K/yr</span></td>
+            <td>No-shows & cancellations</td>
+          </tr>
+          <tr>
+            <td><span aria-hidden="true">⚖️</span> Law Firm</td>
+            <td>35–50%</td>
+            <td class="highlight">$3,200</td>
+            <td class="highlight">$80K–$200K</td>
+            <td><span class="tag">$16K–$60K/yr</span></td>
+            <td>After-hours intake</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="text-align:center;font-size:11px;color:var(--text-dim);margin-top:16px;font-family:var(--font-mono)">
+        Sources: Invoca Call Intelligence Report, ServiceTitan Industry Benchmarks, MGMA Practice Data, Clio Legal Trends Report, IBISWorld Industry Research
+      </p>
+    </div>
+  </section>
+
+  <!-- CALCULATOR CTA -->
+  <section class="section" aria-labelledby="calc-cta-heading">
+    <div class="calc-cta">
+      <h2 id="calc-cta-heading">See <span>Your Exact</span> Opportunity Cost</h2>
+      <p>Enter your industry, call volume, and average job value. Get a personalized revenue recovery projection in under 60 seconds.</p>
+      <div class="hero-btns">
+        <a href="opportunity-cost-calculator.html" class="btn btn-primary">
+          Launch Free Calculator
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9.5 4.5L13 8l-3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="ai-roi-calculator.html" class="btn btn-ghost">Full ROI Calculator</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENTERPRISE STRIP -->
+  <div class="enterprise-strip" role="complementary" aria-labelledby="enterprise-heading">
+    <h3 id="enterprise-heading">Not a Service Business? We Build Enterprise AI Too.</h3>
+    <p>Multi-location franchises, enterprise operations, and custom AI deployments — Micap AI scales from $2,500/month to fully custom enterprise solutions.</p>
+    <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" rel="noopener noreferrer" class="btn btn-primary" aria-label="Book enterprise consultation - Opens in new window">Book Enterprise Consultation</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <nav aria-label="Footer navigation" style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center">
+      <a href="services.html">Services</a>
+      <a href="industries.html">Industries</a>
+      <a href="digital-employees.html">Digital Employees</a>
+      <a href="blog.html">Blog</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="ai-roi-calculator.html">ROI Calculator</a>
+      <a href="opportunity-cost-calculator.html">Opportunity Calculator</a>
+      <a href="faq.html">FAQ</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+    <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;justify-content:center">
+      <span class="footer-copy">&copy; 2026 Micap AI Consulting. All rights reserved.</span>
+      <a href="mailto:hi@micap.pro" style="color:var(--text-muted);font-size:13px">hi@micap.pro</a>
+    </div>
+  </footer>
+
+  <script>
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    if (hamburger && navMenu) {
+      hamburger.addEventListener('click', function() {
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', !expanded);
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+      navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
+      });
+      document.addEventListener('click', function(event) {
+        if (!event.target.closest('.nav') && !event.target.closest('.nav-menu')) {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (navbar) {
+        if (window.scrollY > 50) {
+          navbar.style.background = 'rgba(14,13,11,0.98)';
+        } else {
+          navbar.style.background = 'rgba(14,13,11,0.9)';
+        }
+      }
+    });
+
+    // GA4 tracking
+    function trackEvent(eventName, params) {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', eventName, params || {});
+      }
+    }
+
+    // Track industry card clicks
+    document.querySelectorAll('.industry-cta a').forEach(link => {
+      link.addEventListener('click', function() {
+        const industry = this.closest('.industry-card').querySelector('h2').textContent;
+        trackEvent('industries_hub_cta_click', { industry: industry, cta_text: this.textContent.trim() });
+      });
+    });
+
+    // Track calculator CTA
+    document.querySelectorAll('.calc-cta a').forEach(link => {
+      link.addEventListener('click', function() {
+        trackEvent('industries_hub_calculator_click');
+      });
+    });
+
+    trackEvent('industries_hub_viewed');
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-50MLBREDYZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-50MLBREDYZ');
+  </script>
+</body>
+</html>

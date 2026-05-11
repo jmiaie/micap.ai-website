@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Hidden Opportunity You're Missing</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; margin: 0; padding: 0; }
+    .email-container { max-width: 600px; margin: 0 auto; background: white; }
+    .header { background: linear-gradient(135deg, #0E0D0B 0%, #1a1917 100%); padding: 30px 20px; text-align: center; }
+    .logo { font-size: 24px; font-weight: 700; color: #BA7517; margin-bottom: 10px; }
+    .tagline { color: #D4A574; font-size: 13px; }
+    .content { padding: 40px 30px; color: #333; line-height: 1.6; }
+    .greeting { font-size: 18px; font-weight: 600; margin-bottom: 20px; }
+    .section { margin-bottom: 30px; }
+    .section-title { font-size: 16px; font-weight: 600; color: #0E0D0B; margin-bottom: 15px; border-left: 4px solid #BA7517; padding-left: 15px; }
+    .section-content { color: #555; font-size: 14px; }
+    .highlight { background: #FFF8F0; border-left: 4px solid #BA7517; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    .highlight strong { color: #BA7517; }
+    .stat-box { background: #f0f0f0; border-left: 4px solid #BA7517; padding: 15px; margin: 15px 0; }
+    .stat-number { font-size: 24px; font-weight: 700; color: #BA7517; }
+    .stat-label { font-size: 13px; color: #666; margin-top: 5px; }
+    .cta-button { display: inline-block; background: linear-gradient(135deg, #BA7517 0%, #D4A574 100%); color: white; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: 600; margin: 20px 0; }
+    .cta-button:hover { opacity: 0.9; }
+    .footer { background: #f9f9f9; padding: 30px; text-align: center; border-top: 1px solid #eee; font-size: 12px; color: #999; }
+    .footer-link { color: #BA7517; text-decoration: none; }
+    .ps { margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; font-size: 13px; color: #666; }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">micap.ai</div>
+      <div class="tagline">Strategic AI & Agentic Automation Experts</div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <div class="greeting">Hi {{firstName}},</div>
+
+      <p>I hope you've had a chance to review your ROI report. Today, I want to share something we've discovered working with {{industry}} companies: there's typically a "hidden opportunity" worth ${{hiddenSavings}}K-${{hiddenSavings2}}K annually that doesn't show up in standard ROI calculations.</p>
+
+      <div class="section">
+        <div class="section-title">The Pattern We See</div>
+        <div class="section-content">
+          <p>When we work with {{industry}} companies, we find that 60-70% of automation ROI comes from three obvious areas:</p>
+          <ul style="margin: 15px 0; padding-left: 20px;">
+            <li>Labor cost reduction</li>
+            <li>Error elimination</li>
+            <li>Speed improvement</li>
+          </ul>
+          <p>But 30-40% comes from a fourth area that most companies miss: <strong>{{hiddenOpportunityName}}</strong>.</p>
+          <p>Here's why it's hidden: it doesn't fit neatly into traditional cost categories. It's not a direct labor cost. It's not a visible error. But it's real, and it's massive.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Example from a Similar Company</div>
+        <div class="section-content">
+          <p>We worked with a {{exampleCompanyType}} that was processing {{exampleVolume}} {{exampleUnit}} monthly. Their initial ROI calculation showed ${{visibleSavings}}K annual savings from automation.</p>
+          <p>But after 90 days, they discovered that automation freed up their {{keyRole}} to focus on {{newFocus}}, which generated an additional ${{hiddenSavings}}K in {{hiddenRevenueType}}.</p>
+          <div class="stat-box">
+            <div class="stat-number">{{roiMultiplier}}x</div>
+            <div class="stat-label">Difference between projected and actual ROI</div>
+          </div>
+          <p><strong>Total ROI:</strong> ${{totalSavings}}K (vs. the projected ${{visibleSavings}}K).</p>
+        </div>
+      </div>
+
+      <div class="highlight">
+        <strong>What This Means for You:</strong> Based on your company profile, we estimate your hidden opportunity is worth approximately ${{hiddenSavings}}K annually. But that's just an estimate. The real number could be higher or lower depending on factors we'd discover in a strategy conversation.
+      </div>
+
+      <div class="section">
+        <div class="section-title">The Next Step</div>
+        <div class="section-content">
+          <p>If you're curious about what your specific hidden opportunity might be, I'd recommend scheduling a 30-minute strategy call. We'll walk through your processes, identify where the biggest leverage points are, and give you a concrete action plan you can implement immediately.</p>
+          <p><strong>No sales pitch.</strong> Just honest analysis and a roadmap.</p>
+          <center>
+            <a href="https://tidycal.com/micapai" class="cta-button">Schedule Your Strategy Call</a>
+          </center>
+          <p>If now isn't the right time, no problem. I'll follow up in a few days with another insight that might be relevant to your situation.</p>
+        </div>
+      </div>
+
+      <p style="margin-top: 30px;">Best,<br><strong>{{senderName}}</strong><br>Micap AI</p>
+
+      <div class="ps">
+        <p><strong>P.S.</strong> — If you're not sure whether automation makes sense for your business, that's exactly what the strategy call is for. We've worked with companies where automation was a perfect fit and companies where it wasn't. We'll give you an honest assessment either way.</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>&copy; 2026 Micap AI. All rights reserved.<br>
+      <a href="https://micap.ai" class="footer-link">micap.ai</a> | <a href="https://micap.ai/privacy" class="footer-link">Privacy Policy</a> | <a href="https://micap.ai/unsubscribe?email={{email}}" class="footer-link">Unsubscribe</a></p>
+    </div>
+  </div>
+</body>
+</html>

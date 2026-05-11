@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Download our comprehensive whitepaper and case study on Model Context Protocol (MCP) and Vectorless RAG. Learn how to transform your AI infrastructure.">
+    <meta name="keywords" content="MCP, Model Context Protocol, Vectorless RAG, whitepaper, case study, AI infrastructure, enterprise AI">
+    <meta property="og:title" content="MCP & Vectorless RAG Resources | Micap AI">
+    <meta property="og:description" content="Download our comprehensive whitepaper and case study on Model Context Protocol and Vectorless RAG.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://micap-ai.manus.space/resources.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MCP & Vectorless RAG Resources | Micap AI">
+    <meta name="twitter:description" content="Download our comprehensive whitepaper and case study on Model Context Protocol and Vectorless RAG.">
+    <link rel="canonical" href="https://micap-ai.manus.space/resources.html">
+    <title>Resources: MCP & Vectorless RAG | Micap AI</title>
+    <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Instrument+Serif&display=swap" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="icon" href="/manus-storage/micap-favicon_a2f043bd.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/manus-storage/micap-favicon-256_c9c78192.png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; color: #1a1a1a; background: white; line-height: 1.6; }
+        a { color: #d4a574; text-decoration: none; transition: color 0.3s; }
+        a:hover { color: #a67c52; }
+        
+        /* Navigation */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: white; border-bottom: 1px solid rgba(186,117,23,.08); position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 1.3em; font-weight: 700; color: #1a1a1a; }
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav a { color: #1a1a1a; font-size: 0.95em; }
+        nav a:hover { color: #d4a574; }
+        
+        /* Hero Section */
+        .hero { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: white; padding: 80px 40px; text-align: center; }
+        .hero h1 { font-size: 3em; margin-bottom: 20px; font-family: 'Instrument Serif', serif; }
+        .hero p { font-size: 1.2em; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; }
+        .breadcrumb { margin-bottom: 30px; font-size: 0.9em; opacity: 0.8; }
+        .breadcrumb a { color: #d4a574; }
+        
+        /* Resources Grid */
+        .resources-section { max-width: 1200px; margin: 80px auto; padding: 0 40px; }
+        .section-title { font-size: 2.2em; margin-bottom: 50px; text-align: center; font-family: 'Instrument Serif', serif; }
+        .resources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; margin-bottom: 80px; }
+        
+        /* Resource Card */
+        .resource-card { background: white; border: 1px solid #e8e8e8; border-radius: 8px; padding: 40px; transition: all 0.3s; }
+        .resource-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.1); transform: translateY(-4px); }
+        .resource-icon { font-size: 3em; margin-bottom: 20px; }
+        .resource-card h3 { font-size: 1.5em; margin-bottom: 15px; color: #1a1a1a; }
+        .resource-card p { color: #666; margin-bottom: 20px; line-height: 1.7; }
+        
+        /* Resource Meta */
+        .resource-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #e8e8e8; }
+        .resource-type { background: #f0f0f0; padding: 6px 12px; border-radius: 4px; font-size: 0.85em; color: #666; }
+        .resource-length { font-size: 0.9em; color: #999; }
+        
+        /* CTA Button */
+        .cta-button { display: inline-block; padding: 14px 32px; background: #d4a574; color: white; border-radius: 4px; font-weight: 600; transition: all 0.3s; border: none; cursor: pointer; font-size: 1em; }
+        .cta-button:hover { background: #a67c52; transform: translateY(-2px); }
+        
+        /* Form Section */
+        .form-section { background: #f8f8f8; padding: 60px 40px; border-radius: 8px; margin-bottom: 60px; }
+        .form-section h2 { font-size: 1.8em; margin-bottom: 10px; }
+        .form-section p { color: #666; margin-bottom: 30px; font-size: 1.05em; }
+        
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #1a1a1a; }
+        .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 1em; font-family: inherit; }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: #d4a574; box-shadow: 0 0 0 3px rgba(212,165,116,0.1); }
+        
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .checkbox-group { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
+        .checkbox-group input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; }
+        .checkbox-group label { margin: 0; cursor: pointer; }
+        
+        /* Features */
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin: 60px 0; }
+        .feature { padding: 30px; background: #f9f9f9; border-radius: 8px; }
+        .feature h4 { color: #d4a574; margin-bottom: 12px; font-size: 1.1em; }
+        .feature p { color: #666; font-size: 0.95em; }
+        
+        /* Footer */
+        footer { background: #1a1a1a; color: white; padding: 40px; text-align: center; margin-top: 80px; }
+        footer p { opacity: 0.8; }
+        
+        /* Responsive */
+        @media (max-width: 900px) {
+            nav { padding: 15px 20px; }
+            nav ul { gap: 15px; font-size: 0.9em; }
+            .hero { padding: 50px 20px; }
+            .hero h1 { font-size: 2em; }
+            .resources-section { padding: 0 20px; }
+            .resources-grid { grid-template-columns: 1fr; gap: 30px; }
+            .form-row { grid-template-columns: 1fr; }
+            .hamburger { display: flex; }
+        }
+        
+        /* Hamburger Menu */
+        .hamburger { display: none; background: none; border: none; color: #1a1a1a; font-size: 1.5em; cursor: pointer; }
+        
+        /* Schema Markup */
+        script[type="application/ld+json"] { display: none; }
+    
+/* Industries dropdown */
+.nav-dropdown{position:relative}
+.nav-dropdown-trigger{display:flex;align-items:center;gap:5px;color:#9C9888;font-size:14px;font-weight:500;cursor:pointer;transition:color .2s;background:none;border:none;font-family:inherit;padding:0}
+.nav-dropdown-trigger:hover,.nav-dropdown:hover .nav-dropdown-trigger{color:#F5F0E8}
+.nav-dropdown-trigger svg{transition:transform .2s}
+.nav-dropdown:hover .nav-dropdown-trigger svg{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:rgba(14,13,11,.97);backdrop-filter:blur(20px);border:1px solid rgba(186,117,23,.2);border-radius:12px;padding:8px;min-width:200px;opacity:0;visibility:hidden;transition:all .2s;z-index:200;box-shadow:0 16px 48px rgba(0,0,0,.4)}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;top:calc(100% + 8px)}
+.nav-dropdown-menu a{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;font-size:13px;color:#9C9888;transition:all .2s;white-space:nowrap}
+.nav-dropdown-menu a:hover{color:#F5F0E8;background:rgba(186,117,23,.08)}
+.nav-dropdown-menu a span.dd-icon{font-size:16px;width:20px;text-align:center}
+.nav-dropdown-divider{height:1px;background:rgba(186,117,23,.1);margin:6px 0}
+
+  </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="logo">Micap AI</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="resources.html" aria-current="page">Resources</a></li>
+            <li><a href="ai-roi-calculator.html">ROI Calculator</a></li>
+        </ul>
+        <button class="hamburger" aria-label="Toggle menu">☰</button>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="hero">
+        <div class="breadcrumb" role="navigation" aria-label="Breadcrumb">
+            <a href="index.html">Home</a> / <span>Resources</span>
+        </div>
+        <h1>Resources & Thought Leadership</h1>
+        <p>Download our comprehensive guides on Model Context Protocol (MCP) and Vectorless RAG—the future of enterprise AI infrastructure.</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="resources-section">
+        <!-- Resources Grid -->
+        <div class="resources-grid">
+            <!-- Whitepaper Card -->
+            <div class="resource-card">
+                <div class="resource-icon">📄</div>
+                <h3>MCP & Vectorless RAG Whitepaper</h3>
+                
+                <div class="resource-meta">
+                    <span class="resource-type">Whitepaper</span>
+                    <span class="resource-length">25 pages</span>
+                </div>
+                
+                <p>A comprehensive technical guide to Model Context Protocol and Vectorless RAG. Learn how these technologies eliminate integration silos, improve accuracy by 40-50%, and reduce infrastructure costs by 60-80%.</p>
+                
+                <div class="features">
+                    <div class="feature">
+                        <h4>✓ MCP Overview</h4>
+                        <p>Architecture, benefits, and implementation patterns</p>
+                    </div>
+                    <div class="feature">
+                        <h4>✓ Vectorless RAG</h4>
+                        <p>Technical deep-dive and comparison with traditional RAG</p>
+                    </div>
+                    <div class="feature">
+                        <h4>✓ Business Impact</h4>
+                        <p>ROI analysis and cost-benefit calculations</p>
+                    </div>
+                    <div class="feature">
+                        <h4>✓ Implementation</h4>
+                        <p>4-phase roadmap for enterprise deployment</p>
+                    </div>
+                </div>
+                
+                <button class="cta-button" onclick="showDownloadForm('whitepaper')">Download Whitepaper</button>
+            </div>
+
+            <!-- Case Study Card -->
+            <div class="resource-card">
+                <div class="resource-icon">📊</div>
+                <h3>Enterprise Case Study: 80% Cost Reduction</h3>
+                
+                <div class="resource-meta">
+                    <span class="resource-type">Case Study</span>
+                    <span class="resource-length">18 pages</span>
+                </div>
+                
+                <p>Real-world implementation of MCP and Vectorless RAG at a 250-person enterprise software consulting firm. See how they achieved 80% infrastructure cost reduction, 20% accuracy improvement, and 87% reduction in operational overhead.</p>
+                
+                <div class="features">
+                    <div class="feature">
+                        <h4>✓ The Challenge</h4>
+                        <p>Why traditional RAG was failing</p>
+                    </div>
+                    <div class="feature">
+                        <h4>✓ The Solution</h4>
+                        <p>MCP and Vectorless RAG architecture</p>
+                    </div>
+                    <div class="feature">
+                        <h4>✓ Results</h4>
+                        <p>Quantified metrics and business impact</p>
+                    </div>
+                    <div class="feature">
+                        <h4>✓ Learnings</h4>
+                        <p>Key takeaways and recommendations</p>
+                    </div>
+                </div>
+                
+                <button class="cta-button" onclick="showDownloadForm('case-study')">Download Case Study</button>
+            </div>
+        </div>
+
+        <!-- Download Form Section -->
+        <div class="form-section" id="downloadForm" style="display: none;">
+            <h2>Download Your Resource</h2>
+            <p>Enter your information below to download the resource immediately.</p>
+            
+            <form id="resourceForm" onsubmit="handleDownload(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required aria-required="true">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required aria-required="true">
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                
+                <div class="form-group">
+                    <label for="industry">Industry</label>
+                    <select id="industry" name="industry">
+                        <option value="">Select an industry...</option>
+                        <option value="financial-services">Financial Services</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="technology">Technology</option>
+                        <option value="manufacturing">Manufacturing</option>
+                        <option value="retail">Retail</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+                    <label for="newsletter">Subscribe to our newsletter for AI insights and updates</label>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required aria-required="true">
+                    <label for="terms">I agree to the <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms of Service</a> *</label>
+                </div>
+                
+                <button type="submit" class="cta-button" style="width: 100%; margin-top: 20px;">Download Resource</button>
+            </form>
+        </div>
+
+        <!-- Additional Resources -->
+        <div style="margin-top: 80px; padding: 40px; background: #f8f8f8; border-radius: 8px;">
+            <h2 style="font-size: 1.8em; margin-bottom: 30px; font-family: 'Instrument Serif', serif;">More Resources</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div>
+                    <h3 style="color: #d4a574; margin-bottom: 15px;">Blog Articles</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Explore our latest articles on MCP, Vectorless RAG, and enterprise AI implementation.</p>
+                    <a href="blog.html" class="cta-button">Read Blog →</a>
+                </div>
+                
+                <div>
+                    <h3 style="color: #d4a574; margin-bottom: 15px;">ROI Calculator</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Calculate the potential ROI of implementing MCP and Vectorless RAG in your organization.</p>
+                    <a href="ai-roi-calculator.html" class="cta-button">Calculate ROI →</a>
+                </div>
+                
+                <div>
+                    <h3 style="color: #d4a574; margin-bottom: 15px;">Schedule Consultation</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Ready to transform your AI infrastructure? Let's discuss your specific needs.</p>
+                    <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" rel="noopener noreferrer" class="cta-button">Book Call →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <p>&copy; 2026 Micap AI Consulting. All rights reserved.</p>
+        <p><a href="privacy.html" style="color: #d4a574;">Privacy Policy</a> | <a href="terms.html" style="color: #d4a574;">Terms of Service</a></p>
+    </footer>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "MCP & Vectorless RAG Resources",
+        "description": "Download comprehensive whitepaper and case study on Model Context Protocol and Vectorless RAG",
+        "url": "https://micap-ai.manus.space/resources.html",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://micap-ai.manus.space/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Resources",
+                    "item": "https://micap-ai.manus.space/resources.html"
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- GA4 Tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-50MLBREDYZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-50MLBREDYZ');
+        
+        let selectedResource = '';
+        
+        function showDownloadForm(resource) {
+            selectedResource = resource;
+            const form = document.getElementById('downloadForm');
+            form.style.display = 'block';
+            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            
+            // Track in GA4
+            gtag('event', 'resource_download_initiated', {
+                'event_category': 'engagement',
+                'resource_type': resource
+            });
+        }
+        
+        function handleDownload(event) {
+            event.preventDefault();
+            
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const company = document.getElementById('company').value;
+            const industry = document.getElementById('industry').value;
+            const newsletter = document.getElementById('newsletter').checked;
+            
+            // Validate email
+            if (!email.includes('@')) {
+                alert('Please enter a valid email address');
+                return;
+            }
+            
+            // Track download in GA4
+            gtag('event', 'resource_downloaded', {
+                'event_category': 'conversion',
+                'resource_type': selectedResource,
+                'user_email': email,
+                'company': company,
+                'industry': industry
+            });
+            
+            // Track newsletter signup if checked
+            if (newsletter) {
+                gtag('event', 'newsletter_signup', {
+                    'event_category': 'conversion',
+                    'email': email
+                });
+            }
+            
+            // Show success message
+            const form = document.getElementById('resourceForm');
+            form.innerHTML = '<div style="text-align: center; padding: 40px;"><h3 style="color: #4caf50; margin-bottom: 15px;">✓ Download Started!</h3><p style="color: #666; margin-bottom: 20px;">Check your email for the download link. Your resource should arrive within seconds.</p><p style="color: #999; font-size: 0.9em;">If you don\'t see it, check your spam folder or <a href="mailto:hi@micap.pro">contact us</a>.</p></div>';
+            
+            // Reset form after 3 seconds
+            setTimeout(() => {
+                location.reload();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

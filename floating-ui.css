@@ -1,0 +1,128 @@
+/* ===== FLOATING UI COMPONENTS STYLES ===== */
+
+/* SCROLL-TO-TOP BUTTON */
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #BA7517, #D4891A);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  z-index: 90;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(186, 117, 23, 0.3);
+}
+
+#scrollToTopBtn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(186, 117, 23, 0.4);
+  background: linear-gradient(135deg, #D4891A, #E8A035);
+}
+
+#scrollToTopBtn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* MOBILE MENU BACKDROP */
+.menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 98;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.menu-backdrop.active {
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  backdrop-filter: blur(4px);
+}
+
+/* ENHANCED MOBILE MENU ANIMATION */
+.nav-menu {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.nav-menu.active {
+  transform: translateX(0) !important;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure menu slides from right */
+.nav-menu:not(.active) {
+  transform: translateX(100%);
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 768px) {
+  #scrollToTopBtn {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+  /* Enhance mobile menu backdrop */
+  .menu-backdrop.active {
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  .nav-menu {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-left: none !important;
+    border-bottom: 1px solid rgba(186, 117, 23, 0.2);
+  }
+
+  .nav-menu a {
+    padding: 16px 24px !important;
+    font-size: 15px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #scrollToTopBtn {
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .nav-menu a {
+    padding: 14px 20px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* PREVENT LAYOUT SHIFT */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* SMOOTH TRANSITIONS */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}

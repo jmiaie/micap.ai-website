@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Your Report - Micap AI</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #0E0D0B 0%, #1a1917 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .download-container {
+      background: rgba(20, 19, 17, 0.8);
+      border: 1px solid rgba(186, 117, 23, 0.2);
+      border-radius: 12px;
+      padding: 40px;
+      max-width: 500px;
+      width: 100%;
+      backdrop-filter: blur(10px);
+    }
+    .logo {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .logo img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+    }
+    .logo h1 {
+      color: #F5F0E8;
+      font-size: 24px;
+      font-weight: 600;
+    }
+    .section-title {
+      color: #F5F0E8;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    .section-subtitle {
+      color: #9C9888;
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+    .success-icon {
+      text-align: center;
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .download-box {
+      background: rgba(186, 117, 23, 0.05);
+      border: 1px solid rgba(186, 117, 23, 0.2);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .download-label {
+      color: #BA7517;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .download-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      background: rgba(30, 28, 25, 0.6);
+      border-radius: 6px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .download-item:hover {
+      background: rgba(186, 117, 23, 0.1);
+      border: 1px solid rgba(186, 117, 23, 0.3);
+    }
+    .download-item:last-child {
+      margin-bottom: 0;
+    }
+    .download-icon {
+      font-size: 24px;
+    }
+    .download-info {
+      flex: 1;
+    }
+    .download-name {
+      color: #F5F0E8;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+    .download-size {
+      color: #9C9888;
+      font-size: 11px;
+    }
+    .download-arrow {
+      color: #BA7517;
+      font-size: 18px;
+    }
+    .action-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .primary-btn {
+      padding: 12px 16px;
+      background: linear-gradient(135deg, #BA7517 0%, #D4A574 100%);
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-align: center;
+      text-decoration: none;
+    }
+    .primary-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(186, 117, 23, 0.3);
+    }
+    .secondary-btn {
+      padding: 12px 16px;
+      background: transparent;
+      color: #BA7517;
+      border: 1px solid rgba(186, 117, 23, 0.3);
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-align: center;
+      text-decoration: none;
+    }
+    .secondary-btn:hover {
+      background: rgba(186, 117, 23, 0.1);
+    }
+    .info-message {
+      background: rgba(186, 117, 23, 0.05);
+      border: 1px solid rgba(186, 117, 23, 0.1);
+      border-radius: 6px;
+      padding: 12px;
+      color: #9C9888;
+      font-size: 12px;
+      line-height: 1.4;
+      margin-top: 20px;
+    }
+    .info-message strong {
+      color: #F5F0E8;
+    }
+  </style>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1012037731152333');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1012037731152333&ev=PageView&noscript=1"
+    / alt="" fetchpriority="high" decoding="async"></noscript>
+    <!-- End Meta Pixel Code -->
+    <script src="/meta-pixel-events.js" defer></script>
+    <script>
+      // Track report download page view
+      if (typeof MetaPixelEvents !== 'undefined') {
+        MetaPixelEvents.trackPageView('Report Download');
+      }
+    </script>
+  </head>
+<body>
+    <a href="#main-content" class="skip-to-content" style="position: absolute; top: -40px; left: 0; background: #d4a574; color: white; padding: 8px; text-decoration: none; z-index: 100;">Skip to main content</a>
+
+  <div class="download-container">
+    <nav aria-label="breadcrumb" class="breadcrumb-nav" style="margin-bottom: 20px;">
+      <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 5px; font-size: 0.9em;">
+        <li><a href="index.html" style="color: #d4a574; text-decoration: none;">Home</a></li>
+        <li style="color: #999;">/</li>
+        <li aria-current="page" style="color: #666;">Tools</li>
+        <li style="color: #999;">/</li>
+        <li aria-current="page" style="color: #666;">Report Download</li>
+      </ol>
+    </nav>
+
+    <div class="logo">
+      <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663473200649/hUUaHIjRLGNJNfOi.jpg" alt="Micap AI" decoding="async">
+      <h1>Micap AI</h1>
+    </div>
+
+    <div class="success-icon">✓</div>
+
+    <div class="section-title">Your Report is Ready!</div>
+    <div class="section-subtitle">
+      We've prepared your personalized ROI analysis with your exclusive free eBook. Download everything below.
+    </div>
+
+    <div class="download-box">
+      <div class="download-label">📥 Your Downloads</div>
+      
+      <div class="download-item" onclick="downloadReport()">
+        <div class="download-icon">📊</div>
+        <div class="download-info">
+          <div class="download-name">ROI Analysis Report</div>
+          <div class="download-size">PDF • ~2.5 MB</div>
+        </div>
+        <div class="download-arrow">↓</div>
+      </div>
+
+      <div class="download-item" onclick="downloadEBook()">
+        <div class="download-icon">📚</div>
+        <div class="download-info">
+          <div class="download-name" id="ebookName">Your Free eBook</div>
+          <div class="download-size">PDF • ~1.2 MB • Valued at $50</div>
+        </div>
+        <div class="download-arrow">↓</div>
+      </div>
+    </div>
+
+    <div class="action-buttons">
+      <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" class="primary-btn" aria-label="Opens in new window">
+        Schedule Consultation
+      </a>
+      <a href="/" class="secondary-btn">
+        Back to Home
+      </a>
+    </div>
+
+    <div class="info-message">
+      <strong>What's Next?</strong> Your report includes two QR codes: one to explore our services and one to schedule a consultation. We'll follow up with you shortly to discuss your specific needs.
+    </div>
+  </div>
+
+  <script>
+    // Get lead ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const leadId = urlParams.get('leadId');
+    const phoneVerified = localStorage.getItem('phoneVerified');
+
+    // Check authentication
+    const sessionToken = localStorage.getItem('sessionToken');
+    if (!sessionToken) {
+      window.location.href = '/auth-login.html';
+    }
+
+    // Update eBook name based on what was selected
+    async function loadEBookInfo() {
+      try {
+        const response = await fetch(`/api/leads/get?leadId=${leadId}`, {
+          headers: { 'Authorization': `Bearer ${sessionToken}` }
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          if (data.selectedEBook) {
+            document.getElementById('ebookName').textContent = data.selectedEBook.title;
+          }
+        }
+      } catch (error) {
+        console.error('Error loading eBook info:', error);
+      }
+    }
+
+    // Download report
+    function downloadReport() {
+      // Track report download with Meta Pixel
+      if (typeof MetaPixelEvents !== 'undefined') {
+        MetaPixelEvents.trackReportDownload(leadId);
+      }
+      
+      fetch(`/api/reports/download?leadId=${leadId}`, {
+        headers: { 'Authorization': `Bearer ${sessionToken}` }
+      })
+        .then(response => response.blob())
+        .then(blob => {
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `micap-roi-report-${new Date().getTime()}.pdf`;
+          document.body.appendChild(a);
+          a.click();
+          window.URL.revokeObjectURL(url);
+          document.body.removeChild(a);
+        })
+        .catch(error => alert('Error downloading report: ' + error.message));
+    }
+
+    // Download eBook
+    function downloadEBook() {
+      if (phoneVerified !== 'true') {
+        alert('Please verify your phone number to download the eBook.');
+        window.location.href = '/auth-phone-verify.html';
+        return;
+      }
+
+      // Track eBook download with Meta Pixel
+      if (typeof MetaPixelEvents !== 'undefined') {
+        MetaPixelEvents.trackEbookDownload('Selected eBook');
+      }
+      
+      fetch(`/api/ebooks/download?leadId=${leadId}`, {
+        headers: { 'Authorization': `Bearer ${sessionToken}` }
+      })
+        .then(response => response.blob())
+        .then(blob => {
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `micap-ebook-${new Date().getTime()}.pdf`;
+          document.body.appendChild(a);
+          a.click();
+          window.URL.revokeObjectURL(url);
+          document.body.removeChild(a);
+        })
+        .catch(error => alert('Error downloading eBook: ' + error.message));
+    }
+
+    // Load eBook info on page load
+    loadEBookInfo();
+  </script>
+</body>
+</html>

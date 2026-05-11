@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Instrument+Serif&display=swap" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <title>FAQ | AI Automation Questions Answered - Micap AI</title>
+  <meta name="description" content="Frequently asked questions about AI automation, digital employees, agentic systems, and strategic implementation.">
+  <link rel="canonical" href="https://micap-ai.manus.space/faq.html">
+  <meta property="og:title" content="FAQ | AI Automation Questions Answered - Micap AI">
+  <meta property="og:description" content="Frequently asked questions about AI automation, digital employees, agentic systems, and strategic implementation.">
+  <meta property="og:url" content="https://micap-ai.manus.space/faq.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Micap AI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FAQ | AI Automation Questions Answered - Micap AI">
+  <meta name="twitter:description" content="Frequently asked questions about AI automation, digital employees, agentic systems, and strategic implementation.">
+  <link rel="icon" href="/manus-storage/micap-favicon_a2f043bd.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/manus-storage/micap-favicon-256_c9c78192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Instrument+Serif&display=swap" rel="stylesheet">
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-50MLBREDYZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-50MLBREDYZ', { 'page_path': window.location.pathname, 'anonymize_ip': true });
+  </script>
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1012037731152333');
+    fbq('track', 'PageView');
+  </script>
+  <link rel="stylesheet" href="floating-ui.css">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:#0E0D0B;color:#F5F0E8;font-family:'DM Sans',sans-serif;overflow-x:hidden;padding-top:64px}
+    a{text-decoration:none;color:inherit}
+    button{font-family:inherit}
+    img{display:block}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes slideIn{from{transform:translateX(100%)}to{transform:translateX(0)}}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid transparent;transition:all .4s ease}
+    .nav.scrolled{background:rgba(14,13,11,.92);backdrop-filter:blur(16px);border-bottom-color:rgba(186,117,23,.12)}
+    .hamburger{display:flex;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;z-index:115}
+    .hamburger span{width:24px;height:2px;background:#BA7517;transition:all .3s}
+    .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+    .nav-menu{display:none;position:fixed;top:64px;right:0;width:250px;max-height:calc(100vh - 64px);background:rgba(14,13,11,.98);backdrop-filter:blur(20px);border-left:1px solid rgba(186,117,23,.2);padding:16px 0;z-index:99;flex-direction:column;overflow-y:auto;animation:slideIn .3s ease}
+    .nav-menu.active{display:flex}
+    .nav-menu a{color:#9C9888;font-size:14px;font-weight:500;text-decoration:none;padding:12px 24px;transition:all .2s;display:block;border-left:3px solid transparent}
+    .nav-menu a:hover{color:#F5F0E8;background:rgba(186,117,23,.1);border-left-color:#BA7517}
+    .nav-menu a.nav-active{color:#BA7517;border-left-color:#BA7517;background:rgba(186,117,23,.05)}
+    .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#F5F0E8;z-index:115}
+    .nav-brand img{width:40px;height:40px;object-fit:contain;background:#000}
+    .nav-brand-text{font-family:'DM Sans',sans-serif;font-size:18px;font-weight:600;color:#F5F0E8;letter-spacing:-.3px}
+    .nav-brand-text span{color:#BA7517}
+    .nav-consultation{background:#BA7517;color:#000;padding:10px 20px;border-radius:6px;font-size:13px;font-weight:600;letter-spacing:.05em;text-decoration:none;transition:all .2s;position:absolute;left:50%;transform:translateX(-50%);top:20px;z-index:115;border:none;cursor:pointer;display:inline-block}
+    .nav-consultation:hover{background:#D4A574;transform:translateX(-50%) translateY(-2px)}
+    .hero{padding:80px 24px 60px;text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(186,117,23,.08) 0%,transparent 70%);pointer-events:none}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(186,117,23,.08);border:1px solid rgba(186,117,23,.2);border-radius:20px;padding:6px 14px;font-size:12px;color:#BA7517;letter-spacing:.08em;text-transform:uppercase;margin-bottom:24px;font-family:'DM Mono',monospace}
+    .hero-badge-dot{width:6px;height:6px;border-radius:50%;background:#BA7517;animation:pulse 2s infinite}
+    .hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(36px,6vw,64px);font-weight:400;line-height:1.1;letter-spacing:-1px;color:#F5F0E8;margin-bottom:20px}
+    .hero h1 em{color:#BA7517;font-style:italic}
+    .hero p{font-size:18px;color:#9C9888;max-width:560px;margin:0 auto 40px;line-height:1.7}
+    .section-label{font-family:'DM Mono',monospace;font-size:11px;color:#BA7517;letter-spacing:.15em;text-transform:uppercase;margin-bottom:16px}
+    .section-title{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(28px,4vw,44px);font-weight:400;color:#F5F0E8;line-height:1.2;letter-spacing:-.5px;margin-bottom:16px}
+    .section-title em{color:#BA7517;font-style:italic}
+    .container{max-width:1100px;margin:0 auto;padding:0 24px}
+    .faq-section{padding:80px 0}
+    .faq-grid{max-width:800px;margin:48px auto 0}
+    .faq-item{border:1px solid rgba(186,117,23,.1);border-radius:12px;margin-bottom:12px;overflow:hidden;transition:border-color .3s}
+    .faq-item:hover{border-color:rgba(186,117,23,.25)}
+    .faq-item.active{border-color:rgba(186,117,23,.3)}
+    .faq-question{padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;background:rgba(186,117,23,.02);transition:background .2s}
+    .faq-question:hover{background:rgba(186,117,23,.04)}
+    .faq-question h3{font-size:16px;font-weight:600;color:#F5F0E8;line-height:1.4}
+    .faq-toggle{color:#BA7517;font-size:20px;font-weight:300;flex-shrink:0;transition:transform .3s;line-height:1}
+    .faq-item.active .faq-toggle{transform:rotate(45deg)}
+    .faq-answer{display:none;padding:0 24px 20px;color:#9C9888;font-size:15px;line-height:1.8;border-top:1px solid rgba(186,117,23,.08)}
+    .faq-answer.active{display:block}
+    .faq-answer p{padding-top:16px}
+    .cta-section{padding:80px 24px;text-align:center;border-top:1px solid rgba(186,117,23,.08)}
+    .cta-box{max-width:640px;margin:0 auto;padding:48px;border-radius:24px;border:1px solid rgba(186,117,23,.15);background:linear-gradient(135deg,rgba(186,117,23,.04),rgba(186,117,23,.01))}
+    .btn-primary{display:inline-block;background:#BA7517;color:#000;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:600;letter-spacing:.02em;transition:all .2s;border:none;cursor:pointer}
+    .btn-primary:hover{background:#D4A574;transform:translateY(-2px);box-shadow:0 8px 24px rgba(186,117,23,.3)}
+    .btn-secondary{display:inline-block;background:transparent;color:#BA7517;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:600;letter-spacing:.02em;transition:all .2s;border:1px solid rgba(186,117,23,.3)}
+    .btn-secondary:hover{background:rgba(186,117,23,.08);border-color:#BA7517}
+    .cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+    .footer{padding:32px 24px;border-top:1px solid rgba(186,117,23,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+    .footer-copy{font-size:13px;color:#6B6860}
+    .footer-links{display:flex;gap:24px}
+    .footer-links a{font-size:13px;color:#6B6860;transition:color .2s}
+    .footer-links a:hover{color:#BA7517}
+    @media(max-width:768px){
+      .hero{padding:72px 16px 60px}
+      .faq-grid{margin-top:32px}
+      .footer{flex-direction:column;gap:16px;text-align:center}
+      .nav-consultation{font-size:11px;padding:8px 14px}
+    }
+  
+/* Industries dropdown */
+.nav-dropdown{position:relative}
+.nav-dropdown-trigger{display:flex;align-items:center;gap:5px;color:#9C9888;font-size:14px;font-weight:500;cursor:pointer;transition:color .2s;background:none;border:none;font-family:inherit;padding:0}
+.nav-dropdown-trigger:hover,.nav-dropdown:hover .nav-dropdown-trigger{color:#F5F0E8}
+.nav-dropdown-trigger svg{transition:transform .2s}
+.nav-dropdown:hover .nav-dropdown-trigger svg{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:rgba(14,13,11,.97);backdrop-filter:blur(20px);border:1px solid rgba(186,117,23,.2);border-radius:12px;padding:8px;min-width:200px;opacity:0;visibility:hidden;transition:all .2s;z-index:200;box-shadow:0 16px 48px rgba(0,0,0,.4)}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;top:calc(100% + 8px)}
+.nav-dropdown-menu a{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;font-size:13px;color:#9C9888;transition:all .2s;white-space:nowrap}
+.nav-dropdown-menu a:hover{color:#F5F0E8;background:rgba(186,117,23,.08)}
+.nav-dropdown-menu a span.dd-icon{font-size:16px;width:20px;text-align:center}
+.nav-dropdown-divider{height:1px;background:rgba(186,117,23,.1);margin:6px 0}
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are AI Digital Employees?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI Digital Employees are AI-powered agents that perform specific business roles such as receptionist, scheduler, lead qualifier, SDR, and customer success management, operating 24/7 with consistent quality."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does agentic automation differ from traditional automation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Agentic automation uses AI agents that can reason, plan, and act autonomously to complete complex multi-step tasks, unlike traditional rule-based automation that follows fixed scripts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What ROI can businesses expect from AI automation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Businesses typically see 300-850% ROI from AI automation within the first year, with cost savings from reduced manual labor, fewer errors, and 24/7 operational capacity."
+      }
+    }
+  ]
+}
+  </script>
+  </head>
+<body>
+    <a href="#main-content" class="skip-to-content" style="position: absolute; top: -40px; left: 0; background: #d4a574; color: white; padding: 8px; text-decoration: none; z-index: 100;">Skip to main content</a>
+
+<button id="scrollToTopBtn" title="Scroll to top">&#8593;</button>
+<nav class="nav" id="navbar" role="navigation">
+  <a href="index.html" class="nav-brand">
+    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663473200649/hUUaHIjRLGNJNfOi.jpg" alt="Micap AI" style="width:40px;height:40px;object-fit:contain;background:#000" decoding="async">
+    <div class="nav-brand-text">micap<span>.ai</span></div>
+  </a>
+  <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" rel="noopener noreferrer" class="nav-consultation" aria-label="Opens in new window">CONSULTATION BOOKING</a>
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-menu" id="navMenu">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="digital-employees.html">Digital Employees</a>
+  <a href="case-studies.html">Case Studies</a>
+  <a href="blog.html">Blog</a>
+  <a href="ai-roi-calculator.html">ROI Calculator</a>
+  <a href="roi-calculator-demo.html">ROI Demo</a>
+  <a href="about.html">About</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="faq.html" class="nav-active">FAQ</a>
+</div>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+    document.addEventListener('click', function(event) {
+      if (!event.target.closest('.nav') && !event.target.closest('.nav-menu')) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    });
+  }
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 20) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+</script>
+
+<section class="hero" id="main-content">
+    <nav aria-label="breadcrumb" class="breadcrumb-nav" style="margin-bottom: 20px;">
+      <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 5px; font-size: 0.9em;">
+        <li><a href="index.html" style="color: #d4a574; text-decoration: none;">Home</a></li>
+        <li style="color: #999;">/</li>
+        <li aria-current="page" style="color: #666;">FAQ</li>
+      </ol>
+    </nav>
+
+  <div class="hero-badge">
+    <div class="hero-badge-dot"></div>
+    <span>Common Questions</span>
+  </div>
+  <h1>Frequently Asked<br><em>Questions</em></h1>
+  <p>Everything you need to know about AI automation, digital employees, and strategic implementation.</p>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="section-label">Knowledge Base</div>
+      <h2 class="section-title">Your Questions, <em>Answered</em></h2>
+      <p style="color:#6B6860;font-size:16px;line-height:1.7;max-width:600px;margin:0 auto">Find answers to the most common questions about working with Micap AI and deploying digital employees in your business.</p>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-question"><h3>What are Digital Employees?</h3><span class="faq-toggle">+</span></div>
+        <div class="faq-answer"><p>Digital Employees are AI-powered autonomous agents designed to handle specific business processes and tasks. Unlike traditional software, they learn from data, adapt to changes, and make intelligent decisions. Our 10 Digital Employees cover core business functions including customer service, data analysis, content creation, lead qualification, and more. They work 24/7 without breaks, reducing operational costs by 60-80% while improving efficiency and accuracy.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question"><h3>How much can we save with AI automation?</h3><span class="faq-toggle">+</span></div>
+        <div class="faq-answer"><p>Savings depend on your current operations, but most businesses see 40-70% reduction in labor costs for automated processes. Use our ROI Calculator to estimate your specific savings. For example, a company with 5 employees spending 30% of their time on repetitive tasks could save $150,000-$300,000 annually. Our Digital Employees typically pay for themselves within 3-6 months.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question"><h3>How long does implementation take?</h3><span class="faq-toggle">+</span></div>
+        <div class="faq-answer"><p>Most Digital Employee deployments take 2-4 weeks from contract signing to go-live. Complex integrations with legacy systems may take 6-8 weeks. We handle the entire process: assessment, configuration, integration, testing, and training. You'll see results within the first month, with full optimization by month 3.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question"><h3>Is AI automation secure for sensitive data?</h3><span class="faq-toggle">+</span></div>
+        <div class="faq-answer"><p>Yes. Our Digital Employees operate within your private infrastructure with enterprise-grade encryption. We comply with GDPR, HIPAA, and SOC 2 standards. All data stays within your systems - we never access or store your business information. We implement role-based access controls, audit logging, and regular security assessments. Your data security is our top priority.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question"><h3>What if the AI makes a mistake?</h3><span class="faq-toggle">+</span></div>
+        <div class="faq-answer"><p>Our Digital Employees are designed with built-in safeguards. Critical decisions require human approval. We implement confidence thresholds - if the AI is unsure, it escalates to your team. All actions are logged and auditable. During the first 30 days, we monitor performance closely and adjust parameters. Most errors are caught and corrected automatically, with a human-in-the-loop for edge cases.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question"><h3>Can we integrate with our existing systems?</h3><span class="faq-toggle">+</span></div>
+        <div class="faq-answer"><p>Absolutely. Our Digital Employees integrate with most business systems: CRM (Salesforce, HubSpot), ERP (SAP, NetSuite), communication tools (Slack, Teams), databases, APIs, and custom applications. We handle the technical integration so you don't have to. If your system has an API, we can connect it. Custom integrations are available for legacy systems.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question"><h3>How do we get started?</h3><span class="faq-toggle">+</span></div>
+        <div class="faq-answer"><p>Getting started is simple: (1) Schedule a free consultation to discuss your needs, (2) We conduct a 30-minute assessment of your current processes, (3) We provide a custom proposal with ROI projections, (4) Sign the agreement and we begin implementation. Most clients see their first Digital Employee deployed within 2-4 weeks. Book a consultation using the button above.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question"><h3>What's your pricing model?</h3><span class="faq-toggle">+</span></div>
+        <div class="faq-answer"><p>We offer flexible pricing: 50% setup fee at project start, 50% at deployment. Monthly service fees depend on the number of Digital Employees and complexity. Most companies pay $2,000-$10,000/month for 2-5 Digital Employees. We also offer performance-based pricing where you only pay based on measurable results. See our <a href="pricing.html" style="color:#BA7517">Pricing page</a> for detailed options or schedule a consultation for a custom quote.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question"><h3>Do we need technical expertise?</h3><span class="faq-toggle">+</span></div>
+        <div class="faq-answer"><p>No. We handle all technical implementation. Your team just needs to provide business requirements and process documentation. We train your staff on how to monitor, adjust, and optimize the Digital Employees. You'll have a dedicated account manager to support you throughout the engagement and beyond.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question"><h3>What industries do you serve?</h3><span class="faq-toggle">+</span></div>
+        <div class="faq-answer"><p>We work across all industries: professional services, healthcare, finance, e-commerce, manufacturing, real estate, legal, and more. Our Digital Employees are industry-agnostic - they adapt to your specific workflows. We have deep expertise in high-volume, repetitive processes common across sectors. If you're unsure if we can help, schedule a consultation and we'll assess your specific situation.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-box">
+    <div class="section-label" style="text-align:center">Get Started</div>
+    <h2 class="section-title" style="text-align:center">Still Have<br><em>Questions?</em></h2>
+    <p style="color:#6B6860;font-size:16px;line-height:1.7;text-align:center;margin-top:12px">Book a free 30-minute consultation and get direct answers to your specific questions. No commitment required.</p>
+    <div class="cta-btns">
+      <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" rel="noopener noreferrer" class="btn-primary" aria-label="Opens in new window">Book a Consultation</a>
+      <a href="ai-roi-calculator.html" class="btn-secondary">Calculate Your ROI</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer-copy">&copy; 2026 Micap AI. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="#privacy">Privacy</a>
+    <a href="#terms">Terms</a>
+    <a href="/api-docs.html">API Documentation</a>
+    <a href="mailto:hi@micap.pro">hi@micap.pro</a>
+  </div>
+</footer>
+
+<script defer src="floating-ui.js"></script>
+<script>
+  document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', function() {
+      const item = this.closest('.faq-item');
+      const answer = item.querySelector('.faq-answer');
+      const isActive = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(faqItem => {
+        faqItem.classList.remove('active');
+        faqItem.querySelector('.faq-answer').classList.remove('active');
+      });
+      if (!isActive) {
+        item.classList.add('active');
+        answer.classList.add('active');
+      }
+    });
+  });
+</script>
+</body>
+</html>

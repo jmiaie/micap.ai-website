@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Instrument+Serif&display=swap" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <title>Digital Employees | AI-Powered Staff for SMB Growth</title>
+  <meta name="description" content="AI-powered Digital Employees for SMBs: Receptionist, Scheduler, Lead Qualifier, SDR, and Customer Success roles.">
+  <link rel="canonical" href="https://micap-ai.manus.space/digital-employees.html">
+  <meta property="og:title" content="Digital Employees | AI-Powered Staff for SMB Growth">
+  <meta property="og:description" content="AI-powered Digital Employees for SMBs: Receptionist, Scheduler, Lead Qualifier, SDR, and Customer Success roles.">
+  <meta property="og:url" content="https://micap-ai.manus.space/digital-employees.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Micap AI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Digital Employees | AI-Powered Staff for SMB Growth">
+  <meta name="twitter:description" content="AI-powered Digital Employees for SMBs: Receptionist, Scheduler, Lead Qualifier, SDR, and Customer Success roles.">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Instrument+Serif&display=swap" rel="stylesheet">
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-50MLBREDYZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-50MLBREDYZ');
+  </script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:#0E0D0B;color:#F5F0E8;font-family:'DM Sans',sans-serif;overflow-x:hidden}
+    a{text-decoration:none;color:inherit}
+    button{font-family:inherit;cursor:pointer}
+    img{display:block}
+
+    /* NAV - Unified hamburger → top banner */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid transparent;transition:all .4s ease}
+    .nav.scrolled{background:rgba(14,13,11,.92);backdrop-filter:blur(16px);border-bottom-color:rgba(186,117,23,.12)}
+    .nav-logo{display:flex;align-items:center;gap:10px}
+    .nav-logo img{display:block;width:32px;height:32px;font-size:18px;color:#F5F0E8;letter-spacing:-.3px}
+    
+    
+    .nav-link{color:#9C9888;font-size:14px;font-weight:500;transition:color .2s}
+    .nav-link:hover{color:#F5F0E8}
+    .nav-link.active{color:#BA7517}
+    .hamburger{display:flex;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;z-index:115}
+    .hamburger span{width:24px;height:2px;background:#BA7517;transition:all .3s}
+    .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+    /* Expanded nav banner on mobile */
+    
+    
+    
+    
+    @keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+    @media(max-width:900px){.hamburger{display:flex}}
+    
+
+    /* BUTTONS */
+    .btn{display:inline-flex;align-items:center;font-weight:600;border-radius:10px;transition:transform .2s,box-shadow .2s;cursor:pointer;border:none}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:linear-gradient(135deg,#BA7517,#D4891A);color:#0E0D0B;padding:14px 32px;font-size:16px}
+    .btn-primary:hover{box-shadow:0 8px 32px rgba(186,117,23,.35)}
+    .btn-primary.lg{padding:16px 40px;font-size:17px;border-radius:12px}
+    .btn-primary.sm{padding:8px 20px;font-size:14px;border-radius:8px}
+    .btn-ghost{border:1px solid rgba(186,117,23,.3);color:#F5F0E8;padding:14px 32px;font-size:16px;background:rgba(186,117,23,.05)}
+    .btn-ghost:hover{background:rgba(186,117,23,.1);border-color:rgba(186,117,23,.5)}
+
+    /* SHARED */
+    .section-label{font-family:'DM Mono',monospace;font-size:12px;color:#BA7517;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+    .section-title{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(32px,4vw,48px);font-weight:400;color:#F5F0E8;margin:0 0 16px;letter-spacing:-1px}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+    /* PAGE HEADER */
+    .page-header{min-height:50vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 24px 60px;background:linear-gradient(180deg,rgba(186,117,23,.08) 0%,transparent 100%);position:relative}
+    .page-header::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(186,117,23,.06) 0%,transparent 70%);pointer-events:none}
+    .page-header h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(40px,6vw,60px);font-weight:400;margin-bottom:20px;letter-spacing:-1px;position:relative}
+    .page-header h1 em{font-style:normal;color:#BA7517}
+    .page-header p{font-size:18px;color:#9C9888;max-width:640px;margin:0 auto;line-height:1.6}
+
+    /* PRODUCT GRID */
+    .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:40px 0}
+    .product-tab{padding:16px 20px;border:1px solid rgba(186,117,23,.12);border-radius:12px;background:rgba(186,117,23,.02);color:#9C9888;font-weight:500;font-size:14px;transition:all .3s;cursor:pointer;text-align:left;display:flex;align-items:center;gap:12px}
+    .product-tab:hover{border-color:rgba(186,117,23,.4);background:rgba(186,117,23,.05);color:#F5F0E8}
+    .product-tab.active{background:rgba(186,117,23,.12);color:#F5F0E8;border-color:#BA7517;box-shadow:0 0 20px rgba(186,117,23,.1)}
+    .product-tab .tab-icon{font-size:24px;flex-shrink:0}
+    .product-tab .tab-name{font-weight:600;font-size:14px}
+    .product-tab .tab-role{font-size:11px;color:#9C9888;margin-top:2px}
+
+    /* TIER SELECTOR */
+    .tier-bar{display:flex;gap:4px;margin:40px auto;justify-content:center;background:rgba(186,117,23,.04);border:1px solid rgba(186,117,23,.1);border-radius:12px;padding:4px;max-width:500px}
+    .tier-btn{flex:1;padding:12px 16px;border:none;border-radius:10px;background:transparent;color:#9C9888;font-weight:600;font-size:14px;transition:all .3s;cursor:pointer}
+    .tier-btn:hover{color:#F5F0E8}
+    .tier-btn.active{background:#BA7517;color:#0E0D0B;box-shadow:0 2px 12px rgba(186,117,23,.3)}
+
+    /* PRODUCT DETAIL CARD */
+    .product-detail{background:rgba(186,117,23,.02);border:1px solid rgba(186,117,23,.1);border-radius:20px;padding:48px;margin:40px 0;position:relative;overflow:hidden}
+    .product-detail::before{content:'';position:absolute;top:0;right:0;width:300px;height:300px;background:radial-gradient(circle,rgba(186,117,23,.04) 0%,transparent 70%);pointer-events:none}
+    .detail-header{display:flex;align-items:flex-start;gap:20px;margin-bottom:32px}
+    .detail-icon{width:64px;height:64px;background:rgba(186,117,23,.1);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:32px;flex-shrink:0}
+    .detail-title{font-family:'Instrument Serif',Georgia,serif;font-size:32px;font-weight:400;color:#F5F0E8;margin-bottom:4px}
+    .detail-subtitle{color:#BA7517;font-size:14px;font-weight:500}
+    .detail-desc{color:#9C9888;line-height:1.7;font-size:15px;margin-bottom:32px;max-width:700px}
+
+    /* PRICING DISPLAY */
+    .pricing-row{display:flex;gap:24px;margin-bottom:40px;flex-wrap:wrap}
+    .price-box{background:rgba(14,13,11,.5);border:1px solid rgba(186,117,23,.1);border-radius:12px;padding:20px 24px;flex:1;min-width:140px}
+    .price-label{font-size:12px;color:#9C9888;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+    .price-value{font-size:28px;font-weight:700;color:#BA7517}
+    .price-value small{font-size:14px;font-weight:400;color:#9C9888}
+
+    /* FEATURE LIST */
+    .feature-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+    .feature-item{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:rgba(186,117,23,.02);border:1px solid rgba(186,117,23,.06);border-radius:10px}
+    .feature-check{color:#BA7517;font-size:16px;flex-shrink:0;margin-top:1px}
+    .feature-text{font-size:14px;color:#C8C0B4;line-height:1.5}
+
+    /* COMPARISON TABLE */
+    .comparison-table{width:100%;border-collapse:collapse;margin:40px 0;border:1px solid rgba(186,117,23,.1);border-radius:12px;overflow:hidden}
+    .comparison-table th{background:rgba(186,117,23,.08);padding:16px;text-align:center;font-weight:600;border-bottom:1px solid rgba(186,117,23,.1);color:#BA7517;font-size:13px}
+    .comparison-table th:first-child{text-align:left}
+    .comparison-table td{padding:14px 16px;border-bottom:1px solid rgba(186,117,23,.05);font-size:13px;text-align:center;color:#C8C0B4}
+    .comparison-table td:first-child{text-align:left;font-weight:500;color:#F5F0E8}
+    .comparison-table tr:last-child td{border-bottom:none}
+    .comparison-table tr:hover{background:rgba(186,117,23,.02)}
+
+    /* BUNDLE SECTION */
+    .bundle-section{background:rgba(186,117,23,.04);border:1px solid rgba(186,117,23,.15);border-radius:20px;padding:48px;margin:60px 0}
+    .bundle-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:32px}
+    .bundle-card{background:rgba(14,13,11,.5);border:1px solid rgba(186,117,23,.1);border-radius:12px;padding:24px;text-align:center;transition:all .3s}
+    .bundle-card:hover{border-color:rgba(186,117,23,.3);transform:translateY(-2px)}
+    .bundle-count{font-size:14px;color:#9C9888;font-weight:500;margin-bottom:8px}
+    .bundle-discount{font-size:28px;font-weight:700;color:#BA7517}
+    .bundle-note{font-size:12px;color:#9C9888;margin-top:8px}
+
+    /* FOOTER */
+    .footer{margin-top:100px;padding:48px 24px;border-top:1px solid rgba(186,117,23,.1);text-align:center;color:#9C9888;font-size:14px}
+    .footer a{color:#BA7517}
+
+    @media(max-width:768px){
+      .product-detail{padding:28px 20px}
+      .pricing-row{flex-direction:column}
+      .detail-header{flex-direction:column;align-items:center;text-align:center}
+      .comparison-table{font-size:12px}
+      .comparison-table td,.comparison-table th{padding:10px 8px}
+    }
+  /* === STANDARD NAV CSS === */
+.nav{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(14,13,11,.95);backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:100;border-bottom:1px solid rgba(186,117,23,.15)}
+.nav.scrolled{background:rgba(14,13,11,.98);box-shadow:0 2px 20px rgba(0,0,0,.3)}
+.hamburger{display:flex;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;z-index:115}
+.hamburger span{width:24px;height:2px;background:#BA7517;transition:all .3s}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.nav-menu{display:none;position:fixed;top:64px;right:0;width:250px;max-height:calc(100vh - 64px);background:rgba(14,13,11,.98);backdrop-filter:blur(20px);border-left:1px solid rgba(186,117,23,.2);padding:16px 0;z-index:99;flex-direction:column;overflow-y:auto;animation:slideIn .3s ease}
+.nav-menu.active{display:flex}
+.nav-menu a{color:#9C9888;font-size:14px;font-weight:500;text-decoration:none;padding:12px 24px;transition:all .2s;display:block;border-left:3px solid transparent}
+.nav-menu a:hover{color:#F5F0E8;background:rgba(186,117,23,.1);border-left-color:#BA7517}
+.nav-menu a.nav-active{color:#BA7517;border-left-color:#BA7517;background:rgba(186,117,23,.05)}
+@keyframes slideIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#F5F0E8;z-index:115}
+.nav-brand img{width:40px;height:40px;font-size:18px;color:#F5F0E8;letter-spacing:-.3px}
+.nav-brand-text span{color:#BA7517}
+.nav-consultation{background:#BA7517;color:#000;padding:10px 20px;border-radius:6px;font-size:13px;font-weight:600;letter-spacing:.05em;text-decoration:none;transition:all .2s;position:absolute;left:50%;transform:translateX(-50%);top:20px;z-index:115;border:none;cursor:pointer;display:inline-block}
+.nav-consultation:hover{background:#D4A574;transform:translateX(-50%) translateY(-2px)}
+/* === END STANDARD NAV CSS === */
+
+/* Industries dropdown */
+.nav-dropdown{position:relative}
+.nav-dropdown-trigger{display:flex;align-items:center;gap:5px;color:#9C9888;font-size:14px;font-weight:500;cursor:pointer;transition:color .2s;background:none;border:none;font-family:inherit;padding:0}
+.nav-dropdown-trigger:hover,.nav-dropdown:hover .nav-dropdown-trigger{color:#F5F0E8}
+.nav-dropdown-trigger svg{transition:transform .2s}
+.nav-dropdown:hover .nav-dropdown-trigger svg{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:rgba(14,13,11,.97);backdrop-filter:blur(20px);border:1px solid rgba(186,117,23,.2);border-radius:12px;padding:8px;min-width:200px;opacity:0;visibility:hidden;transition:all .2s;z-index:200;box-shadow:0 16px 48px rgba(0,0,0,.4)}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;top:calc(100% + 8px)}
+.nav-dropdown-menu a{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;font-size:13px;color:#9C9888;transition:all .2s;white-space:nowrap}
+.nav-dropdown-menu a:hover{color:#F5F0E8;background:rgba(186,117,23,.08)}
+.nav-dropdown-menu a span.dd-icon{font-size:16px;width:20px;text-align:center}
+.nav-dropdown-divider{height:1px;background:rgba(186,117,23,.1);margin:6px 0}
+
+  </style>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1012037731152333');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1012037731152333&ev=PageView&noscript=1"
+    / alt="" decoding="async"></noscript>
+    <!-- End Meta Pixel Code -->
+  
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Micap AI Digital Employees",
+  "description": "AI-powered Digital Employees for SMBs: Receptionist, Scheduler, Lead Qualifier, SDR, and Customer Success roles.",
+  "url": "https://micap-ai.manus.space/digital-employees.html",
+  "brand": {
+    "@type": "Brand",
+    "name": "Micap AI"
+  },
+  "category": "AI Software",
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "USD",
+    "lowPrice": "97",
+    "highPrice": "497",
+    "offerCount": "10"
+  }
+}
+  </script>
+  </head>
+<body>
+    <a href="#main-content" class="skip-to-content" style="position: absolute; top: -40px; left: 0; background: #d4a574; color: white; padding: 8px; text-decoration: none; z-index: 100;">Skip to main content</a>
+
+<nav class="nav" id="navbar" role="navigation">
+  <a href="index.html" class="nav-brand">
+    <img loading="lazy" src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663473200649/hUUaHIjRLGNJNfOi.jpg" alt="Micap AI" style="width:40px;height:40px;object-fit:contain;background:#000" decoding="async">
+    <div class="nav-brand-text">micap<span>.ai</span></div>
+  </a>
+  <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" rel="noopener noreferrer" class="nav-consultation" aria-label="Opens in new window">CONSULTATION BOOKING</a>
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+<div class="nav-menu" id="navMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="digital-employees.html">Digital Employees</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="case-studies.html">Case Studies</a>
+  <a href="ai-roi-calculator.html">ROI Calculator</a>
+  <a href="roi-calculator-demo.html">ROI Demo</a>
+  <a href="blog.html">Blog</a>
+  <a href="faq.html">FAQ</a>
+</div>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+  
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+    
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+    
+    document.addEventListener('click', function(event) {
+      if (!event.target.closest('.nav') && !event.target.closest('.nav-menu')) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    });
+  }
+</script>
+
+
+<!-- NAV -->
+
+  
+  
+  
+</nav>
+
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="section-label">Your AI-Powered Workforce</div>
+  <h1>Meet Your <em>Digital Employees</em></h1>
+  <p>10 specialized AI workers that handle specific operational roles 24/7, 365 days a year. Deploy individually or as a coordinated team to multiply your capacity.</p>
+</div>
+
+<!-- MAIN CONTENT -->
+<section style="padding:40px 0 80px">
+    <nav aria-label="breadcrumb" class="breadcrumb-nav" style="margin-bottom: 20px;">
+      <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 5px; font-size: 0.9em;">
+        <li><a href="index.html" style="color: #d4a574; text-decoration: none;">Home</a></li>
+        <li style="color: #999;">/</li>
+        <li><a href="services.html" style="color: #d4a574; text-decoration: none;">Services</a></li>
+        <li style="color: #999;">/</li>
+        <li aria-current="page" style="color: #666;">Digital Employees</li>
+      </ol>
+    </nav>
+
+  <div class="container">
+    <!-- Product Selector Grid -->
+    <div style="text-align:center;margin-bottom:16px">
+      <div class="section-label">Choose a Digital Employee</div>
+    </div>
+    <div class="product-grid" id="productGrid">
+      <button class="product-tab active" data-product="receptionist">
+        <span class="tab-icon">🎧</span>
+        <div><div class="tab-name">Receptionist</div><div class="tab-role">24/7 Call Handling</div></div>
+      </button>
+      <button class="product-tab" data-product="scheduler">
+        <span class="tab-icon">📅</span>
+        <div><div class="tab-name">Scheduler</div><div class="tab-role">Appointment Management</div></div>
+      </button>
+      <button class="product-tab" data-product="qualifier">
+        <span class="tab-icon">🎯</span>
+        <div><div class="tab-name">Lead Qualifier</div><div class="tab-role">Lead Reactivation</div></div>
+      </button>
+      <button class="product-tab" data-product="quote">
+        <span class="tab-icon">📝</span>
+        <div><div class="tab-name">Quote Specialist</div><div class="tab-role">Instant Proposals</div></div>
+      </button>
+      <button class="product-tab" data-product="nurture">
+        <span class="tab-icon">❤️</span>
+        <div><div class="tab-name">Customer Nurture</div><div class="tab-role">Retention & Reviews</div></div>
+      </button>
+      <button class="product-tab" data-product="sdr">
+        <span class="tab-icon">🚀</span>
+        <div><div class="tab-name">SDR</div><div class="tab-role">Sales Development</div></div>
+      </button>
+      <button class="product-tab" data-product="social">
+        <span class="tab-icon">📱</span>
+        <div><div class="tab-name">Social Media</div><div class="tab-role">SMM & Engagement</div></div>
+      </button>
+      <button class="product-tab" data-product="content">
+        <span class="tab-icon">✍️</span>
+        <div><div class="tab-name">Content Creator</div><div class="tab-role">Blog & SEO</div></div>
+      </button>
+      <button class="product-tab" data-product="csm">
+        <span class="tab-icon">🤝</span>
+        <div><div class="tab-name">Customer Success</div><div class="tab-role">CSM & Retention</div></div>
+      </button>
+      <button class="product-tab" data-product="email">
+        <span class="tab-icon">📧</span>
+        <div><div class="tab-name">Email Marketing</div><div class="tab-role">EMM Specialist</div></div>
+      </button>
+    </div>
+
+    <!-- Tier Selector -->
+    <div class="tier-bar" id="tierBar">
+      <button class="tier-btn active" data-tier="starter">Starter</button>
+      <button class="tier-btn" data-tier="core">Core</button>
+      <button class="tier-btn" data-tier="pro">Pro</button>
+      <button class="tier-btn" data-tier="elite">Elite</button>
+    </div>
+
+    <!-- Product Detail Card -->
+    <div id="productDetail"></div>
+
+    <!-- Quick Comparison Table -->
+    <div style="margin:80px 0 40px;text-align:center">
+      <div class="section-label">At a Glance</div>
+      <h2 class="section-title">All Digital Employees — Pricing Overview</h2>
+    </div>
+    <div style="overflow-x:auto">
+      <table class="comparison-table" id="comparisonTable"></table>
+    </div>
+  </div>
+</section>
+
+<!-- BUNDLE SECTION -->
+<section style="padding:80px 0">
+  <div class="container">
+    <div class="bundle-section">
+      <div style="text-align:center">
+        <div class="section-label">Save More Together</div>
+        <h2 class="section-title">Bundle Discounts</h2>
+        <p style="color:#9C9888;margin-top:12px;max-width:500px;margin-left:auto;margin-right:auto">Deploy multiple Digital Employees and save up to 30%. Discounts apply to Core tier and above.</p>
+      </div>
+      <div class="bundle-grid">
+        <div class="bundle-card">
+          <div class="bundle-count">2 Employees</div>
+          <div class="bundle-discount">10% off</div>
+          <div class="bundle-note">Most popular starter bundle</div>
+        </div>
+        <div class="bundle-card">
+          <div class="bundle-count">3–4 Employees</div>
+          <div class="bundle-discount">15% off</div>
+          <div class="bundle-note">Growth team package</div>
+        </div>
+        <div class="bundle-card">
+          <div class="bundle-count">5–7 Employees</div>
+          <div class="bundle-discount">20% off</div>
+          <div class="bundle-note">Operations suite</div>
+        </div>
+        <div class="bundle-card">
+          <div class="bundle-count">8–10 Employees</div>
+          <div class="bundle-discount">25–30% off</div>
+          <div class="bundle-note">Full digital workforce</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:80px 0">
+  <div class="container" style="text-align:center">
+    <h2 class="section-title">Ready to Deploy Your Digital Team?</h2>
+    <p style="color:#9C9888;font-size:16px;margin-bottom:32px;max-width:600px;margin-left:auto;margin-right:auto">Schedule a 15-minute strategy call to identify your biggest revenue leak and how to plug it with AI.</p>
+    <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" rel="noopener noreferrer" class="btn btn-primary lg" aria-label="Opens in new window">Book Your Strategy Call</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>&copy; 2026 Micap AI. All rights reserved.</p>
+  <p><a href="mailto:hi@micap.pro">hi@micap.pro</a></p>
+  <p><a href="/api-docs.html">API Documentation</a></p>
+</div>
+
+<script>
+  // ═══════════════════════════════════════════
+  // PRODUCT DATA — All 10 Digital Employees
+  // ═══════════════════════════════════════════
+  const products = {
+    receptionist: {
+      name: 'Digital Receptionist', icon: '🎧', tag: '⭐ BEACHHEAD PRODUCT',
+      description: 'Answers phone calls, books appointments, qualifies leads, sends follow-up reminders — 24/7 AI-powered reception that captures revenue your team currently misses.',
+      breakEven: '1–2 new clients from previously missed calls',
+      tiers: {
+        starter: { setup: 1500, monthly: 500, features: ['1 Phone Number', 'Pre-built AI (3 voices)', 'Up to 3 qualification questions', '1 Vertical', 'Calendly integration', 'SMS notifications', '2 Test scenarios', 'Email support (72hr)', '2-month minimum'] },
+        core: { setup: 2500, monthly: 750, features: ['1 Phone Number', 'Pre-built AI (5 voices)', 'Up to 5 qualification questions', '1 Vertical', 'Calendly integration', 'SMS notifications', '3 Test scenarios', 'Email support (48hr)', '3-month minimum'] },
+        pro: { setup: 4000, monthly: 1000, features: ['2 Phone Numbers', 'Custom voice clone', 'Up to 12 qualification questions', 'Up to 3 Verticals', 'Native Google Calendar', 'SMS + Slack notifications', '7 Tests + 48hr monitoring', 'Priority Slack (4hr)', '3-month minimum'] },
+        elite: { setup: 6500, monthly: 1500, features: ['4 Phone Numbers', 'Custom voice clone + bilingual', 'Unlimited qualification questions', 'Unlimited Verticals', 'Native Calendar + dispatch', 'SMS + Slack + email digest', '10 Tests + 72hr monitoring', 'Dedicated Slack + bi-weekly review', '12-month minimum'] }
+      }
+    },
+    scheduler: {
+      name: 'Appointment Scheduler', icon: '📅', tag: '',
+      description: 'Manages the entire appointment lifecycle — sends confirmations, multi-channel reminders, handles reschedule requests, manages waitlists, and recovers no-shows automatically.',
+      breakEven: 'Eliminating 3–5 no-shows per month at average ticket value',
+      tiers: {
+        starter: { setup: 2000, monthly: 1000, features: ['SMS confirmations', '1 reminder (24hr)', 'Calendly rescheduling', 'Automated "missed you" text', 'Up to 200 appointments/month', 'Monthly email summary', 'Email support (72hr)', '2-month minimum'] },
+        core: { setup: 3500, monthly: 1500, features: ['SMS + email confirmations', '2 reminders (48hr + 2hr)', 'Self-serve SMS rescheduling', 'Text + follow-up call', 'Basic waitlist management', 'Up to 600 appointments/month', 'Email support (48hr)', '3-month minimum'] },
+        pro: { setup: 5500, monthly: 2000, features: ['SMS + email + voice confirmations', '3 reminders (72hr + 24hr + 2hr)', 'AI-powered phone + SMS rescheduling', 'Auto-fill from waitlist', 'Up to 1,500 appointments/month', 'Weekly call + dashboard', 'Priority Slack (4hr)', '3-month minimum'] },
+        elite: { setup: 8500, monthly: 3000, features: ['SMS + email + voice + app push', 'Custom cadence + escalation logic', 'Full conversational rescheduling', 'Priority waitlist + revenue optimization', 'Unlimited appointments', 'Weekly call + analytics', 'Dedicated Slack + bi-weekly review', '12-month minimum'] }
+      }
+    },
+    qualifier: {
+      name: 'Lead Qualifier', icon: '🎯', tag: '',
+      description: 'Re-engages cold, dead, and dormant leads from your existing database via automated multi-channel sequences. Scores and prioritizes leads, then routes warm ones to your team ready to close.',
+      breakEven: 'Reactivating 2–3 dead leads into booked jobs per month',
+      tiers: {
+        starter: { setup: 2000, monthly: 1000, features: ['Up to 500 contacts', 'SMS outreach', '1 drip sequence (3 touches)', 'Basic lead scoring', 'Manual list upload', 'SMS notification to owner', 'Monthly email summary', 'Email support (72hr)', '2-month minimum'] },
+        core: { setup: 3500, monthly: 1500, features: ['Up to 2,000 contacts', 'SMS + email outreach', '2 sequences (5 touches each)', 'Engagement scoring', 'Manual + time-based triggers', 'Monthly + campaign performance', 'Email support (48hr)', '3-month minimum'] },
+        pro: { setup: 5500, monthly: 2000, features: ['Up to 5,000 contacts', 'SMS + email + ringless voicemail', '4 sequences + A/B testing', 'Behavioral + intent scoring', 'Auto-trigger on behavior', 'Weekly call + conversion dashboard', 'Priority Slack (4hr)', '3-month minimum'] },
+        elite: { setup: 8500, monthly: 3000, features: ['Unlimited contacts', 'SMS + email + RVM + AI voice', 'Unlimited sequences + AI timing', 'Predictive scoring + forecasting', 'Full automation + event triggers', 'Weekly call + ROI attribution', 'Dedicated Slack + bi-weekly review', '12-month minimum'] }
+      }
+    },
+    quote: {
+      name: 'Quote Specialist', icon: '📝', tag: '',
+      description: 'Captures job requirements via phone, text, or web form, then generates professional branded proposals in under 60 seconds. Handles follow-ups on open quotes and tracks acceptance rates.',
+      breakEven: 'Converting 1–2 additional quotes into signed work per month',
+      tiers: {
+        starter: { setup: 2000, monthly: 1000, features: ['2 quote templates', 'Web form intake', 'Up to 20 service items', '< 2 minutes generation', 'Manual reminder', 'Basic sent/signed tracking', 'Airtable integration', 'Email support (72hr)', '2-month minimum'] },
+        core: { setup: 3500, monthly: 1500, features: ['5 quote templates', 'Web form + SMS intake', 'Up to 50 service items', '< 60 seconds generation', 'Auto-SMS at 48hr', 'Sent/opened/signed tracking', 'Airtable + email', 'Email support (48hr)', '3-month minimum'] },
+        pro: { setup: 5500, monthly: 2000, features: ['15 templates + custom branding', 'Web + SMS + AI phone intake', 'Up to 200 items + bundles', '< 30 seconds + multi-option', 'SMS + email follow-ups', 'Full funnel tracking', 'Airtable + Zapier + QuickBooks', 'Priority Slack (4hr)', '3-month minimum'] },
+        elite: { setup: 8500, monthly: 3000, features: ['Unlimited templates + dynamic engine', 'All channels + photo/video intake', 'Unlimited + dynamic pricing', 'Instant + AI upsells', 'Custom cadence + AI call follow-up', 'Full funnel + win/loss analysis', 'Custom CRM + ERP + accounting', 'Dedicated Slack + bi-weekly review', '12-month minimum'] }
+      }
+    },
+    nurture: {
+      name: 'Customer Nurture', icon: '❤️', tag: '',
+      description: 'Manages the entire post-sale relationship — sends check-in messages, requests reviews, promotes seasonal services, runs referral campaigns, and identifies upsell opportunities.',
+      breakEven: '1 retained client per quarter who would have otherwise churned',
+      tiers: {
+        starter: { setup: 2000, monthly: 1000, features: ['Up to 500 clients', 'SMS check-in at 24hr', 'SMS link to Google reviews', '1 campaign/quarter', 'Airtable integration', 'Monthly email summary', 'Email support (72hr)', '2-month minimum'] },
+        core: { setup: 3500, monthly: 1500, features: ['Up to 2,000 clients', 'SMS + email at 24hr and 7 days', 'Google + Yelp reviews', '2 campaigns/quarter', 'Basic referral SMS', 'Monthly + review tracking', 'Email support (48hr)', '3-month minimum'] },
+        pro: { setup: 5500, monthly: 2000, features: ['Up to 5,000 clients', 'SMS + email + voice check-ins', 'Multi-platform + review gating', 'Monthly campaigns + A/B testing', 'Referral tracking + rewards', 'Weekly call + retention dashboard', 'Priority Slack (4hr)', '3-month minimum'] },
+        elite: { setup: 8500, monthly: 3000, features: ['Unlimited clients', 'Full lifecycle with AI timing', 'Multi-platform + sentiment analysis', 'Unlimited + AI-optimized campaigns', 'Full referral engine + ambassador tiers', 'Weekly call + LTV analytics', 'Dedicated Slack + bi-weekly review', '12-month minimum'] }
+      }
+    },
+    sdr: {
+      name: 'Sales Development Rep', icon: '🚀', tag: '',
+      description: 'Automates outbound prospecting across email, SMS, LinkedIn, and voice. Identifies high-intent prospects, runs multi-touch sequences, and books qualified meetings for your sales team.',
+      breakEven: '2–3 qualified meetings booked per month from cold outreach',
+      tiers: {
+        starter: { setup: 2500, monthly: 1200, features: ['Up to 500 prospects/month', 'Email + SMS outreach', '3 sequences (5 touches)', 'Basic lead scoring', 'Manual list upload', 'Daily activity summary', 'Email support (72hr)', '2-month minimum'] },
+        core: { setup: 4000, monthly: 1800, features: ['Up to 1,500 prospects/month', 'Email + SMS + LinkedIn', '5 sequences (7 touches each)', 'Engagement + intent scoring', 'Auto-trigger on behavior', 'Daily + weekly reports', 'Email support (48hr)', '3-month minimum'] },
+        pro: { setup: 6500, monthly: 2500, features: ['Up to 3,000 prospects/month', 'Email + SMS + LinkedIn + voice', '10 sequences + A/B testing', 'Behavioral + predictive scoring', 'Auto-trigger + seasonal campaigns', 'Real-time dashboard + weekly call', 'Priority Slack (4hr)', '3-month minimum'] },
+        elite: { setup: 10000, monthly: 3500, features: ['Unlimited prospects', 'All channels + AI voice calls', 'Unlimited sequences + AI optimization', 'Predictive scoring + revenue forecasting', 'Full automation + event triggers', 'Custom dashboard + dedicated support', 'Dedicated Slack + bi-weekly review', '12-month minimum'] }
+      }
+    },
+    social: {
+      name: 'Social Media Manager', icon: '📱', tag: '',
+      description: 'Manages your social media presence across all platforms — creates content, schedules posts, engages with followers, tracks analytics, and grows your audience organically.',
+      breakEven: 'Consistent posting that generates 2–3 inbound leads per month',
+      tiers: {
+        starter: { setup: 2000, monthly: 1000, features: ['1 social platform', '4 posts/week', 'Basic content calendar', 'Manual scheduling', 'Community moderation', 'Monthly engagement report', 'Email support (72hr)', '2-month minimum'] },
+        core: { setup: 3500, monthly: 1500, features: ['2 platforms (FB + IG)', '6 posts/week', 'Content calendar + planning', 'Auto-scheduling + optimal timing', 'Comment + DM responses', 'Weekly engagement + growth report', 'Email support (48hr)', '3-month minimum'] },
+        pro: { setup: 5500, monthly: 2000, features: ['3 platforms (FB + IG + LinkedIn)', '10 posts/week + stories', 'AI-assisted content creation', 'Auto-schedule + trend-based posting', 'Full community management', 'Weekly analytics + competitor tracking', 'Priority Slack (4hr)', '3-month minimum'] },
+        elite: { setup: 8500, monthly: 3000, features: ['All platforms + TikTok', 'Daily posts + stories + reels', 'AI content generation + trending topics', 'Full automation + influencer outreach', 'Paid ad management + ROI tracking', 'Real-time analytics + audience insights', 'Dedicated Slack + bi-weekly review', '12-month minimum'] }
+      }
+    },
+    content: {
+      name: 'Content Creator', icon: '✍️', tag: '',
+      description: 'Produces SEO-optimized blog posts, whitepapers, case studies, and multimedia content that drives organic traffic and establishes your brand as an industry authority.',
+      breakEven: 'Organic traffic generating 3–5 qualified leads per month',
+      tiers: {
+        starter: { setup: 2000, monthly: 1000, features: ['4 blog posts/month', 'SEO optimization', 'Basic keyword research', 'Manual publishing', 'Monthly performance report', 'Email support (72hr)', '2-month minimum'] },
+        core: { setup: 3500, monthly: 1500, features: ['8 blog posts/month', 'SEO + keyword optimization', 'Content calendar + planning', 'Auto-publishing + scheduling', 'Weekly traffic + engagement report', 'Email support (48hr)', '3-month minimum'] },
+        pro: { setup: 5500, monthly: 2000, features: ['15 posts/month + whitepapers', 'Advanced SEO + competitor analysis', 'AI-assisted research + writing', 'Auto-publish + distribution', 'Weekly analytics + conversion tracking', 'Priority Slack (4hr)', '3-month minimum'] },
+        elite: { setup: 8500, monthly: 3000, features: ['Unlimited content + multimedia', 'Full SEO + content strategy', 'AI writing + video scripts', 'Full automation + multi-channel', 'Real-time analytics + audience insights', 'Dedicated Slack + bi-weekly review', '12-month minimum'] }
+      }
+    },
+    csm: {
+      name: 'Customer Success Manager', icon: '🤝', tag: '',
+      description: 'Proactively monitors account health, conducts check-ins, identifies churn risks, and drives renewals and expansions. Ensures every customer achieves their desired outcomes.',
+      breakEven: 'Preventing 1–2 account churns per quarter',
+      tiers: {
+        starter: { setup: 2000, monthly: 1000, features: ['Up to 50 accounts', 'Monthly check-ins', 'Basic health scoring', 'Manual outreach', 'Monthly summary report', 'Email support (72hr)', '2-month minimum'] },
+        core: { setup: 3500, monthly: 1500, features: ['Up to 150 accounts', 'Bi-weekly check-ins', 'Engagement + health scoring', 'Auto-triggered outreach', 'Weekly account health report', 'Email support (48hr)', '3-month minimum'] },
+        pro: { setup: 5500, monthly: 2000, features: ['Up to 300 accounts', 'Weekly + on-demand outreach', 'Predictive churn scoring', 'Auto-escalation + renewal alerts', 'Real-time dashboard + weekly call', 'Priority Slack (4hr)', '3-month minimum'] },
+        elite: { setup: 8500, monthly: 3000, features: ['Unlimited accounts', 'Continuous AI-driven outreach', 'Predictive analytics + forecasting', 'Full automation + proactive interventions', 'Custom dashboard + dedicated support', 'Dedicated Slack + bi-weekly review', '12-month minimum'] }
+      }
+    },
+    email: {
+      name: 'Email Marketing Specialist', icon: '📧', tag: '',
+      description: 'Designs, writes, and deploys email campaigns that nurture leads, drive conversions, and maximize customer lifetime value through intelligent segmentation and automation.',
+      breakEven: 'Email-driven revenue covering 2x the monthly service cost',
+      tiers: {
+        starter: { setup: 2000, monthly: 1000, features: ['1 campaign/week', 'Basic templates', 'List segmentation', 'Manual scheduling', 'Weekly performance report', 'Email support (72hr)', '2-month minimum'] },
+        core: { setup: 3500, monthly: 1500, features: ['2 campaigns/week', 'Custom templates', 'Advanced segmentation', 'Auto-scheduling + A/B testing', 'Weekly analytics + open/click rates', 'Email support (48hr)', '3-month minimum'] },
+        pro: { setup: 5500, monthly: 2000, features: ['4 campaigns/week + automation', 'AI-generated subject lines', 'Behavioral + predictive segmentation', 'Full automation + drip sequences', 'Real-time analytics + conversion tracking', 'Priority Slack (4hr)', '3-month minimum'] },
+        elite: { setup: 8500, monthly: 3000, features: ['Unlimited campaigns + personalization', 'AI content + subject optimization', 'Full predictive segmentation', 'Complete lifecycle marketing', 'Advanced analytics + revenue attribution', 'Dedicated Slack + bi-weekly review', '12-month minimum'] }
+      }
+    }
+  };
+
+  let currentProduct = 'receptionist';
+  let currentTier = 'starter';
+
+  function renderDetail() {
+    const p = products[currentProduct];
+    const t = p.tiers[currentTier];
+    const tagHtml = p.tag ? `<span style="display:inline-block;background:rgba(186,117,23,.15);color:#BA7517;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:600;margin-left:12px">${p.tag}</span>` : '';
+
+    let html = `
+      <div class="product-detail">
+        <div class="detail-header">
+          <div class="detail-icon">${p.icon}</div>
+          <div>
+            <div class="detail-title">${p.name}${tagHtml}</div>
+            <div class="detail-subtitle">Break-even: ${p.breakEven}</div>
+          </div>
+        </div>
+        <p class="detail-desc">${p.description}</p>
+        <div class="pricing-row">
+          <div class="price-box">
+            <div class="price-label">Setup Fee</div>
+            <div class="price-value">$${t.setup.toLocaleString()}</div>
+          </div>
+          <div class="price-box">
+            <div class="price-label">Monthly</div>
+            <div class="price-value">$${t.monthly.toLocaleString()}<small>/mo</small></div>
+          </div>
+          <div class="price-box">
+            <div class="price-label">Annual Cost</div>
+            <div class="price-value">$${(t.monthly * 12).toLocaleString()}<small>/yr</small></div>
+          </div>
+        </div>
+        <div style="margin-bottom:16px"><div class="section-label">${currentTier.charAt(0).toUpperCase() + currentTier.slice(1)} Tier Features</div></div>
+        <div class="feature-grid">
+          ${t.features.map(f => `<div class="feature-item"><span class="feature-check">✓</span><span class="feature-text">${f}</span></div>`).join('')}
+        </div>
+        <div style="text-align:center;margin-top:40px">
+          <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" rel="noopener noreferrer" class="btn btn-primary" aria-label="Opens in new window">Deploy This Employee</a>
+          <a href="ai-roi-calculator.html" class="btn btn-ghost" style="margin-left:12px">Calculate ROI</a>
+        </div>
+      </div>
+    `;
+    document.getElementById('productDetail').innerHTML = html;
+  }
+
+  function renderComparison() {
+    const allKeys = Object.keys(products);
+    let html = `<thead><tr><th style="text-align:left">Digital Employee</th><th>Starter</th><th>Core</th><th>Pro</th><th>Elite</th></tr></thead><tbody>`;
+    allKeys.forEach(key => {
+      const p = products[key];
+      html += `<tr><td style="text-align:left;font-weight:600">${p.icon} ${p.name}</td>`;
+      ['starter','core','pro','elite'].forEach(tier => {
+        const t = p.tiers[tier];
+        html += `<td><div style="font-weight:600;color:#BA7517">$${t.monthly.toLocaleString()}</div><div style="font-size:11px;color:#9C9888">Setup: $${t.setup.toLocaleString()}</div></td>`;
+      });
+      html += '</tr>';
+    });
+    html += '</tbody>';
+    document.getElementById('comparisonTable').innerHTML = html;
+  }
+
+  // Event listeners
+  document.querySelectorAll('.product-tab').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.product-tab').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      currentProduct = this.dataset.product;
+      renderDetail();
+    });
+  });
+
+  document.querySelectorAll('.tier-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.tier-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      currentTier = this.dataset.tier;
+      renderDetail();
+    });
+  });
+
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Hamburger toggle
+  // Old navExpanded code removed - using standard navMenu handler
+
+  // Initial render
+  renderDetail();
+  renderComparison();
+</script>
+
+</body>
+</html>

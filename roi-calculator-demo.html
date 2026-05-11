@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Instrument+Serif&display=swap" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <title>ROI Calculator Demo | See AI Savings in Action - Micap AI</title>
+  <meta name="description" content="Interactive demo of our AI ROI calculator. See how automation drives cost savings and efficiency gains.">
+  <link rel="canonical" href="https://micap-ai.manus.space/roi-calculator-demo.html">
+  <meta property="og:title" content="ROI Calculator Demo | See AI Savings in Action - Micap AI">
+  <meta property="og:description" content="Interactive demo of our AI ROI calculator. See how automation drives cost savings and efficiency gains.">
+  <meta property="og:url" content="https://micap-ai.manus.space/roi-calculator-demo.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Micap AI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ROI Calculator Demo | See AI Savings in Action - Micap AI">
+  <meta name="twitter:description" content="Interactive demo of our AI ROI calculator. See how automation drives cost savings and efficiency gains.">
+  <link rel="icon" href="/manus-storage/micap-favicon_a2f043bd.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/manus-storage/micap-favicon-256_c9c78192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Instrument+Serif&display=swap" rel="stylesheet">
+  
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-50MLBREDYZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-50MLBREDYZ', { page_path: window.location.pathname, anonymize_ip: true });
+  </script>
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1012037731152333');fbq('track','PageView');
+  </script>
+  <link rel="stylesheet" href="floating-ui.css">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:#0E0D0B;color:#F5F0E8;font-family:'DM Sans',sans-serif;overflow-x:hidden;padding-top:64px}
+    a{text-decoration:none;color:inherit}
+    button{font-family:inherit}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes slideIn{from{transform:translateX(100%)}to{transform:translateX(0)}}
+    @keyframes countUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+    /* NAV */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid transparent;transition:all .4s ease}
+    .nav.scrolled{background:rgba(14,13,11,.92);backdrop-filter:blur(16px);border-bottom-color:rgba(186,117,23,.12)}
+    .hamburger{display:flex;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;z-index:115}
+    .hamburger span{width:24px;height:2px;background:#BA7517;transition:all .3s}
+    .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+    .nav-menu{display:none;position:fixed;top:64px;right:0;width:250px;max-height:calc(100vh - 64px);background:rgba(14,13,11,.98);backdrop-filter:blur(20px);border-left:1px solid rgba(186,117,23,.2);padding:16px 0;z-index:99;flex-direction:column;overflow-y:auto;animation:slideIn .3s ease}
+    .nav-menu.active{display:flex}
+    .nav-menu a{color:#9C9888;font-size:14px;font-weight:500;text-decoration:none;padding:12px 24px;transition:all .2s;display:block;border-left:3px solid transparent}
+    .nav-menu a:hover{color:#F5F0E8;background:rgba(186,117,23,.1);border-left-color:#BA7517}
+    .nav-menu a.nav-active{color:#BA7517;border-left-color:#BA7517;background:rgba(186,117,23,.05)}
+    .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#F5F0E8;z-index:115}
+    .nav-brand img{width:40px;height:40px;object-fit:contain;background:#000;border-radius:4px}
+    .nav-brand-text{font-family:'DM Sans',sans-serif;font-size:18px;font-weight:600;color:#F5F0E8;letter-spacing:-.3px}
+    .nav-brand-text span{color:#BA7517}
+    .nav-consultation{background:#BA7517;color:#000;padding:10px 20px;border-radius:6px;font-size:13px;font-weight:600;letter-spacing:.05em;text-decoration:none;transition:all .2s;position:absolute;left:50%;transform:translateX(-50%);top:16px;z-index:114;border:none;cursor:pointer;display:inline-block;white-space:nowrap}
+    .nav-consultation:hover{background:#D4A574;transform:translateX(-50%) translateY(-2px)}
+
+    /* LAYOUT */
+    .container{max-width:1100px;margin:0 auto;padding:0 24px}
+    .section-label{font-family:'DM Mono',monospace;font-size:12px;color:#BA7517;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+    .section-title{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(30px,4vw,46px);font-weight:400;color:#F5F0E8;margin:0 0 16px;letter-spacing:-1px;line-height:1.15}
+    .section-title em{color:#BA7517;font-style:normal}
+    .section-sub{font-size:17px;color:#9C9888;line-height:1.7;max-width:600px}
+    .btn{display:inline-flex;align-items:center;font-weight:600;border-radius:10px;transition:transform .2s,box-shadow .2s;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;text-decoration:none}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:linear-gradient(135deg,#BA7517,#D4891A);color:#0E0D0B;padding:14px 32px;font-size:16px}
+    .btn-primary:hover{box-shadow:0 8px 32px rgba(186,117,23,.35)}
+    .btn-ghost{border:1px solid rgba(186,117,23,.3);color:#F5F0E8;padding:14px 32px;font-size:16px;background:rgba(186,117,23,.05)}
+    .btn-ghost:hover{background:rgba(186,117,23,.1);border-color:rgba(186,117,23,.5)}
+
+    /* HERO */
+    .hero{padding:96px 24px 80px;text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(186,117,23,.08) 0%,transparent 70%);pointer-events:none}
+    .hero-label{font-family:'DM Mono',monospace;font-size:12px;color:#BA7517;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;display:inline-block}
+    .hero-title{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(38px,6vw,64px);font-weight:400;color:#F5F0E8;line-height:1.1;letter-spacing:-2px;margin-bottom:24px}
+    .hero-title em{color:#BA7517;font-style:normal}
+    .hero-sub{font-size:18px;color:#9C9888;line-height:1.7;max-width:560px;margin:0 auto 40px}
+    .hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+    /* FEATURES */
+    .features-section{padding:80px 0;border-top:1px solid rgba(186,117,23,.08)}
+    .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:48px}
+    .feature-card{padding:28px;border-radius:16px;border:1px solid rgba(186,117,23,.1);background:rgba(186,117,23,.02);transition:all .3s}
+    .feature-card:hover{border-color:rgba(186,117,23,.25);background:rgba(186,117,23,.04);transform:translateY(-4px)}
+    .feature-icon{font-size:28px;margin-bottom:16px}
+    .feature-card h3{font-size:17px;font-weight:600;color:#F5F0E8;margin-bottom:8px}
+    .feature-card p{font-size:14px;color:#9C9888;line-height:1.6}
+
+    /* FLOW */
+    .flow-section{padding:80px 0;border-top:1px solid rgba(186,117,23,.08)}
+    .flow-steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px}
+    .flow-step{text-align:center;padding:0 8px}
+    .flow-num{width:56px;height:56px;border-radius:50%;background:#0E0D0B;border:2px solid rgba(186,117,23,.4);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-family:'DM Mono',monospace;font-size:16px;color:#BA7517;font-weight:500}
+    .flow-step h4{font-size:15px;font-weight:600;color:#F5F0E8;margin-bottom:6px}
+    .flow-step p{font-size:13px;color:#6B6860;line-height:1.5}
+
+    /* WIDGET */
+    .widget-section{padding:80px 0;border-top:1px solid rgba(186,117,23,.08)}
+    .widget-box{max-width:720px;margin:48px auto 0;padding:40px;border-radius:24px;border:1px solid rgba(186,117,23,.2);background:rgba(186,117,23,.03)}
+    .widget-row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}
+    .widget-field label{display:block;font-family:'DM Mono',monospace;font-size:11px;color:#BA7517;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+    .widget-field input[type="range"]{width:100%;accent-color:#BA7517;cursor:pointer;margin-top:8px}
+    .widget-field input[type="number"]{width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(186,117,23,.2);border-radius:8px;padding:10px 14px;color:#F5F0E8;font-size:15px;font-family:'DM Sans',sans-serif}
+    .widget-field input[type="number"]:focus{outline:none;border-color:rgba(186,117,23,.5)}
+    .range-val{font-family:'DM Mono',monospace;font-size:18px;color:#BA7517;font-weight:500;margin-top:4px}
+    .widget-results{display:none;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px;padding-top:24px;border-top:1px solid rgba(186,117,23,.1)}
+    .widget-results.visible{display:grid;animation:countUp .4s ease}
+    .widget-metric{text-align:center;padding:16px;border-radius:12px;background:rgba(186,117,23,.05);border:1px solid rgba(186,117,23,.1)}
+    .widget-metric-val{font-family:'Instrument Serif',Georgia,serif;font-size:24px;color:#BA7517;letter-spacing:-1px}
+    .widget-metric-label{font-size:11px;color:#6B6860;text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+    .widget-btn{width:100%;margin-top:24px;padding:14px;border-radius:10px;background:linear-gradient(135deg,#BA7517,#D4891A);color:#0E0D0B;font-size:15px;font-weight:700;border:none;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}
+    .widget-btn:hover{box-shadow:0 8px 32px rgba(186,117,23,.35);transform:translateY(-2px)}
+    .widget-link{display:block;text-align:center;margin-top:20px;font-family:'DM Mono',monospace;font-size:12px;color:#BA7517;letter-spacing:1px;text-decoration:none}
+    .widget-link:hover{color:#D4A574}
+
+    /* METRICS */
+    .metrics-section{padding:80px 0;border-top:1px solid rgba(186,117,23,.08)}
+    .metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+    .metric-card{text-align:center;padding:32px 16px;border-radius:16px;border:1px solid rgba(186,117,23,.1);background:rgba(186,117,23,.02)}
+    .metric-val{font-family:'Instrument Serif',Georgia,serif;font-size:40px;color:#BA7517;letter-spacing:-2px;margin-bottom:8px}
+    .metric-label{font-size:13px;color:#9C9888;text-transform:uppercase;letter-spacing:1px}
+    .metric-desc{font-size:12px;color:#4A473F;margin-top:6px}
+
+    /* TESTIMONIALS */
+    .testimonials-section{padding:80px 0;border-top:1px solid rgba(186,117,23,.08)}
+    .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:48px}
+    .testimonial-card{padding:32px;border-radius:16px;border:1px solid rgba(186,117,23,.1);background:rgba(186,117,23,.02);transition:all .3s}
+    .testimonial-card:hover{border-color:rgba(186,117,23,.25);transform:translateY(-4px)}
+    .testimonial-stars{color:#BA7517;font-size:16px;margin-bottom:16px;letter-spacing:2px}
+    .testimonial-quote{font-size:15px;color:#D4CCBC;line-height:1.7;margin-bottom:20px;font-style:italic}
+    .testimonial-metrics{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+    .testimonial-metric-tag{font-family:'DM Mono',monospace;font-size:11px;color:#BA7517;background:rgba(186,117,23,.08);padding:4px 10px;border-radius:20px}
+    .testimonial-author{display:flex;align-items:center;gap:12px}
+    .testimonial-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#BA7517,#D4891A);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#0E0D0B;flex-shrink:0}
+    .testimonial-name{font-size:14px;font-weight:600;color:#F5F0E8}
+    .testimonial-role{font-size:12px;color:#6B6860}
+
+    /* CTA */
+    .cta-section{padding:80px 24px;text-align:center;border-top:1px solid rgba(186,117,23,.08)}
+    .cta-box{max-width:640px;margin:0 auto;padding:48px;border-radius:24px;border:1px solid rgba(186,117,23,.15);background:linear-gradient(135deg,rgba(186,117,23,.04),rgba(186,117,23,.01))}
+    .cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+
+    /* FOOTER */
+    .footer-wrap{border-top:1px solid rgba(186,117,23,.08);padding:32px 24px}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#4A473F;flex-wrap:wrap;gap:16px}
+    .footer-inner a:hover{color:#BA7517}
+
+    /* MOBILE */
+    @media(max-width:768px){
+      .hero{padding:72px 16px 60px}
+      .flow-steps-grid{grid-template-columns:1fr 1fr;gap:24px}
+      .metrics-grid{grid-template-columns:repeat(2,1fr)}
+      .widget-row{grid-template-columns:1fr}
+      .widget-results{grid-template-columns:1fr}
+      .footer-inner{flex-direction:column;text-align:center}
+      .nav-consultation{font-size:11px;padding:8px 14px}
+    }
+    @media(max-width:480px){
+      .flow-steps-grid{grid-template-columns:1fr}
+      .metrics-grid{grid-template-columns:1fr}
+      .hero-cta{flex-direction:column;align-items:center}
+      .cta-btns{flex-direction:column;align-items:center}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "ROI Calculator Demo",
+  "description": "Interactive demo of our AI ROI calculator. See how automation drives cost savings and efficiency gains.",
+  "url": "https://micap-ai.manus.space/roi-calculator-demo.html",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web Browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "Micap AI",
+    "url": "https://micap-ai.manus.space"
+  }
+}
+  </script>
+  </head>
+<body>
+    <a href="#main-content" class="skip-to-content" style="position: absolute; top: -40px; left: 0; background: #d4a574; color: white; padding: 8px; text-decoration: none; z-index: 100;">Skip to main content</a>
+
+
+<!-- Scroll-to-Top Button -->
+<button id="scrollToTopBtn" title="Scroll to top" style="display:none;position:fixed;bottom:80px;right:24px;z-index:200;width:44px;height:44px;border-radius:50%;background:#BA7517;color:#0E0D0B;border:none;cursor:pointer;font-size:18px;font-weight:700;box-shadow:0 4px 16px rgba(186,117,23,.4);transition:all .2s">↑</button>
+
+<!-- NAV -->
+<nav class="nav" id="navbar" role="navigation">
+  <a href="index.html" class="nav-brand">
+    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663473200649/hUUaHIjRLGNJNfOi.jpg" alt="Micap AI" decoding="async">
+    <div class="nav-brand-text">micap<span>.ai</span></div>
+  </a>
+  <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" rel="noopener noreferrer" class="nav-consultation" aria-label="Opens in new window">CONSULTATION BOOKING</a>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-menu" id="navMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="digital-employees.html">Digital Employees</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="case-studies.html">Case Studies</a>
+  <a href="ai-roi-calculator.html">ROI Calculator</a>
+  <a href="roi-calculator-demo.html" class="nav-active">ROI Demo</a>
+  <a href="blog.html">Blog</a>
+  <a href="faq.html">FAQ</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="main-content">
+    <nav aria-label="breadcrumb" class="breadcrumb-nav" style="margin-bottom: 20px;">
+      <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 5px; font-size: 0.9em;">
+        <li><a href="index.html" style="color: #d4a574; text-decoration: none;">Home</a></li>
+        <li style="color: #999;">/</li>
+        <li aria-current="page" style="color: #666;">Tools</li>
+        <li style="color: #999;">/</li>
+        <li aria-current="page" style="color: #666;">ROI Calculator Demo</li>
+      </ol>
+    </nav>
+
+  <span class="hero-label">ROI Calculator Demo</span>
+  <h1 class="hero-title">See Your Savings<br><em>Before You Commit.</em></h1>
+  <p class="hero-sub">Our AI ROI Calculator analyzes your business inputs and delivers a personalized savings report — in under 3 minutes. Try the preview below or run the full analysis.</p>
+  <div class="hero-cta">
+    <a href="ai-roi-calculator.html" class="btn btn-primary">Run Full Analysis →</a>
+    <a href="#widget" class="btn btn-ghost">Try the Preview</a>
+  </div>
+</section>
+
+<!-- KEY FEATURES -->
+<section class="features-section">
+  <div class="container">
+    <div class="section-label">What It Does</div>
+    <h2 class="section-title">Six Capabilities That<br>Change How You Plan</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🧮</div>
+        <h3>Instant ROI Calculation</h3>
+        <p>Enter your team size and current costs. Get annual savings, ROI %, and payback period calculated in real time.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Scenario Comparison</h3>
+        <p>Compare Conservative (30%), Moderate (60%), and Aggressive (100%) automation levels side by side with benchmarks.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏭</div>
+        <h3>Industry Benchmarks</h3>
+        <p>See how your projected ROI compares to industry averages for your specific sector — 15+ industries covered.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <h3>AI-Powered Analysis</h3>
+        <p>After your inputs, an AI assistant asks targeted questions to refine your analysis and surface hidden savings.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📄</div>
+        <h3>Branded PDF Report</h3>
+        <p>Download a professional PDF with your full ROI analysis, scenario comparison, and strategic recommendations.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📎</div>
+        <h3>Document Upload</h3>
+        <p>Upload company documents or process maps for deeper AI analysis and more accurate savings projections.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USER FLOW -->
+<section class="flow-section">
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">From Input to Insight<br>in 6 Simple Steps</h2>
+    <div class="flow-steps-grid">
+      <div class="flow-step">
+        <div class="flow-num">01</div>
+        <h3>Enter Your Info</h3>
+        <p>Name, company, industry, and employee count — takes 60 seconds.</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">02</div>
+        <h3>Answer 3 Questions</h3>
+        <p>A short survey about your automation goals and current pain points.</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">03</div>
+        <h3>AI Analyzes</h3>
+        <p>Our AI processes your inputs against 15+ industry benchmarks.</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">04</div>
+        <h3>Review Results</h3>
+        <p>See your savings, ROI %, payback period, and capacity multiplier.</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">05</div>
+        <h3>Compare Scenarios</h3>
+        <p>View Conservative, Moderate, and Aggressive automation side by side.</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">06</div>
+        <h3>Download Report</h3>
+        <p>Get a branded PDF with your full analysis and strategic recommendations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE WIDGET -->
+<section class="widget-section" id="widget">
+  <div class="container">
+    <div class="section-label">Try It Now</div>
+    <h2 class="section-title">Get an Instant<br><em>ROI Estimate</em></h2>
+    <p class="section-sub">Adjust the inputs to see how automation level and team size affect your projected savings. For a full personalized analysis, run the complete calculator.</p>
+    <div class="widget-box">
+      <div class="widget-row">
+        <div class="widget-field">
+          <label>Number of Employees</label>
+          <input type="number" id="widgetEmployees" value="50" min="1" max="10000" oninput="updateWidget()">
+        </div>
+        <div class="widget-field">
+          <label>Avg. Annual Salary ($)</label>
+          <input type="number" id="widgetSalary" value="65000" min="20000" max="500000" step="5000" oninput="updateWidget()">
+        </div>
+      </div>
+      <div class="widget-field">
+        <label>Automation Level: <span id="autoLevelLabel" class="range-val">60%</span></label>
+        <input type="range" id="widgetAutoLevel" min="10" max="100" value="60" oninput="updateWidget()">
+      </div>
+      <button class="widget-btn" onclick="calculateWidget()">Calculate My ROI →</button>
+      <div class="widget-results" id="widgetResults">
+        <div class="widget-metric">
+          <div class="widget-metric-val" id="wAnnualSavings">$0</div>
+          <div class="widget-metric-label">Annual Savings</div>
+        </div>
+        <div class="widget-metric">
+          <div class="widget-metric-val" id="wROI">0%</div>
+          <div class="widget-metric-label">ROI</div>
+        </div>
+        <div class="widget-metric">
+          <div class="widget-metric-val" id="wPayback">0 mo</div>
+          <div class="widget-metric-label">Payback Period</div>
+        </div>
+      </div>
+      <a href="ai-roi-calculator.html" class="widget-link">Get Full Personalized Analysis →</a>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section class="metrics-section">
+  <div class="container">
+    <div class="section-label">Typical Results</div>
+    <h2 class="section-title">What Our Clients<br>Actually Achieve</h2>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-val">340%</div>
+        <div class="metric-label">Average ROI</div>
+        <div class="metric-desc">Across all client engagements</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val">$480K</div>
+        <div class="metric-label">Avg. Annual Savings</div>
+        <div class="metric-desc">For mid-market companies</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val">3.2 mo</div>
+        <div class="metric-label">Avg. Payback Period</div>
+        <div class="metric-desc">Time to break even on investment</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val">3×</div>
+        <div class="metric-label">Capacity Multiplier</div>
+        <div class="metric-desc">Output per employee</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-label">Client Results</div>
+    <h2 class="section-title">Real Companies.<br>Real Savings.</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"The ROI Calculator was spot-on. We projected $500K in savings and hit $520K in year one. The scenario comparison helped us choose the right automation level for our risk tolerance."</p>
+        <div class="testimonial-metrics">
+          <span class="testimonial-metric-tag">$520K Saved</span>
+          <span class="testimonial-metric-tag">3-Month Payback</span>
+          <span class="testimonial-metric-tag">420% ROI</span>
+        </div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SC</div>
+          <div>
+            <div class="testimonial-name">Sarah Chen</div>
+            <div class="testimonial-role">COO, TechFlow Solutions</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"We were skeptical about the 3× capacity multiplier. Six months in, our team of 12 is doing the work of 38. The calculator actually underestimated what was possible."</p>
+        <div class="testimonial-metrics">
+          <span class="testimonial-metric-tag">3× Capacity</span>
+          <span class="testimonial-metric-tag">$380K Saved</span>
+          <span class="testimonial-metric-tag">290% ROI</span>
+        </div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MR</div>
+          <div>
+            <div class="testimonial-name">Michael Rodriguez</div>
+            <div class="testimonial-role">VP Operations, Nexus Healthcare</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"The industry benchmark comparison was eye-opening. We were 40% below the average ROI for our sector. Now we're 60% above it. The calculator gave us the roadmap to get there."</p>
+        <div class="testimonial-metrics">
+          <span class="testimonial-metric-tag">$200K Saved</span>
+          <span class="testimonial-metric-tag">5-Month Payback</span>
+          <span class="testimonial-metric-tag">180% ROI</span>
+        </div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">JM</div>
+          <div>
+            <div class="testimonial-name">Jennifer Mowitzski</div>
+            <div class="testimonial-role">CEO, Meridian Financial Group</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-box">
+    <div class="section-label">Get Started</div>
+    <h2 class="section-title" style="font-size:clamp(26px,4vw,38px)">Ready for Your<br>Personalized Analysis?</h2>
+    <p style="font-size:16px;color:#9C9888;line-height:1.7">The full calculator takes 3 minutes and delivers a branded PDF report with your exact savings projections, scenario comparison, and strategic recommendations.</p>
+    <div class="cta-btns">
+      <a href="ai-roi-calculator.html" class="btn btn-primary">Run Full ROI Analysis →</a>
+      <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" class="btn btn-ghost" aria-label="Opens in new window">Book a Strategy Call</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-wrap" role="contentinfo">
+  <div class="footer-inner">
+    <div>&copy; 2026 Micap AI Consulting. All rights reserved.</div>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;justify-content:center">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="/api-docs.html">API Documentation</a>
+      <a href="mailto:hi@micap.pro">hi@micap.pro</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+  const navbar = document.getElementById('navbar');
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.nav') && !e.target.closest('.nav-menu')) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    });
+  }
+  window.addEventListener('scroll', function() {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+    const btn = document.getElementById('scrollToTopBtn');
+    if (btn) btn.style.display = window.scrollY > 300 ? 'block' : 'none';
+  });
+  const scrollBtn = document.getElementById('scrollToTopBtn');
+  if (scrollBtn) scrollBtn.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+  // Widget
+  function updateWidget() {
+    const level = document.getElementById('widgetAutoLevel').value;
+    document.getElementById('autoLevelLabel').textContent = level + '%';
+  }
+  function calculateWidget() {
+    const employees = parseInt(document.getElementById('widgetEmployees').value) || 50;
+    const salary = parseInt(document.getElementById('widgetSalary').value) || 65000;
+    const autoLevel = parseInt(document.getElementById('widgetAutoLevel').value) / 100;
+    const totalPayroll = employees * salary;
+    const savingsRate = autoLevel * 0.35;
+    const annualSavings = Math.round(totalPayroll * savingsRate);
+    const implementationCost = Math.round(employees * 2500 * autoLevel);
+    const roi = implementationCost > 0 ? Math.round((annualSavings / implementationCost) * 100) : 0;
+    const paybackMonths = annualSavings > 0 ? Math.round((implementationCost / annualSavings) * 12) : 0;
+    document.getElementById('wAnnualSavings').textContent = '$' + annualSavings.toLocaleString();
+    document.getElementById('wROI').textContent = roi + '%';
+    document.getElementById('wPayback').textContent = paybackMonths + ' mo';
+    document.getElementById('widgetResults').classList.add('visible');
+    if (typeof fbq !== 'undefined') fbq('trackCustom', 'WidgetCalculation', { employees, salary, autoLevel: autoLevel * 100, annualSavings, roi });
+  }
+</script>
+<script defer src="floating-ui.js"></script>
+</body>
+</html>

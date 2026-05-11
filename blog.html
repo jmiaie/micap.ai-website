@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Instrument+Serif&display=swap" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <title>Blog | AI Automation Insights & Strategy - Micap AI</title>
+  <meta name="description" content="Expert insights on AI strategy, digital transformation, and enterprise automation from Micap AI thought leaders.">
+  <meta name="keywords" content="AI automation blog, agentic AI articles, business automation insights, AI case studies, digital transformation">
+  <link rel="canonical" href="https://micap-ai.manus.space/blog.html">
+  <meta property="og:title" content="Blog | AI Automation Insights & Strategy - Micap AI">
+  <meta property="og:description" content="Expert insights on AI strategy, digital transformation, and enterprise automation from Micap AI thought leaders.">
+  <meta property="og:url" content="https://micap-ai.manus.space/blog.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Micap AI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog | AI Automation Insights & Strategy - Micap AI">
+  <meta name="twitter:description" content="Expert insights on AI strategy, digital transformation, and enterprise automation from Micap AI thought leaders.">
+  <link rel="icon" href="/manus-storage/micap-favicon_a2f043bd.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/manus-storage/micap-favicon-256_c9c78192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Instrument+Serif&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-50MLBREDYZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-50MLBREDYZ', { 'page_path': window.location.pathname, 'anonymize_ip': true });
+  </script>
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1012037731152333');
+    fbq('track', 'PageView');
+  </script>
+  <link rel="stylesheet" href="floating-ui.css">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:#0E0D0B;color:#F5F0E8;font-family:'DM Sans',sans-serif;overflow-x:hidden;padding-top:64px}
+    a{text-decoration:none;color:inherit}
+    button{font-family:inherit}
+    img{display:block}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+    @keyframes slideIn{from{transform:translateX(100%)}to{transform:translateX(0)}}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+    /* NAV */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid transparent;transition:all .4s ease}
+    .nav.scrolled{background:rgba(14,13,11,.92);backdrop-filter:blur(16px);border-bottom-color:rgba(186,117,23,.12)}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;z-index:115}
+    .hamburger span{width:24px;height:2px;background:#BA7517;transition:all .3s}
+    .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+    .nav-menu{display:none;position:fixed;top:64px;right:0;width:250px;max-height:calc(100vh - 64px);background:rgba(14,13,11,.98);backdrop-filter:blur(20px);border-left:1px solid rgba(186,117,23,.2);padding:16px 0;z-index:99;flex-direction:column;overflow-y:auto;animation:slideIn .3s ease}
+    .nav-menu.active{display:flex}
+    .nav-menu a{color:#9C9888;font-size:14px;font-weight:500;text-decoration:none;padding:12px 24px;transition:all .2s;display:block;border-left:3px solid transparent}
+    .nav-menu a:hover{color:#F5F0E8;background:rgba(186,117,23,.1);border-left-color:#BA7517}
+    .nav-menu a.nav-active{color:#BA7517;border-left-color:#BA7517;background:rgba(186,117,23,.05)}
+    .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#F5F0E8;z-index:115}
+    .nav-brand img{width:40px;height:40px;object-fit:contain;background:#000}
+    .nav-brand-text{font-family:'DM Sans',sans-serif;font-size:18px;font-weight:600;color:#F5F0E8;letter-spacing:-.3px}
+    .nav-brand-text span{color:#BA7517}
+    .nav-consultation{background:#BA7517;color:#000;padding:10px 20px;border-radius:6px;font-size:13px;font-weight:600;letter-spacing:.05em;text-decoration:none;transition:all .2s;position:absolute;left:50%;transform:translateX(-50%);top:20px;z-index:115;border:none;cursor:pointer;display:inline-block}
+    .nav-consultation:hover{background:#D4A574;transform:translateX(-50%) translateY(-2px)}
+
+    /* HERO */
+    .hero{padding:80px 24px 64px;text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(186,117,23,.07) 0%,transparent 70%);pointer-events:none}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(186,117,23,.08);border:1px solid rgba(186,117,23,.2);border-radius:20px;padding:6px 14px;font-size:12px;color:#BA7517;letter-spacing:.08em;text-transform:uppercase;margin-bottom:24px;font-family:'DM Mono',monospace}
+    .hero-badge-dot{width:6px;height:6px;border-radius:50%;background:#BA7517;animation:pulse 2s infinite}
+    .hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(36px,6vw,68px);font-weight:400;line-height:1.1;letter-spacing:-1px;color:#F5F0E8;margin-bottom:20px}
+    .hero h1 em{color:#BA7517;font-style:italic}
+    .hero p{font-size:18px;color:#9C9888;max-width:580px;margin:0 auto;line-height:1.7}
+
+    /* LAYOUT */
+    .container{max-width:1100px;margin:0 auto;padding:0 24px}
+    .section-label{font-family:'DM Mono',monospace;font-size:11px;color:#BA7517;letter-spacing:.15em;text-transform:uppercase;margin-bottom:16px}
+    .section-title{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(28px,4vw,44px);font-weight:400;color:#F5F0E8;line-height:1.2;letter-spacing:-.5px;margin-bottom:16px}
+    .section-title em{color:#BA7517;font-style:italic}
+
+    /* SEARCH SECTION */
+    .search-section{padding:60px 0;border-top:1px solid rgba(186,117,23,.08)}
+    .search-box{max-width:700px;margin:0 auto 40px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+    .search-input{flex:1;min-width:280px;background:rgba(255,255,255,.04);border:1px solid rgba(186,117,23,.2);border-radius:12px;padding:14px 18px;color:#F5F0E8;font-size:15px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s}
+    .search-input:focus{border-color:rgba(186,117,23,.5);background:rgba(255,255,255,.06)}
+    .search-input::placeholder{color:#6B6860}
+    .search-clear{background:rgba(186,117,23,.1);border:1px solid rgba(186,117,23,.2);color:#BA7517;padding:14px 18px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;display:none}
+    .search-clear.show{display:block}
+    .search-clear:hover{background:rgba(186,117,23,.2);border-color:#BA7517}
+    .filter-pills{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:20px}
+    .filter-pill{padding:8px 14px;border-radius:10px;border:1px solid rgba(186,117,23,.2);background:transparent;color:#9C9888;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s}
+    .filter-pill:hover{border-color:rgba(186,117,23,.4);background:rgba(186,117,23,.05)}
+    .filter-pill.active{background:rgba(186,117,23,.2);border-color:#BA7517;color:#BA7517}
+    .search-results-label{font-size:13px;color:#6B6860;text-align:center;margin-bottom:20px;font-family:'DM Mono',monospace}
+
+    /* FEATURED POST */
+    .featured-section{padding:60px 0;border-top:1px solid rgba(186,117,23,.08)}
+    .featured-card{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:20px;border:1px solid rgba(186,117,23,.15);overflow:hidden;background:rgba(186,117,23,.02);transition:border-color .3s,transform .3s;cursor:pointer}
+    .featured-card:hover{border-color:rgba(186,117,23,.35);transform:translateY(-3px);box-shadow:0 16px 48px rgba(0,0,0,.4)}
+    .featured-img{background:linear-gradient(135deg,rgba(186,117,23,.12),rgba(186,117,23,.04));min-height:280px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+    .featured-img-inner{text-align:center;padding:32px}
+    .featured-img-icon{font-size:64px;margin-bottom:16px;display:block}
+    .featured-img-label{font-family:'DM Mono',monospace;font-size:11px;color:#BA7517;letter-spacing:.12em;text-transform:uppercase}
+    .featured-body{padding:40px}
+    .featured-meta{display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+    .featured-tag{font-family:'DM Mono',monospace;font-size:11px;color:#BA7517;letter-spacing:.08em;text-transform:uppercase;background:rgba(186,117,23,.08);border:1px solid rgba(186,117,23,.2);border-radius:12px;padding:4px 10px}
+    .featured-read{font-size:12px;color:#6B6860}
+    .featured-title{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(22px,3vw,32px);font-weight:400;color:#F5F0E8;line-height:1.25;margin-bottom:16px;letter-spacing:-.3px}
+    .featured-excerpt{font-size:15px;color:#9C9888;line-height:1.8;margin-bottom:24px}
+    .featured-cta{display:inline-flex;align-items:center;gap:8px;color:#BA7517;font-size:14px;font-weight:600;font-family:'DM Mono',monospace;letter-spacing:.05em;transition:gap .2s}
+    .featured-card:hover .featured-cta{gap:12px}
+
+    /* BLOG GRID */
+    .grid-section{padding:80px 0;border-top:1px solid rgba(186,117,23,.08)}
+    .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:48px}
+    .blog-card{border-radius:16px;border:1px solid rgba(186,117,23,.1);background:rgba(255,255,255,.01);overflow:hidden;transition:border-color .3s,transform .3s;display:flex;flex-direction:column}
+    .blog-card:hover{border-color:rgba(186,117,23,.3);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+    .blog-card-header{padding:24px 24px 0}
+    .blog-card-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+    .blog-card-tag{font-family:'DM Mono',monospace;font-size:10px;color:#BA7517;letter-spacing:.1em;text-transform:uppercase;background:rgba(186,117,23,.08);border:1px solid rgba(186,117,23,.15);border-radius:10px;padding:3px 9px}
+    .blog-card-read{font-size:11px;color:#6B6860;font-family:'DM Mono',monospace}
+    .blog-card-title{font-family:'Instrument Serif',Georgia,serif;font-size:20px;font-weight:400;color:#F5F0E8;line-height:1.3;margin-bottom:12px}
+    .blog-card-body{padding:0 24px 24px;flex:1;display:flex;flex-direction:column}
+    .blog-card-excerpt{font-size:14px;color:#6B6860;line-height:1.75;flex:1;margin-bottom:20px}
+    .blog-card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid rgba(186,117,23,.06)}
+    .blog-card-cta{font-size:13px;color:#BA7517;font-weight:600;display:flex;align-items:center;gap:6px;transition:gap .2s}
+    .blog-card:hover .blog-card-cta{gap:10px}
+    .blog-card-date{font-size:11px;color:#6B6860;font-family:'DM Mono',monospace}
+    .blog-card.hidden{display:none}
+
+    /* NO RESULTS */
+    .no-results{text-align:center;padding:60px 24px;color:#6B6860}
+    .no-results-icon{font-size:48px;margin-bottom:16px;display:block}
+    .no-results-title{font-family:'Instrument Serif',Georgia,serif;font-size:24px;color:#F5F0E8;margin-bottom:8px}
+    .no-results-text{font-size:15px;line-height:1.7;margin-bottom:24px}
+    .no-results-btn{display:inline-block;background:rgba(186,117,23,.1);border:1px solid rgba(186,117,23,.2);color:#BA7517;padding:10px 18px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s}
+    .no-results-btn:hover{background:rgba(186,117,23,.2);border-color:#BA7517}
+
+    /* TOPICS */
+    .topics-section{padding:80px 0;border-top:1px solid rgba(186,117,23,.08)}
+    .topics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:40px}
+    .topic-pill{padding:16px 20px;border-radius:12px;border:1px solid rgba(186,117,23,.1);background:rgba(186,117,23,.02);display:flex;align-items:center;gap:12px;cursor:pointer;transition:all .2s}
+    .topic-pill:hover{border-color:rgba(186,117,23,.3);background:rgba(186,117,23,.05);transform:translateY(-2px)}
+    .topic-icon{font-size:20px}
+    .topic-name{font-size:14px;font-weight:600;color:#F5F0E8}
+    .topic-count{font-size:11px;color:#6B6860;font-family:'DM Mono',monospace;margin-top:2px}
+
+    /* NEWSLETTER */
+    .newsletter-section{padding:80px 24px;border-top:1px solid rgba(186,117,23,.08)}
+    .newsletter-box{max-width:640px;margin:0 auto;padding:48px;border-radius:24px;border:1px solid rgba(186,117,23,.15);background:linear-gradient(135deg,rgba(186,117,23,.04),rgba(186,117,23,.01));text-align:center}
+    .newsletter-form{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;justify-content:center}
+    .newsletter-input{flex:1;min-width:220px;background:rgba(255,255,255,.04);border:1px solid rgba(186,117,23,.2);border-radius:8px;padding:12px 16px;color:#F5F0E8;font-size:15px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s}
+    .newsletter-input:focus{border-color:rgba(186,117,23,.5)}
+    .newsletter-input::placeholder{color:#6B6860}
+    .newsletter-btn{background:#BA7517;color:#000;padding:12px 24px;border-radius:8px;font-size:15px;font-weight:600;border:none;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;white-space:nowrap}
+    .newsletter-btn:hover{background:#D4A574;transform:translateY(-2px)}
+    .newsletter-note{font-size:12px;color:#6B6860;margin-top:12px}
+
+    /* CTA */
+    .cta-section{padding:80px 24px;border-top:1px solid rgba(186,117,23,.08);text-align:center}
+    .cta-box{max-width:640px;margin:0 auto;padding:48px;border-radius:24px;border:1px solid rgba(186,117,23,.15);background:linear-gradient(135deg,rgba(186,117,23,.04),rgba(186,117,23,.01))}
+    .cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+    .btn-primary{display:inline-block;background:#BA7517;color:#000;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:600;letter-spacing:.02em;transition:all .2s;border:none;cursor:pointer}
+    .btn-primary:hover{background:#D4A574;transform:translateY(-2px);box-shadow:0 8px 24px rgba(186,117,23,.3)}
+    .btn-ghost{display:inline-block;background:transparent;color:#BA7517;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:600;letter-spacing:.02em;transition:all .2s;border:1px solid rgba(186,117,23,.3)}
+    .btn-ghost:hover{background:rgba(186,117,23,.08);border-color:#BA7517}
+
+    /* FOOTER */
+    .footer{padding:32px 24px;border-top:1px solid rgba(186,117,23,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+    .footer-copy{font-size:13px;color:#6B6860}
+    .footer-links{display:flex;gap:24px}
+    .footer-links a{font-size:13px;color:#6B6860;transition:color .2s}
+    .footer-links a:hover{color:#BA7517}
+
+    /* MOBILE */
+    @media(max-width:768px){
+      .hero{padding:72px 16px 60px}
+      .featured-card{grid-template-columns:1fr}
+      .featured-img{min-height:180px}
+      .featured-body{padding:28px 24px}
+      .blog-grid{grid-template-columns:1fr}
+      .topics-grid{grid-template-columns:repeat(2,1fr)}
+      .newsletter-box{padding:32px 20px}
+      .cta-box{padding:32px 20px}
+      .footer{flex-direction:column;gap:16px;text-align:center}
+      .nav-consultation{font-size:11px;padding:8px 14px}
+      .search-box{flex-direction:column}
+      .search-input{min-width:unset;width:100%}
+      .filter-pills{gap:8px}
+      .filter-pill{font-size:12px;padding:6px 12px}
+    }
+    @media(max-width:480px){
+      .topics-grid{grid-template-columns:1fr 1fr}
+      .newsletter-form{flex-direction:column}
+      .newsletter-input{min-width:unset;width:100%}
+      .cta-btns{flex-direction:column;align-items:center}
+      .filter-pills{gap:6px}
+      .filter-pill{font-size:11px;padding:5px 10px}
+    }
+  
+/* Industries dropdown */
+.nav-dropdown{position:relative}
+.nav-dropdown-trigger{display:flex;align-items:center;gap:5px;color:#9C9888;font-size:14px;font-weight:500;cursor:pointer;transition:color .2s;background:none;border:none;font-family:inherit;padding:0}
+.nav-dropdown-trigger:hover,.nav-dropdown:hover .nav-dropdown-trigger{color:#F5F0E8}
+.nav-dropdown-trigger svg{transition:transform .2s}
+.nav-dropdown:hover .nav-dropdown-trigger svg{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:rgba(14,13,11,.97);backdrop-filter:blur(20px);border:1px solid rgba(186,117,23,.2);border-radius:12px;padding:8px;min-width:200px;opacity:0;visibility:hidden;transition:all .2s;z-index:200;box-shadow:0 16px 48px rgba(0,0,0,.4)}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;top:calc(100% + 8px)}
+.nav-dropdown-menu a{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;font-size:13px;color:#9C9888;transition:all .2s;white-space:nowrap}
+.nav-dropdown-menu a:hover{color:#F5F0E8;background:rgba(186,117,23,.08)}
+.nav-dropdown-menu a span.dd-icon{font-size:16px;width:20px;text-align:center}
+.nav-dropdown-divider{height:1px;background:rgba(186,117,23,.1);margin:6px 0}
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Micap AI Blog",
+  "description": "Expert insights on AI strategy, digital transformation, and enterprise automation.",
+  "url": "https://micap-ai.manus.space/blog.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Micap AI",
+    "url": "https://micap-ai.manus.space"
+  }
+}
+  </script>
+  </head>
+<body>
+    <a href="#main-content" class="skip-to-content" style="position: absolute; top: -40px; left: 0; background: #d4a574; color: white; padding: 8px; text-decoration: none; z-index: 100;">Skip to main content</a>
+
+<button id="scrollToTopBtn" title="Scroll to top">↑</button>
+
+<!-- NAV -->
+<nav class="nav" id="navbar" role="navigation">
+  <a href="index.html" class="nav-brand">
+    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663473200649/hUUaHIjRLGNJNfOi.jpg" alt="Micap AI" style="width:40px;height:40px;object-fit:contain;background:#000" decoding="async">
+    <div class="nav-brand-text">micap<span>.ai</span></div>
+  </a>
+  <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" rel="noopener noreferrer" class="nav-consultation" aria-label="Opens in new window">CONSULTATION BOOKING</a>
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-menu" id="navMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="digital-employees.html">Digital Employees</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="case-studies.html">Case Studies</a>
+  <a href="ai-roi-calculator.html">ROI Calculator</a>
+  <a href="roi-calculator-demo.html">ROI Demo</a>
+  <a href="blog.html" class="nav-active">Blog</a>
+  <a href="faq.html">FAQ</a>
+</div>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+    document.addEventListener('click', function(event) {
+      if (!event.target.closest('.nav') && !event.target.closest('.nav-menu')) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    });
+  }
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 20) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+  const scrollBtn = document.getElementById('scrollToTopBtn');
+  if (scrollBtn) {
+    scrollBtn.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+    window.addEventListener('scroll', () => {
+      scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+  }
+</script>
+
+<!-- HERO -->
+<section class="hero" id="main-content">
+    <nav aria-label="breadcrumb" class="breadcrumb-nav" style="margin-bottom: 20px;">
+      <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 5px; font-size: 0.9em;">
+        <li><a href="index.html" style="color: #d4a574; text-decoration: none;">Home</a></li>
+        <li style="color: #999;">/</li>
+        <li aria-current="page" style="color: #666;">Blog</li>
+      </ol>
+    </nav>
+
+  <div class="hero-badge">
+    <div class="hero-badge-dot"></div>
+    <span>AI Automation Insights</span>
+  </div>
+  <h1>Strategy, Insights,<br><em>& Real Results</em></h1>
+  <p>Expert perspectives on AI automation, digital transformation, and enterprise strategy — written for business leaders who want measurable outcomes.</p>
+</section>
+
+<!-- SEARCH SECTION -->
+<section class="search-section">
+  <div class="container">
+    <div class="search-box">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search articles by title, topic, or keyword...">
+      <button id="clearSearch" class="search-clear">Clear</button>
+    </div>
+    <div class="filter-pills">
+      <button class="filter-pill" data-filter="all">All Articles</button>
+      <button class="filter-pill" data-filter="AI Strategy">AI Strategy</button>
+      <button class="filter-pill" data-filter="Digital Transformation">Digital Transformation</button>
+      <button class="filter-pill" data-filter="Implementation">Implementation</button>
+      <button class="filter-pill" data-filter="ROI & Metrics">ROI & Metrics</button>
+    </div>
+    <div id="searchResults" class="search-results-label"></div>
+  </div>
+</section>
+
+<!-- FEATURED POST -->
+<section class="featured-section">
+  <div class="container">
+    <div class="section-label">Featured Article</div>
+    <a href="blog-post-1-roi-guide.html" class="featured-card" data-article-id="1">
+      <div class="featured-img">
+        <div class="featured-img-inner">
+          <span class="featured-img-icon">📊</span>
+          <div class="featured-img-label">Complete Guide</div>
+        </div>
+      </div>
+      <div class="featured-body">
+        <div class="featured-meta">
+          <span class="featured-tag">AI Strategy</span>
+          <span class="featured-read">8 min read</span>
+        </div>
+        <div class="featured-title">How to Calculate AI Automation ROI: A Complete Guide for Business Owners</div>
+        <p class="featured-excerpt">Learn the step-by-step framework for calculating AI automation ROI. Includes real-world examples, industry benchmarks, and a practical calculator you can use today to project your savings.</p>
+        <span class="featured-cta">Read Article →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- BLOG GRID -->
+<section class="grid-section">
+  <div class="container">
+    <div class="section-label">All Articles</div>
+    <h2 class="section-title">Latest <em>Insights</em></h2>
+    <div class="blog-grid" id="blogGrid">
+
+      <a href="blog-post-2-roi-examples.html" class="blog-card" data-article-id="2" data-category="Digital Transformation" data-keywords="digital employees hybrid teams human-centric automation workforce">
+        <div class="blog-card-header">
+          <div class="blog-card-meta">
+            <span class="blog-card-tag">Digital Transformation</span>
+            <span class="blog-card-read">7 min</span>
+          </div>
+          <div class="blog-card-title">Digital Employees vs. Human Teams: The Hybrid Future of Work</div>
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-card-excerpt">Explore how leading organizations are building hybrid teams that combine AI-powered digital employees with human expertise. Learn the economics and implementation strategy.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-cta">Read Article →</span>
+            <span class="blog-card-date">Apr 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-post-3-hidden-costs.html" class="blog-card" data-article-id="3" data-category="AI Strategy" data-keywords="enterprise strategy governance maturity framework competitive advantage">
+        <div class="blog-card-header">
+          <div class="blog-card-meta">
+            <span class="blog-card-tag">AI Strategy</span>
+            <span class="blog-card-read">10 min</span>
+          </div>
+          <div class="blog-card-title">Enterprise AI Strategy: A Framework for Sustainable Competitive Advantage</div>
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-card-excerpt">A comprehensive framework for developing enterprise-wide AI strategy. Learn the three levels of AI maturity and how to build governance structures that drive measurable success.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-cta">Read Article →</span>
+            <span class="blog-card-date">Mar 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-article-4.html" class="blog-card" data-article-id="4" data-category="Implementation" data-keywords="mistakes implementation errors pitfalls deployment failures cost">
+        <div class="blog-card-header">
+          <div class="blog-card-meta">
+            <span class="blog-card-tag">Implementation</span>
+            <span class="blog-card-read">9 min</span>
+          </div>
+          <div class="blog-card-title">7 AI Implementation Mistakes That Cost Organizations Millions</div>
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-card-excerpt">Learn the seven most costly AI implementation mistakes and how to avoid them. Based on real-world experience deploying automation across hundreds of organizations.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-cta">Read Article →</span>
+            <span class="blog-card-date">Mar 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-post-1-roi-guide.html" class="blog-card" data-article-id="1" data-category="AI Strategy" data-keywords="roi calculation framework benchmarks examples savings payback period">
+        <div class="blog-card-header">
+          <div class="blog-card-meta">
+            <span class="blog-card-tag">AI Strategy</span>
+            <span class="blog-card-read">8 min</span>
+          </div>
+          <div class="blog-card-title">How to Calculate AI Automation ROI: A Complete Guide for Business Owners</div>
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-card-excerpt">The definitive step-by-step framework for calculating AI automation ROI, with industry benchmarks, real-world examples, and a practical calculator.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-cta">Read Article →</span>
+            <span class="blog-card-date">Apr 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-hvac-missed-calls.html" class="blog-card" data-article-id="8" data-category="Industry Insights" data-keywords="hvac missed calls revenue loss ai automation service business opportunity cost">
+        <div class="blog-card-header">
+          <div class="blog-card-meta">
+            <span class="blog-card-tag">Industry Insights</span>
+            <span class="blog-card-read">6 min</span>
+          </div>
+          <div class="blog-card-title">Why HVAC Companies Lose $45K–$95K Annually to Missed Calls</div>
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-card-excerpt">Peak season call spikes, after-hours emergencies, and scheduling friction are costing HVAC businesses tens of thousands annually. Here's the data — and the fix.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-cta">Read Article →</span>
+            <span class="blog-card-date">May 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-plumbing-emergency-calls.html" class="blog-card" data-article-id="9" data-category="Industry Insights" data-keywords="plumbing missed calls emergency calls revenue loss ai automation opportunity cost">
+        <div class="blog-card-header">
+          <div class="blog-card-meta">
+            <span class="blog-card-tag">Industry Insights</span>
+            <span class="blog-card-read">6 min</span>
+          </div>
+          <div class="blog-card-title">How Plumbing Companies Lose $55K–$110K to Missed Emergency Calls</div>
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-card-excerpt">72% of plumbing calls are emergencies — and your competitors answer them when you don't. Validated market data on the true cost of missed plumbing calls.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-cta">Read Article →</span>
+            <span class="blog-card-date">May 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-agentic-ai-guide.html" class="blog-card" data-article-id="11" data-category="AI Fundamentals" data-keywords="agentic AI AI agents autonomous systems AI agent architecture what is agentic AI">
+        <div class="blog-card-header">
+          <div class="blog-card-meta">
+            <span class="blog-card-tag">AI Fundamentals</span>
+            <span class="blog-card-read">8 min</span>
+          </div>
+          <div class="blog-card-title">What is Agentic AI? Complete Guide to AI Agents & Autonomous Systems</div>
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-card-excerpt">Agentic AI operates autonomously toward defined goals unlike traditional AI that responds to prompts. Learn how AI agents differ from chatbots, why they are transformative, and how they deliver 50-70% operational savings.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-cta">Read Article →</span>
+            <span class="blog-card-date">May 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-dental-practice-automation.html" class="blog-card" data-article-id="12" data-category="Industry Insights" data-keywords="dental practice AI appointment scheduling AI dental office automation patient intake automation">
+        <div class="blog-card-header">
+          <div class="blog-card-meta">
+            <span class="blog-card-tag">Industry Insights</span>
+            <span class="blog-card-read">8 min</span>
+          </div>
+          <div class="blog-card-title">Dental Practice AI Automation | Increase Patient Intake by 40%</div>
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-card-excerpt">Missed calls cost dental practices $96K-$180K annually. AI automation captures every call, reduces no-shows by 50%, and increases patient intake by 40%. Here's the complete ROI breakdown.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-cta">Read Article →</span>
+            <span class="blog-card-date">May 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-salon-automation.html" class="blog-card" data-article-id="13" data-category="Industry Insights" data-keywords="salon AI automation booking automation salon scheduling beauty business AI">
+        <div class="blog-card-header">
+          <div class="blog-card-meta">
+            <span class="blog-card-tag">Industry Insights</span>
+            <span class="blog-card-read">8 min</span>
+          </div>
+          <div class="blog-card-title">Salon AI Automation | Reduce No-Shows & Boost Revenue</div>
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-card-excerpt">Salons lose $41K-$187K annually to no-shows and missed bookings. AI automation reduces no-shows by 50%, increases bookings by 35%, and drives $137K-$301K in annual revenue gains.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-cta">Read Article →</span>
+            <span class="blog-card-date">May 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-law-firm-intake.html" class="blog-card" data-article-id="10" data-category="Industry Insights" data-keywords="law firm missed calls legal intake ai automation revenue loss attorney">
+        <div class="blog-card-header">
+          <div class="blog-card-meta">
+            <span class="blog-card-tag">Industry Insights</span>
+            <span class="blog-card-read">7 min</span>
+          </div>
+          <div class="blog-card-title">Why Law Firms Miss 35–50% of Potential Client Calls — And What It Costs</div>
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-card-excerpt">Law firms have the highest revenue loss per missed call of any service vertical. A single missed PI case can mean $50K+ in lost contingency fees. Here's the full breakdown.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-cta">Read Article →</span>
+            <span class="blog-card-date">May 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-plumbing-automation.html" class="blog-card" data-article-id="11" data-category="Industry Insights" data-keywords="plumbing ai automation emergency call recovery dispatch optimization revenue">
+        <div class="blog-card-header">
+          <div class="blog-card-meta">
+            <span class="blog-card-tag">Industry Insights</span>
+            <span class="blog-card-read">8 min</span>
+          </div>
+          <div class="blog-card-title">Plumbing AI Automation: Emergency Call Recovery & Dispatch Optimization</div>
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-card-excerpt">Plumbing companies miss 30-40% of emergency calls, costing $50K-$120K annually. Recover emergency revenue with Micap AI 24/7 call handling and smart dispatch.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-cta">Read Article →</span>
+            <span class="blog-card-date">May 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-law-firm-automation.html" class="blog-card" data-article-id="12" data-category="Industry Insights" data-keywords="law firm ai automation lead capture client intake legal practice management">
+        <div class="blog-card-header">
+          <div class="blog-card-meta">
+            <span class="blog-card-tag">Industry Insights</span>
+            <span class="blog-card-read">8 min</span>
+          </div>
+          <div class="blog-card-title">Law Firm AI Automation: Lead Capture & Client Intake Optimization</div>
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-card-excerpt">Law firms miss 40-50% of inbound client calls, costing $80K-$180K annually. Recover lost leads with Micap AI 24/7 call handling and intelligent intake.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-cta">Read Article →</span>
+            <span class="blog-card-date">May 2026</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+    <div id="noResults" class="no-results" style="display:none;">
+      <span class="no-results-icon">🔍</span>
+      <h3 class="no-results-title">No articles found</h3>
+      <p class="no-results-text">Try adjusting your search terms or filters to find what you're looking for.</p>
+      <button class="no-results-btn" onclick="resetSearch()">Reset Search</button>
+    </div>
+  </div>
+</section>
+
+<!-- TOPICS -->
+<section class="topics-section">
+  <div class="container">
+    <div class="section-label">Browse by Topic</div>
+    <h2 class="section-title">Explore <em>Categories</em></h2>
+    <div class="topics-grid">
+      <div class="topic-pill">
+        <span class="topic-icon">🤖</span>
+        <div>
+          <div class="topic-name">AI Strategy</div>
+          <div class="topic-count">2 articles</div>
+        </div>
+      </div>
+      <div class="topic-pill">
+        <span class="topic-icon">🔄</span>
+        <div>
+          <div class="topic-name">Digital Transformation</div>
+          <div class="topic-count">1 article</div>
+        </div>
+      </div>
+      <div class="topic-pill">
+        <span class="topic-icon">⚙️</span>
+        <div>
+          <div class="topic-name">Implementation</div>
+          <div class="topic-count">1 article</div>
+        </div>
+      </div>
+      <div class="topic-pill">
+        <span class="topic-icon">📈</span>
+        <div>
+          <div class="topic-name">ROI & Metrics</div>
+          <div class="topic-count">2 articles</div>
+        </div>
+      </div>
+      <div class="topic-pill">
+        <span class="topic-icon">👥</span>
+        <div>
+          <div class="topic-name">Digital Employees</div>
+          <div class="topic-count">1 article</div>
+        </div>
+      </div>
+      <div class="topic-pill">
+        <span class="topic-icon">🏭</span>
+        <div>
+          <div class="topic-name">Industry Guides</div>
+          <div class="topic-count">Coming soon</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+  <div class="newsletter-box">
+    <div class="section-label" style="text-align:center">Stay Informed</div>
+    <h2 class="section-title" style="text-align:center">Get AI Insights<br><em>In Your Inbox</em></h2>
+    <p style="color:#6B6860;font-size:15px;line-height:1.7;margin-top:12px">New articles on AI strategy, automation ROI, and digital transformation — delivered when published. No spam, unsubscribe anytime.</p>
+    <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+      <input type="email" class="newsletter-input" placeholder="your@email.com" required id="newsletterEmail" aria-label="Email address">
+      <button type="submit" class="newsletter-btn" aria-label="Submit form">Subscribe</button>
+    </form>
+    <p class="newsletter-note">Join 500+ business leaders already subscribed.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-box">
+    <div class="section-label" style="text-align:center">Ready to Act?</div>
+    <h2 class="section-title" style="text-align:center">Turn Insights Into<br><em>Real Results</em></h2>
+    <p style="color:#6B6860;font-size:16px;line-height:1.7;text-align:center;margin-top:12px">Reading about AI automation is just the first step. Let's build a custom strategy for your business and calculate your specific ROI potential.</p>
+    <div class="cta-btns">
+      <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" rel="noopener noreferrer" class="btn-primary" aria-label="Opens in new window">Book a Consultation</a>
+      <a href="ai-roi-calculator.html" class="btn-ghost">Calculate Your ROI</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-copy">© 2026 Micap AI LLC. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="#privacy">Privacy</a>
+    <a href="#terms">Terms</a>
+    <a href="/api-docs.html">API Documentation</a>
+    <a href="mailto:hi@micap.pro">hi@micap.pro</a>
+  </div>
+</footer>
+
+<script defer src="floating-ui.js"></script>
+<script>
+// Article data structure
+const articles = [
+  {
+    id: 1,
+    title: 'How to Calculate AI Automation ROI: A Complete Guide for Business Owners',
+    excerpt: 'The definitive step-by-step framework for calculating AI automation ROI, with industry benchmarks, real-world examples, and a practical calculator.',
+    category: 'AI Strategy',
+    keywords: ['roi', 'calculation', 'framework', 'benchmarks', 'examples', 'savings', 'payback', 'period']
+  },
+  {
+    id: 2,
+    title: 'Digital Employees vs. Human Teams: The Hybrid Future of Work',
+    excerpt: 'Explore how leading organizations are building hybrid teams that combine AI-powered digital employees with human expertise. Learn the economics and implementation strategy.',
+    category: 'Digital Transformation',
+    keywords: ['digital', 'employees', 'hybrid', 'teams', 'human-centric', 'automation', 'workforce']
+  },
+  {
+    id: 3,
+    title: 'Enterprise AI Strategy: A Framework for Sustainable Competitive Advantage',
+    excerpt: 'A comprehensive framework for developing enterprise-wide AI strategy. Learn the three levels of AI maturity and how to build governance structures that drive measurable success.',
+    category: 'AI Strategy',
+    keywords: ['enterprise', 'strategy', 'governance', 'maturity', 'framework', 'competitive', 'advantage']
+  },
+  {
+    id: 4,
+    title: '7 AI Implementation Mistakes That Cost Organizations Millions',
+    excerpt: 'Learn the seven most costly AI implementation mistakes and how to avoid them. Based on real-world experience deploying automation across hundreds of organizations.',
+    category: 'Implementation',
+    keywords: ['mistakes', 'implementation', 'errors', 'pitfalls', 'deployment', 'failures', 'cost']
+  }
+];
+
+let activeFilter = 'all';
+let searchQuery = '';
+
+// Search functionality
+const searchInput = document.getElementById('searchInput');
+const clearBtn = document.getElementById('clearSearch');
+const filterPills = document.querySelectorAll('.filter-pill');
+const blogGrid = document.getElementById('blogGrid');
+const noResults = document.getElementById('noResults');
+const searchResults = document.getElementById('searchResults');
+
+function performSearch() {
+  const query = searchInput.value.toLowerCase().trim();
+  searchQuery = query;
+  
+  let visibleCount = 0;
+  const cards = blogGrid.querySelectorAll('.blog-card');
+  
+  cards.forEach(card => {
+    const category = card.dataset.category;
+    const title = card.querySelector('.blog-card-title').textContent.toLowerCase();
+    const excerpt = card.querySelector('.blog-card-excerpt').textContent.toLowerCase();
+    const keywords = card.dataset.keywords.toLowerCase();
+    
+    const matchesSearch = !query || 
+      title.includes(query) || 
+      excerpt.includes(query) || 
+      keywords.includes(query);
+    
+    const matchesFilter = activeFilter === 'all' || category === activeFilter;
+    
+    if (matchesSearch && matchesFilter) {
+      card.classList.remove('hidden');
+      visibleCount++;
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+  
+  // Update results label
+  if (query || activeFilter !== 'all') {
+    const filterText = activeFilter !== 'all' ? ` in ${activeFilter}` : '';
+    const queryText = query ? `"${query}"` : 'articles';
+    searchResults.textContent = `Found ${visibleCount} result${visibleCount !== 1 ? 's' : ''} for ${queryText}${filterText}`;
+  } else {
+    searchResults.textContent = '';
+  }
+  
+  // Show/hide no results
+  if (visibleCount === 0) {
+    noResults.style.display = 'block';
+  } else {
+    noResults.style.display = 'none';
+  }
+  
+  // Show/hide clear button
+  if (query) {
+    clearBtn.classList.add('show');
+  } else {
+    clearBtn.classList.remove('show');
+  }
+}
+
+function resetSearch() {
+  searchInput.value = '';
+  activeFilter = 'all';
+  filterPills.forEach(pill => {
+    if (pill.dataset.filter === 'all') {
+      pill.classList.add('active');
+    } else {
+      pill.classList.remove('active');
+    }
+  });
+  performSearch();
+}
+
+// Event listeners
+searchInput.addEventListener('input', performSearch);
+searchInput.addEventListener('keyup', (e) => {
+  if (e.key === 'Enter') performSearch();
+});
+
+clearBtn.addEventListener('click', resetSearch);
+
+filterPills.forEach(pill => {
+  pill.addEventListener('click', () => {
+    filterPills.forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    activeFilter = pill.dataset.filter;
+    performSearch();
+  });
+});
+
+// Initialize
+filterPills[0].classList.add('active');
+
+function handleNewsletterSubmit(e) {
+  e.preventDefault();
+  const email = document.getElementById('newsletterEmail').value;
+  const btn = e.target.querySelector('.newsletter-btn');
+  btn.textContent = 'Subscribed!';
+  btn.style.background = '#2a6b3a';
+  btn.style.color = '#fff';
+  btn.disabled = true;
+  document.getElementById('newsletterEmail').disabled = true;
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'newsletter_signup', { event_category: 'engagement', event_label: 'blog_page' });
+  }
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'Lead', { content_name: 'newsletter_signup' });
+  }
+}
+</script>
+</body>
+</html>

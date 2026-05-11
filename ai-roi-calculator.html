@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Instrument+Serif&display=swap" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <title>AI ROI Calculator | Measure Your Automation Savings</title>
+  <meta name="description" content="Calculate your AI ROI instantly. Discover cost savings, efficiency gains, and measurable business impact from automation.">
+  <link rel="canonical" href="https://micap-ai.manus.space/ai-roi-calculator.html">
+  <meta property="og:title" content="AI ROI Calculator | Measure Your Automation Savings">
+  <meta property="og:description" content="Calculate your AI ROI instantly. Discover cost savings, efficiency gains, and measurable business impact from automation.">
+  <meta property="og:url" content="https://micap-ai.manus.space/ai-roi-calculator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Micap AI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI ROI Calculator | Measure Your Automation Savings">
+  <meta name="twitter:description" content="Calculate your AI ROI instantly. Discover cost savings, efficiency gains, and measurable business impact from automation.">
+  <link rel="icon" href="/manus-storage/micap-favicon_a2f043bd.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/manus-storage/micap-favicon-256_c9c78192.png">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script defer src="/industry-benchmarks.js"></script>
+  <script defer src="/scenario-pdf-export.js"></script>
+  <link rel="stylesheet" href="floating-ui.css">
+  <style>
+    :root {
+      --gold: #BA7517;
+      --gold-light: #D4A574;
+      --gold-glow: rgba(186,117,23,0.15);
+      --dark-bg: #0E0D0B;
+      --dark-surface: #161514;
+      --dark-card: #1C1B19;
+      --dark-border: rgba(186,117,23,0.12);
+      --dark-hover: #222120;
+      --text-primary: #F5F0E8;
+      --text-secondary: #9C9888;
+      --text-muted: #6B6560;
+      --green: #34D399;
+      --blue: #60A5FA;
+      --purple: #A78BFA;
+      --radius: 16px;
+      --radius-sm: 10px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--dark-bg);
+      color: var(--text-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(186,117,23,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(186,117,23,0.03) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page-wrapper { position: relative; z-index: 1; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
+
+    /* ===== SPACING ===== */
+    .page-wrapper { margin-top: 64px; }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      height: 64px;
+      border-bottom: 1px solid var(--dark-border);
+      backdrop-filter: blur(12px);
+      background: rgba(14,13,11,0.92);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-brand{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-primary);;z-index:115}
+    .nav-brand img { width: 32px; height: 32px; border-radius: 6px; }
+    .nav-brand-text { font-weight: 600; font-size: 18px; letter-spacing: -0.3px; }
+    .nav-brand-text span { color: var(--gold); }
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;z-index:115}
+    .hamburger span { width: 24px; height: 2px; background: var(--gold); transition: var(--transition); }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+    .nav-consultation { background: var(--gold); color: #000; padding: 10px 20px; border-radius: 6px; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-decoration: none; transition: all 0.2s; position: absolute; left: 50%; transform: translateX(-50%); top: 20px; z-index: 115; border: none; cursor: pointer; display: inline-block; }
+    .nav-consultation:hover { background: var(--gold-light); transform: translateX(-50%) translateY(-2px); }
+    .nav-menu{display:none;position:fixed;top:64px;right:0;width:250px;max-height:calc(100vh - 64px);z-index:99;background:rgba(14,13,11,.98);backdrop-filter:blur(20px);border-left:1px solid rgba(186,117,23,.2);padding:16px 0;flex-direction:column;overflow-y:auto;animation:slideIn .3s ease}
+    .nav-menu.active { display: flex; }
+    .nav-menu a {
+      color: var(--text-secondary);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 12px 24px;
+      transition: var(--transition);
+      display: block;
+      border-left: 3px solid transparent;
+    }
+    .nav-menu a:hover { color: var(--text-primary); background: rgba(186,117,23,0.1); border-left-color: var(--gold); }
+    .nav-menu a.nav-active { color: var(--gold); border-left-color: var(--gold); background: rgba(186,117,23,0.05); }
+    @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
+
+    @media (max-width: 768px) {
+      .nav-menu.active { flex-wrap: wrap; height: auto; padding: 16px 24px; gap: 8px; }
+      .nav-menu a { font-size: 13px; padding: 10px 14px; }
+    }
+    @media (max-width: 600px) {
+      .nav-menu.active { flex-direction: column; height: auto; padding: 16px 24px; gap: 4px; }
+      .nav-menu a { width: 100%; text-align: center; padding: 12px 16px; border-bottom: 1px solid rgba(186,117,23,0.05); }
+    }
+
+    /* ===== MAIN LAYOUT ===== */
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      max-width: 960px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+      box-sizing: border-box;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      text-align: center;
+      padding: 48px 0 32px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold-glow);
+      border: 1px solid rgba(186,117,23,0.2);
+      color: var(--gold);
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+      letter-spacing: 0.02em;
+    }
+    .hero-badge .pulse {
+      width: 8px; height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.5; transform:scale(1.3); } }
+    .hero h1 {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .hero h1 em { font-style: normal; color: var(--gold); }
+    .hero p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* ===== INTAKE FORM ===== */
+    .intake-section {
+      padding: 0 0 40px;
+      animation: fadeUp 0.6s ease;
+    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+    .form-card {
+      background: var(--dark-surface);
+      border: 1px solid var(--dark-border);
+      border-radius: var(--radius);
+      padding: 40px;
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+    .form-card h2 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+    .form-card .subtitle {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 32px;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      width: 100%;
+    }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .form-group input, .form-group select {
+      background: var(--dark-card);
+      border: 1px solid rgba(186,117,23,0.1);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      font-family: inherit;
+      transition: var(--transition);
+      outline: none;
+      width: 100%;
+      box-sizing: border-box;
+      min-width: 0;
+    }
+    .form-group input:focus, .form-group select:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(186,117,23,0.1);
+    }
+    .form-group input::placeholder { color: var(--text-muted); }
+    .form-group select option { background: var(--dark-card); color: var(--text-primary); }
+
+    .labor-toggle {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .labor-toggle button {
+      background: var(--dark-card);
+      border: 1px solid rgba(186,117,23,0.1);
+      color: var(--text-secondary);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .labor-toggle button.active {
+      background: var(--gold);
+      color: var(--dark-bg);
+      border-color: var(--gold);
+    }
+
+    .slider-group { display: flex; flex-direction: column; gap: 8px; }
+    .slider-header { display: flex; justify-content: space-between; align-items: center; }
+    .slider-value {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gold);
+      font-family: 'DM Mono', monospace;
+    }
+    input[type="range"] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: var(--dark-card);
+      outline: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--gold);
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(186,117,23,0.3);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--gold);
+      color: var(--dark-bg);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      width: 100%;
+      margin-top: 12px;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(186,117,23,0.3); }
+    .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+    /* ===== CHAT INTERFACE ===== */
+    .chat-section {
+      flex: 1;
+      display: none;
+      flex-direction: column;
+      padding-bottom: 24px;
+      animation: fadeUp 0.6s ease;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .chat-section.active { display: flex; }
+
+    .chat-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--dark-border);
+      margin-bottom: 16px;
+    }
+    .chat-header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .chat-avatar {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--gold), #D4A574);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    .chat-header-info h3 { font-size: 0.95rem; font-weight: 600; }
+    .chat-header-info p { font-size: 0.78rem; color: var(--text-secondary); }
+    .chat-header-actions { display: flex; gap: 8px; }
+    .chat-action-btn {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      color: var(--text-secondary);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .chat-action-btn:hover { background: var(--dark-hover); color: var(--text-primary); border-color: var(--gold); }
+
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      min-height: 300px;
+      max-height: calc(100vh - 340px);
+    }
+
+    .message {
+      display: flex;
+      gap: 12px;
+      animation: messageIn 0.4s ease;
+    }
+    @keyframes messageIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    .message-avatar {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+    .message.ai .message-avatar {
+      background: linear-gradient(135deg, var(--gold), #D4A574);
+    }
+    .message.user .message-avatar {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+    }
+    .message-content {
+      flex: 1;
+      min-width: 0;
+    }
+    .message-sender {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+    }
+    .message.ai .message-sender { color: var(--gold); }
+    .message-body {
+      background: var(--dark-surface);
+      border: 1px solid var(--dark-border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .message.user .message-body {
+      background: rgba(186,117,23,0.08);
+      border-color: rgba(186,117,23,0.15);
+    }
+    .message-body h2 { font-size: 1.1rem; margin: 16px 0 8px; color: var(--gold-light); font-family: 'Instrument Serif', serif; }
+    .message-body h2:first-child { margin-top: 0; }
+    .message-body h3 { font-size: 0.95rem; margin: 12px 0 6px; color: var(--text-primary); }
+    .message-body strong { color: var(--gold-light); }
+    .message-body ul, .message-body ol { padding-left: 20px; margin: 8px 0; }
+    .message-body li { margin: 4px 0; }
+    .message-body p { margin: 8px 0; }
+    .message-body p:first-child { margin-top: 0; }
+    .message-body p:last-child { margin-bottom: 0; }
+
+    /* Typing indicator */
+    .typing-indicator {
+      display: flex;
+      gap: 4px;
+      padding: 8px 0;
+    }
+    .typing-indicator span {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: typingBounce 1.4s infinite;
+    }
+    .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+    .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes typingBounce {
+      0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+      30% { transform: translateY(-8px); opacity: 1; }
+    }
+
+    /* Chat input */
+    .chat-input-area {
+      display: flex;
+      gap: 12px;
+      padding: 16px 0;
+      border-top: 1px solid var(--dark-border);
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .chat-input {
+      flex: 1;
+      background: var(--dark-surface);
+      border: 1px solid var(--dark-border);
+      border-radius: 12px;
+      padding: 14px 18px;
+      color: var(--text-primary);
+      font-size: 0.92rem;
+      font-family: inherit;
+      outline: none;
+      transition: var(--transition);
+      resize: none;
+      min-height: 48px;
+      max-height: 120px;
+    }
+    .chat-input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(186,117,23,0.1); }
+    .chat-input::placeholder { color: var(--text-muted); }
+    .chat-send {
+      background: var(--gold);
+      border: none;
+      border-radius: 12px;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+      flex-shrink: 0;
+      align-self: flex-end;
+    }
+    .chat-send:hover { transform: scale(1.05); box-shadow: 0 4px 16px rgba(186,117,23,0.3); }
+    .chat-send:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+    .chat-send svg { width: 20px; height: 20px; }
+
+    /* Quick prompts */
+    .quick-prompts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .quick-prompt {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      color: var(--text-secondary);
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .quick-prompt:hover { background: var(--dark-hover); color: var(--gold); border-color: rgba(186,117,23,0.3); }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--dark-border);
+    }
+    .footer a { color: var(--text-secondary); text-decoration: none; }
+    .footer a:hover { color: var(--gold); }
+
+    /* Survey Modal Styles */
+    .survey-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .survey-modal.active {
+      display: flex;
+    }
+    .survey-content {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 500px;
+      width: 100%;
+      animation: slideUp 0.4s ease;
+    }
+    .survey-content h3 {
+      color: var(--text-primary);
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+    .survey-content p {
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      font-size: 14px;
+    }
+    .survey-question {
+      margin-bottom: 20px;
+    }
+    .survey-question label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      color: var(--text-primary);
+      font-size: 14px;
+      padding: 12px;
+      border-radius: 8px;
+      transition: var(--transition);
+    }
+    .survey-question label:hover {
+      background: rgba(186, 117, 23, 0.1);
+    }
+    .survey-question input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      accent-color: var(--gold);
+    }
+    .survey-buttons {
+      display: flex;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .survey-buttons button {
+      flex: 1;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 14px;
+    }
+    .survey-buttons .btn-primary {
+      background: var(--gold);
+      color: #000;
+    }
+    .survey-buttons .btn-primary:hover {
+      background: var(--gold-light);
+    }
+    .survey-buttons .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--dark-border);
+      color: var(--text-secondary);
+    }
+    .survey-buttons .btn-secondary:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* Loading Animation */
+    .loading-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .loading-overlay.active {
+      display: flex;
+    }
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid rgba(186, 117, 23, 0.2);
+      border-top: 4px solid var(--gold);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .loading-text {
+      color: var(--text-primary);
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    /* Success Message */
+    .success-message {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 400px;
+      text-align: center;
+      z-index: 1001;
+      animation: slideUp 0.4s ease;
+    }
+    .success-message.active {
+      display: block;
+    }
+    .success-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 20px;
+      background: rgba(52, 211, 153, 0.1);
+      border: 2px solid var(--green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+    }
+    .success-message h3 {
+      color: var(--text-primary);
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    .success-message p {
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .compare-section { background: rgba(186, 117, 23, 0.03); border: 1px solid rgba(186, 117, 23, 0.1); border-radius: 16px; padding: 40px 20px; margin: 40px auto; }
+    .scenario-card { background: rgba(186, 117, 23, 0.05); border: 1px solid rgba(186, 117, 23, 0.15); border-radius: 12px; padding: 24px; position: relative; transition: var(--transition); }
+    .scenario-card:hover { background: rgba(186, 117, 23, 0.08); border-color: rgba(186, 117, 23, 0.3); transform: translateY(-4px); }
+    .scenario-card.recommended { background: rgba(186, 117, 23, 0.1); border-color: rgba(186, 117, 23, 0.3); }
+    .scenario-badge { position: absolute; top: 12px; right: 12px; background: var(--gold); color: #0E0D0B; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; }
+    .scenario-header { margin-bottom: 20px; }
+    .scenario-header h3 { color: var(--text-primary); font-size: 1.3rem; margin-bottom: 4px; }
+    .scenario-level { color: var(--gold); font-weight: 600; font-size: 0.9rem; }
+    .scenario-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+    .metric-item { background: rgba(0, 0, 0, 0.2); padding: 12px; border-radius: 8px; text-align: center; }
+    .metric-label { display: block; color: var(--text-secondary); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 6px; }
+    .metric-value { display: block; color: var(--gold); font-size: 1.4rem; font-weight: 700; }
+    .scenario-description { color: var(--text-secondary); font-size: 0.9rem; text-align: center; padding-top: 12px; border-top: 1px solid rgba(186, 117, 23, 0.1); }
+    .chart-metric { background: rgba(0, 0, 0, 0.2); padding: 16px; border-radius: 8px; }
+    .chart-label { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 12px; text-align: center; }
+    .chart-bars { display: flex; align-items: flex-end; justify-content: center; gap: 8px; height: 120px; }
+    .bar { width: 24px; background: rgba(186, 117, 23, 0.5); border-radius: 4px 4px 0 0; transition: var(--transition); min-height: 4px; }
+    .bar.recommended { background: var(--gold); box-shadow: 0 0 12px rgba(186, 117, 23, 0.4); }
+    .bar:hover { background: var(--gold); }
+
+    @media (max-width: 600px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .form-card { padding: 24px; }
+      .chat-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .chat-header-actions { width: 100%; }
+      .chat-action-btn { flex: 1; justify-content: center; }
+      .hero { padding: 32px 0 24px; }
+      .survey-content { padding: 24px; }
+      .scenario-metrics { grid-template-columns: 1fr; }
+    }
+  /* === STANDARD NAV CSS === */
+.nav{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(14,13,11,.95);backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:100;border-bottom:1px solid rgba(186,117,23,.15)}
+.nav.scrolled{background:rgba(14,13,11,.98);box-shadow:0 2px 20px rgba(0,0,0,.3)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;z-index:115}
+.hamburger span{width:24px;height:2px;background:#BA7517;transition:all .3s}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.nav-menu{display:none;position:fixed;top:64px;right:0;width:250px;max-height:calc(100vh - 64px);background:rgba(14,13,11,.98);backdrop-filter:blur(20px);border-left:1px solid rgba(186,117,23,.2);padding:16px 0;z-index:99;flex-direction:column;overflow-y:auto;animation:slideIn .3s ease}
+.nav-menu.active{display:flex}
+.nav-menu a{color:#9C9888;font-size:14px;font-weight:500;text-decoration:none;padding:12px 24px;transition:all .2s;display:block;border-left:3px solid transparent}
+.nav-menu a:hover{color:#F5F0E8;background:rgba(186,117,23,.1);border-left-color:#BA7517}
+.nav-menu a.nav-active{color:#BA7517;border-left-color:#BA7517;background:rgba(186,117,23,.05)}
+@keyframes slideIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#F5F0E8;z-index:115}
+.nav-brand img{width:40px;height:40px;font-size:18px;color:#F5F0E8;letter-spacing:-.3px}
+.nav-brand-text span{color:#BA7517}
+.nav-consultation{background:#BA7517;color:#000;padding:10px 20px;border-radius:6px;font-size:13px;font-weight:600;letter-spacing:.05em;text-decoration:none;transition:all .2s;position:absolute;left:50%;transform:translateX(-50%);top:20px;z-index:115;border:none;cursor:pointer;display:inline-block}
+.nav-consultation:hover{background:#D4A574;transform:translateX(-50%) translateY(-2px)}
+/* === END STANDARD NAV CSS === */
+
+/* Industries dropdown */
+.nav-dropdown{position:relative}
+.nav-dropdown-trigger{display:flex;align-items:center;gap:5px;color:#9C9888;font-size:14px;font-weight:500;cursor:pointer;transition:color .2s;background:none;border:none;font-family:inherit;padding:0}
+.nav-dropdown-trigger:hover,.nav-dropdown:hover .nav-dropdown-trigger{color:#F5F0E8}
+.nav-dropdown-trigger svg{transition:transform .2s}
+.nav-dropdown:hover .nav-dropdown-trigger svg{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:rgba(14,13,11,.97);backdrop-filter:blur(20px);border:1px solid rgba(186,117,23,.2);border-radius:12px;padding:8px;min-width:200px;opacity:0;visibility:hidden;transition:all .2s;z-index:200;box-shadow:0 16px 48px rgba(0,0,0,.4)}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;top:calc(100% + 8px)}
+.nav-dropdown-menu a{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;font-size:13px;color:#9C9888;transition:all .2s;white-space:nowrap}
+.nav-dropdown-menu a:hover{color:#F5F0E8;background:rgba(186,117,23,.08)}
+.nav-dropdown-menu a span.dd-icon{font-size:16px;width:20px;text-align:center}
+.nav-dropdown-divider{height:1px;background:rgba(186,117,23,.1);margin:6px 0}
+
+  </style>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1012037731152333');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1012037731152333&ev=PageView&noscript=1"
+    / alt="" decoding="async"></noscript>
+    <!-- End Meta Pixel Code -->
+    <script defer src="/meta-pixel-events.js"></script>
+    <script>
+      // Track ROI Calculator page view
+      if (typeof MetaPixelEvents !== 'undefined') {
+        MetaPixelEvents.trackROICalculatorView();
+      }
+    </script>
+  
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "AI ROI Calculator",
+  "description": "Calculate your AI ROI instantly. Discover cost savings, efficiency gains, and measurable business impact from automation.",
+  "url": "https://micap-ai.manus.space/ai-roi-calculator.html",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web Browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "Micap AI",
+    "url": "https://micap-ai.manus.space"
+  }
+}
+  </script>
+  </head>
+<body>
+    <nav aria-label="breadcrumb" class="breadcrumb-nav" style="margin-bottom: 20px;">
+      <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 5px; font-size: 0.9em;">
+        <li><a href="index.html" style="color: #d4a574; text-decoration: none;">Home</a></li>
+        <li style="color: #999;">/</li>
+        <li aria-current="page" style="color: #666;">Tools</li>
+        <li style="color: #999;">/</li>
+        <li aria-current="page" style="color: #666;">ROI Calculator</li>
+      </ol>
+    </nav>
+
+    <a href="#main-content" class="skip-to-content" style="position: absolute; top: -40px; left: 0; background: #d4a574; color: white; padding: 8px; text-decoration: none; z-index: 100;">Skip to main content</a>
+
+<nav class="nav" id="navbar" role="navigation">
+  <a href="index.html" class="nav-brand">
+    <img loading="lazy" src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663473200649/hUUaHIjRLGNJNfOi.jpg" alt="Micap AI" style="width:40px;height:40px;object-fit:contain;background:#000" decoding="async">
+    <div class="nav-brand-text">micap<span>.ai</span></div>
+  </a>
+  <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" rel="noopener noreferrer" class="nav-consultation" aria-label="Opens in new window">CONSULTATION BOOKING</a>
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+<div class="nav-menu" id="navMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="digital-employees.html">Digital Employees</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="case-studies.html">Case Studies</a>
+  <a href="ai-roi-calculator.html" class="nav-active">ROI Calculator</a>
+  <a href="roi-calculator-demo.html">ROI Demo</a>
+  <a href="blog.html">Blog</a>
+  <a href="faq.html">FAQ</a>
+</div>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+  
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+    
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+    
+    document.addEventListener('click', function(event) {
+      if (!event.target.closest('.nav') && !event.target.closest('.nav-menu')) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    });
+  }
+</script>
+
+<div class="page-wrapper">
+
+  <!-- NAV -->
+  
+
+
+  <div class="main-content">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-badge"><div class="pulse"></div> AI-Powered Analysis</div>
+      <h1>Calculate Your <em>AI ROI</em></h1>
+      <p>Tell us about your business and our AI consultant will analyze your automation opportunities, projected savings, and capacity multiplier in real time.</p>
+    </div>
+
+    <!-- INTAKE FORM -->
+    <div class="intake-section" id="intakeSection">
+      <div class="form-card">
+        <h2>Business Profile</h2>
+        <p class="subtitle">We need a few details to provide an accurate analysis.</p>
+        <form id="intakeForm" onsubmit="submitIntake(event)">
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Company Name</label>
+              <input type="text" id="companyName" placeholder="Acme Corp" required>
+            </div>
+            <div class="form-group">
+              <label>Industry</label>
+              <select id="industry" required>
+                <option value="">Select industry...</option>
+                <option value="Technology">Technology</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Finance">Finance / Banking</option>
+                <option value="Retail">Retail / E-Commerce</option>
+                <option value="Manufacturing">Manufacturing</option>
+                <option value="Real Estate">Real Estate</option>
+                <option value="Legal">Legal Services</option>
+                <option value="Construction">Construction</option>
+                <option value="Hospitality">Hospitality / Food Service</option>
+                <option value="Professional Services">Professional Services</option>
+                <option value="Education">Education</option>
+                <option value="Logistics">Logistics / Transportation</option>
+                <option value="Marketing">Marketing / Advertising</option>
+                <option value="Insurance">Insurance</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Annual Revenue ($)</label>
+              <input type="number" id="revenue" placeholder="1,000,000" min="0" required>
+            </div>
+            <div class="form-group">
+              <label>Number of Employees</label>
+              <input type="number" id="headcount" placeholder="25" min="1" required oninput="if(stdHoursActive) calcStdLaborHours()">
+            </div>
+            <div class="form-group">
+              <label>Average Labor Cost / Hour ($)</label>
+              <input type="number" id="laborRate" placeholder="35" min="1" required>
+            </div>
+            <div class="form-group">
+              <label>Total Labor Hours <span id="periodLabel">(per month)</span></label>
+              <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px">
+                <input type="number" id="laborHours" placeholder="4000" min="35" max="10000000" required style="flex:1;min-width:120px" oninput="validateLaborHours(this)" onchange="validateLaborHours(this)">
+                <div class="labor-toggle" style="flex-wrap:wrap">
+                  <button type="button" class="active" onclick="setPeriod('month',this)">Monthly</button>
+                  <button type="button" onclick="setPeriod('week',this)">Weekly</button>
+                </div>
+              </div>
+              <div style="display:flex;gap:8px;align-items:center">
+                <button type="button" onclick="toggleStdHours(this)" style="background:var(--dark-card);border:1px solid rgba(186,117,23,0.1);color:var(--text-secondary);padding:6px 14px;border-radius:6px;font-size:0.82rem;font-weight:500;cursor:pointer;transition:var(--transition);white-space:nowrap">Std Hours/Week</button>
+              </div>
+              <div id="stdHoursRow" style="display:none;margin-top:12px;">
+                <div style="display:flex;gap:8px;align-items:center">
+                  <label style="font-size:0.82rem;color:var(--text-secondary);white-space:nowrap">Hours/Week per Employee:</label>
+                  <input type="number" id="stdHoursPerWeek" value="40" min="20" max="120" step="1" style="width:100px;text-align:center" oninput="calcStdLaborHours()">
+                </div>
+                <div style="margin-top:4px;font-size:0.78rem;color:var(--text-muted)" id="stdHoursCalcLabel"></div>
+              </div>
+            </div>
+            <div class="form-group full slider-group">
+              <div class="slider-header">
+                <label>Expected Automation Level</label>
+                <span class="slider-value" id="automationValue">30%</span>
+              </div>
+              <input type="range" id="automationLevel" min="5" max="80" value="30" oninput="document.getElementById('automationValue').textContent=this.value+'%'">
+              <div style="display:flex;justify-content:space-between;font-size:0.72rem;color:var(--text-muted)">
+                <span>Conservative (5%)</span>
+                <span>Aggressive (80%)</span>
+              </div>
+            </div>
+            <div class="form-group full">
+              <label>Additional Comments (Optional)</label>
+              <textarea id="additionalComments" placeholder="Share any business-specific information, challenges, or goals that might help with the analysis..." style="min-height:100px;font-family:'DM Sans',sans-serif;padding:12px;border:1px solid rgba(186,117,23,0.2);border-radius:8px;background:rgba(186,117,23,0.02);color:var(--text-primary);resize:vertical"></textarea>
+            </div>
+            <div class="form-group full">
+              <label>Upload Documents (Optional)</label>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <input type="file" id="documentUpload" accept=".pdf,.doc,.docx,.xlsx,.xls,.txt" multiple style="padding:12px;border:2px dashed rgba(186,117,23,0.3);border-radius:8px;background:rgba(186,117,23,0.02);color:var(--text-primary);cursor:pointer">
+                <div style="font-size:0.78rem;color:var(--text-muted)">Accepted: PDF, Word, Excel, Text files (Max 10MB per file)</div>
+                <div id="uploadedFiles" style="display:flex;flex-direction:column;gap:6px;margin-top:8px"></div>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn-primary" id="submitBtn" aria-label="Submit form">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            Analyze My Business
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- COMPARE SCENARIOS SECTION -->
+    <div class="compare-section" id="compareSection" style="display:none;max-width:1200px;margin:40px auto;padding:0 20px">
+      <div style="text-align:center;margin-bottom:40px">
+        <h2 style="font-size:2rem;color:var(--text-primary);margin-bottom:12px">Compare Automation Scenarios</h2>
+        <p style="color:var(--text-secondary);font-size:1rem">See how different automation levels impact your ROI, payback period, and capacity multiplier</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-bottom:40px">
+        <div class="scenario-card" data-scenario="conservative"><div class="scenario-header"><h3>Conservative</h3><span class="scenario-level">30% Automation</span></div><div class="scenario-metrics"><div class="metric-item"><span class="metric-label">Annual Savings</span><span class="metric-value" id="conservative-savings">$0</span></div><div class="metric-item"><span class="metric-label">ROI %</span><span class="metric-value" id="conservative-roi">0%</span><span class="metric-benchmark" id="conservative-roi-benchmark" style="font-size:0.75rem;margin-left:8px;color:#999"></span></div><div class="metric-item"><span class="metric-label">Payback Period</span><span class="metric-value" id="conservative-payback">0 mo</span><span class="metric-benchmark" id="conservative-payback-benchmark" style="font-size:0.75rem;margin-left:8px;color:#999"></span></div><div class="metric-item"><span class="metric-label">Capacity Multiplier</span><span class="metric-value" id="conservative-capacity">1.0x</span></div></div><div class="scenario-description">Lower risk, steady ROI with minimal disruption</div></div>
+        <div class="scenario-card recommended" data-scenario="moderate"><div class="scenario-badge">Recommended</div><div class="scenario-header"><h3>Moderate</h3><span class="scenario-level">60% Automation</span></div><div class="scenario-metrics"><div class="metric-item"><span class="metric-label">Annual Savings</span><span class="metric-value" id="moderate-savings">$0</span></div><div class="metric-item"><span class="metric-label">ROI %</span><span class="metric-value" id="moderate-roi">0%</span><span class="metric-benchmark" id="moderate-roi-benchmark" style="font-size:0.75rem;margin-left:8px;color:#999"></span></div><div class="metric-item"><span class="metric-label">Payback Period</span><span class="metric-value" id="moderate-payback">0 mo</span><span class="metric-benchmark" id="moderate-payback-benchmark" style="font-size:0.75rem;margin-left:8px;color:#999"></span></div><div class="metric-item"><span class="metric-label">Capacity Multiplier</span><span class="metric-value" id="moderate-capacity">1.0x</span></div></div><div class="scenario-description">Balanced approach with strong ROI and manageable risk</div></div>
+        <div class="scenario-card" data-scenario="aggressive"><div class="scenario-header"><h3>Aggressive</h3><span class="scenario-level">100% Automation</span></div><div class="scenario-metrics"><div class="metric-item"><span class="metric-label">Annual Savings</span><span class="metric-value" id="aggressive-savings">$0</span></div><div class="metric-item"><span class="metric-label">ROI %</span><span class="metric-value" id="aggressive-roi">0%</span><span class="metric-benchmark" id="aggressive-roi-benchmark" style="font-size:0.75rem;margin-left:8px;color:#999"></span></div><div class="metric-item"><span class="metric-label">Payback Period</span><span class="metric-value" id="aggressive-payback">0 mo</span><span class="metric-benchmark" id="aggressive-payback-benchmark" style="font-size:0.75rem;margin-left:8px;color:#999"></span></div><div class="metric-item"><span class="metric-label">Capacity Multiplier</span><span class="metric-value" id="aggressive-capacity">1.0x</span></div></div><div class="scenario-description">Maximum impact with highest savings and capacity gains</div></div>
+      </div>
+      <div style="background:rgba(186,117,23,0.08);border:1px solid rgba(186,117,23,0.2);border-radius:12px;padding:24px;margin-bottom:40px"><h3 style="color:var(--text-primary);margin-bottom:16px">Scenario Comparison Chart</h3><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px"><div class="chart-metric"><div class="chart-label">Annual Savings</div><div class="chart-bars"><div class="bar" id="chart-savings-conservative" style="height:0%"></div><div class="bar recommended" id="chart-savings-moderate" style="height:0%"></div><div class="bar" id="chart-savings-aggressive" style="height:0%"></div></div></div><div class="chart-metric"><div class="chart-label">ROI %</div><div class="chart-bars"><div class="bar" id="chart-roi-conservative" style="height:0%"></div><div class="bar recommended" id="chart-roi-moderate" style="height:0%"></div><div class="bar" id="chart-roi-aggressive" style="height:0%"></div></div></div><div class="chart-metric"><div class="chart-label">Payback (months)</div><div class="chart-bars"><div class="bar" id="chart-payback-conservative" style="height:0%"></div><div class="bar recommended" id="chart-payback-moderate" style="height:0%"></div><div class="bar" id="chart-payback-aggressive" style="height:0%"></div></div></div><div class="chart-metric"><div class="chart-label">Capacity Multiplier</div><div class="chart-bars"><div class="bar" id="chart-capacity-conservative" style="height:0%"></div><div class="bar recommended" id="chart-capacity-moderate" style="height:0%"></div><div class="bar" id="chart-capacity-aggressive" style="height:0%"></div></div></div></div></div>
+    </div>
+
+    <!-- CHAT INTERFACE -->
+    <div class="chat-section" id="chatSection">
+      <div class="chat-header">
+        <div class="chat-header-left">
+          <div class="chat-avatar">M</div>
+          <div class="chat-header-info">
+            <h3>Micap AI ROI Analyst</h3>
+            <p>Powered by Gemini 2.5 Flash</p>
+          </div>
+        </div>
+        <div class="chat-header-actions">
+          <button class="chat-action-btn" onclick="exportPDF()" title="Download ROI report as PDF">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V10z"/><polyline points="14 2 14 10 22 10"/><line x1="12" y1="19" x2="12" y2="5"/></svg>
+            PDF
+          </button>
+          <button class="chat-action-btn" onclick="exportChat()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Export
+          </button>
+          <button class="chat-action-btn" onclick="resetChat()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6M23 20v-6h-6"/><path d="M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15"/></svg>
+            New Analysis
+          </button>
+        </div>
+      </div>
+
+      <div class="chat-messages" id="chatMessages"></div>
+
+      <div class="quick-prompts" id="quickPrompts">
+        <button class="quick-prompt" onclick="sendQuickPrompt(this)">Break down savings by department</button>
+        <button class="quick-prompt" onclick="sendQuickPrompt(this)">Which digital employees fit my business?</button>
+        <button class="quick-prompt" onclick="sendQuickPrompt(this)">What's my 5-year projection?</button>
+        <button class="quick-prompt" onclick="sendQuickPrompt(this)">How does my Capacity Multiplier work?</button>
+        <button class="quick-prompt" onclick="sendQuickPrompt(this)">Compare my ROI to industry benchmarks</button>
+      </div>
+
+      <div style="display: flex; gap: 10px; margin-bottom: 15px; padding: 0 15px;">
+        <button id="compareBtn" onclick="calculateScenarios()" style="flex: 1; padding: 12px 20px; background: linear-gradient(135deg, #BA7517 0%, #D4A574 100%); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px; transition: all 0.3s ease;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 8px; vertical-align: middle;">
+            <path d="M3 3h18v18H3z"></path>
+            <path d="M3 9h18M9 3v18"></path>
+          </svg>
+          Compare Scenarios
+        </button>
+        <button id="exportPdfBtn" onclick="exportScenarioComparison()" style="flex: 1; padding: 12px 20px; background: linear-gradient(135deg, #D4A574 0%, #B8860B 100%); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px; transition: all 0.3s ease;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 8px; vertical-align: middle;">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="9 16 12 19 15 16"></polyline>
+          </svg>
+          Export Comparison PDF
+        </button>
+        <button id="resetBtn" onclick="resetChat()" style="flex: 1; padding: 12px 20px; background: #333; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px; transition: all 0.3s ease;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 8px; vertical-align: middle;">
+            <path d="M1 4v6h6M23 20v-6h-6"></path>
+            <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"></path>
+          </svg>
+          New Analysis
+        </button>
+      </div>
+
+      <div class="chat-input-area">
+        <textarea class="chat-input" id="chatInput" placeholder="Ask about automation opportunities, savings breakdown, or specific departments..." rows="1" onkeydown="handleKeyDown(event)"></textarea>
+        <button class="chat-send" id="chatSend" onclick="sendMessage()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#0E0D0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+
+      <!-- Email Capture Modal -->
+      <div id="emailCaptureModal" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; align-items: center; justify-content: center;">
+        <div style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); border: 1px solid #D4A574; border-radius: 12px; padding: 40px; max-width: 500px; width: 90%; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+          <h2 style="color: #D4A574; margin: 0 0 10px 0; font-size: 24px; font-weight: 700;">Get Your ROI Report</h2>
+          <p style="color: #999; margin: 0 0 30px 0; font-size: 14px;">Enter your details to download your personalized ROI analysis and receive strategic recommendations.</p>
+          
+          <form id="emailCaptureForm" onsubmit="submitEmailCapture(event)" style="display: flex; flex-direction: column; gap: 15px;">
+            <div>
+              <label style="display: block; color: #D4A574; font-size: 12px; font-weight: 600; margin-bottom: 8px;">Company Name</label>
+              <input type="text" id="captureCompanyName" placeholder="Your Company" required style="width: 100%; padding: 12px; background: #0E0D0B; border: 1px solid #333; border-radius: 6px; color: #fff; font-size: 14px; box-sizing: border-box;">
+            </div>
+            
+            <div>
+              <label style="display: block; color: #D4A574; font-size: 12px; font-weight: 600; margin-bottom: 8px;">Email Address</label>
+              <input type="email" id="captureEmail" placeholder="you@company.com" required style="width: 100%; padding: 12px; background: #0E0D0B; border: 1px solid #333; border-radius: 6px; color: #fff; font-size: 14px; box-sizing: border-box;" aria-label="Email address">
+            </div>
+            
+            <div>
+              <label style="display: block; color: #D4A574; font-size: 12px; font-weight: 600; margin-bottom: 8px;">Phone (Optional)</label>
+              <input type="tel" id="capturePhone" placeholder="+1 (555) 123-4567" style="width: 100%; padding: 12px; background: #0E0D0B; border: 1px solid #333; border-radius: 6px; color: #fff; font-size: 14px; box-sizing: border-box;">
+            </div>
+            
+            <div style="display: flex; gap: 10px; margin-top: 20px;">
+              <button type="submit" id="captureSubmitBtn" style="flex: 1; padding: 12px 20px; background: linear-gradient(135deg, #D4A574 0%, #B8860B 100%); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px; transition: all 0.3s ease;" aria-label="Submit form">
+                Download Report
+              </button>
+              <button type="button" onclick="closeEmailCapture()" style="flex: 1; padding: 12px 20px; background: #333; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px; transition: all 0.3s ease;">
+                Skip
+              </button>
+            </div>
+          </form>
+          
+          <p style="color: #666; font-size: 12px; margin-top: 15px; text-align: center;">We respect your privacy. Your data is secure and will only be used for your ROI analysis follow-up.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    &copy; 2026 Micap AI Consulting. All rights reserved. &nbsp;|&nbsp;
+    <a href="index.html">Home</a> &nbsp;|&nbsp;
+    <a href="pricing.html">Pricing</a> &nbsp;|&nbsp;
+    <a href="mailto:hi@micap.pro">Contact</a> &nbsp;|&nbsp;
+    <a href="/api-docs.html">API Documentation</a>
+  </div>
+
+</div>
+
+<script>
+  // ===== STATE =====
+  let sessionId = 'roi-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+  let businessProfile = {};
+  let laborPeriod = 'month';
+  let isTyping = false;
+
+  // ===== NAVIGATION =====
+  // Hamburger handled by standard nav script in the nav block above
+
+  // ===== FORM FUNCTIONS =====
+  let stdHoursActive = false;
+
+  function setPeriod(period, btn) {
+    laborPeriod = period;
+    document.getElementById('periodLabel').textContent = `(per ${period})`;
+    document.querySelectorAll('.labor-toggle button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    // Deactivate std hours mode when switching to monthly/weekly
+    stdHoursActive = false;
+    document.getElementById('stdHoursRow').style.display = 'none';
+    document.getElementById('laborHours').disabled = false;
+    document.getElementById('laborHours').style.opacity = '1';
+  }
+
+  function toggleStdHours(btn) {
+    stdHoursActive = !stdHoursActive;
+    document.querySelectorAll('.labor-toggle button').forEach(b => b.classList.remove('active'));
+    if (stdHoursActive) {
+      btn.classList.add('active');
+      laborPeriod = 'week';
+      document.getElementById('periodLabel').textContent = '(per week, auto-calculated)';
+      document.getElementById('stdHoursRow').style.display = 'block';
+      document.getElementById('laborHours').disabled = true;
+      document.getElementById('laborHours').style.opacity = '0.5';
+      calcStdLaborHours();
+    } else {
+      // Revert to monthly default
+      laborPeriod = 'month';
+      document.getElementById('periodLabel').textContent = '(per month)';
+      document.getElementById('stdHoursRow').style.display = 'none';
+      document.getElementById('laborHours').disabled = false;
+      document.getElementById('laborHours').style.opacity = '1';
+      document.getElementById('laborHours').value = '';
+      document.getElementById('laborHours').placeholder = '4000';
+      // Set Monthly as active
+      document.querySelectorAll('.labor-toggle button')[0].classList.add('active');
+    }
+  }
+
+  function calcStdLaborHours() {
+    const headcountInput = document.getElementById('headcount');
+    const hrsPerWeekInput = document.getElementById('stdHoursPerWeek');
+    const laborHoursInput = document.getElementById('laborHours');
+    
+    const headcount = parseInt(headcountInput.value) || 0;
+    const hrsPerWeek = parseInt(hrsPerWeekInput.value) || 40;
+    const total = headcount * hrsPerWeek;
+    
+    laborHoursInput.value = total;
+    
+    const label = document.getElementById('stdHoursCalcLabel');
+    if (headcount > 0) {
+      label.textContent = `${headcount} employees × ${hrsPerWeek} hrs/week = ${total.toLocaleString()} total hours/week`;
+    } else {
+      label.textContent = 'Enter number of employees above to auto-calculate';
+    }
+  }
+
+  function validateLaborHours(input) {
+    // Remove non-numeric characters
+    let value = input.value.replace(/[^0-9]/g, '');
+    
+    // Convert to number
+    let numValue = parseInt(value) || 0;
+    
+    // Enforce min/max constraints
+    if (numValue < 35 && value !== '') {
+      numValue = 35;
+    } else if (numValue > 10000000) {
+      numValue = 10000000;
+    }
+    
+    // Update input value
+    input.value = numValue > 0 ? numValue : '';
+  }
+
+  async function submitIntake(e) {
+    e.preventDefault();
+    
+    const fileInput = document.getElementById('documentUpload');
+    const uploadedFiles = fileInput.files;
+    const fileList = [];
+    for (let file of uploadedFiles) {
+      if (file.size <= 10 * 1024 * 1024) {
+        fileList.push({ name: file.name, size: file.size, type: file.type });
+      }
+    }
+    
+    businessProfile = {
+      companyName: document.getElementById('companyName').value,
+      industry: document.getElementById('industry').value,
+      revenue: document.getElementById('revenue').value,
+      headcount: document.getElementById('headcount').value,
+      laborRate: document.getElementById('laborRate').value,
+      laborHours: document.getElementById('laborHours').value,
+      laborPeriod: laborPeriod,
+      automationLevel: document.getElementById('automationLevel').value,
+      additionalComments: document.getElementById('additionalComments').value,
+      uploadedFiles: fileList
+    };
+
+    document.getElementById('surveyModal').classList.add('active');
+  }
+
+  function submitSurvey() {
+    // Collect survey responses
+    const selectedGoals = Array.from(document.querySelectorAll('input[name="goal"]:checked')).map(el => el.value);
+    businessProfile.businessGoals = selectedGoals.length > 0 ? selectedGoals : ['not-specified'];
+    
+    // Close survey and show loading
+    document.getElementById('surveyModal').classList.remove('active');
+    document.getElementById('loadingOverlay').classList.add('active');
+    
+    // Process the analysis
+    processAnalysis();
+  }
+
+  function skipSurvey() {
+    businessProfile.businessGoals = ['skipped'];
+    document.getElementById('surveyModal').classList.remove('active');
+    document.getElementById('loadingOverlay').classList.add('active');
+    processAnalysis();
+  }
+
+  async function processAnalysis() {
+    // Track ROI Calculator submission with Meta Pixel
+    if (typeof MetaPixelEvents !== 'undefined') {
+      MetaPixelEvents.trackROICalculatorSubmit({
+        potentialSavings: 0
+      });
+    }
+
+    // Store lead data
+    try {
+      await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName: '',
+          lastName: '',
+          email: '',
+          company: businessProfile.companyName,
+          jobTitle: '',
+          companySize: businessProfile.headcount + ' employees',
+          resourceType: 'roi-calculator',
+          industry: businessProfile.industry,
+          revenue: businessProfile.revenue,
+          businessGoals: businessProfile.businessGoals
+        })
+      });
+    } catch (err) { console.error('Lead storage error:', err.message); }
+
+    // Track lead scoring
+    try {
+      await fetch('/api/lead-scoring/visit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sessionId, industry: businessProfile.industry, source: 'roi-calculator' })
+      });
+    } catch (err) { console.error('Lead scoring error:', err.message); }
+
+    // Simulate processing time for better UX
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    // Hide loading and show success message
+    document.getElementById('loadingOverlay').classList.remove('active');
+    document.getElementById('successMessage').classList.add('active');
+    
+    // Hide success message after 2 seconds and transition to chat
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    document.getElementById('successMessage').classList.remove('active');
+
+    // Transition to chat
+    document.getElementById('intakeSection').style.display = 'none';
+    document.querySelector('.hero').style.display = 'none';
+    document.getElementById('chatSection').classList.add('active');
+    
+    // Scroll to chat section smoothly
+    const chatSection = document.getElementById('chatSection');
+    if (chatSection) {
+      setTimeout(() => {
+        chatSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+
+    // Send initial analysis request
+    const initialMessage = `I've just submitted my business profile. Please analyze my automation opportunities and provide an initial ROI assessment. My company is ${businessProfile.companyName} in the ${businessProfile.industry} industry with $${Number(businessProfile.revenue).toLocaleString()} annual revenue, ${businessProfile.headcount} employees, $${businessProfile.laborRate}/hr average labor cost, ${businessProfile.laborHours} total labor hours per ${laborPeriod}, and I'm targeting ${businessProfile.automationLevel}% automation.`;
+
+    addMessage('user', initialMessage);
+    await sendToAPI(initialMessage);
+  }
+
+  // ===== CHAT FUNCTIONS =====
+  function addMessage(type, content, isMarkdown = false) {
+    const container = document.getElementById('chatMessages');
+    const div = document.createElement('div');
+    div.className = `message ${type}`;
+
+    const avatarContent = type === 'ai' ? 'M' : '👤';
+    const senderName = type === 'ai' ? 'Micap AI Analyst' : 'You';
+
+    let bodyContent = content;
+    if (isMarkdown && typeof marked !== 'undefined') {
+      bodyContent = marked.parse(content);
+    } else if (isMarkdown) {
+      bodyContent = content.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\n/g, '<br>')
+        .replace(/^## (.*)/gm, '<h2>$1</h2>')
+        .replace(/^### (.*)/gm, '<h3>$1</h3>')
+        .replace(/^- (.*)/gm, '<li>$1</li>')
+        .replace(/^(\d+)\. (.*)/gm, '<li>$2</li>');
+    }
+
+    div.innerHTML = `
+      <div class="message-avatar">${avatarContent}</div>
+      <div class="message-content">
+        <div class="message-sender">${senderName}</div>
+        <div class="message-body">${bodyContent}</div>
+      </div>
+    `;
+    container.appendChild(div);
+    container.scrollTop = container.scrollHeight;
+    return div;
+  }
+
+  function addTypingIndicator() {
+    const container = document.getElementById('chatMessages');
+    const div = document.createElement('div');
+    div.className = 'message ai';
+    div.id = 'typingIndicator';
+    div.innerHTML = `
+      <div class="message-avatar">M</div>
+      <div class="message-content">
+        <div class="message-sender">Micap AI Analyst</div>
+        <div class="message-body">
+          <div class="typing-indicator"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    `;
+    container.appendChild(div);
+    container.scrollTop = container.scrollHeight;
+  }
+
+  function removeTypingIndicator() {
+    const el = document.getElementById('typingIndicator');
+    if (el) el.remove();
+  }
+
+  async function sendToAPI(message) {
+    isTyping = true;
+    document.getElementById('chatSend').disabled = true;
+    addTypingIndicator();
+
+    try {
+      const response = await fetch('/api/roi-chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          sessionId,
+          message,
+          businessProfile
+        })
+      });
+
+      removeTypingIndicator();
+
+      if (!response.ok) {
+        const err = await response.json();
+        addMessage('ai', `I apologize, but I'm temporarily unable to process your request. ${err.error || 'Please try again in a moment.'}`, true);
+        return;
+      }
+
+      const data = await response.json();
+      addMessage('ai', data.response, true);
+
+      if (data.source === 'fallback') {
+        // Subtle indicator
+        const msgs = document.querySelectorAll('.message.ai');
+        const lastMsg = msgs[msgs.length - 1];
+        if (lastMsg) {
+          const badge = document.createElement('div');
+          badge.style.cssText = 'font-size:0.7rem;color:var(--text-muted);margin-top:8px;font-style:italic';
+          badge.textContent = 'Analysis based on industry benchmarks';
+          lastMsg.querySelector('.message-body').appendChild(badge);
+        }
+      }
+    } catch (error) {
+      removeTypingIndicator();
+      addMessage('ai', 'I apologize, but there was a connection error. Please try again.', true);
+    } finally {
+      isTyping = false;
+      document.getElementById('chatSend').disabled = false;
+    }
+  }
+
+  async function sendMessage() {
+    const input = document.getElementById('chatInput');
+    const message = input.value.trim();
+    if (!message || isTyping) return;
+
+    input.value = '';
+    input.style.height = 'auto';
+    addMessage('user', message);
+    await sendToAPI(message);
+  }
+
+  function sendQuickPrompt(btn) {
+    if (isTyping) return;
+    const message = btn.textContent;
+    document.getElementById('chatInput').value = message;
+    sendMessage();
+  }
+
+  function handleKeyDown(e) {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
+    // Auto-resize textarea
+    const textarea = e.target;
+    setTimeout(() => {
+      textarea.style.height = 'auto';
+      textarea.style.height = Math.min(textarea.scrollHeight, 120) + 'px';
+    }, 0);
+  }
+
+  function exportChat() {
+    const messages = document.querySelectorAll('.message');
+    let csv = 'Sender,Message\n';
+    let text = `Micap AI ROI Analysis - ${businessProfile.companyName || 'Business'}\n`;
+    text += `Generated: ${new Date().toLocaleDateString()}\n`;
+    text += '='.repeat(60) + '\n\n';
+
+    messages.forEach(msg => {
+      const sender = msg.classList.contains('ai') ? 'Micap AI' : 'User';
+      const body = msg.querySelector('.message-body').textContent.trim();
+      text += `[${sender}]\n${body}\n\n`;
+      csv += `"${sender}","${body.replace(/"/g, '""')}"\n`;
+    });
+
+    // Download as text
+    const blob = new Blob([text], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `roi-analysis-${(businessProfile.companyName || 'business').toLowerCase().replace(/\s+/g, '-')}-${new Date().toISOString().split('T')[0]}.txt`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function exportPDF() {
+    // Show email modal to capture email for PDF delivery
+    const email = prompt('Enter your email to receive the ROI report:', businessProfile.email || '');
+    if (!email) return;
+    
+    if (!isValidEmail(email)) {
+      alert('Please enter a valid email address');
+      return;
+    }
+    
+    // Store email in business profile
+    businessProfile.email = email;
+    
+    // Generate PDF HTML and send via email
+    sendPDFReport(email);
+  }
+
+  function isValidEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
+
+  function sendPDFReport(email) {
+    const submitBtn = document.getElementById('submitBtn');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Sending...';
+    
+    // Prepare ROI data
+    const roiData = {
+      companyName: businessProfile.companyName,
+      industry: businessProfile.industry,
+      annualRevenue: businessProfile.annualRevenue,
+      headcount: businessProfile.headcount,
+      avgLaborHour: businessProfile.avgLaborHour,
+      expectedAutomation: businessProfile.expectedAutomation,
+      email: email,
+      // Add calculated metrics from the chat
+      annualSavings: extractMetricFromChat('Annual Savings'),
+      paybackMonths: extractMetricFromChat('Payback Period'),
+      roiPercentage: extractMetricFromChat('ROI'),
+      capacityMultiplier: extractMetricFromChat('Capacity Multiplier'),
+      projection: generateProjection()
+    };
+    
+    // Send to backend to email the PDF
+    fetch('/api/send-roi-pdf', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(roiData)
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        alert(`ROI report sent successfully to ${email}!`);
+        // Also trigger download
+        downloadPDFReport(roiData);
+      } else {
+        alert('Failed to send report: ' + (data.error || 'Unknown error'));
+      }
+    })
+    .catch(err => {
+      console.error('Error sending PDF:', err);
+      alert('Error sending report. Downloading locally instead...');
+      downloadPDFReport(roiData);
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalText;
+    });
+  }
+
+  function extractMetricFromChat(metricName) {
+    // Extract metric values from chat messages
+    const messages = document.querySelectorAll('.message.ai .message-body');
+    for (let msg of messages) {
+      const text = msg.textContent;
+      if (text.includes(metricName)) {
+        // Simple extraction - look for currency or percentage patterns
+        const match = text.match(/\$(\d+[,\d]*(?:\.\d{2})?)|([\d.]+)%/);
+        if (match) return match[0];
+      }
+    }
+    return 'N/A';
+  }
+
+  function generateProjection() {
+    // Generate 5-year projection based on annual savings
+    const annualSavings = parseFloat(extractMetricFromChat('Annual Savings').replace(/[^0-9.]/g, '')) || 0;
+    const projection = [];
+    for (let year = 1; year <= 5; year++) {
+      projection.push({
+        year: year,
+        annualBenefit: annualSavings,
+        cumulativeBenefit: annualSavings * year,
+        roi: Math.round((annualSavings * year / 50000) * 100) // Assuming $50k implementation cost
+      });
+    }
+    return projection;
+  }
+
+  function downloadPDFReport(roiData) {
+    // Generate HTML report and convert to PDF using browser's print-to-PDF
+    const html = generateROIReportHTML(roiData);
+    const newWindow = window.open();
+    newWindow.document.write(html);
+    newWindow.document.close();
+    setTimeout(() => newWindow.print(), 250);
+  }
+
+  function generateROIReportHTML(data) {
+    const formatCurrency = (num) => {
+      if (!num || num === 'N/A') return '$0';
+      const val = typeof num === 'string' ? parseFloat(num.replace(/[^0-9.]/g, '')) : num;
+      return isNaN(val) ? '$0' : '$' + Math.round(val).toLocaleString();
+    };
+
+    const projectionRows = (data.projection || []).map((row, idx) => `
+      <tr>
+        <td>Year ${row.year || idx + 1}</td>
+        <td>${formatCurrency(row.annualBenefit)}</td>
+        <td>${formatCurrency(row.cumulativeBenefit)}</td>
+        <td>${row.roi}%</td>
+      </tr>
+    `).join('');
+
+    return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AI ROI Calculator | Measure Your Automation Savings</title>
+  <style>
+    body { font-family: Arial, sans-serif; color: #333; margin: 40px; }
+    .header { border-bottom: 3px solid #d4a574; margin-bottom: 30px; padding-bottom: 20px; }
+    .logo { font-size: 24px; font-weight: bold; color: #1a1a1a; }
+    .tagline { font-size: 12px; color: #d4a574; margin-top: 5px; }
+    .title { font-size: 20px; font-weight: bold; margin-top: 15px; }
+    .date { font-size: 12px; color: #999; margin-top: 5px; }
+    .section { margin-bottom: 30px; }
+    .section-title { font-size: 14px; font-weight: bold; border-bottom: 2px solid #d4a574; padding-bottom: 10px; margin-bottom: 15px; }
+    .company-info { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .info-row { font-size: 12px; }
+    .info-label { font-weight: bold; color: #666; }
+    .metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .metric-box { border: 2px solid #d4a574; padding: 15px; text-align: center; }
+    .metric-value { font-size: 18px; font-weight: bold; color: #d4a574; }
+    .metric-label { font-size: 11px; color: #666; margin-top: 5px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+    th { background: #1a1a1a; color: white; padding: 10px; text-align: left; font-size: 12px; }
+    td { padding: 10px; border-bottom: 1px solid #eee; font-size: 12px; }
+    tr:nth-child(even) { background: #f9f9f9; }
+    .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; font-size: 10px; color: #999; text-align: center; }
+    @media print { body { margin: 0; } }
+  </style>
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "AI ROI Calculator",
+  "description": "Calculate your AI ROI instantly. Discover cost savings, efficiency gains, and measurable business impact from automation.",
+  "url": "https://micap-ai.manus.space/ai-roi-calculator.html",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web Browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "Micap AI",
+    "url": "https://micap-ai.manus.space"
+  }
+}
+  </script>
+  </head>
+</script>
+
+<body>
+<!-- Scroll-to-Top Button -->
+<button id="scrollToTopBtn" title="Scroll to top">↑</button>
+
+
+  <div class="page-wrapper">
+
+  <script>
+  function resetChat() {
+    sessionId = 'roi-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+    businessProfile = {};
+    document.getElementById('chatMessages').innerHTML = '';
+    document.getElementById('chatSection').classList.remove('active');
+    document.getElementById('intakeSection').style.display = '';
+    document.querySelector('.hero').style.display = '';
+    document.getElementById('intakeForm').reset();
+    document.getElementById('automationValue').textContent = '30%';
+    document.getElementById('submitBtn').disabled = false;
+    document.getElementById('submitBtn').innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> Analyze My Business';
+  }
+
+  async function exportToPDF() {
+    const btn = document.getElementById('exportPdfBtn');
+    const originalText = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '<span class="typing-indicator"><span></span><span></span><span></span></span> Generating...';
+
+    try {
+      // Prepare data for PDF
+      const pdfData = {
+        companyName: businessProfile.companyName || 'Your Company',
+        industry: businessProfile.industry || 'N/A',
+        revenue: businessProfile.revenue || 0,
+        headcount: businessProfile.headcount || 0,
+        laborRate: businessProfile.laborRate || 0,
+        laborHours: businessProfile.laborHours || 1600,
+        automationLevel: businessProfile.automationLevel || 30
+      };
+
+      // Extract use cases from chat if available
+      const useCaseMessages = document.querySelectorAll('.message.ai .message-body');
+      const useCases = [];
+      
+      useCaseMessages.forEach(msg => {
+        const text = msg.textContent;
+        // Try to parse use cases from AI responses
+        try {
+          const jsonMatch = text.match(/\[\s*{[^}]*}[^\]]*\]/);
+          if (jsonMatch) {
+            const parsed = JSON.parse(jsonMatch[0]);
+            if (Array.isArray(parsed)) {
+              useCases.push(...parsed);
+            }
+          }
+        } catch (e) {
+          // Skip if not valid JSON
+        }
+      });
+
+      pdfData.useCases = useCases.slice(0, 3);
+
+      // Send to backend
+      const response = await fetch('/api/roi-pdf', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(pdfData)
+      });
+
+      if (!response.ok) {
+        throw new Error('PDF generation failed');
+      }
+
+      // Download the PDF
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Micap-AI-ROI-Report-${Date.now()}.pdf`;
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+      document.body.removeChild(a);
+
+      btn.innerHTML = originalText;
+      btn.disabled = false;
+      showEmailCapture();
+    } catch (error) {
+      console.error('PDF export error:', error);
+      alert('Failed to generate PDF. Please try again.');
+      btn.innerHTML = originalText;
+      btn.disabled = false;
+      showEmailCapture();
+    }
+  }
+
+
+  async function submitEmailCapture(event) {
+    event.preventDefault();
+    
+    const btn = document.getElementById('captureSubmitBtn');
+    const originalText = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = 'Submitting...';
+    
+    try {
+      const leadData = {
+        companyName: document.getElementById('captureCompanyName').value,
+        email: document.getElementById('captureEmail').value,
+        phone: document.getElementById('capturePhone').value || null,
+        industry: businessProfile.industry || 'N/A',
+        revenue: businessProfile.revenue || 0,
+        headcount: businessProfile.headcount || 0,
+        laborRate: businessProfile.laborRate || 0,
+        laborHours: businessProfile.laborHours || 1600,
+        automationLevel: businessProfile.automationLevel || 30,
+        timestamp: new Date().toISOString()
+      };
+      
+      const response = await fetch('/api/leads/capture', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(leadData)
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to save lead');
+      }
+      
+      closeEmailCapture();
+      alert('Thank you! Your ROI report is ready. Check your email for the download link.');
+      exportToPDF();
+      
+    } catch (error) {
+      console.error('Lead capture error:', error);
+      alert('Error saving your information. Please try again.');
+      btn.innerHTML = originalText;
+      btn.disabled = false;
+      showEmailCapture();
+    }
+  }
+  
+  function showEmailCapture() {
+    const modal = document.getElementById('emailCaptureModal');
+    modal.style.display = 'flex';
+  }
+  
+  function closeEmailCapture() {
+    const modal = document.getElementById('emailCaptureModal');
+    modal.style.display = 'none';
+    document.getElementById('emailCaptureForm').reset();
+  }
+  
+  document.addEventListener('click', (e) => {
+    const modal = document.getElementById('emailCaptureModal');
+    if (e.target === modal) {
+      closeEmailCapture();
+    }
+  });
+  
+  const docUpload = document.getElementById('documentUpload');
+  if (docUpload) {
+    docUpload.addEventListener('change', function(e) {
+      const files = e.target.files;
+      const uploadedFilesDiv = document.getElementById('uploadedFiles');
+      uploadedFilesDiv.innerHTML = '';
+      for (let file of files) {
+        if (file.size > 10 * 1024 * 1024) {
+          const errorMsg = document.createElement('div');
+          errorMsg.style.cssText = 'color:#ff6b6b;font-size:0.78rem';
+          errorMsg.textContent = file.name + ' exceeds 10MB limit';
+          uploadedFilesDiv.appendChild(errorMsg);
+        } else {
+          const fileItem = document.createElement('div');
+          fileItem.style.cssText = 'display:flex;align-items:center;gap:8px;padding:8px;background:rgba(186,117,23,0.05);border-radius:6px;font-size:0.85rem';
+          fileItem.textContent = '📄 ' + file.name + ' (' + (file.size / 1024).toFixed(1) + 'KB)';
+          uploadedFilesDiv.appendChild(fileItem);
+        }
+      }
+    });
+  }
+
+  function calculateScenarios() {
+    if (!businessProfile || !businessProfile.laborRate || !businessProfile.laborHours) return;
+    const hourlyRate = parseFloat(businessProfile.laborRate);
+    const monthlyHours = laborPeriod === 'month' ? parseFloat(businessProfile.laborHours) : parseFloat(businessProfile.laborHours) * 4.33;
+    const monthlyLaborCost = hourlyRate * monthlyHours;
+    const annualLaborCost = monthlyLaborCost * 12;
+    const implementationCost = (parseFloat(businessProfile.headcount) || 1) * 5000;
+    const scenarios = [
+      { level: 30, savings: (annualLaborCost * 0.30), id: 'conservative' },
+      { level: 60, savings: (annualLaborCost * 0.60), id: 'moderate' },
+      { level: 100, savings: (annualLaborCost * 1.00), id: 'aggressive' }
+    ];
+    const maxSavings = Math.max(...scenarios.map(s => s.savings));
+    scenarios.forEach(s => {
+      const roi = ((s.savings - implementationCost) / implementationCost) * 100;
+      const payback = Math.max(1, Math.round((implementationCost / (s.savings / 12))));
+      const capacity = (1 + (s.level / 100)).toFixed(1);
+      document.getElementById(s.id + '-savings').textContent = '$' + (s.savings / 1000).toFixed(0) + 'K';
+      document.getElementById(s.id + '-roi').textContent = Math.round(roi) + '%';
+      document.getElementById(s.id + '-payback').textContent = payback + ' mo';
+      document.getElementById(s.id + '-capacity').textContent = capacity + 'x';
+      document.getElementById('chart-savings-' + s.id).style.height = ((s.savings / maxSavings) * 100) + '%';
+      document.getElementById('chart-roi-' + s.id).style.height = (Math.min(100, Math.max(0, roi / 2))) + '%';
+      document.getElementById('chart-payback-' + s.id).style.height = (Math.min(100, (payback / 24) * 100)) + '%';
+      document.getElementById('chart-capacity-' + s.id).style.height = ((capacity / 2) * 100) + '%';
+    });
+    document.getElementById('compareSection').style.display = 'block';
+    if (typeof MetaPixelEvents !== 'undefined') {
+      MetaPixelEvents.trackCustomEvent('scenario_comparison_viewed', { automationLevel: businessProfile.automationLevel });
+    }
+  }
+</script>
+
+<!-- Survey Modal -->
+<div class="survey-modal" id="surveyModal">
+  <div class="survey-content">
+    <h3>Quick Question</h3>
+    <p>What's your primary business goal for AI automation?</p>
+    <div class="survey-question">
+      <label>
+        <input type="checkbox" name="goal" value="cost-reduction">
+        <span>Reduce operational costs</span>
+      </label>
+    </div>
+    <div class="survey-question">
+      <label>
+        <input type="checkbox" name="goal" value="efficiency">
+        <span>Improve efficiency & productivity</span>
+      </label>
+    </div>
+    <div class="survey-question">
+      <label>
+        <input type="checkbox" name="goal" value="revenue">
+        <span>Increase revenue & growth</span>
+      </label>
+    </div>
+    <div class="survey-question">
+      <label>
+        <input type="checkbox" name="goal" value="quality">
+        <span>Improve quality & accuracy</span>
+      </label>
+    </div>
+    <div class="survey-buttons">
+      <button class="btn-secondary" onclick="skipSurvey()">Skip</button>
+      <button class="btn-primary" onclick="submitSurvey()">See Results</button>
+    </div>
+  </div>
+</div>
+
+<!-- Loading Overlay -->
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="spinner"></div>
+  <div class="loading-text">Analyzing your business...</div>
+</div>
+
+<!-- Success Message -->
+<div class="success-message" id="successMessage">
+  <div class="success-icon">✓</div>
+  <h3>Analysis Complete!</h3>
+  <p>Your ROI report is ready. View your results below.</p>
+</div>
+
+
+<!-- Floating UI Components -->
+<script defer src="floating-ui.js"></script>
+</body>
+</html>

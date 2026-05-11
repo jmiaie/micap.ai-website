@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Micap AI Consulting | Enterprise AI Automation</title>
+  <meta name="description" content="Enterprise AI consulting services. AI automation audits, agent implementation, LLM optimization, and AI safety guardrails for mid-market and enterprise companies.">
+  <link rel="icon" href="/manus-storage/micap-favicon_a2f043bd.ico" type="image/x-icon">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #ffffff;
+    }
+    
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #000;
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: #666;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: #000;
+    }
+    
+    .cta-button {
+      background: #000;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: background 0.3s;
+    }
+    
+    .cta-button:hover {
+      background: #333;
+    }
+    
+    .page-header {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    
+    .page-header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #000;
+    }
+    
+    .page-header p {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .section {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+    
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #000;
+    }
+    
+    .section p {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .service-card {
+      padding: 2rem;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #000;
+    }
+    
+    .service-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #000;
+    }
+    
+    .service-card .price {
+      font-size: 0.9rem;
+      color: #999;
+      margin-bottom: 1rem;
+    }
+    
+    .service-card p {
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    
+    .service-card ul {
+      list-style: none;
+      margin-bottom: 1rem;
+    }
+    
+    .service-card ul li {
+      color: #666;
+      margin-bottom: 0.5rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    
+    .service-card ul li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #000;
+      font-weight: bold;
+    }
+    
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .step {
+      padding: 2rem;
+      background: #f9f9f9;
+      border-radius: 8px;
+      text-align: center;
+    }
+    
+    .step-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 0.5rem;
+    }
+    
+    .step h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #000;
+    }
+    
+    .step p {
+      color: #666;
+      line-height: 1.8;
+    }
+    
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+    }
+    
+    .pricing-table th,
+    .pricing-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    
+    .pricing-table th {
+      background: #f9f9f9;
+      font-weight: 600;
+      color: #000;
+    }
+    
+    .pricing-table td {
+      color: #666;
+    }
+    
+    .btn-primary {
+      background: #000;
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+      display: inline-block;
+    }
+    
+    .btn-primary:hover {
+      background: #333;
+    }
+    
+    .cta-section {
+      background: #000;
+      color: #fff;
+      padding: 3rem 2rem;
+      text-align: center;
+      border-radius: 8px;
+      margin: 3rem auto;
+      max-width: 1200px;
+    }
+    
+    .cta-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    
+    .cta-section p {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      color: #ddd;
+    }
+    
+    .cta-section .btn-primary {
+      background: #fff;
+      color: #000;
+    }
+    
+    .cta-section .btn-primary:hover {
+      background: #f0f0f0;
+    }
+    
+    .contact-form {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #f9f9f9;
+      border-radius: 8px;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #000;
+      font-weight: 600;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+    
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    
+    footer {
+      background: #f9f9f9;
+      border-top: 1px solid #e5e5e5;
+      padding: 3rem 2rem;
+      margin-top: 4rem;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .footer-section h4 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #000;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+    }
+    
+    .footer-section ul li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-section a {
+      color: #666;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    
+    .footer-section a:hover {
+      color: #000;
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid #e5e5e5;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      text-align: center;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      .page-header h1 {
+        font-size: 2rem;
+      }
+      
+      .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/" class="logo">Micap AI</a>
+      <ul class="nav-links">
+        <li><a href="/lab.html">Lab</a></li>
+        <li><a href="/consulting.html">Consulting</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="#contact" class="cta-button">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="page-header">
+      <h1>Enterprise Consulting</h1>
+      <p>We help mid-market and enterprise companies unlock revenue through AI agents and enterprise automation. Our consulting is backed by original research and validated through real-world implementation.</p>
+      <div style="margin-top: 2rem;">
+        <a href="https://tidycal.com/jmilam/ai-audit-discovery-call" class="cta-button" target="_blank">Schedule Free Discovery Call</a>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" id="services">
+      <h2>Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Free Discovery Call</h3>
+          <div class="price">FREE</div>
+          <p>30-minute conversation to understand your business, identify quick wins, and determine if we're a good fit.</p>
+          <ul>
+            <li>Business overview</li>
+            <li>1-2 quick win opportunities</li>
+            <li>Fit assessment</li>
+            <li>Next steps discussion</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <h3>Standard Audit</h3>
+          <div class="price">$3,500</div>
+          <p>Comprehensive assessment of your automation opportunities. We identify 3-5 high-impact opportunities and quantify revenue recovery potential.</p>
+          <ul>
+            <li>Process analysis and mapping</li>
+            <li>Automation opportunity identification</li>
+            <li>ROI quantification</li>
+            <li>Implementation roadmap</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <h3>Deep Dive Audit</h3>
+          <div class="price">$7,500 - $10K</div>
+          <p>In-depth analysis with implementation planning. Ideal for serious buyers ready to move forward with automation initiatives.</p>
+          <ul>
+            <li>Comprehensive process analysis</li>
+            <li>Detailed implementation roadmap</li>
+            <li>Resource and timeline planning</li>
+            <li>Risk assessment and mitigation</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <h3>Agent Implementation</h3>
+          <div class="price">$100K - $500K</div>
+          <p>Design and deploy AI agents for your specific workflows. From architecture to production deployment with ongoing support. Typically follows audit engagement.</p>
+          <ul>
+            <li>Agent architecture design</li>
+            <li>Development and testing</li>
+            <li>Integration with existing systems</li>
+            <li>Training and handoff</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <h3>LLM Optimization</h3>
+          <div class="price">$50K - $200K</div>
+          <p>Optimize your LLM usage for cost, latency, and accuracy. Reduce costs by 50-80% while improving performance.</p>
+          <ul>
+            <li>Model selection and benchmarking</li>
+            <li>Prompt optimization</li>
+            <li>Caching and inference optimization</li>
+            <li>Cost monitoring and reporting</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <h3>AI Safety Implementation</h3>
+          <div class="price">$75K - $300K</div>
+          <p>Build guardrails and safety systems for your AI deployments. Ensure compliance, safety, and controllability.</p>
+          <ul>
+            <li>Safety framework design</li>
+            <li>Guardrail implementation</li>
+            <li>Compliance assessment</li>
+            <li>Monitoring and alerting</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <h3>Retainer Support</h3>
+          <div class="price">$10K - $50K/month</div>
+          <p>Ongoing optimization and support for your AI systems. Continuous improvement, monitoring, and evolution.</p>
+          <ul>
+            <li>Performance monitoring</li>
+            <li>Optimization recommendations</li>
+            <li>System updates and improvements</li>
+            <li>Priority support</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Process -->
+    <section class="section" id="process">
+      <h2>Our Process</h2>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Discovery</h3>
+          <p>We conduct a comprehensive audit of your operations to identify automation opportunities and quantify potential ROI.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Design</h3>
+          <p>We design a custom solution tailored to your specific needs, workflows, and constraints.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Implementation</h3>
+          <p>We build and deploy your solution with rigorous testing, monitoring, and quality assurance.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Optimization</h3>
+          <p>We continuously monitor and optimize your system based on real-world performance and feedback.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Typical Engagement -->
+    <section class="section">
+      <h2>Typical Engagement</h2>
+      <p>Most engagements follow this timeline and structure:</p>
+      <table class="pricing-table">
+        <tr>
+          <th>Phase</th>
+          <th>Duration</th>
+          <th>Deliverables</th>
+        </tr>
+        <tr>
+          <td><strong>Discovery & Audit</strong></td>
+          <td>2-3 weeks</td>
+          <td>Audit report, opportunity analysis, ROI quantification</td>
+        </tr>
+        <tr>
+          <td><strong>Design & Planning</strong></td>
+          <td>1-2 weeks</td>
+          <td>Architecture design, implementation roadmap, resource plan</td>
+        </tr>
+        <tr>
+          <td><strong>Development & Testing</strong></td>
+          <td>4-8 weeks</td>
+          <td>Agent development, testing, integration, documentation</td>
+        </tr>
+        <tr>
+          <td><strong>Deployment & Training</strong></td>
+          <td>1-2 weeks</td>
+          <td>Production deployment, team training, handoff</td>
+        </tr>
+        <tr>
+          <td><strong>Post-Deployment Support</strong></td>
+          <td>4 weeks</td>
+          <td>Monitoring, optimization, issue resolution</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Why Choose Micap -->
+    <section class="section">
+      <h2>Why Choose Micap AI</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Research-Driven</h3>
+          <p>Our consulting is backed by original research on enterprise AI agents, LLM optimization, and AI safety.</p>
+        </div>
+        <div class="service-card">
+          <h3>Production-Proven</h3>
+          <p>Every research insight is validated through real enterprise implementations with measurable ROI.</p>
+        </div>
+        <div class="service-card">
+          <h3>Proprietary IP</h3>
+          <p>We bring proprietary tools and frameworks that competitors can't replicate, giving you competitive advantage.</p>
+        </div>
+        <div class="service-card">
+          <h3>Business-Focused</h3>
+          <p>We approach problems through an MBA and program management lens, focusing on business outcomes not just technology.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+      <h2>Schedule a Consultation</h2>
+      <p>Let's discuss how AI agents and enterprise automation can unlock revenue for your business.</p>
+      <div class="contact-form">
+        <form>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company">
+          </div>
+          <div class="form-group">
+            <label for="message">Tell us about your automation challenges</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Schedule Consultation</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <h2>Ready to Transform Your Enterprise?</h2>
+      <p>Let's discuss how AI agents and enterprise automation can unlock revenue for your business.</p>
+      <a href="#contact" class="btn-primary">Get Started</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Micap AI</h4>
+        <p>Research-driven AI automation for enterprises.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Lab</h4>
+        <ul>
+          <li><a href="/lab.html">Research</a></li>
+          <li><a href="/lab.html">Open-Source Tools</a></li>
+          <li><a href="/lab.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Consulting</h4>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#process">Our Process</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/about.html">Team</a></li>
+          <li><a href="/about.html">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Micap AI. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

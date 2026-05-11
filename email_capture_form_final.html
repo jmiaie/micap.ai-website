@@ -1,0 +1,123 @@
+<!-- Email Capture Form Component - Mailchimp Integrated -->
+<!-- Integrated with Mailchimp Account: micap.us22.list-manage.com -->
+
+<div id="email-capture-section" class="email-capture-container" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 40px 20px; margin: 40px 0; border-radius: 8px; text-align: center;">
+    <div class="email-capture-content" style="max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #d4a574; margin-bottom: 15px; font-size: 1.8em;">Stay Updated on AI Automation</h2>
+        <p style="color: #ccc; margin-bottom: 25px; font-size: 1.05em;">Get insights, tips, and industry trends delivered to your inbox. No spam, unsubscribe anytime.</p>
+        
+        <!-- Mailchimp Form -->
+        <form id="mc-form" action="https://micap.us22.list-manage.com/subscribe/post?u=7f7204a338762942ac47ca773&id=269cc255d8&f_id=00a7c2e1f0" method="post" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate style="display: flex; flex-direction: column; gap: 12px;">
+            
+            <!-- Email Input -->
+            <div class="mc-field-group" style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Enter your email" required aria-label="Email address" style="flex: 1; min-width: 200px; padding: 12px 15px; border: 1px solid #d4a574; border-radius: 4px; font-size: 1em; background: white; color: #333;">
+                
+                <!-- Submit Button -->
+                <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" aria-label="Subscribe to newsletter" style="padding: 12px 30px; background: #d4a574; color: white; border: none; border-radius: 4px; font-size: 1em; font-weight: 600; cursor: pointer; transition: background 0.3s; white-space: nowrap;">Subscribe</button>
+            </div>
+            
+            <!-- First Name (Optional) -->
+            <div class="mc-field-group" style="display: none;">
+                <input type="text" value="" name="FNAME" class="" id="mce-FNAME" placeholder="First Name" aria-label="First name">
+            </div>
+            
+            <!-- Privacy Notice -->
+            <p style="color: #999; font-size: 0.85em; margin-top: 10px;">We respect your privacy. Unsubscribe at any time. <a href="privacy.html" style="color: #d4a574; text-decoration: none;">Privacy Policy</a></p>
+            
+            <!-- Hidden fields for Mailchimp -->
+            <div id="mce-responses" class="response" style="display: none;">
+                <div class="response" id="mce-error-response" style="display: none; color: #ff6b6b;"></div>
+                <div class="response" id="mce-success-response" style="display: none; color: #51cf66;">Thank you! Check your email to confirm your subscription.</div>
+            </div>
+            
+            <!-- Real Mailchimp field (hidden) -->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                <input type="text" name="b_7f7204a338762942ac47ca773_269cc255d8" tabindex="-1" value="">
+            </div>
+        </form>
+        
+        <!-- Fallback: Simple Email Capture (if Mailchimp not ready) -->
+        <noscript>
+            <p style="color: #ccc;">Please enable JavaScript to subscribe to our newsletter.</p>
+        </noscript>
+    </div>
+</div>
+
+<script>
+// Mailchimp form handler
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('mc-form');
+    if (!form) return;
+    
+    form.addEventListener('submit', function(e) {
+        // Track in GA4
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'newsletter_signup', {
+                'event_category': 'engagement',
+                'event_label': 'email_capture_form',
+                'value': 1
+            });
+        }
+        
+        // Show loading state
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Subscribing...';
+        submitBtn.disabled = true;
+        
+        // Mailchimp handles the submission via AJAX
+        setTimeout(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }, 3000);
+    });
+});
+</script>
+
+<style>
+    @media (max-width: 600px) {
+        #email-capture-section {
+            padding: 30px 15px !important;
+        }
+        
+        .email-capture-content h2 {
+            font-size: 1.4em !important;
+        }
+        
+        #mc-form {
+            flex-direction: column !important;
+        }
+        
+        #mce-EMAIL {
+            width: 100% !important;
+        }
+        
+        #mc-embedded-subscribe {
+            width: 100% !important;
+        }
+    }
+    
+    #mc-form button:hover {
+        background: #c9935f !important;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3);
+    }
+    
+    #mc-form button:active {
+        transform: translateY(0);
+    }
+    
+    #mce-EMAIL:focus {
+        outline: none;
+        border-color: #d4a574;
+        box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+    }
+    
+    .response {
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 4px;
+        font-weight: 500;
+    }
+</style>

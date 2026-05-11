@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Instrument+Serif&display=swap" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <title>Detailed Case Studies | AI Transformation Success Stories</title>
+  <meta name="description" content="In-depth case studies showing how Micap AI transformed organizations through strategic AI consulting and implementation.">
+  <link rel="canonical" href="https://micap-ai.manus.space/case-studies-detailed.html">
+  <meta property="og:title" content="Detailed Case Studies | AI Transformation Success Stories">
+  <meta property="og:description" content="In-depth case studies showing how Micap AI transformed organizations through strategic AI consulting and implementation.">
+  <meta property="og:url" content="https://micap-ai.manus.space/case-studies-detailed.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Micap AI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Detailed Case Studies | AI Transformation Success Stories">
+  <meta name="twitter:description" content="In-depth case studies showing how Micap AI transformed organizations through strategic AI consulting and implementation.">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #0E0D0B; color: #F5F0E8; line-height: 1.6; }
+    a { color: #BA7517; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    
+    /* NAVIGATION */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(14, 13, 11, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(186, 117, 23, 0.1); padding: 16px 0; }
+    nav.scrolled { background: rgba(14, 13, 11, 0.98); }
+    .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .logo { font-size: 20px; font-weight: 700; color: #BA7517; }
+    .nav-center { flex: 1; text-align: center; }
+    .nav-center a { display: inline-block; padding: 8px 16px; color: #F5F0E8; font-size: 14px; transition: color 0.3s; }
+    .nav-center a:hover { color: #BA7517; }
+    .hamburger{display:flex;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;z-index:115}
+    .nav-menu { display: none; position: absolute; top: 60px; right: 24px; background: rgba(14, 13, 11, 0.98); border: 1px solid rgba(186, 117, 23, 0.2); border-radius: 12px; min-width: 200px; z-index: 999; }
+    .nav-menu.active { display: block; }
+    .nav-menu a { display: block; padding: 12px 20px; color: #F5F0E8; font-size: 14px; border-bottom: 1px solid rgba(186, 117, 23, 0.1); }
+    .nav-menu a:last-child { border-bottom: none; }
+    .nav-menu a:hover { background: rgba(186, 117, 23, 0.1); color: #BA7517; }
+    .book-btn { background: linear-gradient(135deg, #BA7517, #D4891A); color: #0E0D0B; padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 14px; border: none; cursor: pointer; transition: all 0.3s; }
+    .book-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(186, 117, 23, 0.3); }
+    
+    /* HEADER */
+    .page-header { padding: 120px 0 80px; text-align: center; margin-top: 60px; }
+    .page-header h1 { font-size: 48px; font-weight: 700; margin-bottom: 16px; background: linear-gradient(135deg, #F5F0E8, #BA7517); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .page-header p { font-size: 18px; color: #7A756C; max-width: 600px; margin: 0 auto; }
+    
+    /* CASE STUDY CARD */
+    .case-study { margin-bottom: 80px; padding: 48px; background: linear-gradient(135deg, rgba(186, 117, 23, 0.05), rgba(186, 117, 23, 0.02)); border: 1px solid rgba(186, 117, 23, 0.15); border-radius: 16px; }
+    .case-study-header { margin-bottom: 40px; }
+    .case-study-title { font-size: 32px; font-weight: 700; margin-bottom: 12px; color: #BA7517; }
+    .case-study-meta { display: flex; gap: 24px; font-size: 14px; color: #7A756C; flex-wrap: wrap; }
+    .case-study-meta span { display: flex; align-items: center; gap: 8px; }
+    
+    .case-study-section { margin-bottom: 40px; }
+    .case-study-section h3 { font-size: 20px; font-weight: 600; margin-bottom: 16px; color: #BA7517; display: flex; align-items: center; gap: 12px; }
+    .case-study-section p { color: #D4D0C8; line-height: 1.8; margin-bottom: 12px; }
+    .case-study-section ul { margin-left: 24px; color: #D4D0C8; }
+    .case-study-section li { margin-bottom: 12px; }
+    
+    .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 24px; }
+    .result-card { background: rgba(186, 117, 23, 0.1); padding: 24px; border-radius: 12px; border: 1px solid rgba(186, 117, 23, 0.2); text-align: center; }
+    .result-metric { font-size: 28px; font-weight: 700; color: #BA7517; margin-bottom: 8px; }
+    .result-label { font-size: 13px; color: #7A756C; text-transform: uppercase; letter-spacing: 0.5px; }
+    
+    /* FOOTER */
+    footer { padding: 60px 0; border-top: 1px solid rgba(186, 117, 23, 0.1); margin-top: 80px; text-align: center; color: #7A756C; font-size: 14px; }
+    .footer-links { margin-bottom: 24px; }
+    .footer-links a { margin: 0 16px; }
+    
+    @media (max-width: 768px) {
+      .page-header h1 { font-size: 32px; }
+      .case-study { padding: 32px; }
+      .case-study-title { font-size: 24px; }
+      .results-grid { grid-template-columns: 1fr; }
+      .hamburger { display: block; }
+      .nav-center { display: none; }
+    }
+      /* NAV - Unified hamburger to top banner */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid transparent;transition:all .4s ease}
+    .nav.scrolled{background:rgba(14,13,11,.92);backdrop-filter:blur(16px);border-bottom-color:rgba(186,117,23,.12)}
+    .nav-logo{display:flex;align-items:center;gap:10px}
+    .nav-logo img{display:block;width:32px;height:32px;font-size:18px;color:#F5F0E8;letter-spacing:-.3px}
+    .nav-logo-text span{color:#BA7517}
+    
+    .nav-link{color:#9C9888;font-size:14px;font-weight:500;transition:color .2s}
+    .nav-link:hover{color:#F5F0E8}
+    .nav-link.active{color:#BA7517}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px}
+    .hamburger span{width:24px;height:2px;background:#BA7517;transition:all .3s}
+    .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+    .nav-menu{display:none;position:fixed;top:64px;left:0;right:0;z-index:99;background:rgba(14,13,11,.98);backdrop-filter:blur(20px);border-bottom:1px solid rgba(186,117,23,.2);padding:12px 24px;align-items:center;justify-content:center;gap:24px;animation:slideDown .3s ease}
+    .nav-menu.active{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+    .nav-menu a{padding:10px 18px;color:#9C9888;font-size:13px;font-weight:500;border-radius:8px;transition:all .2s;border:1px solid transparent}
+    .nav-menu a:hover{color:#F5F0E8;background:rgba(186,117,23,.08);border-color:rgba(186,117,23,.15)}
+    @keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+    @media(max-width:900px){.hamburger{display:flex}}
+    @media(min-width:901px){.nav-menu{display:none !important}}
+  /* === STANDARD NAV CSS === */
+.nav{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(14,13,11,.95);backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:100;border-bottom:1px solid rgba(186,117,23,.15)}
+.nav.scrolled{background:rgba(14,13,11,.98);box-shadow:0 2px 20px rgba(0,0,0,.3)}
+.hamburger{display:flex;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;z-index:115}
+.hamburger span{width:24px;height:2px;background:#BA7517;transition:all .3s}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.nav-menu{display:none;position:fixed;top:64px;right:0;width:250px;max-height:calc(100vh - 64px);background:rgba(14,13,11,.98);backdrop-filter:blur(20px);border-left:1px solid rgba(186,117,23,.2);padding:16px 0;z-index:99;flex-direction:column;overflow-y:auto;animation:slideIn .3s ease}
+.nav-menu.active{display:flex}
+.nav-menu a{color:#9C9888;font-size:14px;font-weight:500;text-decoration:none;padding:12px 24px;transition:all .2s;display:block;border-left:3px solid transparent}
+.nav-menu a:hover{color:#F5F0E8;background:rgba(186,117,23,.1);border-left-color:#BA7517}
+.nav-menu a.nav-active{color:#BA7517;border-left-color:#BA7517;background:rgba(186,117,23,.05)}
+@keyframes slideIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#F5F0E8;z-index:115}
+.nav-brand img{width:40px;height:40px;font-size:18px;color:#F5F0E8;letter-spacing:-.3px}
+.nav-brand-text span{color:#BA7517}
+.nav-consultation{background:#BA7517;color:#000;padding:10px 20px;border-radius:6px;font-size:13px;font-weight:600;letter-spacing:.05em;text-decoration:none;transition:all .2s;position:absolute;left:50%;transform:translateX(-50%);top:20px;z-index:115;border:none;cursor:pointer;display:inline-block}
+.nav-consultation:hover{background:#D4A574;transform:translateX(-50%) translateY(-2px)}
+/* === END STANDARD NAV CSS === */
+</style>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1012037731152333');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1012037731152333&ev=PageView&noscript=1"
+    / alt="" decoding="async"></noscript>
+    <!-- End Meta Pixel Code -->
+    <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Detailed AI Automation Case Studies",
+  "description": "In-depth case studies showing how Micap AI transformed organizations through strategic AI consulting and implementation.",
+  "url": "https://micap-ai.manus.space/case-studies-detailed.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Micap AI",
+    "url": "https://micap-ai.manus.space"
+  }
+}
+  </script>
+  </head>
+<body>
+    <a href="#main-content" class="skip-to-content" style="position: absolute; top: -40px; left: 0; background: #d4a574; color: white; padding: 8px; text-decoration: none; z-index: 100;">Skip to main content</a>
+
+<nav class="nav" id="navbar" role="navigation">
+  <a href="index.html" class="nav-brand">
+    <img loading="lazy" src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663473200649/hUUaHIjRLGNJNfOi.jpg" alt="Micap AI" style="width:40px;height:40px;object-fit:contain;background:#000" decoding="async">
+    <div class="nav-brand-text">micap<span>.ai</span></div>
+  </a>
+  <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" rel="noopener noreferrer" class="nav-consultation" aria-label="Opens in new window">CONSULTATION BOOKING</a>
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+<div class="nav-menu" id="navMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="digital-employees.html">Digital Employees</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="case-studies.html">Case Studies</a>
+  <a href="ai-roi-calculator.html">ROI Calculator</a>
+  <a href="blog.html">Blog</a>
+  <a href="faq.html">FAQ</a>
+</div>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+  
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+    
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+    
+    document.addEventListener('click', function(event) {
+      if (!event.target.closest('.nav') && !event.target.closest('.nav-menu')) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    });
+  }
+</script>
+
+  <!-- NAVIGATION -->
+  
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <h1>Case Studies</h1>
+      <p>Real-world examples of how Micap AI transformed businesses through strategic AI consulting and digital transformation</p>
+    </div>
+  </div>
+
+  <!-- CASE STUDIES -->
+  <section style="padding: 40px 0;">
+    <nav aria-label="breadcrumb" class="breadcrumb-nav" style="margin-bottom: 20px;">
+      <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 5px; font-size: 0.9em;">
+        <li><a href="index.html" style="color: #d4a574; text-decoration: none;">Home</a></li>
+        <li style="color: #999;">/</li>
+        <li><a href="case-studies.html" style="color: #d4a574; text-decoration: none;">Case Studies</a></li>
+        <li style="color: #999;">/</li>
+        <li aria-current="page" style="color: #666;">Detailed Case Studies</li>
+      </ol>
+    </nav>
+
+    <div class="container">
+      
+      <!-- CASE STUDY 1 -->
+      <div class="case-study">
+        <div class="case-study-header">
+          <h2 class="case-study-title">Legal Services Firm: Document Review Automation</h2>
+          <div class="case-study-meta">
+            <span>📍 Regional Legal Practice</span>
+            <span>🎯 Document Processing</span>
+            <span>⏱️ 8-week engagement</span>
+          </div>
+        </div>
+
+        <div class="case-study-section">
+          <h3>🎯 Client Challenge</h3>
+          <p>A mid-sized legal services firm was drowning in document review work. Their team spent 60% of billable hours on repetitive document analysis, contract review, and due diligence tasks. This manual process was:</p>
+          <ul>
+            <li>Consuming 400+ hours monthly on document review</li>
+            <li>Creating bottlenecks that delayed client deliverables</li>
+            <li>Limiting the firm's ability to take on new cases</li>
+            <li>Causing attorney burnout and high turnover</li>
+          </ul>
+        </div>
+
+        <div class="case-study-section">
+          <h3>💡 Our Solution</h3>
+          <p>We deployed a private AI infrastructure solution that:</p>
+          <ul>
+            <li>Built custom AI models trained on their historical case data and legal precedents</li>
+            <li>Implemented document classification and automated contract analysis</li>
+            <li>Created a private, on-premise AI system ensuring 100% data sovereignty</li>
+            <li>Integrated with their existing case management system (Clio)</li>
+            <li>Provided attorney-in-the-loop validation workflows</li>
+          </ul>
+        </div>
+
+        <div class="case-study-section">
+          <h3>📊 Results</h3>
+          <div class="results-grid">
+            <div class="result-card">
+              <div class="result-metric">68%</div>
+              <div class="result-label">Document Review Time Saved</div>
+            </div>
+            <div class="result-card">
+              <div class="result-metric">$340k</div>
+              <div class="result-label">Annual Cost Savings</div>
+            </div>
+            <div class="result-card">
+              <div class="result-metric">3x</div>
+              <div class="result-label">Case Capacity Increase</div>
+            </div>
+            <div class="result-card">
+              <div class="result-metric">100%</div>
+              <div class="result-label">Data Sovereignty</div>
+            </div>
+          </div>
+          <p style="margin-top: 24px;"><strong>Impact:</strong> The firm now handles 3x more cases with the same team size. Attorneys focus on high-value legal strategy instead of repetitive document work. Client satisfaction increased 45% due to faster turnaround times.</p>
+        </div>
+      </div>
+
+      <!-- CASE STUDY 2 -->
+      <div class="case-study">
+        <div class="case-study-header">
+          <h2 class="case-study-title">Manufacturing Company: Predictive Maintenance & Supply Chain</h2>
+          <div class="case-study-meta">
+            <span>📍 Industrial Manufacturing</span>
+            <span>🎯 Predictive Analytics</span>
+            <span>⏱️ 12-week engagement</span>
+          </div>
+        </div>
+
+        <div class="case-study-section">
+          <h3>🎯 Client Challenge</h3>
+          <p>A mid-tier manufacturing company faced critical operational inefficiencies:</p>
+          <ul>
+            <li>Unplanned equipment downtime costing $50k+ per incident</li>
+            <li>Reactive maintenance approach (fixing problems after they occur)</li>
+            <li>Supply chain visibility gaps leading to production delays</li>
+            <li>No data-driven decision making across operations</li>
+            <li>Inability to forecast demand accurately</li>
+          </ul>
+        </div>
+
+        <div class="case-study-section">
+          <h3>💡 Our Solution</h3>
+          <p>We implemented a comprehensive AI-driven operational intelligence platform:</p>
+          <ul>
+            <li>Deployed IoT sensors and data collection infrastructure</li>
+            <li>Built predictive maintenance models using historical equipment data</li>
+            <li>Created demand forecasting algorithms for inventory optimization</li>
+            <li>Implemented real-time dashboards for production monitoring</li>
+            <li>Trained staff on AI-driven decision making</li>
+          </ul>
+        </div>
+
+        <div class="case-study-section">
+          <h3>📊 Results</h3>
+          <div class="results-grid">
+            <div class="result-card">
+              <div class="result-metric">92%</div>
+              <div class="result-label">Downtime Reduction</div>
+            </div>
+            <div class="result-card">
+              <div class="result-metric">$1.2M</div>
+              <div class="result-label">Annual Savings</div>
+            </div>
+            <div class="result-card">
+              <div class="result-metric">35%</div>
+              <div class="result-label">Inventory Reduction</div>
+            </div>
+            <div class="result-card">
+              <div class="result-metric">18%</div>
+              <div class="result-label">Production Increase</div>
+            </div>
+          </div>
+          <p style="margin-top: 24px;"><strong>Impact:</strong> Shifted from reactive to predictive maintenance. Equipment uptime improved from 87% to 97%. Inventory carrying costs reduced by $420k annually. Production capacity increased by 18% without additional capital investment.</p>
+        </div>
+      </div>
+
+      <!-- CASE STUDY 3 -->
+      <div class="case-study">
+        <div class="case-study-header">
+          <h2 class="case-study-title">FinTech Startup: AI-Powered Lead Qualification</h2>
+          <div class="case-study-meta">
+            <span>📍 Financial Technology</span>
+            <span>🎯 Sales Automation</span>
+            <span>⏱️ 6-week engagement</span>
+          </div>
+        </div>
+
+        <div class="case-study-section">
+          <h3>🎯 Client Challenge</h3>
+          <p>A growing fintech startup was struggling with sales efficiency:</p>
+          <ul>
+            <li>Sales team spending 70% of time on unqualified leads</li>
+            <li>Low conversion rate (2.1%) compared to industry average (4.5%)</li>
+            <li>Manual lead scoring was inconsistent and time-consuming</li>
+            <li>Unable to scale sales without proportionally increasing headcount</li>
+            <li>Missing high-value opportunities due to poor lead prioritization</li>
+          </ul>
+        </div>
+
+        <div class="case-study-section">
+          <h3>💡 Our Solution</h3>
+          <p>We deployed our Digital Receptionist and Lead Qualifier digital employees:</p>
+          <ul>
+            <li>Implemented AI-powered lead qualification system that scores prospects in real-time</li>
+            <li>Deployed Digital Receptionist to handle initial customer inquiries 24/7</li>
+            <li>Created custom qualification workflows based on their ideal customer profile</li>
+            <li>Integrated with their CRM (Salesforce) for seamless data flow</li>
+            <li>Set up automated lead routing to appropriate sales reps</li>
+          </ul>
+        </div>
+
+        <div class="case-study-section">
+          <h3>📊 Results</h3>
+          <div class="results-grid">
+            <div class="result-card">
+              <div class="result-metric">78%</div>
+              <div class="result-label">Inquiry Handling Automated</div>
+            </div>
+            <div class="result-card">
+              <div class="result-metric">6.2%</div>
+              <div class="result-label">Conversion Rate (↑38%)</div>
+            </div>
+            <div class="result-card">
+              <div class="result-metric">$420k</div>
+              <div class="result-label">New ARR Generated</div>
+            </div>
+            <div class="result-card">
+              <div class="result-metric">3x</div>
+              <div class="result-label">Sales Productivity Gain</div>
+            </div>
+          </div>
+          <p style="margin-top: 24px;"><strong>Impact:</strong> Sales team now focuses on closing deals instead of lead qualification. Conversion rate jumped from 2.1% to 6.2%. Generated $420k in new annual recurring revenue without hiring additional sales staff. Customer acquisition cost decreased by 42%. Payback period: 6 weeks.</p>
+          <p style="margin-top: 12px; color: #BA7517; font-weight: 600;">💰 Financial Breakdown: Implementation cost $32k | Monthly savings $18.5k | Break-even: 1.7 months | Year 1 ROI: 690%</p>
+        </div>
+      </div>
+
+      <!-- CASE STUDY 4 -->
+      <div class="case-study">
+        <div class="case-study-header">
+          <h2 class="case-study-title">Healthcare Network: Patient Intake Automation</h2>
+          <div class="case-study-meta">
+            <span>📍 Healthcare Services</span>
+            <span>🎯 Patient Operations</span>
+            <span>⏱️ 10-week engagement</span>
+          </div>
+        </div>
+
+        <div class="case-study-section">
+          <h3>🎯 Client Challenge</h3>
+          <p>A multi-clinic healthcare network faced operational bottlenecks:</p>
+          <ul>
+            <li>Administrative staff spending 40+ hours weekly on patient intake calls</li>
+            <li>Patients frustrated by long wait times to schedule appointments</li>
+            <li>High no-show rate (22%) due to poor appointment reminders</li>
+            <li>Inconsistent patient data entry causing medical errors</li>
+            <li>Unable to handle after-hours appointment requests</li>
+          </ul>
+        </div>
+
+        <div class="case-study-section">
+          <h3>💡 Our Solution</h3>
+          <p>We deployed our Digital Receptionist and Appointment Scheduler digital employees:</p>
+          <ul>
+            <li>Implemented AI-powered phone system for 24/7 patient intake</li>
+            <li>Created automated appointment scheduling with calendar integration</li>
+            <li>Built intelligent patient data validation and form completion</li>
+            <li>Integrated with their EHR system (Epic) for seamless data flow</li>
+            <li>Implemented automated appointment reminders (SMS/email)</li>
+          </ul>
+        </div>
+
+        <div class="case-study-section">
+          <h3>📊 Results</h3>
+          <div class="results-grid">
+            <div class="result-card">
+              <div class="result-metric">85%</div>
+              <div class="result-label">Intake Calls Automated</div>
+            </div>
+            <div class="result-card">
+              <div class="result-metric">$280k</div>
+              <div class="result-label">Annual Labor Savings</div>
+            </div>
+            <div class="result-card">
+              <div class="result-metric">8%</div>
+              <div class="result-label">No-Show Rate (↓14 pts)</div>
+            </div>
+            <div class="result-card">
+              <div class="result-metric">24/7</div>
+              <div class="result-label">Appointment Booking</div>
+            </div>
+          </div>
+          <p style="margin-top: 24px;"><strong>Impact:</strong> Administrative staff redirected to higher-value patient care tasks. Patient satisfaction increased 32% due to faster scheduling. No-show rate dropped from 22% to 8%, increasing clinic revenue. System handles 500+ appointment requests daily with zero manual intervention. Payback period: 4.2 months.</p>
+          <p style="margin-top: 12px; color: #BA7517; font-weight: 600;">💰 Financial Breakdown: Implementation cost $95k | Monthly savings $23.3k | Break-even: 4.1 months | Year 1 ROI: 255%</p>
+        </div>
+      </div>
+
+      <!-- CASE STUDY 5 -->
+      <div class="case-study">
+        <div class="case-study-header">
+          <h2 class="case-study-title">Real Estate Brokerage: Lead Nurture Automation</h2>
+          <div class="case-study-meta">
+            <span>📍 Real Estate Services</span>
+            <span>🎯 Lead Management</span>
+            <span>⏱️ 7-week engagement</span>
+          </div>
+        </div>
+
+        <div class="case-study-section">
+          <h3>🎯 Client Challenge</h3>
+          <p>A regional real estate brokerage struggled with lead management:</p>
+          <ul>
+            <li>60% of leads went cold due to lack of timely follow-up</li>
+            <li>Agents manually sending repetitive emails and messages</li>
+            <li>No systematic nurture process for long sales cycles</li>
+            <li>Difficulty tracking lead status across multiple agents</li>
+            <li>Lost deals due to poor lead prioritization</li>
+          </ul>
+        </div>
+
+        <div class="case-study-section">
+          <h3>💡 Our Solution</h3>
+          <p>We deployed our Customer Nurture digital employee:</p>
+          <ul>
+            <li>Built AI-powered lead nurture system with personalized messaging</li>
+            <li>Created automated follow-up sequences based on lead behavior</li>
+            <li>Implemented lead scoring to prioritize hot prospects</li>
+            <li>Integrated with their CRM (Zillow Premier Agent) for data sync</li>
+            <li>Set up intelligent timing for outreach (optimal contact times)</li>
+          </ul>
+        </div>
+
+        <div class="case-study-section">
+          <h3>📊 Results</h3>
+          <div class="results-grid">
+            <div class="result-card">
+              <div class="result-metric">54%</div>
+              <div class="result-label">Lead Conversion Increase</div>
+            </div>
+            <div class="result-card">
+              <div class="result-metric">$1.8M</div>
+              <div class="result-label">Additional Sales Generated</div>
+            </div>
+            <div class="result-card">
+              <div class="result-metric">12 hrs</div>
+              <div class="result-label">Weekly Time Saved/Agent</div>
+            </div>
+            <div class="result-card">
+              <div class="result-metric">89%</div>
+              <div class="result-label">Lead Engagement Rate</div>
+            </div>
+          </div>
+          <p style="margin-top: 24px;"><strong>Impact:</strong> Lead conversion rate increased from 8% to 12.3%. Agents now focus on closing deals instead of administrative follow-up. Generated $1.8M in additional sales revenue in first year. Average deal cycle reduced from 94 days to 68 days. Payback period: 2.1 months.</p>
+          <p style="margin-top: 12px; color: #BA7517; font-weight: 600;">💰 Financial Breakdown: Implementation cost $28k | Monthly savings $18k | Break-even: 1.6 months | Year 1 ROI: 750%</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section style="padding: 80px 0; background: linear-gradient(135deg, rgba(186, 117, 23, 0.1), rgba(186, 117, 23, 0.05)); border-top: 1px solid rgba(186, 117, 23, 0.15); border-bottom: 1px solid rgba(186, 117, 23, 0.15);">
+    <div class="container" style="text-align: center;">
+      <h2 style="font-size: 32px; margin-bottom: 16px;">Ready to Transform Your Business?</h2>
+      <p style="font-size: 16px; color: #7A756C; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto;">Let's discuss how Micap AI can help you achieve similar results. Schedule a consultation with Jeff to explore your specific opportunities.</p></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="pricing.html">Digital Employees</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="ai-roi-calculator.html">ROI Calculator</a>
+        <a href="case-studies-detailed.html">Case Studies</a>
+      </div>
+      <p>© 2026 Micap AI. All rights reserved. | <a href="mailto:hi@micap.pro">hi@micap.pro</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // NAVIGATION
+    window.addEventListener('scroll', function() {
+      var nav = document.getElementById('nav');
+      if (window.scrollY > 50) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    });
+    
+    
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      var nav = document.getElementById('nav');
+      if (!nav.contains(event.target)) {
+        document.getElementById('navMenu').classList.remove('active');
+      }
+    });
+  
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    const nb = document.getElementById('navbar');
+    if (nb) nb.classList.toggle('scrolled', window.scrollY > 50);
+  });
+  // Hamburger toggle
+  // Old navExpanded code removed - using standard navMenu handler
+  }
+</script>
+</body>
+</html>

@@ -1,8 +1,5 @@
 {
   "buildCommand": "",
   "outputDirectory": ".",
-  "framework": "static",
-  "public": true,
-  "env": {},
-  "regions": ["sfo1"]
+  "public": true
 }

@@ -3,543 +3,410 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Instrument+Serif&display=swap" crossorigin>
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>About Micap AI | Our Mission & AI Automation Approach</title>
-  <meta name="description" content="Discover Micap AI's mission and human-centric approach to AI automation for SMBs and enterprises alike.">
-  <meta name="keywords" content="about Micap AI, AI consulting firm, agentic AI experts, digital transformation consultants, AI automation company">
-  <link rel="canonical" href="https://micap-ai.manus.space/about.html">
+  <meta name="description" content="Discover Micap AI's mission: helping enterprises automate complex workflows with intelligent AI agents. We combine cutting-edge research with real-world implementation.">
+  <meta name="keywords" content="about Micap AI, AI research lab, agentic AI, enterprise automation, AI consulting">
   <meta property="og:title" content="About Micap AI | Our Mission & AI Automation Approach">
-  <meta property="og:description" content="Discover Micap AI's mission and human-centric approach to AI automation for SMBs and enterprises alike.">
-  <meta property="og:url" content="https://micap-ai.manus.space/about.html">
+  <meta property="og:description" content="Discover Micap AI's mission and approach to enterprise AI automation.">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Micap AI">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="About Micap AI | Our Mission & AI Automation Approach">
-  <meta name="twitter:description" content="Discover Micap AI's mission and human-centric approach to AI automation for SMBs and enterprises alike.">
   <link rel="icon" href="/manus-storage/micap-favicon_a2f043bd.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="/manus-storage/micap-favicon-256_c9c78192.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Instrument+Serif&display=swap" rel="stylesheet">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-50MLBREDYZ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-50MLBREDYZ', { 'page_path': window.location.pathname, 'anonymize_ip': true });
-  </script>
-  <script>
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1012037731152333');
-    fbq('track', 'PageView');
-  </script>
-  <link rel="stylesheet" href="floating-ui.css">
+  
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{background:#0E0D0B;color:#F5F0E8;font-family:'DM Sans',sans-serif;overflow-x:hidden;padding-top:64px}
-    a{text-decoration:none;color:inherit}
-    button{font-family:inherit}
-    img{display:block}
-    @keyframes slideIn{from{transform:translateX(100%)}to{transform:translateX(0)}}
-    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-    @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
-    .btn-loading{position:relative;color:transparent !important}
-    .btn-loading::after{content:'';position:absolute;width:16px;height:16px;top:50%;left:50%;margin-left:-8px;margin-top:-8px;border:2px solid rgba(0,0,0,.3);border-top-color:#000;border-radius:50%;animation:spin .6s linear infinite}
-    .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid transparent;transition:all .4s ease}
-    .nav.scrolled{background:rgba(14,13,11,.92);backdrop-filter:blur(16px);border-bottom-color:rgba(186,117,23,.12)}
-    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;z-index:115}
-    .hamburger span{width:24px;height:2px;background:#BA7517;transition:all .3s}
-    .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-    .hamburger.active span:nth-child(2){opacity:0}
-    .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-    .nav-menu{display:none;position:fixed;top:64px;right:0;width:250px;max-height:calc(100vh - 64px);background:rgba(14,13,11,.98);backdrop-filter:blur(20px);border-left:1px solid rgba(186,117,23,.2);padding:16px 0;z-index:99;flex-direction:column;overflow-y:auto;animation:slideIn .3s ease}
-    .nav-menu.active{display:flex}
-    .nav-menu a{color:#9C9888;font-size:14px;font-weight:500;text-decoration:none;padding:12px 24px;transition:all .2s;display:block;border-left:3px solid transparent}
-    .nav-menu a:hover{color:#F5F0E8;background:rgba(186,117,23,.1);border-left-color:#BA7517}
-    .nav-menu a.nav-active{color:#BA7517;border-left-color:#BA7517;background:rgba(186,117,23,.05)}
-    .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#F5F0E8;z-index:115}
-    .nav-brand img{width:40px;height:40px;object-fit:contain;background:#000}
-    .nav-brand-text{font-family:'DM Sans',sans-serif;font-size:18px;font-weight:600;color:#F5F0E8;letter-spacing:-.3px}
-    .nav-brand-text span{color:#BA7517}
-    .nav-consultation{background:#BA7517;color:#000;padding:10px 20px;border-radius:6px;font-size:13px;font-weight:600;letter-spacing:.05em;text-decoration:none;transition:all .2s;position:absolute;left:50%;transform:translateX(-50%);top:20px;z-index:115;border:none;cursor:pointer;display:inline-block}
-    .nav-consultation:hover{background:#D4A574;transform:translateX(-50%) translateY(-2px)}
-    .hero{padding:80px 24px 64px;text-align:center;position:relative;overflow:hidden}
-    .hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(186,117,23,.07) 0%,transparent 70%);pointer-events:none}
-    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(186,117,23,.08);border:1px solid rgba(186,117,23,.2);border-radius:20px;padding:6px 14px;font-size:12px;color:#BA7517;letter-spacing:.08em;text-transform:uppercase;margin-bottom:24px;font-family:'DM Mono',monospace}
-    .hero-badge-dot{width:6px;height:6px;border-radius:50%;background:#BA7517;animation:pulse 2s infinite}
-    .hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(36px,6vw,68px);font-weight:400;line-height:1.1;letter-spacing:-1px;color:#F5F0E8;margin-bottom:20px}
-    .hero h1 em{color:#BA7517;font-style:italic}
-    .hero p{font-size:18px;color:#9C9888;max-width:580px;margin:0 auto 40px;line-height:1.7}
-    .hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-    .container{max-width:1100px;margin:0 auto;padding:0 24px}
-    .section-label{font-family:'DM Mono',monospace;font-size:11px;color:#BA7517;letter-spacing:.15em;text-transform:uppercase;margin-bottom:16px}
-    .section-title{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(28px,4vw,44px);font-weight:400;color:#F5F0E8;line-height:1.2;letter-spacing:-.5px;margin-bottom:16px}
-    .section-title em{color:#BA7517;font-style:italic}
-    .btn-primary{display:inline-block;background:#BA7517;color:#000;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:600;letter-spacing:.02em;transition:all .2s;border:none;cursor:pointer}
-    .btn-primary:hover{background:#D4A574;transform:translateY(-2px);box-shadow:0 8px 24px rgba(186,117,23,.3)}
-    .btn-ghost{display:inline-block;background:transparent;color:#BA7517;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:600;letter-spacing:.02em;transition:all .2s;border:1px solid rgba(186,117,23,.3)}
-    .btn-ghost:hover{background:rgba(186,117,23,.08);border-color:#BA7517}
-    .vm-section{padding:80px 0;border-top:1px solid rgba(186,117,23,.08)}
-    .vm-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
-    .vm-card{padding:36px;border-radius:16px;border:1px solid rgba(186,117,23,.15);background:linear-gradient(135deg,rgba(186,117,23,.04),rgba(186,117,23,.01));position:relative;overflow:hidden}
-    .vm-card::before{content:'';position:absolute;top:-40px;right:-40px;width:120px;height:120px;background:radial-gradient(circle,rgba(186,117,23,.08),transparent 70%);pointer-events:none}
-    .vm-card-label{font-family:'DM Mono',monospace;font-size:11px;color:#BA7517;letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px}
-    .vm-card h3{font-family:'Instrument Serif',Georgia,serif;font-size:26px;font-weight:400;color:#F5F0E8;margin-bottom:16px;line-height:1.2}
-    .vm-card p{font-size:15px;color:#9C9888;line-height:1.8}
-    .objectives-section{padding:80px 0;border-top:1px solid rgba(186,117,23,.08)}
-    .objectives-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:48px}
-    .objective-card{padding:28px;border-radius:12px;border:1px solid rgba(186,117,23,.08);background:rgba(255,255,255,.01);transition:border-color .3s,transform .3s}
-    .objective-card:hover{border-color:rgba(186,117,23,.25);transform:translateY(-4px)}
-    .objective-icon{font-size:28px;margin-bottom:16px}
-    .objective-card h3{font-family:'Instrument Serif',Georgia,serif;font-size:20px;font-weight:400;color:#F5F0E8;margin-bottom:10px}
-    .objective-card p{font-size:14px;color:#6B6860;line-height:1.7}
-    .metrics-section{padding:80px 0;border-top:1px solid rgba(186,117,23,.08)}
-    .metrics-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-    .metric-card{text-align:center;padding:36px 24px;border-radius:16px;border:1px solid rgba(186,117,23,.12);background:rgba(186,117,23,.02)}
-    .metric-value{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(28px,4vw,42px);color:#BA7517;font-weight:400;margin-bottom:8px;letter-spacing:-.5px}
-    .metric-label{font-size:14px;color:#6B6860;letter-spacing:.02em}
-    .story-section{padding:80px 0;border-top:1px solid rgba(186,117,23,.08)}
-    .story-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:48px}
-    .story-text p{font-size:16px;color:#9C9888;line-height:1.8;margin-bottom:20px}
-    .story-text p:last-child{margin-bottom:0}
-    .story-visual{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .story-stat{padding:24px;border-radius:12px;border:1px solid rgba(186,117,23,.1);background:rgba(186,117,23,.02);text-align:center}
-    .story-stat-val{font-family:'DM Mono',monospace;font-size:22px;color:#BA7517;font-weight:500;margin-bottom:6px}
-    .story-stat-label{font-size:12px;color:#6B6860;letter-spacing:.05em;text-transform:uppercase}
-    .principles-section{padding:80px 0;border-top:1px solid rgba(186,117,23,.08)}
-    .principles-list{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
-    .principle-item{display:flex;gap:16px;align-items:flex-start}
-    .principle-num{font-family:'DM Mono',monospace;font-size:13px;color:#BA7517;background:rgba(186,117,23,.08);border:1px solid rgba(186,117,23,.2);border-radius:6px;padding:4px 10px;flex-shrink:0;margin-top:2px}
-    .principle-item h4{font-size:15px;font-weight:600;color:#F5F0E8;margin-bottom:6px}
-    .principle-item p{font-size:14px;color:#6B6860;line-height:1.6}
-    .cta-section{padding:80px 24px;text-align:center;border-top:1px solid rgba(186,117,23,.08)}
-    .cta-box{max-width:640px;margin:0 auto;padding:48px;border-radius:24px;border:1px solid rgba(186,117,23,.15);background:linear-gradient(135deg,rgba(186,117,23,.04),rgba(186,117,23,.01))}
-    .cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:32px}
-    .footer{padding:32px 24px;border-top:1px solid rgba(186,117,23,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
-    .footer-copy{font-size:13px;color:#6B6860}
-    .footer-links{display:flex;gap:24px}
-    .footer-links a{font-size:13px;color:#6B6860;transition:color .2s}
-    .footer-links a:hover{color:#BA7517}
-    @media(max-width:768px){
-      .hero{padding:72px 16px 60px}
-      .vm-grid{grid-template-columns:1fr}
-      .metrics-grid{grid-template-columns:1fr}
-      .story-layout{grid-template-columns:1fr;gap:40px}
-      .principles-list{grid-template-columns:1fr}
-      .footer{flex-direction:column;gap:16px;text-align:center}
-      .nav-consultation{font-size:11px;padding:8px 14px}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    @media(max-width:480px){.hero-cta{flex-direction:column;align-items:center}}
-  
-/* Industries dropdown */
-.nav-dropdown{position:relative}
-.nav-dropdown-trigger{display:flex;align-items:center;gap:5px;color:#9C9888;font-size:14px;font-weight:500;cursor:pointer;transition:color .2s;background:none;border:none;font-family:inherit;padding:0}
-.nav-dropdown-trigger:hover,.nav-dropdown:hover .nav-dropdown-trigger{color:#F5F0E8}
-.nav-dropdown-trigger svg{transition:transform .2s}
-.nav-dropdown:hover .nav-dropdown-trigger svg{transform:rotate(180deg)}
-.nav-dropdown-menu{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:rgba(14,13,11,.97);backdrop-filter:blur(20px);border:1px solid rgba(186,117,23,.2);border-radius:12px;padding:8px;min-width:200px;opacity:0;visibility:hidden;transition:all .2s;z-index:200;box-shadow:0 16px 48px rgba(0,0,0,.4)}
-.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;top:calc(100% + 8px)}
-.nav-dropdown-menu a{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;font-size:13px;color:#9C9888;transition:all .2s;white-space:nowrap}
-.nav-dropdown-menu a:hover{color:#F5F0E8;background:rgba(186,117,23,.08)}
-.nav-dropdown-menu a span.dd-icon{font-size:16px;width:20px;text-align:center}
-.nav-dropdown-divider{height:1px;background:rgba(186,117,23,.1);margin:6px 0}
-
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #ffffff;
+      transition: background 0.3s, color 0.3s;
+    }
+    
+    body[data-theme="dark"] {
+      background: #0f0f0f;
+      color: #f5f5f5;
+    }
+    
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    
+    body[data-theme="dark"] header {
+      background: #1a1a1a;
+      border-bottom-color: #333;
+    }
+    
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #000;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    body[data-theme="dark"] .logo {
+      color: #fff;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: #666;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+    
+    body[data-theme="dark"] .nav-links a {
+      color: #aaa;
+    }
+    
+    .nav-links a:hover {
+      color: #000;
+    }
+    
+    body[data-theme="dark"] .nav-links a:hover {
+      color: #fff;
+    }
+    
+    .theme-toggle {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      transition: transform 0.3s;
+    }
+    
+    .theme-toggle:hover {
+      transform: scale(1.1);
+    }
+    
+    .cta-button {
+      background: #000;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: background 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+    
+    body[data-theme="dark"] .cta-button {
+      background: #fff;
+      color: #000;
+    }
+    
+    .cta-button:hover {
+      background: #333;
+    }
+    
+    body[data-theme="dark"] .cta-button:hover {
+      background: #ddd;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .hero {
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      color: #000;
+      transition: color 0.3s;
+    }
+    
+    body[data-theme="dark"] .hero h1 {
+      color: #fff;
+    }
+    
+    .hero p {
+      font-size: 1.25rem;
+      color: #666;
+      margin-bottom: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      transition: color 0.3s;
+    }
+    
+    body[data-theme="dark"] .hero p {
+      color: #aaa;
+    }
+    
+    .section {
+      padding: 4rem 2rem;
+      border-top: 1px solid #e5e5e5;
+      transition: border-color 0.3s;
+    }
+    
+    body[data-theme="dark"] .section {
+      border-top-color: #333;
+    }
+    
+    .section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #000;
+      transition: color 0.3s;
+    }
+    
+    body[data-theme="dark"] .section h2 {
+      color: #fff;
+    }
+    
+    .section h3 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #000;
+      transition: color 0.3s;
+    }
+    
+    body[data-theme="dark"] .section h3 {
+      color: #fff;
+    }
+    
+    .section p {
+      color: #666;
+      margin-bottom: 1rem;
+      line-height: 1.8;
+      transition: color 0.3s;
+    }
+    
+    body[data-theme="dark"] .section p {
+      color: #aaa;
+    }
+    
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .value-card {
+      padding: 2rem;
+      background: #f9f9f9;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    
+    body[data-theme="dark"] .value-card {
+      background: #222;
+    }
+    
+    .value-card h4 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: #000;
+      transition: color 0.3s;
+    }
+    
+    body[data-theme="dark"] .value-card h4 {
+      color: #fff;
+    }
+    
+    .value-card p {
+      color: #666;
+      transition: color 0.3s;
+    }
+    
+    body[data-theme="dark"] .value-card p {
+      color: #aaa;
+    }
+    
+    footer {
+      background: #f5f5f5;
+      border-top: 1px solid #e5e5e5;
+      padding: 3rem 2rem;
+      text-align: center;
+      color: #666;
+      transition: background 0.3s, color 0.3s;
+    }
+    
+    body[data-theme="dark"] footer {
+      background: #1a1a1a;
+      border-top-color: #333;
+      color: #aaa;
+    }
+    
+    footer p {
+      margin-bottom: 1rem;
+    }
+    
+    footer a {
+      color: #000;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    body[data-theme="dark"] footer a {
+      color: #fff;
+    }
+    
+    footer a:hover {
+      text-decoration: underline;
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .section h2 {
+        font-size: 1.75rem;
+      }
+      
+      .nav-links {
+        gap: 1rem;
+      }
+    }
   </style>
-
-  <script type="application/ld+json">
-  {
-  "@context": "https://schema.org",
-  "@type": "AboutPage",
-  "name": "About Micap AI",
-  "description": "Discover Micap AI's mission and human-centric approach to AI automation for SMBs and enterprises alike.",
-  "url": "https://micap-ai.manus.space/about.html",
-  "mainEntity": {
-    "@type": "Organization",
-    "name": "Micap AI",
-    "description": "Strategic AI & Agentic Automation Experts and Software Innovation Lab",
-    "url": "https://micap-ai.manus.space",
-    "foundingDate": "2024",
-    "areaServed": "Worldwide",
-    "serviceType": [
-      "AI Consulting",
-      "Agentic Automation",
-      "Digital Transformation",
-      "AI Software Development"
-    ]
-  }
-}
-  </script>
-  </head>
+</head>
 <body>
-    <a href="#main-content" class="skip-to-content" style="position: absolute; top: -40px; left: 0; background: #d4a574; color: white; padding: 8px; text-decoration: none; z-index: 100;">Skip to main content</a>
-
-<button id="scrollToTopBtn" title="Scroll to top">↑</button>
-<nav class="nav" id="navbar" role="navigation">
-  <a href="index.html" class="nav-brand">
-    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663473200649/hUUaHIjRLGNJNfOi.jpg" alt="Micap AI" style="width:40px;height:40px;object-fit:contain;background:#000" decoding="async">
-    <div class="nav-brand-text">micap<span>.ai</span></div>
-  </a>
-  <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" rel="noopener noreferrer" class="nav-consultation" aria-label="Opens in new window">CONSULTATION BOOKING</a>
-  <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-<div class="nav-menu" id="navMenu">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
-  <a href="case-studies.html">Case Studies</a>
-  <a href="pricing.html">Pricing</a>
-  <a href="blog.html">Blog</a>
-  <a href="faq.html">FAQ</a>
-  <a href="contact.html">Contact</a>
-</div>
-
-<section class="hero" id="main-content">
-    <nav aria-label="breadcrumb" class="breadcrumb-nav" style="margin-bottom: 20px;">
-      <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 5px; font-size: 0.9em;">
-        <li><a href="index.html" style="color: #d4a574; text-decoration: none;">Home</a></li>
-        <li style="color: #999;">/</li>
-        <li aria-current="page" style="color: #666;">About Us</li>
-      </ol>
+  <header>
+    <nav>
+      <a href="/" class="logo">Micap AI</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/lab.html">Lab</a></li>
+        <li><a href="/consulting.html">Consulting</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><button class="theme-toggle" id="themeToggle">🌙</button></li>
+      </ul>
     </nav>
+  </header>
 
-  <div class="hero-badge">
-    <span class="hero-badge-dot"></span>
-    WHO WE ARE
-  </div>
-  <h1>Human-Centric AI<br><em>Done Right</em></h1>
-  <p>We are the premier catalyst for human-centric automation — creating a future where AI-driven efficiency provides unparalleled prosperity and peace of mind for every stakeholder.</p>
-  <div class="hero-cta">
-    <a href="https://tidycal.com/jmilam/ai-deployment-consultation" target="_blank" rel="noopener noreferrer" class="btn-primary" aria-label="Opens in new window">Book a Consultation</a>
-    <a href="services.html" class="btn-ghost">Explore Services</a>
-  </div>
-</section>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>About Micap AI</h1>
+        <p>We're building the future of enterprise automation through research-driven AI innovation.</p>
+      </div>
+    </section>
 
-<section class="vm-section">
-  <div class="container">
-    <div class="section-label">FOUNDATION</div>
-    <h2 class="section-title">Our Vision & <em>Mission</em></h2>
-    <div class="vm-grid">
-      <div class="vm-card">
-        <div class="vm-card-label">VISION</div>
-        <h3>The North Star</h3>
-        <p>To redefine the relationship between humanity and technology, ushering in an era where AI-driven autonomy grants every business leader the freedom to innovate and the peace of mind to thrive.</p>
+    <section class="section">
+      <div class="container">
+        <h2>Our Mission</h2>
+        <p>Micap AI exists to help enterprises unlock the full potential of intelligent automation. We combine cutting-edge research with real-world implementation to solve complex business challenges.</p>
+        <p>We believe that the most powerful AI solutions come from understanding both the technology frontier and the practical constraints of enterprise environments. That's why we operate as both a research lab and a consulting firm.</p>
       </div>
-      <div class="vm-card">
-        <div class="vm-card-label">MISSION</div>
-        <h3>The Roadmap</h3>
-        <p>Micap AI empowers small enterprises and small business alike by deploying sophisticated automation that dissolves operational friction. We transform complex workflows into streamlined engines of profitability, reclaiming time for owners and elevating the professional experience for every employee. As a Software Innovation Lab, we also drive cutting-edge AI research and development to stay at the forefront of automation technology.</p>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Our Approach</h2>
+        <h3>Research-First Thinking</h3>
+        <p>We stay at the forefront of AI research, exploring new architectures, optimization techniques, and safety approaches. This research directly informs our consulting work.</p>
+        
+        <h3>Business-Focused Implementation</h3>
+        <p>We don't just build AI systems—we build AI systems that solve real business problems and deliver measurable ROI. Every project is grounded in understanding your specific constraints and opportunities.</p>
+        
+        <h3>Responsible AI</h3>
+        <p>We prioritize safety, transparency, and ethical considerations in all our work. We help enterprises build AI systems they can trust and deploy with confidence.</p>
       </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Our Core Values</h2>
+        <div class="values-grid">
+          <div class="value-card">
+            <h4>Excellence</h4>
+            <p>We pursue the highest standards in research and implementation, continuously pushing the boundaries of what's possible.</p>
+          </div>
+          <div class="value-card">
+            <h4>Integrity</h4>
+            <p>We're transparent about capabilities, limitations, and costs. We build trust through honest communication and reliable delivery.</p>
+          </div>
+          <div class="value-card">
+            <h4>Impact</h4>
+            <p>We measure success by the real-world value we create for our partners, not by vanity metrics or hype.</p>
+          </div>
+          <div class="value-card">
+            <h4>Innovation</h4>
+            <p>We combine cutting-edge research with practical innovation to create solutions that are both novel and deployable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Why Work With Us</h2>
+        <h3>Research + Implementation</h3>
+        <p>We're not just consultants—we're researchers. We bring the latest breakthroughs to your business.</p>
+        
+        <h3>Enterprise Experience</h3>
+        <p>We understand the complexity of enterprise environments. We build solutions that scale, integrate, and deliver ROI.</p>
+        
+        <h3>Proprietary Tools</h3>
+        <p>We've built proprietary AI frameworks, memory layers, and agentic harnesses that give us an edge in implementation speed and quality.</p>
+        
+        <h3>Founder-Led</h3>
+        <p>You work directly with founders who understand both the technology and the business side of AI automation.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Ready to Transform Your Business?</h2>
+        <p>Schedule a free discovery call to explore how AI automation can unlock new revenue opportunities for your enterprise.</p>
+        <a href="https://tidycal.com/jmilam/ai-audit-discovery-call" class="cta-button" style="display: inline-block; margin-top: 1rem;">Schedule Discovery Call</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Micap AI. All rights reserved.</p>
+      <p>
+        <a href="/privacy.html">Privacy Policy</a> | 
+        <a href="/terms.html">Terms of Service</a>
+      </p>
     </div>
-  </div>
-</section>
+  </footer>
 
-<section class="objectives-section">
-  <div class="container">
-    <div class="section-label">CORE PILLARS</div>
-    <h2 class="section-title">Strategic <em>Objectives</em></h2>
-    <p style="color:#9C9888;font-size:16px;line-height:1.7;max-width:700px;margin:0 auto 48px">Four core pillars that guide every engagement and ensure measurable impact for your business.</p>
-    <div class="objectives-grid">
-      <div class="objective-card">
-        <div class="objective-icon">⚙️</div>
-        <h3>Workflow Optimization</h3>
-        <p>Automate every possible manual process to remove human-in-the-loop interactions, ensuring seamless, high-speed business execution.</p>
-      </div>
-      <div class="objective-card">
-        <div class="objective-icon">💼</div>
-        <h3>Stakeholder Value</h3>
-        <p>Optimize departments to reduce employee stress, enabling owners to reallocate increased profits toward higher salaries, bonuses, and better benefits.</p>
-      </div>
-      <div class="objective-card">
-        <div class="objective-icon">📈</div>
-        <h3>Operational Scale</h3>
-        <p>Maximize revenue per capita by leveraging AI to handle increased workloads without necessitating a proportional increase in human headcount.</p>
-      </div>
-      <div class="objective-card">
-        <div class="objective-icon">🎯</div>
-        <h3>Client Impact</h3>
-        <p>Directly reduce owner pain points and stress by transforming complex workflows into automated, high-performing systems that deliver measurable results.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="metrics-section">
-  <div class="container">
-    <div class="section-label">PROVEN RESULTS</div>
-    <h2 class="section-title">Our Track <em>Record</em></h2>
-    <p style="color:#9C9888;font-size:16px;line-height:1.7;text-align:center;max-width:700px;margin:0 auto 48px">Measurable results across our client engagements, validated through real deployments.</p>
-    <div class="metrics-grid">
-      <div class="metric-card">
-        <div class="metric-value">2.55x–7.5x</div>
-        <div class="metric-label">Average Year 1 ROI</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-value">1.6–4.1 mo</div>
-        <div class="metric-label">Average Payback Period</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-value">$280k–$1.2M</div>
-        <div class="metric-label">Average Annual Savings</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="story-section">
-  <div class="container">
-    <div class="section-label">OUR PHILOSOPHY</div>
-    <h2 class="section-title">Why We Do <em>This</em></h2>
-    <div class="story-layout">
-      <div class="story-text">
-        <p>Our commitment to human-centric automation goes beyond technology. We believe that AI should serve people, not replace them. When businesses automate their operational bottlenecks, they free up their teams to focus on what humans do best: strategic thinking, relationship building, and creative problem-solving.</p>
-        <p>Owners get peace of mind. Employees get better work-life balance and higher compensation. Customers get faster, more consistent service. And businesses get the competitive advantage they need to thrive in the AI era.</p>
-        <p>Every engagement we take on is guided by a single question: does this automation genuinely improve the lives of the people involved? If the answer is yes, we build it. If not, we find a better path.</p>
-      </div>
-      <div class="story-visual">
-        <div class="story-stat">
-          <div class="story-stat-val">60–80%</div>
-          <div class="story-stat-label">Cost Reduction</div>
-        </div>
-        <div class="story-stat">
-          <div class="story-stat-val">24/7</div>
-          <div class="story-stat-label">Always On</div>
-        </div>
-        <div class="story-stat">
-          <div class="story-stat-val">2–4 wk</div>
-          <div class="story-stat-label">Time to Deploy</div>
-        </div>
-        <div class="story-stat">
-          <div class="story-stat-val">10+</div>
-          <div class="story-stat-label">Digital Employees</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="principles-section">
-  <div class="container">
-    <div class="section-label">HOW WE WORK</div>
-    <h2 class="section-title">Guiding <em>Principles</em></h2>
-    <div class="principles-list">
-      <div class="principle-item">
-        <div class="principle-num">01</div>
-        <div>
-          <h3>People First, Technology Second</h3>
-          <p>Every automation decision starts with the human impact. We design systems that elevate people, not eliminate them.</p>
-        </div>
-      </div>
-      <div class="principle-item">
-        <div class="principle-num">02</div>
-        <div>
-          <h3>Measurable Outcomes Only</h3>
-          <p>We commit to specific, quantifiable results. If we cannot measure it, we do not promise it.</p>
-        </div>
-      </div>
-      <div class="principle-item">
-        <div class="principle-num">03</div>
-        <div>
-          <h3>Private Infrastructure by Default</h3>
-          <p>Your data stays in your systems. We build within your existing infrastructure with no third-party data exposure.</p>
-        </div>
-      </div>
-      <div class="principle-item">
-        <div class="principle-num">04</div>
-        <div>
-          <h3>Transparent Pricing, No Surprises</h3>
-          <p>50% upfront, 50% at deployment. Monthly service fees are fixed. You always know what you are paying and why.</p>
-        </div>
-      </div>
-      <div class="principle-item">
-        <div class="principle-num">05</div>
-        <div>
-          <h3>Long-Term Partnership</h3>
-          <p>We do not disappear after deployment. Every client gets a dedicated account manager and ongoing optimization support.</p>
-        </div>
-      </div>
-      <div class="principle-item">
-        <div class="principle-num">06</div>
-        <div>
-          <h3>Continuous Improvement</h3>
-          <p>AI systems improve over time. We monitor, tune, and evolve your Digital Employees as your business grows.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section style="padding:80px 0;border-top:1px solid rgba(186,117,23,.08);background:rgba(186,117,23,.02)">
-  <div class="container">
-    <div style="max-width:600px;margin:0 auto;text-align:center">
-      <div class="section-label">DIRECT INQUIRY</div>
-      <h2 class="section-title" style="text-align:center">Get in Touch<br><em>With Our Team</em></h2>
-      <p style="color:#9C9888;font-size:16px;line-height:1.7;text-align:center;margin-top:12px;margin-bottom:32px">Fill out the form below and we'll reach out within 24 hours to discuss your automation needs.</p>
-      
-      <form id="leadForm" style="display:flex;flex-direction:column;gap:16px">
-        <div style="display:flex;flex-direction:column;gap:4px">
-          <label for="leadName" style="font-size:14px;color:#BA7517;font-weight:500">Your Name *</label>
-          <input type="text" id="leadName" placeholder="Your Name" required aria-label="Your Name" aria-required="true" style="padding:14px 16px;border-radius:8px;border:1px solid rgba(186,117,23,.2);background:rgba(14,13,11,.8);color:#F5F0E8;font-family:inherit;font-size:15px;transition:all .2s" />
-          <span id="nameError" style="color:#FF6B6B;font-size:12px;display:none"></span>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:4px">
-          <label for="leadEmail" style="font-size:14px;color:#BA7517;font-weight:500">Email Address *</label>
-          <input type="email" id="leadEmail" placeholder="Email Address" required aria-label="Email Address" aria-required="true" style="padding:14px 16px;border-radius:8px;border:1px solid rgba(186,117,23,.2);background:rgba(14,13,11,.8);color:#F5F0E8;font-family:inherit;font-size:15px;transition:all .2s" />
-          <span id="emailError" style="color:#FF6B6B;font-size:12px;display:none"></span>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:4px">
-          <label for="leadCompany" style="font-size:14px;color:#BA7517;font-weight:500">Company Name *</label>
-          <input type="text" id="leadCompany" placeholder="Company Name" required aria-label="Company Name" aria-required="true" style="padding:14px 16px;border-radius:8px;border:1px solid rgba(186,117,23,.2);background:rgba(14,13,11,.8);color:#F5F0E8;font-family:inherit;font-size:15px;transition:all .2s" />
-          <span id="companyError" style="color:#FF6B6B;font-size:12px;display:none"></span>
-        </div>
-        <button type="submit" id="submitBtn" class="btn-primary" style="width:100%;padding:16px;font-size:16px;margin-top:8px;transition:all .3s" aria-label="Send Inquiry">Send Inquiry</button>
-      </form>
-      
-      <p style="color:#9C9888;font-size:14px;margin-top:16px;line-height:1.6">We respect your privacy. Your information is secure and will only be used to contact you about your inquiry.</p>
-    </div>
-  </div>
-</section>
-
-<footer class="footer" role="contentinfo">
-  <div class="footer-copy">© 2026 Micap AI LLC. All rights reserved.</div>
-  <div class="footer-links">
-    <a href="index.html">Home</a>
-    <a href="#privacy">Privacy</a>
-    <a href="#terms">Terms</a>
-    <a href="/api-docs.html">API Documentation</a>
-    <a href="mailto:hi@micap.pro">hi@micap.pro</a>
-  </div>
-</footer>
-
-<script defer src="floating-ui.js"></script>
-<script>
-document.getElementById('leadForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  
-  const name = document.getElementById('leadName').value.trim();
-  const email = document.getElementById('leadEmail').value.trim();
-  const company = document.getElementById('leadCompany').value.trim();
-  const submitBtn = document.getElementById('submitBtn');
-  
-  // Clear previous errors
-  document.getElementById('nameError').style.display = 'none';
-  document.getElementById('emailError').style.display = 'none';
-  document.getElementById('companyError').style.display = 'none';
-  
-  let hasError = false;
-  
-  // Validate name
-  if (!name) {
-    document.getElementById('nameError').textContent = 'Name is required';
-    document.getElementById('nameError').style.display = 'block';
-    hasError = true;
-  }
-  
-  // Validate email
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!email) {
-    document.getElementById('emailError').textContent = 'Email is required';
-    document.getElementById('emailError').style.display = 'block';
-    hasError = true;
-  } else if (!emailRegex.test(email)) {
-    document.getElementById('emailError').textContent = 'Please enter a valid email address';
-    document.getElementById('emailError').style.display = 'block';
-    hasError = true;
-  }
-  
-  // Validate company
-  if (!company) {
-    document.getElementById('companyError').textContent = 'Company name is required';
-    document.getElementById('companyError').style.display = 'block';
-    hasError = true;
-  }
-  
-  if (hasError) {
-    return;
-  }
-  
-  // Disable button and show loading state
-  submitBtn.disabled = true;
-  submitBtn.classList.add('btn-loading');
-  const originalText = submitBtn.textContent;
-  submitBtn.textContent = '';
-  
-  try {
-    const sessionToken = 'lead-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
-    
-    const response = await fetch('/api/leads/store', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ 
-        sessionToken, 
-        email, 
-        companyName: company, 
-        consent: true,
-        roiData: { source: 'about-page-form', contactName: name }
-      })
-    });
-    
-    if (response.ok) {
-      document.getElementById('leadForm').innerHTML = '<div style="padding:24px;border-radius:8px;background:rgba(186,117,23,.1);border:1px solid rgba(186,117,23,.3);text-align:center"><p style="color:#BA7517;font-size:16px;font-weight:600">✓ Thank you!</p><p style="color:#9C9888;font-size:14px;margin-top:8px">We\'ve received your inquiry and will be in touch within 24 hours.</p></div>';
-    } else {
-      // Restore button on error
-      submitBtn.disabled = false;
-      submitBtn.classList.remove('btn-loading');
-      submitBtn.textContent = originalText;
-      alert('Error submitting form. Please try again.');
-    }
-  } catch (error) {
-    console.error('Form submission error:', error);
-    // Restore button on error
-    submitBtn.disabled = false;
-    submitBtn.classList.remove('btn-loading');
-    submitBtn.textContent = originalText;
-    alert('Error submitting form. Please try again.');
-  }
-});
-
-// Navbar scroll effect
-window.addEventListener('scroll', function() {
-  const navbar = document.getElementById('navbar');
-  if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
-});
-
-// Hamburger menu toggle
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('navMenu');
-hamburger.addEventListener('click', function() {
-  hamburger.classList.toggle('active');
-  navMenu.classList.toggle('active');
-});
-
-// Close menu when clicking on a link
-navMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', function() {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-  });
-});
-
-// Scroll to top button
-const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-window.addEventListener('scroll', function() {
-  if (window.scrollY > 300) {
-    scrollToTopBtn.style.display = 'block';
-  } else {
-    scrollToTopBtn.style.display = 'none';
-  }
-});
-
-scrollToTopBtn.addEventListener('click', function() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-</script>
+  <script src="/theme-toggle.js"></script>
 </body>
 </html>

@@ -3,305 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>About Micap AI | Our Mission & AI Automation Approach</title>
-  <meta name="description" content="Discover Micap AI's mission: helping enterprises automate complex workflows with intelligent AI agents. We combine cutting-edge research with real-world implementation.">
-  <meta name="keywords" content="about Micap AI, AI research lab, agentic AI, enterprise automation, AI consulting">
-  <meta property="og:title" content="About Micap AI | Our Mission & AI Automation Approach">
-  <meta property="og:description" content="Discover Micap AI's mission and approach to enterprise AI automation.">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/manus-storage/micap-favicon_a2f043bd.ico" type="image/x-icon">
-  
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      line-height: 1.6;
-      color: #1a1a1a;
-      background: #ffffff;
-      transition: background 0.3s, color 0.3s;
-    }
-    
-    body[data-theme="dark"] {
-      background: #0f0f0f;
-      color: #f5f5f5;
-    }
-    
-    header {
-      background: #ffffff;
-      border-bottom: 1px solid #e5e5e5;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      transition: background 0.3s, border-color 0.3s;
-    }
-    
-    body[data-theme="dark"] header {
-      background: #1a1a1a;
-      border-bottom-color: #333;
-    }
-    
-    nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #000;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    
-    body[data-theme="dark"] .logo {
-      color: #fff;
-    }
-    
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-      align-items: center;
-    }
-    
-    .nav-links a {
-      text-decoration: none;
-      color: #666;
-      font-size: 0.95rem;
-      transition: color 0.3s;
-    }
-    
-    body[data-theme="dark"] .nav-links a {
-      color: #aaa;
-    }
-    
-    .nav-links a:hover {
-      color: #000;
-    }
-    
-    body[data-theme="dark"] .nav-links a:hover {
-      color: #fff;
-    }
-    
-    .theme-toggle {
-      background: none;
-      border: none;
-      font-size: 1.2rem;
-      cursor: pointer;
-      padding: 0.5rem;
-      transition: transform 0.3s;
-    }
-    
-    .theme-toggle:hover {
-      transform: scale(1.1);
-    }
-    
-    .cta-button {
-      background: #000;
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: background 0.3s;
-      border: none;
-      cursor: pointer;
-    }
-    
-    body[data-theme="dark"] .cta-button {
-      background: #fff;
-      color: #000;
-    }
-    
-    .cta-button:hover {
-      background: #333;
-    }
-    
-    body[data-theme="dark"] .cta-button:hover {
-      background: #ddd;
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-    
-    .hero {
-      padding: 6rem 2rem;
-      text-align: center;
-    }
-    
-    .hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1rem;
-      line-height: 1.2;
-      color: #000;
-      transition: color 0.3s;
-    }
-    
-    body[data-theme="dark"] .hero h1 {
-      color: #fff;
-    }
-    
-    .hero p {
-      font-size: 1.25rem;
-      color: #666;
-      margin-bottom: 2rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      transition: color 0.3s;
-    }
-    
-    body[data-theme="dark"] .hero p {
-      color: #aaa;
-    }
-    
-    .section {
-      padding: 4rem 2rem;
-      border-top: 1px solid #e5e5e5;
-      transition: border-color 0.3s;
-    }
-    
-    body[data-theme="dark"] .section {
-      border-top-color: #333;
-    }
-    
-    .section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      color: #000;
-      transition: color 0.3s;
-    }
-    
-    body[data-theme="dark"] .section h2 {
-      color: #fff;
-    }
-    
-    .section h3 {
-      font-size: 1.5rem;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      color: #000;
-      transition: color 0.3s;
-    }
-    
-    body[data-theme="dark"] .section h3 {
-      color: #fff;
-    }
-    
-    .section p {
-      color: #666;
-      margin-bottom: 1rem;
-      line-height: 1.8;
-      transition: color 0.3s;
-    }
-    
-    body[data-theme="dark"] .section p {
-      color: #aaa;
-    }
-    
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    
-    .value-card {
-      padding: 2rem;
-      background: #f9f9f9;
-      border-radius: 8px;
-      transition: background 0.3s;
-    }
-    
-    body[data-theme="dark"] .value-card {
-      background: #222;
-    }
-    
-    .value-card h4 {
-      font-size: 1.25rem;
-      margin-bottom: 1rem;
-      color: #000;
-      transition: color 0.3s;
-    }
-    
-    body[data-theme="dark"] .value-card h4 {
-      color: #fff;
-    }
-    
-    .value-card p {
-      color: #666;
-      transition: color 0.3s;
-    }
-    
-    body[data-theme="dark"] .value-card p {
-      color: #aaa;
-    }
-    
-    footer {
-      background: #f5f5f5;
-      border-top: 1px solid #e5e5e5;
-      padding: 3rem 2rem;
-      text-align: center;
-      color: #666;
-      transition: background 0.3s, color 0.3s;
-    }
-    
-    body[data-theme="dark"] footer {
-      background: #1a1a1a;
-      border-top-color: #333;
-      color: #aaa;
-    }
-    
-    footer p {
-      margin-bottom: 1rem;
-    }
-    
-    footer a {
-      color: #000;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    
-    body[data-theme="dark"] footer a {
-      color: #fff;
-    }
-    
-    footer a:hover {
-      text-decoration: underline;
-    }
-    
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      
-      .hero p {
-        font-size: 1rem;
-      }
-      
-      .section h2 {
-        font-size: 1.75rem;
-      }
-      
-      .nav-links {
-        gap: 1rem;
-      }
-    }
-  </style>
+  <title>About - Micap AI</title>
+  <meta name="description" content="Learn about Micap AI, our mission, and our team.">
+  <link rel="stylesheet" href="/premium-styles.css">
 </head>
 <body>
   <header>
@@ -312,98 +16,162 @@
         <li><a href="/lab.html">Lab</a></li>
         <li><a href="/consulting.html">Consulting</a></li>
         <li><a href="/about.html">About</a></li>
-        <li><button class="theme-toggle" id="themeToggle">🌙</button></li>
+        <li><button id="themeToggle" class="theme-toggle">🌙</button></li>
       </ul>
     </nav>
   </header>
 
   <main>
+    <!-- Hero Section -->
     <section class="hero">
-      <div class="container">
+      <div class="hero-content">
         <h1>About Micap AI</h1>
-        <p>We're building the future of enterprise automation through research-driven AI innovation.</p>
+        <p>We're building the future of enterprise automation through research-driven innovation and practical implementation.</p>
       </div>
     </section>
 
-    <section class="section">
+    <!-- Mission & Vision -->
+    <section>
       <div class="container">
-        <h2>Our Mission</h2>
-        <p>Micap AI exists to help enterprises unlock the full potential of intelligent automation. We combine cutting-edge research with real-world implementation to solve complex business challenges.</p>
-        <p>We believe that the most powerful AI solutions come from understanding both the technology frontier and the practical constraints of enterprise environments. That's why we operate as both a research lab and a consulting firm.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2>Our Approach</h2>
-        <h3>Research-First Thinking</h3>
-        <p>We stay at the forefront of AI research, exploring new architectures, optimization techniques, and safety approaches. This research directly informs our consulting work.</p>
-        
-        <h3>Business-Focused Implementation</h3>
-        <p>We don't just build AI systems—we build AI systems that solve real business problems and deliver measurable ROI. Every project is grounded in understanding your specific constraints and opportunities.</p>
-        
-        <h3>Responsible AI</h3>
-        <p>We prioritize safety, transparency, and ethical considerations in all our work. We help enterprises build AI systems they can trust and deploy with confidence.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2>Our Core Values</h2>
-        <div class="values-grid">
-          <div class="value-card">
-            <h4>Excellence</h4>
-            <p>We pursue the highest standards in research and implementation, continuously pushing the boundaries of what's possible.</p>
+        <div class="grid grid-2">
+          <div>
+            <h2 style="color: var(--accent-primary); margin-bottom: var(--spacing-lg);">Our Mission</h2>
+            <p>To help enterprises unlock hidden revenue and operational efficiency through intelligent AI agents and automation. We combine cutting-edge research with practical implementation to deliver measurable results.</p>
           </div>
-          <div class="value-card">
-            <h4>Integrity</h4>
-            <p>We're transparent about capabilities, limitations, and costs. We build trust through honest communication and reliable delivery.</p>
-          </div>
-          <div class="value-card">
-            <h4>Impact</h4>
-            <p>We measure success by the real-world value we create for our partners, not by vanity metrics or hype.</p>
-          </div>
-          <div class="value-card">
-            <h4>Innovation</h4>
-            <p>We combine cutting-edge research with practical innovation to create solutions that are both novel and deployable.</p>
+          <div>
+            <h2 style="color: var(--accent-primary); margin-bottom: var(--spacing-lg);">Our Vision</h2>
+            <p>A world where AI agents handle complex workflows autonomously, freeing humans to focus on high-value work. Where enterprises compete on innovation, not operational overhead.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <!-- Values -->
+    <section style="background-color: var(--bg-secondary);">
       <div class="container">
-        <h2>Why Work With Us</h2>
-        <h3>Research + Implementation</h3>
-        <p>We're not just consultants—we're researchers. We bring the latest breakthroughs to your business.</p>
+        <div class="section-title">
+          <h2>Our Values</h2>
+          <p>The principles that guide everything we do.</p>
+        </div>
         
-        <h3>Enterprise Experience</h3>
-        <p>We understand the complexity of enterprise environments. We build solutions that scale, integrate, and deliver ROI.</p>
-        
-        <h3>Proprietary Tools</h3>
-        <p>We've built proprietary AI frameworks, memory layers, and agentic harnesses that give us an edge in implementation speed and quality.</p>
-        
-        <h3>Founder-Led</h3>
-        <p>You work directly with founders who understand both the technology and the business side of AI automation.</p>
+        <div class="grid grid-4">
+          <div class="card">
+            <h4 style="color: var(--accent-primary);">Research-First</h4>
+            <p>We ground our work in original research and deep technical expertise, not trends or hype.</p>
+          </div>
+          <div class="card">
+            <h4 style="color: var(--accent-primary);">Business-Focused</h4>
+            <p>We measure success by revenue impact and measurable ROI, not technology for its own sake.</p>
+          </div>
+          <div class="card">
+            <h4 style="color: var(--accent-primary);">Transparent</h4>
+            <p>We share our research, tools, and methodologies openly with the community.</p>
+          </div>
+          <div class="card">
+            <h4 style="color: var(--accent-primary);">Practical</h4>
+            <p>We build solutions that work in the real world, with real constraints and real requirements.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section">
+    <!-- Team -->
+    <section>
       <div class="container">
-        <h2>Ready to Transform Your Business?</h2>
-        <p>Schedule a free discovery call to explore how AI automation can unlock new revenue opportunities for your enterprise.</p>
-        <a href="https://tidycal.com/jmilam/ai-audit-discovery-call" class="cta-button" style="display: inline-block; margin-top: 1rem;">Schedule Discovery Call</a>
+        <div class="section-title">
+          <h2>Our Team</h2>
+          <p>Experienced technologists and entrepreneurs building the future of enterprise AI.</p>
+        </div>
+        
+        <div class="grid grid-2">
+          <div class="card">
+            <h4>Founder & CEO</h4>
+            <p>Background in AI research, enterprise software, and startup scaling. Led teams at Fortune 500 companies and venture-backed startups. MBA, Program Management certification.</p>
+          </div>
+          <div class="card">
+            <h4>Technical Team</h4>
+            <p>Network of senior engineers and architects with expertise in AI systems, enterprise architecture, and production-scale deployment. On-shore and offshore resources for flexible scaling.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why We're Different -->
+    <section style="background-color: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-title">
+          <h2>Why We're Different</h2>
+          <p>What sets Micap AI apart from traditional consulting firms.</p>
+        </div>
+        
+        <div class="grid grid-2">
+          <div>
+            <h4 style="color: var(--accent-primary); margin-bottom: var(--spacing-md);">Lab + Consulting Model</h4>
+            <p>We're not just consultants. We're researchers who implement. Our consulting is informed by original research and proprietary tools.</p>
+          </div>
+          <div>
+            <h4 style="color: var(--accent-primary); margin-bottom: var(--spacing-md);">Proprietary IP</h4>
+            <p>We've built agentic harnesses, memory layers, and safety frameworks that give us a competitive advantage. These become your competitive advantage.</p>
+          </div>
+          <div>
+            <h4 style="color: var(--accent-primary); margin-bottom: var(--spacing-md);">Business-First Approach</h4>
+            <p>We focus on revenue impact and measurable ROI. We don't implement technology for its own sake.</p>
+          </div>
+          <div>
+            <h4 style="color: var(--accent-primary); margin-bottom: var(--spacing-md);">Rapid Implementation</h4>
+            <p>From discovery to deployment, we move fast. First revenue in 1-2 weeks. Full implementation in 2-3 months.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section>
+      <div class="container" style="text-align: center;">
+        <h2 style="margin-bottom: var(--spacing-lg);">Let's Work Together</h2>
+        <p style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-2xl); max-width: 600px; margin-left: auto; margin-right: auto;">We're always interested in talking with enterprises looking to transform their operations through AI automation.</p>
+        <button class="button-primary" style="font-size: var(--font-size-lg); padding: var(--spacing-lg) var(--spacing-3xl);">Schedule Discovery Call</button>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Lab</h4>
+        <ul>
+          <li><a href="/lab.html">Research</a></li>
+          <li><a href="/lab.html">Open-Source Tools</a></li>
+          <li><a href="/lab.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Consulting</h4>
+        <ul>
+          <li><a href="/consulting.html">Services</a></li>
+          <li><a href="/consulting.html">Our Process</a></li>
+          <li><a href="/consulting.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/about.html">Team</a></li>
+          <li><a href="/about.html">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">API Reference</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
       <p>&copy; 2026 Micap AI. All rights reserved.</p>
-      <p>
-        <a href="/privacy.html">Privacy Policy</a> | 
-        <a href="/terms.html">Terms of Service</a>
-      </p>
     </div>
   </footer>
 

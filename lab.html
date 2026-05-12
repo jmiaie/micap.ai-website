@@ -3,352 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Micap AI Lab | Research & Innovation</title>
-  <meta name="description" content="Micap AI Lab conducts original research on enterprise AI agents, LLM optimization, and AI safety. Explore our research papers, open-source tools, and thought leadership.">
-  <link rel="icon" href="/manus-storage/micap-favicon_a2f043bd.ico" type="image/x-icon">
-  
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      line-height: 1.6;
-      color: #1a1a1a;
-      background: #ffffff;
-    }
-    
-    header {
-      background: #ffffff;
-      border-bottom: 1px solid #e5e5e5;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    
-    nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #000;
-      text-decoration: none;
-    }
-    
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-    
-    .nav-links a {
-      text-decoration: none;
-      color: #666;
-      font-size: 0.95rem;
-      transition: color 0.3s;
-    }
-    
-    .nav-links a:hover {
-      color: #000;
-    }
-    
-    .cta-button {
-      background: #000;
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: background 0.3s;
-    }
-    
-    .cta-button:hover {
-      background: #333;
-    }
-    
-    .page-header {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    
-    .page-header h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: #000;
-    }
-    
-    .page-header p {
-      font-size: 1.1rem;
-      color: #666;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    
-    .section {
-      max-width: 1200px;
-      margin: 3rem auto;
-      padding: 0 2rem;
-    }
-    
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      color: #000;
-    }
-    
-    .research-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-    
-    .research-card {
-      padding: 2rem;
-      background: #f9f9f9;
-      border-radius: 8px;
-      border-left: 4px solid #000;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    
-    .research-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    }
-    
-    .research-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-      color: #000;
-    }
-    
-    .research-card .date {
-      font-size: 0.85rem;
-      color: #999;
-      margin-bottom: 1rem;
-    }
-    
-    .research-card p {
-      color: #666;
-      line-height: 1.8;
-      margin-bottom: 1rem;
-    }
-    
-    .research-card a {
-      color: #000;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-    
-    .research-card a:hover {
-      color: #666;
-    }
-    
-    .tool-card {
-      padding: 2rem;
-      background: #f9f9f9;
-      border-radius: 8px;
-      border: 2px solid #e5e5e5;
-    }
-    
-    .tool-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      color: #000;
-    }
-    
-    .tool-card .status {
-      display: inline-block;
-      background: #000;
-      color: #fff;
-      padding: 0.25rem 0.75rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      margin-bottom: 1rem;
-    }
-    
-    .tool-card p {
-      color: #666;
-      margin-bottom: 1rem;
-      line-height: 1.8;
-    }
-    
-    .tool-links {
-      display: flex;
-      gap: 1rem;
-    }
-    
-    .tool-links a {
-      color: #000;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-    
-    .tool-links a:hover {
-      color: #666;
-    }
-    
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-    
-    .blog-card {
-      padding: 2rem;
-      background: #f9f9f9;
-      border-radius: 8px;
-    }
-    
-    .blog-card .category {
-      display: inline-block;
-      background: #000;
-      color: #fff;
-      padding: 0.25rem 0.75rem;
-      border-radius: 4px;
-      font-size: 0.75rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    .blog-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      color: #000;
-    }
-    
-    .blog-card .date {
-      font-size: 0.85rem;
-      color: #999;
-      margin-bottom: 1rem;
-    }
-    
-    .blog-card p {
-      color: #666;
-      margin-bottom: 1rem;
-      line-height: 1.8;
-    }
-    
-    .blog-card a {
-      color: #000;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    
-    .blog-card a:hover {
-      text-decoration: underline;
-    }
-    
-    .cta-section {
-      background: #000;
-      color: #fff;
-      padding: 3rem 2rem;
-      text-align: center;
-      border-radius: 8px;
-      margin: 3rem auto;
-      max-width: 1200px;
-    }
-    
-    .cta-section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #fff;
-    }
-    
-    .cta-section p {
-      font-size: 1rem;
-      margin-bottom: 2rem;
-      color: #ddd;
-    }
-    
-    .btn-primary {
-      background: #fff;
-      color: #000;
-      padding: 1rem 2rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s;
-      display: inline-block;
-    }
-    
-    .btn-primary:hover {
-      background: #f0f0f0;
-    }
-    
-    footer {
-      background: #f9f9f9;
-      border-top: 1px solid #e5e5e5;
-      padding: 3rem 2rem;
-      margin-top: 4rem;
-    }
-    
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-    
-    .footer-section h4 {
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      color: #000;
-    }
-    
-    .footer-section ul {
-      list-style: none;
-    }
-    
-    .footer-section ul li {
-      margin-bottom: 0.5rem;
-    }
-    
-    .footer-section a {
-      color: #666;
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-    
-    .footer-section a:hover {
-      color: #000;
-    }
-    
-    .footer-bottom {
-      border-top: 1px solid #e5e5e5;
-      padding-top: 2rem;
-      margin-top: 2rem;
-      text-align: center;
-      color: #666;
-      font-size: 0.9rem;
-    }
-    
-    @media (max-width: 768px) {
-      .page-header h1 {
-        font-size: 2rem;
-      }
-      
-      .nav-links {
-        gap: 1rem;
-        font-size: 0.9rem;
-      }
-    }
-  </style>
+  <title>Lab - Micap AI Research</title>
+  <meta name="description" content="Explore our research on AI agents, LLM optimization, and enterprise automation.">
+  <link rel="stylesheet" href="/premium-styles.css">
 </head>
 <body>
   <header>
@@ -359,125 +16,119 @@
         <li><a href="/lab.html">Lab</a></li>
         <li><a href="/consulting.html">Consulting</a></li>
         <li><a href="/about.html">About</a></li>
-        <li><button class="theme-toggle" id="themeToggle">🌙</button></li>
+        <li><button id="themeToggle" class="theme-toggle">🌙</button></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <!-- Page Header -->
-    <section class="page-header">
-      <h1>Micap AI Lab</h1>
-      <p>Original research on enterprise AI agents, LLM optimization, and AI safety. We publish findings, release open-source tools, and establish thought leadership in enterprise automation.</p>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Research Driving Innovation</h1>
+        <p>Original research on enterprise AI agents, LLM optimization, and AI safety. Freely shared with the community.</p>
+      </div>
     </section>
 
     <!-- Research Papers -->
-    <section class="section" id="research">
-      <h2>Research Papers</h2>
-      <div class="research-grid">
-        <div class="research-card">
-          <h3>Enterprise AI Agents: Architecture and Implementation Patterns</h3>
-          <div class="date">May 2026</div>
-          <p>Deep dive into the architecture patterns, reliability mechanisms, and implementation strategies for building production-grade AI agents in enterprise environments. Includes 40-60% efficiency gains and 20-30% revenue recovery metrics.</p>
-          <a href="/RESEARCH_PAPER_Enterprise_AI_Agents.md" target="_blank">Read Paper →</a>
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>Research Papers</h2>
+          <p>Peer-reviewed and community-validated research on enterprise AI automation.</p>
         </div>
-        <div class="research-card">
-          <h3>LLM Cost Optimization for Enterprise: A Practical Guide</h3>
-          <div class="date">Coming Soon</div>
-          <p>Comprehensive guide to optimizing LLM costs, latency, and accuracy. Techniques for model selection, fine-tuning, and inference optimization.</p>
-          <a href="#">Read Paper →</a>
-        </div>
-        <div class="research-card">
-          <h3>AI Safety Guardrails: Building Trustworthy Automation</h3>
-          <div class="date">Coming Soon</div>
-          <p>Framework for implementing safety guardrails, compliance controls, and monitoring systems for enterprise AI deployments.</p>
-          <a href="#">Read Paper →</a>
+        
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>Enterprise AI Agents: Architecture and Implementation Patterns</h3>
+            <p style="color: var(--text-tertiary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-md);">Published: May 2026 | 12,000 words</p>
+            <p>Comprehensive guide to designing, building, and deploying AI agents in enterprise environments. Covers architecture patterns, orchestration frameworks, and production deployment strategies.</p>
+            <button class="button-secondary" style="width: 100%; margin-top: var(--spacing-lg);">Read Paper</button>
+          </div>
+          <div class="card">
+            <h3>LLM Optimization for Enterprise: Cost, Performance, and Safety</h3>
+            <p style="color: var(--text-tertiary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-md);">Coming Soon | Q2 2026</p>
+            <p>Deep dive into model selection, fine-tuning strategies, and prompt engineering techniques that maximize performance while minimizing costs and ensuring safety.</p>
+            <button class="button-secondary" style="width: 100%; margin-top: var(--spacing-lg);">Notify Me</button>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Open-Source Tools -->
-    <section class="section" id="tools">
-      <h2>Open-Source Tools</h2>
-      <div class="research-grid">
-        <div class="tool-card">
-          <h3>Agentic AI Harness</h3>
-          <span class="status">Open Source</span>
-          <p>Production-ready framework for building reliable AI agents. Includes memory management, error handling, and monitoring.</p>
-          <div class="tool-links">
-            <a href="https://github.com/micap-ai" target="_blank">GitHub →</a>
-            <a href="#">Docs →</a>
-          </div>
+    <!-- Open Source Tools -->
+    <section style="background-color: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-title">
+          <h2>Open Source Tools</h2>
+          <p>Freely available frameworks and tools for building AI agents and enterprise automation.</p>
         </div>
-        <div class="tool-card">
-          <h3>Memory Layer for AI Agents</h3>
-          <span class="status">Open Source</span>
-          <p>Persistent memory system for long-running AI agents. Supports semantic search, context management, and knowledge graphs.</p>
-          <div class="tool-links">
-            <a href="https://github.com/micap-ai" target="_blank">GitHub →</a>
-            <a href="#">Docs →</a>
+        
+        <div class="grid grid-3">
+          <div class="card">
+            <h4>Agentic Harness</h4>
+            <p>Lightweight framework for orchestrating AI agents. Handles state management, tool integration, and error recovery.</p>
+            <p style="color: var(--accent-primary); font-weight: var(--font-weight-semibold); margin-top: var(--spacing-md);">GitHub →</p>
           </div>
-        </div>
-        <div class="tool-card">
-          <h3>LLM Optimization Toolkit</h3>
-          <span class="status">Open Source</span>
-          <p>Tools for optimizing LLM performance, cost, and latency. Includes model benchmarking, prompt optimization, and caching strategies.</p>
-          <div class="tool-links">
-            <a href="https://github.com/micap-ai" target="_blank">GitHub →</a>
-            <a href="#">Docs →</a>
+          <div class="card">
+            <h4>Memory Layer</h4>
+            <p>Persistent memory system for AI agents. Supports semantic search, context management, and multi-agent coordination.</p>
+            <p style="color: var(--accent-primary); font-weight: var(--font-weight-semibold); margin-top: var(--spacing-md);">GitHub →</p>
+          </div>
+          <div class="card">
+            <h4>Safety Guardrails</h4>
+            <p>Production-ready safety framework for AI agents. Includes input validation, output filtering, and compliance checks.</p>
+            <p style="color: var(--accent-primary); font-weight: var(--font-weight-semibold); margin-top: var(--spacing-md);">GitHub →</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Blog -->
-    <section class="section" id="blog">
-      <h2>Latest Articles</h2>
-      <div class="blog-grid">
-        <div class="blog-card">
-          <span class="category">AI Agents</span>
-          <h3>Enterprise AI Agents: Why Now?</h3>
-          <div class="date">Coming Soon</div>
-          <p>Exploring why enterprise AI agents are becoming critical for business automation. The convergence of LLMs, agentic frameworks, and business needs.</p>
-          <a href="#">Read Article →</a>
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>Latest Articles</h2>
+          <p>Insights, tutorials, and case studies on enterprise AI automation.</p>
         </div>
-        <div class="blog-card">
-          <span class="category">LLM Optimization</span>
-          <h3>Reducing LLM Costs by 80%: A Case Study</h3>
-          <div class="date">Coming Soon</div>
-          <p>Real-world techniques for optimizing LLM usage and reducing costs. Model selection, prompt engineering, and caching strategies.</p>
-          <a href="#">Read Article →</a>
-        </div>
-        <div class="blog-card">
-          <span class="category">AI Safety</span>
-          <h3>Building Safe AI Systems: A Framework</h3>
-          <div class="date">Coming Soon</div>
-          <p>Comprehensive framework for implementing safety guardrails, compliance controls, and monitoring for enterprise AI systems.</p>
-          <a href="#">Read Article →</a>
+        
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>Why Enterprise AI Agents Are Different From Chatbots</h3>
+            <p style="color: var(--text-tertiary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-md);">May 12, 2026</p>
+            <p>Enterprise AI agents operate autonomously, make decisions, and take actions. Chatbots respond to queries. Understanding the difference is critical for successful implementation.</p>
+            <button class="button-secondary" style="width: 100%; margin-top: var(--spacing-lg);">Read Article</button>
+          </div>
+          <div class="card">
+            <h3>The Hidden Costs of LLM Inference at Scale</h3>
+            <p style="color: var(--text-tertiary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-md);">May 10, 2026</p>
+            <p>Analyzing the true cost of running large language models in production. Includes strategies for optimization, cost reduction, and performance tuning.</p>
+            <button class="button-secondary" style="width: 100%; margin-top: var(--spacing-lg);">Read Article</button>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-      <h2>Interested in Our Research?</h2>
-      <p>Subscribe to our newsletter for the latest research papers, tools, and thought leadership.</p>
-      <a href="#" class="btn-primary">Subscribe to Newsletter</a>
+    <!-- Newsletter -->
+    <section style="background-color: var(--bg-secondary);">
+      <div class="container" style="text-align: center; max-width: 600px;">
+        <h2 style="margin-bottom: var(--spacing-md);">Stay Updated</h2>
+        <p style="margin-bottom: var(--spacing-2xl);">Get new research papers, articles, and tools delivered to your inbox.</p>
+        <form style="display: flex; gap: var(--spacing-md);">
+          <input type="email" placeholder="Your email" style="flex: 1; padding: var(--spacing-md);" required>
+          <button type="submit" class="button-primary">Subscribe</button>
+        </form>
+      </div>
     </section>
   </main>
 
   <footer>
     <div class="footer-content">
       <div class="footer-section">
-        <h4>Micap AI</h4>
-        <p>Research-driven AI automation for enterprises.</p>
-      </div>
-      <div class="footer-section">
         <h4>Lab</h4>
         <ul>
-          <li><a href="#research">Research</a></li>
-          <li><a href="#tools">Open-Source Tools</a></li>
-          <li><a href="#blog">Blog</a></li>
+          <li><a href="/lab.html">Research</a></li>
+          <li><a href="/lab.html">Open-Source Tools</a></li>
+          <li><a href="/lab.html">Blog</a></li>
         </ul>
       </div>
       <div class="footer-section">
@@ -494,6 +145,14 @@
           <li><a href="/about.html">About Us</a></li>
           <li><a href="/about.html">Team</a></li>
           <li><a href="/about.html">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">API Reference</a></li>
+          <li><a href="#">Support</a></li>
         </ul>
       </div>
     </div>

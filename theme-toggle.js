@@ -38,8 +38,8 @@
       document.body.setAttribute('data-theme', LIGHT_THEME);
       updateToggleIcon('☀️');
     } else {
-      html.removeAttribute('data-theme');
-      document.body.removeAttribute('data-theme');
+      html.setAttribute('data-theme', DARK_THEME);
+      document.body.setAttribute('data-theme', DARK_THEME);
       updateToggleIcon('🌙');
     }
     localStorage.setItem(THEME_KEY, theme);

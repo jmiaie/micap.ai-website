@@ -3,331 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Micap AI | Enterprise Automation Powered by Research</title>
-  <meta name="description" content="Micap AI is an AI research lab helping enterprises automate complex workflows with intelligent agents. We combine cutting-edge research with real-world implementation.">
-  <meta name="keywords" content="AI agents, enterprise automation, LLM optimization, AI safety, agentic AI, research lab, AI consulting">
-  <link rel="icon" href="/manus-storage/micap-favicon_a2f043bd.ico" type="image/x-icon">
-  <meta property="og:title" content="Micap AI | Enterprise Automation Powered by Research">
-  <meta property="og:description" content="Research-driven AI automation for enterprises. We research the frontier of what's possible, then bring those innovations to your business.">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
-  
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      line-height: 1.6;
-      color: #1a1a1a;
-      background: #ffffff;
-    }
-    
-    header {
-      background: #ffffff;
-      border-bottom: 1px solid #e5e5e5;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    
-    nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #000;
-      text-decoration: none;
-    }
-    
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-    
-    .nav-links a {
-      text-decoration: none;
-      color: #666;
-      font-size: 0.95rem;
-      transition: color 0.3s;
-    }
-    
-    .nav-links a:hover {
-      color: #000;
-    }
-    
-    .cta-button {
-      background: #000;
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: background 0.3s;
-    }
-    
-    .cta-button:hover {
-      background: #333;
-    }
-    
-    .hero {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 6rem 2rem;
-      text-align: center;
-    }
-    
-    .hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1rem;
-      line-height: 1.2;
-      color: #000;
-    }
-    
-    .hero p {
-      font-size: 1.25rem;
-      color: #666;
-      margin-bottom: 2rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      margin-bottom: 3rem;
-    }
-    
-    .btn-primary {
-      background: #000;
-      color: #fff;
-      padding: 1rem 2rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: 600;
-      transition: background 0.3s;
-      border: none;
-      cursor: pointer;
-    }
-    
-    .btn-primary:hover {
-      background: #333;
-    }
-    
-    .btn-secondary {
-      background: transparent;
-      color: #000;
-      padding: 1rem 2rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: 600;
-      border: 2px solid #000;
-      transition: all 0.3s;
-      cursor: pointer;
-    }
-    
-    .btn-secondary:hover {
-      background: #000;
-      color: #fff;
-    }
-    
-    .three-pillars {
-      max-width: 1200px;
-      margin: 4rem auto;
-      padding: 0 2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-    
-    .pillar {
-      padding: 2rem;
-      background: #f9f9f9;
-      border-radius: 8px;
-      border-left: 4px solid #000;
-    }
-    
-    .pillar h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #000;
-    }
-    
-    .pillar p {
-      color: #666;
-      line-height: 1.8;
-    }
-    
-    .section {
-      max-width: 1200px;
-      margin: 4rem auto;
-      padding: 0 2rem;
-    }
-    
-    .section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      color: #000;
-    }
-    
-    .section p {
-      font-size: 1.1rem;
-      color: #666;
-      margin-bottom: 1.5rem;
-      line-height: 1.8;
-    }
-    
-    .research-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    
-    .research-item {
-      padding: 1.5rem;
-      background: #f9f9f9;
-      border-radius: 8px;
-    }
-    
-    .research-item h4 {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-      color: #000;
-    }
-    
-    .research-item p {
-      font-size: 0.95rem;
-      color: #666;
-    }
-    
-    .cta-section {
-      background: #000;
-      color: #fff;
-      padding: 4rem 2rem;
-      text-align: center;
-      margin-top: 4rem;
-    }
-    
-    .cta-section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: #fff;
-    }
-    
-    .cta-section p {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-      color: #ddd;
-    }
-    
-    .cta-section .btn-primary {
-      background: #fff;
-      color: #000;
-    }
-    
-    .cta-section .btn-primary:hover {
-      background: #f0f0f0;
-    }
-    
-    footer {
-      background: #f9f9f9;
-      border-top: 1px solid #e5e5e5;
-      padding: 3rem 2rem;
-      margin-top: 4rem;
-    }
-    
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-    
-    .footer-section h4 {
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      color: #000;
-    }
-    
-    .footer-section ul {
-      list-style: none;
-    }
-    
-    .footer-section ul li {
-      margin-bottom: 0.5rem;
-    }
-    
-    .footer-section a {
-      color: #666;
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-    
-    .footer-section a:hover {
-      color: #000;
-    }
-    
-    .footer-bottom {
-      border-top: 1px solid #e5e5e5;
-      padding-top: 2rem;
-      margin-top: 2rem;
-      text-align: center;
-      color: #666;
-      font-size: 0.9rem;
-    }
-    
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      
-      .hero p {
-        font-size: 1rem;
-      }
-      
-      .nav-links {
-        gap: 1rem;
-        font-size: 0.9rem;
-      }
-      
-      .hero-buttons {
-        flex-direction: column;
-      }
-      
-      .btn-primary, .btn-secondary {
-        width: 100%;
-      }
-    }
-  </style>
+  <title>Micap AI - Enterprise AI Research Lab</title>
+  <meta name="description" content="Enterprise AI Research Lab. Helping enterprises automate complex workflows with AI agents.">
+  <link rel="stylesheet" href="/premium-styles.css">
 </head>
 <body>
   <header>
     <nav>
       <a href="/" class="logo">Micap AI</a>
       <ul class="nav-links">
+        <li><a href="/">Home</a></li>
         <li><a href="/lab.html">Lab</a></li>
         <li><a href="/consulting.html">Consulting</a></li>
         <li><a href="/about.html">About</a></li>
-        <li><a href="#contact" class="cta-button">Contact</a></li>
+        <li><button id="themeToggle" class="theme-toggle">🌙</button></li>
       </ul>
     </nav>
   </header>
@@ -335,138 +24,172 @@
   <main>
     <!-- Hero Section -->
     <section class="hero">
-      <h1>Enterprise Automation Powered by Research</h1>
-      <p>We research the frontier of AI agents and enterprise automation, then bring those innovations to your business. Combining cutting-edge research with real-world implementation.</p>
-      <div class="hero-buttons">
-        <a href="/consulting.html" class="btn-primary">Explore Consulting</a>
-        <a href="/lab.html" class="btn-secondary">View Our Research</a>
-      </div>
-    </section>
-
-    <!-- Three Pillars -->
-    <section class="three-pillars">
-      <div class="pillar">
-        <h3>🔬 Lab</h3>
-        <p>Original research on AI agents, LLM optimization, and AI safety. We publish findings, release open-source tools, and establish thought leadership in enterprise automation.</p>
-      </div>
-      <div class="pillar">
-        <h3>💼 Consulting</h3>
-        <p>Enterprise implementations of cutting-edge automation. We help mid-market and enterprise companies unlock revenue through intelligent agents and workflow automation.</p>
-      </div>
-      <div class="pillar">
-        <h3>🛠️ IP</h3>
-        <p>Proprietary tools and frameworks that drive results. Our research becomes your competitive advantage through custom implementations and licensing.</p>
-      </div>
-    </section>
-
-    <!-- What We Do -->
-    <section class="section">
-      <h2>What We Do</h2>
-      <p>Micap AI helps enterprises automate complex workflows with AI agents, recovering lost revenue through intelligent automation and agentic systems. We focus on:</p>
-      <div class="research-grid">
-        <div class="research-item">
-          <h4>AI Agents & Automation</h4>
-          <p>Build reliable, safe agents for complex enterprise workflows. From architecture to deployment.</p>
-        </div>
-        <div class="research-item">
-          <h4>LLM Optimization</h4>
-          <p>Cost, latency, and accuracy optimization for enterprise LLM usage. Maximize ROI on AI investments.</p>
-        </div>
-        <div class="research-item">
-          <h4>AI Safety & Guardrails</h4>
-          <p>Ensure AI systems remain safe, controllable, and compliant. Enterprise-grade safety infrastructure.</p>
-        </div>
-        <div class="research-item">
-          <h4>Enterprise Integration</h4>
-          <p>Integrate AI into existing systems without disruption. Legacy system compatibility and data security.</p>
+      <div class="hero-content">
+        <h1>Enterprise Automation Powered by Research</h1>
+        <p>We help enterprises unlock hidden revenue through AI agents and intelligent automation. Research-driven. Implementation-proven. Results-focused.</p>
+        <div class="hero-buttons">
+          <button class="button-primary">Schedule Discovery Call</button>
+          <button class="button-outline">Explore Our Research</button>
         </div>
       </div>
     </section>
 
-    <!-- Research Focus -->
-    <section class="section">
-      <h2>Our Research Focus</h2>
-      <p>We conduct original research on the most complex automation challenges facing modern enterprises:</p>
-      <div class="research-grid">
-        <div class="research-item">
-          <h4>Enterprise AI Agents</h4>
-          <p>Architecture patterns, reliability, and implementation strategies for production agents.</p>
+    <!-- What We Do Section -->
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>What We Do</h2>
+          <p>We combine cutting-edge AI research with practical business implementation to drive measurable results.</p>
         </div>
-        <div class="research-item">
-          <h4>Memory & Context</h4>
-          <p>Building persistent, contextual AI systems that learn and improve over time.</p>
+        
+        <div class="grid grid-3">
+          <div class="card">
+            <h3>🔬 Research</h3>
+            <p>We conduct original research on enterprise AI agents, LLM optimization, and AI safety. Our findings drive industry standards.</p>
+          </div>
+          <div class="card">
+            <h3>🛠️ Tools & IP</h3>
+            <p>We build proprietary frameworks, agentic harnesses, and memory layers that become your competitive advantage.</p>
+          </div>
+          <div class="card">
+            <h3>💼 Consulting</h3>
+            <p>We implement AI solutions that directly address your business challenges and unlock new revenue opportunities.</p>
+          </div>
         </div>
-        <div class="research-item">
-          <h4>Integration Patterns</h4>
-          <p>How to integrate AI into existing enterprise systems seamlessly.</p>
+      </div>
+    </section>
+
+    <!-- Research Focus Areas -->
+    <section style="background-color: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Research Focus</h2>
+          <p>Deep expertise in the technologies that matter most to enterprise automation.</p>
         </div>
-        <div class="research-item">
-          <h4>AI Compliance</h4>
-          <p>Governance, compliance, and regulatory considerations for enterprise AI.</p>
+        
+        <div class="grid grid-2">
+          <div class="card">
+            <h4>AI Agents & Agentic Systems</h4>
+            <p>Architecture patterns, orchestration frameworks, and deployment strategies for enterprise-grade AI agents that handle complex workflows autonomously.</p>
+          </div>
+          <div class="card">
+            <h4>Enterprise Automation</h4>
+            <p>Identifying and implementing automation opportunities across your organization. From process optimization to revenue recovery.</p>
+          </div>
+          <div class="card">
+            <h4>LLM Optimization</h4>
+            <p>Model selection, fine-tuning, and prompt engineering strategies that maximize performance while minimizing costs.</p>
+          </div>
+          <div class="card">
+            <h4>AI Safety & Guardrails</h4>
+            <p>Ensuring your AI systems are reliable, controllable, and aligned with your business objectives and compliance requirements.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Consulting Services -->
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>Consulting Services</h2>
+          <p>From discovery to implementation, we guide you through every step of your AI automation journey.</p>
+        </div>
+        
+        <div class="grid grid-3">
+          <div class="card">
+            <h3>Free Discovery Call</h3>
+            <p style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); color: var(--accent-primary);">$0</p>
+            <p>30-minute consultation to identify quick wins and opportunities in your organization.</p>
+            <button class="button-secondary" style="width: 100%; margin-top: var(--spacing-lg);">Schedule Now</button>
+          </div>
+          <div class="card">
+            <h3>AI Automation Audit</h3>
+            <p style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); color: var(--accent-primary);">$3,500</p>
+            <p>4-6 hour comprehensive analysis with 20-30 page report, 3-5 opportunities identified, ROI quantification.</p>
+            <button class="button-secondary" style="width: 100%; margin-top: var(--spacing-lg);">Learn More</button>
+          </div>
+          <div class="card">
+            <h3>Deep Dive Analysis</h3>
+            <p style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); color: var(--accent-primary);">$7,500-$10K</p>
+            <p>2-3 days of analysis with implementation roadmap, resource planning, and deployment strategy.</p>
+            <button class="button-secondary" style="width: 100%; margin-top: var(--spacing-lg);">Learn More</button>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Why Choose Micap -->
-    <section class="section">
-      <h2>Why Choose Micap AI</h2>
-      <p>We're not just consultants—we're researchers. Every engagement is informed by original research and validated through real-world implementation.</p>
-      <div class="research-grid">
-        <div class="research-item">
-          <h4>Research-Driven</h4>
-          <p>Our consulting is backed by original research on enterprise automation and AI agents.</p>
+    <section style="background-color: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-title">
+          <h2>Why Choose Micap AI</h2>
+          <p>We're not just consultants. We're researchers who implement.</p>
         </div>
-        <div class="research-item">
-          <h4>Production-Proven</h4>
-          <p>Every research insight is validated through real enterprise implementations.</p>
-        </div>
-        <div class="research-item">
-          <h4>Proprietary IP</h4>
-          <p>We bring proprietary tools and frameworks that competitors can't replicate.</p>
-        </div>
-        <div class="research-item">
-          <h4>Business-Focused</h4>
-          <p>We approach problems through an MBA and program management lens, not just technology.</p>
+        
+        <div class="grid grid-2">
+          <div>
+            <h4 style="color: var(--accent-primary); margin-bottom: var(--spacing-md);">✓ Research-Backed</h4>
+            <p>Our consulting is informed by original research and industry expertise, not generic templates.</p>
+          </div>
+          <div>
+            <h4 style="color: var(--accent-primary); margin-bottom: var(--spacing-md);">✓ Proprietary Tools</h4>
+            <p>We use our own frameworks and tools to implement solutions faster and more effectively.</p>
+          </div>
+          <div>
+            <h4 style="color: var(--accent-primary); margin-bottom: var(--spacing-md);">✓ Business-First</h4>
+            <p>We focus on revenue impact and measurable ROI, not technology for its own sake.</p>
+          </div>
+          <div>
+            <h4 style="color: var(--accent-primary); margin-bottom: var(--spacing-md);">✓ Rapid Implementation</h4>
+            <p>From discovery to deployment, we move fast. First revenue in 1-2 weeks.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section" id="contact">
-      <h2>Ready to Transform Your Enterprise?</h2>
-      <p>Let's discuss how AI agents and enterprise automation can unlock revenue for your business.</p>
-      <a href="/consulting.html" class="btn-primary">Schedule Consultation</a>
+    <section>
+      <div class="container" style="text-align: center;">
+        <h2 style="margin-bottom: var(--spacing-lg);">Ready to Transform Your Operations?</h2>
+        <p style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-2xl); max-width: 600px; margin-left: auto; margin-right: auto;">Start with a free 30-minute discovery call. We'll identify your top automation opportunities and discuss next steps.</p>
+        <button class="button-primary" style="font-size: var(--font-size-lg); padding: var(--spacing-lg) var(--spacing-3xl);">Schedule Discovery Call</button>
+      </div>
     </section>
   </main>
 
   <footer>
     <div class="footer-content">
       <div class="footer-section">
-        <h4>Micap AI</h4>
-        <p>Research-driven AI automation for enterprises.</p>
-      </div>
-      <div class="footer-section">
         <h4>Lab</h4>
         <ul>
           <li><a href="/lab.html">Research</a></li>
-          <li><a href="/lab.html#tools">Open-Source Tools</a></li>
-          <li><a href="/lab.html#blog">Blog</a></li>
+          <li><a href="/lab.html">Open-Source Tools</a></li>
+          <li><a href="/lab.html">Blog</a></li>
         </ul>
       </div>
       <div class="footer-section">
         <h4>Consulting</h4>
         <ul>
           <li><a href="/consulting.html">Services</a></li>
-          <li><a href="/consulting.html#process">Our Process</a></li>
-          <li><a href="/consulting.html#contact">Contact</a></li>
+          <li><a href="/consulting.html">Our Process</a></li>
+          <li><a href="/consulting.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-section">
         <h4>Company</h4>
         <ul>
           <li><a href="/about.html">About Us</a></li>
-          <li><a href="/about.html#team">Team</a></li>
-          <li><a href="/about.html#careers">Careers</a></li>
+          <li><a href="/about.html">Team</a></li>
+          <li><a href="/about.html">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">API Reference</a></li>
+          <li><a href="#">Support</a></li>
         </ul>
       </div>
     </div>
@@ -474,5 +197,7 @@
       <p>&copy; 2026 Micap AI. All rights reserved.</p>
     </div>
   </footer>
+
+  <script src="/theme-toggle.js"></script>
 </body>
 </html>

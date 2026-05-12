@@ -6,9 +6,7 @@
  *   <script src="/theme-toggle.js"></script>
  *
  * Add toggle button to navigation:
- *   <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
- *     <span class="theme-icon">🌙</span>
- *   </button>
+ *   <button id="themeToggle" class="theme-toggle">🌙</button>
  */
 
 (function() {
@@ -18,7 +16,6 @@
   const THEME_KEY = 'micap-theme';
   const DARK_THEME = 'dark';
   const LIGHT_THEME = 'light';
-  const SYSTEM_THEME = 'system';
 
   // Get stored theme or system preference
   function getInitialTheme() {
@@ -34,11 +31,15 @@
 
   // Apply theme to document
   function applyTheme(theme) {
+    const html = document.documentElement;
+    
     if (theme === LIGHT_THEME) {
-      document.documentElement.setAttribute('data-theme', LIGHT_THEME);
+      html.setAttribute('data-theme', LIGHT_THEME);
+      document.body.setAttribute('data-theme', LIGHT_THEME);
       updateToggleIcon('☀️');
     } else {
-      document.documentElement.removeAttribute('data-theme');
+      html.removeAttribute('data-theme');
+      document.body.removeAttribute('data-theme');
       updateToggleIcon('🌙');
     }
     localStorage.setItem(THEME_KEY, theme);
@@ -46,18 +47,20 @@
 
   // Update toggle button icon
   function updateToggleIcon(icon) {
-    const toggle = document.getElementById('theme-toggle');
+    // Try both possible button IDs
+    let toggle = document.getElementById('themeToggle');
+    if (!toggle) {
+      toggle = document.getElementById('theme-toggle');
+    }
+    
     if (toggle) {
-      const iconSpan = toggle.querySelector('.theme-icon');
-      if (iconSpan) {
-        iconSpan.textContent = icon;
-      }
+      toggle.textContent = icon;
     }
   }
 
   // Toggle between themes
   function toggleTheme() {
-    const current = document.documentElement.getAttribute('data-theme');
+    const current = document.documentElement.getAttribute('data-theme') || 'dark';
     const newTheme = current === LIGHT_THEME ? DARK_THEME : LIGHT_THEME;
     applyTheme(newTheme);
   }
@@ -68,10 +71,15 @@
     const initialTheme = getInitialTheme();
     applyTheme(initialTheme);
 
-    // Attach toggle listener
-    const toggle = document.getElementById('theme-toggle');
+    // Attach toggle listener to both possible button IDs
+    let toggle = document.getElementById('themeToggle');
+    if (!toggle) {
+      toggle = document.getElementById('theme-toggle');
+    }
+    
     if (toggle) {
       toggle.addEventListener('click', toggleTheme);
+      toggle.style.cursor = 'pointer';
     }
 
     // Listen for system theme changes
